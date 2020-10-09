@@ -11,7 +11,8 @@ import UIKit
 class MainCoordinator:Coordinator{
     func start() {
         let vc = ViewController()
-        vc.coor
+        vc.coordinator = self
+        nav.pushViewController(vc, animated:false)
     }
     
     
