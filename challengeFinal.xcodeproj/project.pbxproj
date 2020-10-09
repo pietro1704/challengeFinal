@@ -15,6 +15,8 @@
 		8D41F6972530932500A496C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D41F6952530932500A496C6 /* LaunchScreen.storyboard */; };
 		8D41F6A22530932500A496C6 /* challengeFinalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6A12530932500A496C6 /* challengeFinalTests.swift */; };
 		8D41F6AD2530932500A496C6 /* challengeFinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6AC2530932500A496C6 /* challengeFinalUITests.swift */; };
+		8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6BD253099B900A496C6 /* Coordinator.swift */; };
+		8D41F6C325309A1000A496C6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6C225309A1000A496C6 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		8D41F6A82530932500A496C6 /* challengeFinalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = challengeFinalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D41F6AC2530932500A496C6 /* challengeFinalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challengeFinalUITests.swift; sourceTree = "<group>"; };
 		8D41F6AE2530932500A496C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D41F6BD253099B900A496C6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8D41F6C225309A1000A496C6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 			children = (
 				8D41F68A2530932300A496C6 /* AppDelegate.swift */,
 				8D41F68C2530932300A496C6 /* SceneDelegate.swift */,
+				8D41F6BD253099B900A496C6 /* Coordinator.swift */,
+				8D41F6C225309A1000A496C6 /* MainCoordinator.swift */,
 				8D41F68E2530932300A496C6 /* ViewController.swift */,
 				8D41F6902530932300A496C6 /* Main.storyboard */,
 				8D41F6932530932500A496C6 /* Assets.xcassets */,
@@ -258,8 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */,
 				8D41F68F2530932300A496C6 /* ViewController.swift in Sources */,
 				8D41F68B2530932300A496C6 /* AppDelegate.swift in Sources */,
+				8D41F6C325309A1000A496C6 /* MainCoordinator.swift in Sources */,
 				8D41F68D2530932300A496C6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +447,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HHRZ35A37Y;
 				INFOPLIST_FILE = challengeFinal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,6 +467,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HHRZ35A37Y;
 				INFOPLIST_FILE = challengeFinal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
