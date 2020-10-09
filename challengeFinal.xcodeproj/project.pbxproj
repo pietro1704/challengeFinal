@@ -105,14 +105,11 @@
 		8D41F6892530932300A496C6 /* challengeFinal */ = {
 			isa = PBXGroup;
 			children = (
-				8D41F68A2530932300A496C6 /* AppDelegate.swift */,
-				8D41F68C2530932300A496C6 /* SceneDelegate.swift */,
-				8D41F6BD253099B900A496C6 /* Coordinator.swift */,
-				8D41F6CA25309C6700A496C6 /* Storyboarded.swift */,
-				8D41F6C225309A1000A496C6 /* MainCoordinator.swift */,
+				8D41F6D62530A60700A496C6 /* App-SceneDelegate */,
+				8D41F6D22530A56D00A496C6 /* Coordinator */,
 				8D41F68E2530932300A496C6 /* ViewController.swift */,
 				8D41F6902530932300A496C6 /* Main.storyboard */,
-				8D41F6932530932500A496C6 /* Assets.xcassets */,
+				8D41F6DA2530A72500A496C6 /* Assets */,
 				8D41F6952530932500A496C6 /* LaunchScreen.storyboard */,
 				8D41F6982530932500A496C6 /* Info.plist */,
 			);
@@ -135,6 +132,33 @@
 				8D41F6AE2530932500A496C6 /* Info.plist */,
 			);
 			path = challengeFinalUITests;
+			sourceTree = "<group>";
+		};
+		8D41F6D22530A56D00A496C6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				8D41F6CA25309C6700A496C6 /* Storyboarded.swift */,
+				8D41F6BD253099B900A496C6 /* Coordinator.swift */,
+				8D41F6C225309A1000A496C6 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8D41F6D62530A60700A496C6 /* App-SceneDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				8D41F68A2530932300A496C6 /* AppDelegate.swift */,
+				8D41F68C2530932300A496C6 /* SceneDelegate.swift */,
+			);
+			path = "App-SceneDelegate";
+			sourceTree = "<group>";
+		};
+		8D41F6DA2530A72500A496C6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8D41F6932530932500A496C6 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,7 +475,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HHRZ35A37Y;
 				INFOPLIST_FILE = challengeFinal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -471,7 +495,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HHRZ35A37Y;
 				INFOPLIST_FILE = challengeFinal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
