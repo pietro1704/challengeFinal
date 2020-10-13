@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70D9ACFB3037CB3506CB401C /* Pods_challengeFinal_challengeFinalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA9293BB9AD97035E577805 /* Pods_challengeFinal_challengeFinalTests.framework */; };
 		8D41F68B2530932300A496C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F68A2530932300A496C6 /* AppDelegate.swift */; };
 		8D41F68D2530932300A496C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F68C2530932300A496C6 /* SceneDelegate.swift */; };
 		8D41F68F2530932300A496C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F68E2530932300A496C6 /* ViewController.swift */; };
@@ -20,7 +21,6 @@
 		DA35ED362535F3E30061606C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED352535F3E30061606C /* ImageView.swift */; };
 		DA35ED3D2535F3FF0061606C /* ImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED3C2535F3FF0061606C /* ImageViewTests.swift */; };
 		DA35ED452535F48E0061606C /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED442535F48E0061606C /* MockView.swift */; };
-		E9956790E7717E9157028B59 /* Pods_challengeFinalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AF80EB6F5E68C67EAB8B6E /* Pods_challengeFinalTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +35,12 @@
 
 /* Begin PBXFileReference section */
 		027EE138654570B6C19ABB2D /* Pods-challengeFinal-challengeFinalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalUITests.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalUITests/Pods-challengeFinal-challengeFinalUITests.release.xcconfig"; sourceTree = "<group>"; };
-		14AF80EB6F5E68C67EAB8B6E /* Pods_challengeFinalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challengeFinalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AE332E1651AA31BD012F32B /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		23B2E6F157755D4FBD473FC4 /* Pods-challengeFinalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinalTests.release.xcconfig"; path = "Target Support Files/Pods-challengeFinalTests/Pods-challengeFinalTests.release.xcconfig"; sourceTree = "<group>"; };
+		267DCD79ABCD49CB6717F55A /* Pods-challengeFinal-challengeFinalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.release.xcconfig"; sourceTree = "<group>"; };
 		3339209148416CCE053D86CC /* Pods-challengeFinal-challengeFinalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalUITests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalUITests/Pods-challengeFinal-challengeFinalUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		44548E80E7D0A3A976B144A5 /* Pods_challengeFinal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challengeFinal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DA9293BB9AD97035E577805 /* Pods_challengeFinal_challengeFinalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challengeFinal_challengeFinalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC7DA82237EAE10FBC69ACD /* Pods_challengeFinal_challengeFinalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challengeFinal_challengeFinalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D41F6872530932300A496C6 /* challengeFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = challengeFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D41F68A2530932300A496C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9956790E7717E9157028B59 /* Pods_challengeFinalTests.framework in Frameworks */,
+				70D9ACFB3037CB3506CB401C /* Pods_challengeFinal_challengeFinalTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +92,8 @@
 				027EE138654570B6C19ABB2D /* Pods-challengeFinal-challengeFinalUITests.release.xcconfig */,
 				CCB77719164055DD08A99333 /* Pods-challengeFinalTests.debug.xcconfig */,
 				23B2E6F157755D4FBD473FC4 /* Pods-challengeFinalTests.release.xcconfig */,
+				1AE332E1651AA31BD012F32B /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */,
+				267DCD79ABCD49CB6717F55A /* Pods-challengeFinal-challengeFinalTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -99,7 +103,7 @@
 			children = (
 				44548E80E7D0A3A976B144A5 /* Pods_challengeFinal.framework */,
 				7EC7DA82237EAE10FBC69ACD /* Pods_challengeFinal_challengeFinalUITests.framework */,
-				14AF80EB6F5E68C67EAB8B6E /* Pods_challengeFinalTests.framework */,
+				4DA9293BB9AD97035E577805 /* Pods_challengeFinal_challengeFinalTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -314,7 +318,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-challengeFinalTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-challengeFinal-challengeFinalTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -349,15 +353,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-challengeFinalTests/Pods-challengeFinalTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-challengeFinalTests/Pods-challengeFinalTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-challengeFinalTests/Pods-challengeFinalTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -576,7 +580,7 @@
 		};
 		8D41F6B52530932500A496C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCB77719164055DD08A99333 /* Pods-challengeFinalTests.debug.xcconfig */;
+			baseConfigurationReference = 1AE332E1651AA31BD012F32B /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -599,7 +603,7 @@
 		};
 		8D41F6B62530932500A496C6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23B2E6F157755D4FBD473FC4 /* Pods-challengeFinalTests.release.xcconfig */;
+			baseConfigurationReference = 267DCD79ABCD49CB6717F55A /* Pods-challengeFinal-challengeFinalTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

@@ -11,8 +11,4 @@ target 'challengeFinal' do
     pod 'SnapshotTesting', '~> 1.8.1'
   end
 
-  target 'challengeFinalUITests' do
-    # Pods for testing
-  end
-
 end
