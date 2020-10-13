@@ -1,0 +1,6 @@
+framework module Pods_challengeFinal {
+  umbrella header "Pods-challengeFinal-umbrella.h"
+
+  export *
+  module * { export * }
+}
