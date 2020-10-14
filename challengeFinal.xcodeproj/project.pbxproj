@@ -17,6 +17,10 @@
 		8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6BD253099B900A496C6 /* Coordinator.swift */; };
 		8D41F6C325309A1000A496C6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6C225309A1000A496C6 /* MainCoordinator.swift */; };
 		8D41F6CB25309C6700A496C6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6CA25309C6700A496C6 /* Storyboarded.swift */; };
+		8D73A56A2537286500C5759E /* StoryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73A5692537286500C5759E /* StoryNode.swift */; };
+		8D73A57225372B6400C5759E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73A57125372B6400C5759E /* Game.swift */; };
+		8DEE2C6F253746A3006C187B /* StoryNodesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */; };
+		8DEE2C7825374E1F006C187B /* StoryNodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE2C7725374E1F006C187B /* StoryNodeManager.swift */; };
 		B08D4A095391882B7B2C3C17 /* Pods_challengeFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44548E80E7D0A3A976B144A5 /* Pods_challengeFinal.framework */; };
 		DA35ED362535F3E30061606C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED352535F3E30061606C /* ImageView.swift */; };
 		DA35ED3D2535F3FF0061606C /* ImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED3C2535F3FF0061606C /* ImageViewTests.swift */; };
@@ -34,13 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		027EE138654570B6C19ABB2D /* Pods-challengeFinal-challengeFinalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalUITests.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalUITests/Pods-challengeFinal-challengeFinalUITests.release.xcconfig"; sourceTree = "<group>"; };
-		1AE332E1651AA31BD012F32B /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
-		23B2E6F157755D4FBD473FC4 /* Pods-challengeFinalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinalTests.release.xcconfig"; path = "Target Support Files/Pods-challengeFinalTests/Pods-challengeFinalTests.release.xcconfig"; sourceTree = "<group>"; };
-		267DCD79ABCD49CB6717F55A /* Pods-challengeFinal-challengeFinalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.release.xcconfig"; sourceTree = "<group>"; };
-		3339209148416CCE053D86CC /* Pods-challengeFinal-challengeFinalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalUITests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalUITests/Pods-challengeFinal-challengeFinalUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		051B5C72F68970D599E310E1 /* Pods-challengeFinal-challengeFinalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.release.xcconfig"; sourceTree = "<group>"; };
 		44548E80E7D0A3A976B144A5 /* Pods_challengeFinal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challengeFinal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA9293BB9AD97035E577805 /* Pods_challengeFinal_challengeFinalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challengeFinal_challengeFinalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77B9F2E37B837715B6F04743 /* Pods-challengeFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.release.xcconfig"; sourceTree = "<group>"; };
 		7EC7DA82237EAE10FBC69ACD /* Pods_challengeFinal_challengeFinalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challengeFinal_challengeFinalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D41F6872530932300A496C6 /* challengeFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = challengeFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D41F68A2530932300A496C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,12 +56,15 @@
 		8D41F6BD253099B900A496C6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8D41F6C225309A1000A496C6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		8D41F6CA25309C6700A496C6 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
-		CCB77719164055DD08A99333 /* Pods-challengeFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinalTests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinalTests/Pods-challengeFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8D73A5692537286500C5759E /* StoryNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNode.swift; sourceTree = "<group>"; };
+		8D73A57125372B6400C5759E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodesTest.swift; sourceTree = "<group>"; };
+		8DEE2C7725374E1F006C187B /* StoryNodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodeManager.swift; sourceTree = "<group>"; };
+		AD27566663346DD3881AC3C2 /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B3C65AD70148E9DF28692587 /* Pods-challengeFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.debug.xcconfig"; sourceTree = "<group>"; };
 		DA35ED352535F3E30061606C /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		DA35ED3C2535F3FF0061606C /* ImageViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewTests.swift; sourceTree = "<group>"; };
 		DA35ED442535F48E0061606C /* MockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
-		E4546E920768EABE4F6323CF /* Pods-challengeFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.debug.xcconfig"; sourceTree = "<group>"; };
-		FD17E51D4DC0D2BC0EC19187 /* Pods-challengeFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,21 +87,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C96919B7851BB2D65204F01 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E4546E920768EABE4F6323CF /* Pods-challengeFinal.debug.xcconfig */,
-				FD17E51D4DC0D2BC0EC19187 /* Pods-challengeFinal.release.xcconfig */,
-				3339209148416CCE053D86CC /* Pods-challengeFinal-challengeFinalUITests.debug.xcconfig */,
-				027EE138654570B6C19ABB2D /* Pods-challengeFinal-challengeFinalUITests.release.xcconfig */,
-				CCB77719164055DD08A99333 /* Pods-challengeFinalTests.debug.xcconfig */,
-				23B2E6F157755D4FBD473FC4 /* Pods-challengeFinalTests.release.xcconfig */,
-				1AE332E1651AA31BD012F32B /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */,
-				267DCD79ABCD49CB6717F55A /* Pods-challengeFinal-challengeFinalTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		2BCA96F367C94307056554B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,8 +104,8 @@
 				8D41F6892530932300A496C6 /* challengeFinal */,
 				8D41F6A02530932500A496C6 /* challengeFinalTests */,
 				8D41F6882530932300A496C6 /* Products */,
-				0C96919B7851BB2D65204F01 /* Pods */,
 				2BCA96F367C94307056554B5 /* Frameworks */,
+				F88E6400B00FFA7446B22489 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +121,7 @@
 		8D41F6892530932300A496C6 /* challengeFinal */ = {
 			isa = PBXGroup;
 			children = (
+				8D73A57125372B6400C5759E /* Game.swift */,
 				8D41F6D62530A60700A496C6 /* App-SceneDelegate */,
 				8D41F6D22530A56D00A496C6 /* Coordinator */,
 				8D41F68E2530932300A496C6 /* ViewController.swift */,
@@ -149,6 +139,7 @@
 				DA35ED3B2535F3FF0061606C /* Components */,
 				8D41F6A32530932500A496C6 /* Info.plist */,
 				DA35ED442535F48E0061606C /* MockView.swift */,
+				8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */,
 			);
 			path = challengeFinalTests;
 			sourceTree = "<group>";
@@ -180,9 +171,19 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		8D73A5682537284400C5759E /* gameComponents */ = {
+			isa = PBXGroup;
+			children = (
+				8D73A5692537286500C5759E /* StoryNode.swift */,
+				8DEE2C7725374E1F006C187B /* StoryNodeManager.swift */,
+			);
+			path = gameComponents;
+			sourceTree = "<group>";
+		};
 		DA35ED332535F3E30061606C /* challengeFinalComponents */ = {
 			isa = PBXGroup;
 			children = (
+				8D73A5682537284400C5759E /* gameComponents */,
 				DA35ED342535F3E30061606C /* ImageView */,
 			);
 			path = challengeFinalComponents;
@@ -202,6 +203,17 @@
 				DA35ED3C2535F3FF0061606C /* ImageViewTests.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		F88E6400B00FFA7446B22489 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3C65AD70148E9DF28692587 /* Pods-challengeFinal.debug.xcconfig */,
+				77B9F2E37B837715B6F04743 /* Pods-challengeFinal.release.xcconfig */,
+				AD27566663346DD3881AC3C2 /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */,
+				051B5C72F68970D599E310E1 /* Pods-challengeFinal-challengeFinalTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +384,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */,
+				8D73A57225372B6400C5759E /* Game.swift in Sources */,
+				8D73A56A2537286500C5759E /* StoryNode.swift in Sources */,
+				8DEE2C7825374E1F006C187B /* StoryNodeManager.swift in Sources */,
 				8D41F68F2530932300A496C6 /* ViewController.swift in Sources */,
 				8D41F68B2530932300A496C6 /* AppDelegate.swift in Sources */,
 				8D41F6C325309A1000A496C6 /* MainCoordinator.swift in Sources */,
@@ -386,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA35ED3D2535F3FF0061606C /* ImageViewTests.swift in Sources */,
+				8DEE2C6F253746A3006C187B /* StoryNodesTest.swift in Sources */,
 				DA35ED452535F48E0061606C /* MockView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,7 +439,7 @@
 		8D41F6AF2530932500A496C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -484,7 +500,7 @@
 		8D41F6B02530932500A496C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -538,7 +554,7 @@
 		};
 		8D41F6B22530932500A496C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4546E920768EABE4F6323CF /* Pods-challengeFinal.debug.xcconfig */;
+			baseConfigurationReference = B3C65AD70148E9DF28692587 /* Pods-challengeFinal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -559,7 +575,7 @@
 		};
 		8D41F6B32530932500A496C6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD17E51D4DC0D2BC0EC19187 /* Pods-challengeFinal.release.xcconfig */;
+			baseConfigurationReference = 77B9F2E37B837715B6F04743 /* Pods-challengeFinal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -580,7 +596,7 @@
 		};
 		8D41F6B52530932500A496C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AE332E1651AA31BD012F32B /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */;
+			baseConfigurationReference = AD27566663346DD3881AC3C2 /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -603,7 +619,7 @@
 		};
 		8D41F6B62530932500A496C6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 267DCD79ABCD49CB6717F55A /* Pods-challengeFinal-challengeFinalTests.release.xcconfig */;
+			baseConfigurationReference = 051B5C72F68970D599E310E1 /* Pods-challengeFinal-challengeFinalTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
