@@ -22,6 +22,4 @@ struct StoryNode: Identifiable {
     mutating func addChild(_ childrenIDs: NodeID...){
         self.childNodeIDs.append(contentsOf: childrenIDs)
     }
-    
-    
 }
