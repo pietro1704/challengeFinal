@@ -15,12 +15,10 @@ class StoryViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
 
-        storyView = StoryView()
+        storyView = StoryView(with: Infos.mockInfos())
         storyView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(storyView)
-        storyView.configure(with: Infos.mockInfos())
-//        storyView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-//        storyView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        storyView.configure(using: Infos.mockInfos())
         storyView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         storyView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         storyView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
@@ -28,10 +26,7 @@ class StoryViewController: UIViewController, Storyboarded {
     }
 }
 
-private struct Infos: StoryViewInfos {
-    var imagePath: String?
-    var textInfos: RegularTextViewInfos
-    var decisions: [String]?
+private struct Infos {
 
     private struct TextInfos: RegularTextViewInfos {
         var text: String
@@ -40,9 +35,11 @@ private struct Infos: StoryViewInfos {
         }
     }
 
-    static func mockInfos() -> StoryViewInfos {
-        return Infos(imagePath: "cap1_1",
-                     textInfos: TextInfos.mockText(),
-                     decisions: ["A", "B", "c", "D"])
+    static func mockInfos() -> StoryViewModel {
+        let viewModel = StoryViewModel()
+        viewModel.decisions = ["Coxinha", "Risóles", "Esfirra", "Empadaadsasadsadads"]
+        viewModel.textInfos = TextInfos.mockText()
+        viewModel.imagePath = "cap1_1"
+        return viewModel
     }
 }

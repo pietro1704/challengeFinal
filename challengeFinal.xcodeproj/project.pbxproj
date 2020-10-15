@@ -21,13 +21,14 @@
 		DA35ED362535F3E30061606C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED352535F3E30061606C /* ImageView.swift */; };
 		DA35ED3D2535F3FF0061606C /* ImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED3C2535F3FF0061606C /* ImageViewTests.swift */; };
 		DA35ED452535F48E0061606C /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED442535F48E0061606C /* MockView.swift */; };
+		DA3E12AA25386BAA00C48AF8 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E12A925386BAA00C48AF8 /* StoryViewModel.swift */; };
+		DA3E12B025387A5E00C48AF8 /* PrimaryButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E12AF25387A5E00C48AF8 /* PrimaryButtonTests.swift */; };
 		DA5972E8253725DB00D6EF40 /* StoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972E7253725DB00D6EF40 /* StoryCoordinator.swift */; };
 		DA5972EC253725F000D6EF40 /* Story.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5972EB253725F000D6EF40 /* Story.storyboard */; };
 		DA5972F02537261500D6EF40 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972EF2537261500D6EF40 /* StoryViewController.swift */; };
 		DA5972F42537278900D6EF40 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972F32537278900D6EF40 /* PrimaryButton.swift */; };
 		DA5972F82537286500D6EF40 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972F72537286500D6EF40 /* StoryView.swift */; };
 		DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA88FF6F2537411500AF0992 /* RegularTextViewInfos.swift */; };
-		DA88FF742537427B00AF0992 /* StoryViewInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA88FF732537427B00AF0992 /* StoryViewInfos.swift */; };
 		DAC23A312537329D00D57C43 /* RegularTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC23A302537329D00D57C43 /* RegularTextView.swift */; };
 		DAC23A37253733D100D57C43 /* RegularTextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC23A36253733D100D57C43 /* RegularTextViewTests.swift */; };
 /* End PBXBuildFile section */
@@ -68,13 +69,14 @@
 		DA35ED352535F3E30061606C /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		DA35ED3C2535F3FF0061606C /* ImageViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewTests.swift; sourceTree = "<group>"; };
 		DA35ED442535F48E0061606C /* MockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
+		DA3E12A925386BAA00C48AF8 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
+		DA3E12AF25387A5E00C48AF8 /* PrimaryButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonTests.swift; sourceTree = "<group>"; };
 		DA5972E7253725DB00D6EF40 /* StoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCoordinator.swift; sourceTree = "<group>"; };
 		DA5972EB253725F000D6EF40 /* Story.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Story.storyboard; sourceTree = "<group>"; };
 		DA5972EF2537261500D6EF40 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		DA5972F32537278900D6EF40 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		DA5972F72537286500D6EF40 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		DA88FF6F2537411500AF0992 /* RegularTextViewInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTextViewInfos.swift; sourceTree = "<group>"; };
-		DA88FF732537427B00AF0992 /* StoryViewInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewInfos.swift; sourceTree = "<group>"; };
 		DAC23A302537329D00D57C43 /* RegularTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTextView.swift; sourceTree = "<group>"; };
 		DAC23A36253733D100D57C43 /* RegularTextViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTextViewTests.swift; sourceTree = "<group>"; };
 		E4546E920768EABE4F6323CF /* Pods-challengeFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.debug.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		DA30DF8F25371E88007C6CA4 /* Story */ = {
 			isa = PBXGroup;
 			children = (
+				DA3E12A825386B9800C48AF8 /* ViewModel */,
 				DA5972E12537256B00D6EF40 /* Coordinator */,
 				DA5972E22537257000D6EF40 /* Storyboard */,
 				DA5972E42537258100D6EF40 /* View */,
@@ -250,8 +253,17 @@
 			children = (
 				DA35ED3C2535F3FF0061606C /* ImageViewTests.swift */,
 				DAC23A36253733D100D57C43 /* RegularTextViewTests.swift */,
+				DA3E12AF25387A5E00C48AF8 /* PrimaryButtonTests.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		DA3E12A825386B9800C48AF8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E12A925386BAA00C48AF8 /* StoryViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		DA5972E02537255000D6EF40 /* PrimaryButton */ = {
@@ -290,7 +302,6 @@
 			isa = PBXGroup;
 			children = (
 				DA5972F72537286500D6EF40 /* StoryView.swift */,
-				DA88FF732537427B00AF0992 /* StoryViewInfos.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -506,6 +517,7 @@
 				DA5972F82537286500D6EF40 /* StoryView.swift in Sources */,
 				DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */,
 				8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */,
+				DA3E12AA25386BAA00C48AF8 /* StoryViewModel.swift in Sources */,
 				8D41F68F2530932300A496C6 /* MenuViewController.swift in Sources */,
 				DA5972F42537278900D6EF40 /* PrimaryButton.swift in Sources */,
 				8D41F68B2530932300A496C6 /* AppDelegate.swift in Sources */,
@@ -513,7 +525,6 @@
 				DAC23A312537329D00D57C43 /* RegularTextView.swift in Sources */,
 				8D41F6C325309A1000A496C6 /* MenuCoordinator.swift in Sources */,
 				8D41F68D2530932300A496C6 /* SceneDelegate.swift in Sources */,
-				DA88FF742537427B00AF0992 /* StoryViewInfos.swift in Sources */,
 				DA35ED362535F3E30061606C /* ImageView.swift in Sources */,
 				DA5972E8253725DB00D6EF40 /* StoryCoordinator.swift in Sources */,
 				8D41F6CB25309C6700A496C6 /* Storyboarded.swift in Sources */,
@@ -526,6 +537,7 @@
 			files = (
 				DA35ED3D2535F3FF0061606C /* ImageViewTests.swift in Sources */,
 				DA35ED452535F48E0061606C /* MockView.swift in Sources */,
+				DA3E12B025387A5E00C48AF8 /* PrimaryButtonTests.swift in Sources */,
 				DAC23A37253733D100D57C43 /* RegularTextViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

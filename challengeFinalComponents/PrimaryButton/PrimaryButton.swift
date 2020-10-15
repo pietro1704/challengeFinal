@@ -7,8 +7,14 @@
 
 import UIKit
 
+public protocol PrimaryButtonDelegate: class {
+    func buttonPressed(_ tag: Int)
+}
+
 public class PrimaryButton: UIButton {
     
+    public weak var delegate: PrimaryButtonDelegate?
+
     public override init(frame: CGRect) {
         super.init(frame: .zero)
         setupButton()
@@ -18,6 +24,11 @@ public class PrimaryButton: UIButton {
         super.init(frame: .zero)
         setupButton()
         setTitle(title, for: state)
+        addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+    }
+
+    @objc private func handleTap() {
+        self.delegate?.buttonPressed(tag)
     }
 
     private func setupButton() {

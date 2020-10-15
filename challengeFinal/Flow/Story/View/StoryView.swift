@@ -9,6 +9,12 @@ import UIKit
 
 public class StoryView: UIView {
 
+    public var viewModel: StoryViewModel {
+        didSet {
+            configure(using: viewModel)
+        }
+    }
+
     private lazy var imageView: ImageView = {
         let imageView = ImageView()
         addSubview(imageView)
@@ -20,7 +26,6 @@ public class StoryView: UIView {
         let textView = RegularTextView()
         addSubview(textView)
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.backgroundColor = .green
         return textView
     }()
 
@@ -29,23 +34,24 @@ public class StoryView: UIView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.spacing = 8
         stack.distribution = .fillEqually
+        stack.axis = .vertical
         addSubview(stack)
-        stack.backgroundColor = .purple
         return stack
     }()
 
-    public init() {
+    public init(with viewModel: StoryViewModel) {
+        self.viewModel = viewModel
         super.init(frame: .zero)
         backgroundColor = UIColor(red: 0.89, green: 0.88, blue: 0.85, alpha: 1.00)
 
         imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        
+
         textView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         textView.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 32).isActive = true
         textView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32).isActive = true
-        
+
         stackview.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10).isActive = true
         stackview.leadingAnchor.constraint(equalTo: textView.leadingAnchor).isActive = true
         stackview.trailingAnchor.constraint(equalTo: textView.trailingAnchor).isActive = true
@@ -56,10 +62,13 @@ public class StoryView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public func configure(with infos: StoryViewInfos) {
+    public func configure(using infos: StoryViewModel) {
         self.imageView.recievedImage(image: loadImage(infos.imagePath))
-        self.textView.configure(with: infos.textInfos)
         configureDecisions(infos.decisions)
+
+        if let textInfos = infos.textInfos {
+            self.textView.configure(with: textInfos)
+        }
     }
 
     public func loadImage(_ imagePath: String?) -> UIImage {
@@ -71,10 +80,19 @@ public class StoryView: UIView {
     private func configureDecisions(_ decisions: [String]?) {
         guard let decisions = decisions else { return }
 
-        decisions.forEach { (caption) in
+        for i in 0..<decisions.count {
+            let caption = decisions[i]
             let button = PrimaryButton(title: caption)
             button.translatesAutoresizingMaskIntoConstraints = false
+            button.tag = i
+            button.delegate = self
             stackview.addArrangedSubview(button)
         }
+    }
+}
+
+extension StoryView: PrimaryButtonDelegate {
+    public func buttonPressed(_ buttonTag: Int) {
+        print("\(viewModel.decisions?[buttonTag]) pressed")
     }
 }
