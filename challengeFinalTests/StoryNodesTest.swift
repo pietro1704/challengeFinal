@@ -10,23 +10,23 @@ import Foundation
 @testable import challengeFinal
 
 class StoryNodesTest: XCTestCase {
-
+    
     func testParse() throws {
         let path = Bundle.main.path(forResource: "StoryNodes", ofType: "json")!
         
-        let url = URL(fileURLWithPath: path)
+        let fileLocation = URL(fileURLWithPath: path)
         
-        let data = try Data(contentsOf: url)
+        let data = try Data(contentsOf: fileLocation)
+        
+        //JSON loads correctly
+        //let json = try? JSONSerialization.jsonObject(with: data, options: [])
                 
         do {
             let nodes = try JSONDecoder().decode([StoryNode].self, from: data)
             
-            
-            print(nodes)
-        } catch {
-            print("erro")
+        } catch let jsonerror as NSError {
+            print(jsonerror.localizedDescription)
         }
-       
     }
 }
 
