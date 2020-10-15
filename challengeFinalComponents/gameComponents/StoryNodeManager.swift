@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct StoryNodeManager{
+struct StoryNodeManager {
     var storyNodes = [StoryNode]()
     
-    func getNodeByID(id:NodeID) -> StoryNode?{
+    func getNodeByID(id: NodeID) -> StoryNode? {
         let nodeIndex = storyNodes.firstIndex { (node) -> Bool in
             node.id == id
         }
-        guard nodeIndex != nil else { return nil}
-        return storyNodes[nodeIndex!]
+        guard let nodeIndexUnwrap = nodeIndex else { return nil}
+        return storyNodes[nodeIndexUnwrap]
     }
 }

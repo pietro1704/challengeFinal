@@ -29,6 +29,5 @@ class StoryNodesTest: XCTestCase {
         print(node3)
         print(node4)
         print(node5)
-
     }
 }

@@ -19,7 +19,7 @@ struct StoryNode: Identifiable {
     
     /// Adds 1 or more (...) children to the node
     /// - Parameter : sequence of nodes (1 or +) to add
-    mutating func addChild(_ childrenIDs: NodeID...){
+    mutating func addChild(_ childrenIDs: NodeID...) {
         self.childNodeIDs.append(contentsOf: childrenIDs)
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Game{
+class Game {
     
     var node1 = StoryNode(id: 0, text: "escolha1")
     var node2 = StoryNode(id: 1, text: "escolha2")
@@ -20,5 +20,4 @@ class Game{
         node3.addChild(4, 5)
         node4.addChild(5)
     }
-    
 }
