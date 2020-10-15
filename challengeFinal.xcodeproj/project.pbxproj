@@ -18,7 +18,6 @@
 		8D41F6C325309A1000A496C6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6C225309A1000A496C6 /* MainCoordinator.swift */; };
 		8D41F6CB25309C6700A496C6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6CA25309C6700A496C6 /* Storyboarded.swift */; };
 		8D73A56A2537286500C5759E /* StoryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73A5692537286500C5759E /* StoryNode.swift */; };
-		8D73A57225372B6400C5759E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73A57125372B6400C5759E /* Game.swift */; };
 		8DEE2C6F253746A3006C187B /* StoryNodesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */; };
 		8DEE2C7825374E1F006C187B /* StoryNodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE2C7725374E1F006C187B /* StoryNodeManager.swift */; };
 		B08D4A095391882B7B2C3C17 /* Pods_challengeFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44548E80E7D0A3A976B144A5 /* Pods_challengeFinal.framework */; };
@@ -57,7 +56,6 @@
 		8D41F6C225309A1000A496C6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		8D41F6CA25309C6700A496C6 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		8D73A5692537286500C5759E /* StoryNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNode.swift; sourceTree = "<group>"; };
-		8D73A57125372B6400C5759E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodesTest.swift; sourceTree = "<group>"; };
 		8DEE2C7725374E1F006C187B /* StoryNodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodeManager.swift; sourceTree = "<group>"; };
 		AD27566663346DD3881AC3C2 /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 		8D41F6892530932300A496C6 /* challengeFinal */ = {
 			isa = PBXGroup;
 			children = (
-				8D73A57125372B6400C5759E /* Game.swift */,
 				8D41F6D62530A60700A496C6 /* App-SceneDelegate */,
 				8D41F6D22530A56D00A496C6 /* Coordinator */,
 				8D41F68E2530932300A496C6 /* ViewController.swift */,
@@ -384,7 +381,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */,
-				8D73A57225372B6400C5759E /* Game.swift in Sources */,
 				8D73A56A2537286500C5759E /* StoryNode.swift in Sources */,
 				8DEE2C7825374E1F006C187B /* StoryNodeManager.swift in Sources */,
 				8D41F68F2530932300A496C6 /* ViewController.swift in Sources */,
