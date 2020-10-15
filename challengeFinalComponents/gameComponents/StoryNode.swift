@@ -9,17 +9,19 @@ import Foundation
 import UIKit
 
 typealias NodeID = Int
-struct StoryNode: Identifiable {
-    
+public  class StoryNode: StoryNodeProtocol {
+
     var id: NodeID
-    var childNodeIDs = [NodeID]()
+    var childNodeIDs: [NodeID]? = [NodeID]()
     var imagePath: String?
     var title: String? //talvez?
     var text: String
-    
-    /// Adds 1 or more (...) children to the node
-    /// - Parameter : sequence of nodes (1 or +) to add
-    mutating func addChild(_ childrenIDs: NodeID...) {
-        self.childNodeIDs.append(contentsOf: childrenIDs)
-    }
+}
+
+protocol StoryNodeProtocol: Codable {
+    var id: NodeID { get set }
+    var childNodeIDs: [NodeID]? { get set }
+    var imagePath: String? { get set }
+    var title: String? { get set }
+    var text: String { get set }
 }

@@ -1,0 +1,25 @@
+{
+    nodes: [
+        {
+            id: 1,
+            imagePath: null,
+            title: "decisao1",
+            text: "você está na decisão1",
+            childNodeIDs: [2, 3]
+        },
+        {
+            id: 2,
+            imagePath: "imagePath2",
+            title: "decisao2",
+            text: "você está na decisão2",
+            childNodeIDs: null
+        },
+        {
+            id: 3,
+            imagePath: null,
+            title: "decisao3",
+            text: "você está na decisão3",
+            childNodeIDs: null
+        }
+    ]
+}

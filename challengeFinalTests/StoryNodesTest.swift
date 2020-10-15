@@ -6,28 +6,27 @@
 //
 
 import XCTest
+import Foundation
 @testable import challengeFinal
 
 class StoryNodesTest: XCTestCase {
 
-    func testExample() throws {
+    func testParse() throws {
+        let path = Bundle.main.path(forResource: "StoryNodes", ofType: "json")!
         
-        var node1 = StoryNode(id: 0, text: "escolha1")
-        var node2 = StoryNode(id: 1, text: "escolha2")
-        var node3 = StoryNode(id: 2, text: "escolha3")
-        var node4 = StoryNode(id: 3, text: "escolha4")
-        var node5 = StoryNode(id: 4, text: "escolha5")
+        let url = URL(fileURLWithPath: path)
         
-        node1.addChild(2, 3)
-        node3.addChild(4, 5)
-        node4.addChild(5)
-        
-        
-        // This is an example of a functional test case.
-        print(node1)
-        print(node2)
-        print(node3)
-        print(node4)
-        print(node5)
+        let data = try Data(contentsOf: url)
+                
+        do {
+            let nodes = try JSONDecoder().decode([StoryNode].self, from: data)
+            
+            
+            print(nodes)
+        } catch {
+            print("erro")
+        }
+       
     }
 }
+
