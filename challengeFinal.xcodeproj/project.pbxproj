@@ -20,11 +20,12 @@
 		8D73A56A2537286500C5759E /* StoryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73A5692537286500C5759E /* StoryNode.swift */; };
 		8D98303E25388E1D0062AD44 /* StoryNodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D98303D25388E1D0062AD44 /* StoryNodes.json */; };
 		8DEE2C6F253746A3006C187B /* StoryNodesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */; };
-		8DEE2C7825374E1F006C187B /* StoryNodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE2C7725374E1F006C187B /* StoryNodeManager.swift */; };
 		B08D4A095391882B7B2C3C17 /* Pods_challengeFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44548E80E7D0A3A976B144A5 /* Pods_challengeFinal.framework */; };
 		DA35ED362535F3E30061606C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED352535F3E30061606C /* ImageView.swift */; };
 		DA35ED3D2535F3FF0061606C /* ImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED3C2535F3FF0061606C /* ImageViewTests.swift */; };
 		DA35ED452535F48E0061606C /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED442535F48E0061606C /* MockView.swift */; };
+		DA608FFD2539CFB3004AB2CC /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA608FFC2539CFB3004AB2CC /* Story.swift */; };
+		DA60900A2539D376004AB2CC /* StoryNodesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6090092539D376004AB2CC /* StoryNodesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,12 +60,13 @@
 		8D73A5692537286500C5759E /* StoryNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNode.swift; sourceTree = "<group>"; };
 		8D98303D25388E1D0062AD44 /* StoryNodes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StoryNodes.json; sourceTree = "<group>"; };
 		8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodesTest.swift; sourceTree = "<group>"; };
-		8DEE2C7725374E1F006C187B /* StoryNodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodeManager.swift; sourceTree = "<group>"; };
 		AD27566663346DD3881AC3C2 /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3C65AD70148E9DF28692587 /* Pods-challengeFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.debug.xcconfig"; sourceTree = "<group>"; };
 		DA35ED352535F3E30061606C /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		DA35ED3C2535F3FF0061606C /* ImageViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewTests.swift; sourceTree = "<group>"; };
 		DA35ED442535F48E0061606C /* MockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
+		DA608FFC2539CFB3004AB2CC /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		DA6090092539D376004AB2CC /* StoryNodesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,8 @@
 		8D41F6892530932300A496C6 /* challengeFinal */ = {
 			isa = PBXGroup;
 			children = (
+				DA60900F2539E2D1004AB2CC /* Models */,
+				DA6090062539D317004AB2CC /* Services */,
 				8D41F6D62530A60700A496C6 /* App-SceneDelegate */,
 				8D41F6D22530A56D00A496C6 /* Coordinator */,
 				8D41F68E2530932300A496C6 /* ViewController.swift */,
@@ -165,25 +169,15 @@
 		8D41F6DA2530A72500A496C6 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8D98303D25388E1D0062AD44 /* StoryNodes.json */,
 				8D41F6932530932500A496C6 /* Assets.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		8D73A5682537284400C5759E /* gameComponents */ = {
-			isa = PBXGroup;
-			children = (
-				8D73A5692537286500C5759E /* StoryNode.swift */,
-				8D98303D25388E1D0062AD44 /* StoryNodes.json */,
-				8DEE2C7725374E1F006C187B /* StoryNodeManager.swift */,
-			);
-			path = gameComponents;
-			sourceTree = "<group>";
-		};
 		DA35ED332535F3E30061606C /* challengeFinalComponents */ = {
 			isa = PBXGroup;
 			children = (
-				8D73A5682537284400C5759E /* gameComponents */,
 				DA35ED342535F3E30061606C /* ImageView */,
 			);
 			path = challengeFinalComponents;
@@ -203,6 +197,23 @@
 				DA35ED3C2535F3FF0061606C /* ImageViewTests.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		DA6090062539D317004AB2CC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DA6090092539D376004AB2CC /* StoryNodesService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DA60900F2539E2D1004AB2CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8D73A5692537286500C5759E /* StoryNode.swift */,
+				DA608FFC2539CFB3004AB2CC /* Story.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F88E6400B00FFA7446B22489 /* Pods */ = {
@@ -386,13 +397,14 @@
 			files = (
 				8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */,
 				8D73A56A2537286500C5759E /* StoryNode.swift in Sources */,
-				8DEE2C7825374E1F006C187B /* StoryNodeManager.swift in Sources */,
 				8D41F68F2530932300A496C6 /* ViewController.swift in Sources */,
+				DA60900A2539D376004AB2CC /* StoryNodesService.swift in Sources */,
 				8D41F68B2530932300A496C6 /* AppDelegate.swift in Sources */,
 				8D41F6C325309A1000A496C6 /* MainCoordinator.swift in Sources */,
 				8D41F68D2530932300A496C6 /* SceneDelegate.swift in Sources */,
 				DA35ED362535F3E30061606C /* ImageView.swift in Sources */,
 				8D41F6CB25309C6700A496C6 /* Storyboarded.swift in Sources */,
+				DA608FFD2539CFB3004AB2CC /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
