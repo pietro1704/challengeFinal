@@ -9,16 +9,22 @@ import Foundation
 import UIKit
 
 typealias NodeID = Int
-public class StoryNode: StoryNodeProtocol {
 
+class StoryNode: StoryNodeProtocol, Codable {
+    
+    internal init(id: NodeID, text: String) {
+        self.id = id
+        self.text = text
+    }
+    
     var id: NodeID
-    var childNodeIDs: [NodeID]? = [NodeID]()
+    var childNodeIDs: [NodeID]?
     var imagePath: String?
     var title: String? //talvez?
     var text: String
 }
 
-protocol StoryNodeProtocol: Codable {
+protocol StoryNodeProtocol{
     var id: NodeID { get set }
     var childNodeIDs: [NodeID]? { get set }
     var imagePath: String? { get set }

@@ -12,7 +12,7 @@ import Foundation
 class StoryNodesTest: XCTestCase {
     
     
-    func testStoryNodesCreation() throws{
+    func testStoryNodesCreation(){
         var node1 = StoryNode(id: 0, text: "decisão1")
         var node2 = StoryNode(id: 1, text: "decisão2")
         var node3 = StoryNode(id: 2, text: "decisão3")
