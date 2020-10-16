@@ -15,9 +15,9 @@ public class ImageView: UIView {
     private lazy var imageView: UIImageView = {
         let iView = UIImageView()
         addSubview(iView)
-        iView.widthAnchor.constraint(equalToConstant: imageWidth).isActive = true
-        iView.heightAnchor.constraint(equalToConstant: imageHeight).isActive = true
         iView.translatesAutoresizingMaskIntoConstraints = false
+        iView.adjustsImageSizeForAccessibilityContentSizeCategory = true
+        iView.contentMode = .scaleAspectFill
         return iView
     }()
 
@@ -31,5 +31,9 @@ public class ImageView: UIView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    public func recievedImage(image: UIImage) {
+        self.imageView.image = image
     }
 }
