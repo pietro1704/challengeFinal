@@ -8,18 +8,21 @@
 import Foundation
 import UIKit
 
-typealias NodeID = Int
-struct StoryNode: Identifiable {
+public typealias NodeID = Int
+
+public class StoryNode {
     
-    var id: NodeID
-    var childNodeIDs = [NodeID]()
+    public var id: NodeID
+    var childNodes: [StoryNode]
     var imagePath: String?
     var title: String? //talvez?
-    var text: String
-    
-    /// Adds 1 or more (...) children to the node
-    /// - Parameter : sequence of nodes (1 or +) to add
-    mutating func addChild(_ childrenIDs: NodeID...) {
-        self.childNodeIDs.append(contentsOf: childrenIDs)
+    var text: RegularTextViewInfos
+
+    public init(id: NodeID, childNodes: [StoryNode], imagePath: String?, title: String?, text: RegularTextViewInfos) {
+        self.id = id
+        self.childNodes = childNodes
+        self.imagePath = imagePath
+        self.title = title
+        self.text = text
     }
 }

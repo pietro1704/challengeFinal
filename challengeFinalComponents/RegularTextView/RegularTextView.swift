@@ -14,15 +14,18 @@ public class RegularTextView: UIView {
         addSubview(label)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .justified
         return label
     }()
 
     public init() {
         super.init(frame: .zero)
-        textLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        textLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        textLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        textLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            textLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            textLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            textLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            textLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+        ])
     }
 
     required init?(coder: NSCoder) {

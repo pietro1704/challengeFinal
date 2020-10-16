@@ -11,6 +11,7 @@ public class StoryView: UIView {
 
     public var viewModel: StoryViewModel {
         didSet {
+            prepareForReuse()
             configure(using: viewModel)
         }
     }
@@ -47,7 +48,8 @@ public class StoryView: UIView {
         imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-
+        imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4).isActive = true
+        
         textView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         textView.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 32).isActive = true
         textView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32).isActive = true
@@ -56,6 +58,7 @@ public class StoryView: UIView {
         stackview.leadingAnchor.constraint(equalTo: textView.leadingAnchor).isActive = true
         stackview.trailingAnchor.constraint(equalTo: textView.trailingAnchor).isActive = true
         stackview.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
+        stackview.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2).isActive = true
     }
 
     required init?(coder: NSCoder) {
@@ -63,10 +66,11 @@ public class StoryView: UIView {
     }
 
     public func configure(using infos: StoryViewModel) {
-        self.imageView.recievedImage(image: loadImage(infos.imagePath))
-        configureDecisions(infos.decisions)
+        let node = infos.node
+        self.imageView.recievedImage(image: loadImage(node?.imagePath))
+        configureDecisions(node?.childNodes)
 
-        if let textInfos = infos.textInfos {
+        if let textInfos = node?.text {
             self.textView.configure(with: textInfos)
         }
     }
@@ -77,22 +81,30 @@ public class StoryView: UIView {
         return image
     }
 
-    private func configureDecisions(_ decisions: [String]?) {
+    private func configureDecisions(_ decisions: [StoryNode]?) {
         guard let decisions = decisions else { return }
 
         for i in 0..<decisions.count {
-            let caption = decisions[i]
-            let button = PrimaryButton(title: caption)
+            let node = decisions[i]
+            let button = PrimaryButton(title: String(node.title ?? ""))
             button.translatesAutoresizingMaskIntoConstraints = false
             button.tag = i
             button.delegate = self
             stackview.addArrangedSubview(button)
         }
     }
+
+    private func prepareForReuse() {
+        stackview.arrangedSubviews.forEach { (arrangedSubview) in
+            arrangedSubview.removeFromSuperview()
+        }
+    }
 }
 
 extension StoryView: PrimaryButtonDelegate {
     public func buttonPressed(_ buttonTag: Int) {
-        print("\(viewModel.decisions?[buttonTag]) pressed")
+        let nodeViewModel = StoryViewModel()
+        nodeViewModel.node = viewModel.node?.childNodes[buttonTag]
+        self.viewModel = nodeViewModel
     }
 }
