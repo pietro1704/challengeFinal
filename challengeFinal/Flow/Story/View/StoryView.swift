@@ -7,14 +7,20 @@
 
 import UIKit
 
+public protocol StoryViewDelegate: class {
+    func userChoose(nodeId: NodeID)
+}
+
 public class StoryView: UIView {
 
-    public var viewModel: StoryViewModel {
+    public var viewModel: StoryViewModel? {
         didSet {
             prepareForReuse()
             configure(using: viewModel)
         }
     }
+    
+    weak var delegate: StoryViewDelegate?
 
     private lazy var imageView: ImageView = {
         let imageView = ImageView()
@@ -39,6 +45,10 @@ public class StoryView: UIView {
         addSubview(stack)
         return stack
     }()
+
+    public init() {
+        super.init(frame: .zero)
+    }
 
     public init(with viewModel: StoryViewModel) {
         self.viewModel = viewModel
@@ -68,14 +78,16 @@ public class StoryView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public func configure(using infos: StoryViewModel) {
-        let node = infos.node
+    public func configure(using infos: StoryViewModel?) {
+        prepareForReuse()
+        let node = infos?.node
         self.imageView.recievedImage(image: loadImage(node?.imagePath))
         configureDecisions(node?.childNodes)
 
         if let textInfos = node?.text {
             self.textView.configure(with: textInfos)
         }
+        setupConstraints()
     }
 
     public func loadImage(_ imagePath: String?) -> UIImage {
@@ -101,13 +113,15 @@ public class StoryView: UIView {
         stackview.arrangedSubviews.forEach { (arrangedSubview) in
             arrangedSubview.removeFromSuperview()
         }
+        self.imageView.recievedImage(image: UIImage())
+        self.textView.configure(with: "")
     }
 }
 
 extension StoryView: PrimaryButtonDelegate {
     public func buttonPressed(_ buttonTag: Int) {
-        let nodeViewModel = StoryViewModel()
-        nodeViewModel.node = viewModel.node?.childNodes?[buttonTag]
-        self.viewModel = nodeViewModel
+        if let child = viewModel?.node?.childNodes?[buttonTag] {
+            delegate?.userChoose(nodeId: child.id)
+        }
     }
 }

@@ -2,27 +2,24 @@
     "nodes": [
         {
             "id": 1,
-            "imagePath": null,
+            "imagePath": "cap1_1",
             "title": "decisao1",
             "text": "você está na decisão1",
-            "childNodeIDs": [
-                2,
-                3
-            ]
+            "childNodeIDs": [2, 3]
         },
         {
             "id": 2,
-            "imagePath": "imagePath2",
+            "imagePath": "cap1_1",
             "title": "decisao2",
             "text": "você está na decisão2",
-            "childNodeIDs": null
+            "childNodeIDs": []
         },
         {
             "id": 3,
-            "imagePath": null,
+            "imagePath": "cap1_1",
             "title": "decisao3",
             "text": "você está na decisão3",
-            "childNodeIDs": null
+            "childNodeIDs": []
         }
     ]
 }
