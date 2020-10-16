@@ -107,7 +107,7 @@ public class StoryView: UIView {
 extension StoryView: PrimaryButtonDelegate {
     public func buttonPressed(_ buttonTag: Int) {
         let nodeViewModel = StoryViewModel()
-        nodeViewModel.node = viewModel.node?.childNodes[buttonTag]
+        nodeViewModel.node = viewModel.node?.childNodes?[buttonTag]
         self.viewModel = nodeViewModel
     }
 }

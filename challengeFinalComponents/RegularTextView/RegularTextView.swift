@@ -35,4 +35,8 @@ public class RegularTextView: UIView {
     public func configure(with infos: RegularTextViewInfos) {
         self.textLabel.text = infos.text
     }
+
+    public func configure(with text: String) {
+        self.textLabel.text = text
+    }
 }

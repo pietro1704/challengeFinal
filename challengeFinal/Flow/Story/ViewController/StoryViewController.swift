@@ -45,17 +45,17 @@ private struct Infos {
                               childNodes: [],
                               imagePath: "cap1_1",
                               title: "Coxinha",
-                              text: TextInfos.mockTextNode2())
+                              text: TextInfos.mockTextNode2().text)
         let node3 = StoryNode(id: 3,
                               childNodes: [],
                               imagePath: "cap1_1",
                               title: "Pastel",
-                              text: TextInfos.mockTextNode3())
+                              text: TextInfos.mockTextNode3().text)
         let node = StoryNode(id: 1,
                              childNodes: [node2, node3],
                              imagePath: "cap1_1",
                              title: "Risóles",
-                             text: TextInfos.mockTextNode1())
+                             text: TextInfos.mockTextNode1().text)
         node2.childNodes = [node3, node]
         let viewModel = StoryViewModel()
         viewModel.node = node
