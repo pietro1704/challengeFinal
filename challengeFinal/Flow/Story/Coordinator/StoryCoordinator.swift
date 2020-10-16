@@ -21,7 +21,7 @@ public class StoryCoordinator: Coordinator {
         print("started")
         navigationController.pushViewController(vc, animated: false)
     }
-    
+
     func childDidFinished(_ child: Coordinator?) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {

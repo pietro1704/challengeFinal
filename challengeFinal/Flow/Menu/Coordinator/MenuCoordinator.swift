@@ -22,10 +22,6 @@ class MenuCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
 
-    func startGame() {
-//        let vc =
-    }
-
     func childDidFinished(_ child: Coordinator?) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {

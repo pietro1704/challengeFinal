@@ -15,8 +15,6 @@ public class ImageView: UIView {
     private lazy var imageView: UIImageView = {
         let iView = UIImageView()
         addSubview(iView)
-//        iView.widthAnchor.constraint(equalToConstant: imageWidth).isActive = true
-//        iView.heightAnchor.constraint(equalToConstant: imageHeight).isActive = true
         iView.translatesAutoresizingMaskIntoConstraints = false
         iView.adjustsImageSizeForAccessibilityContentSizeCategory = true
         iView.contentMode = .scaleAspectFill
