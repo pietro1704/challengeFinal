@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 typealias NodeID = Int
-struct StoryNode: StoryNodeProtocol, Codable {
+public class StoryNode: StoryNodeProtocol {
 
     var id: NodeID
     var childNodeIDs: [NodeID]? = [NodeID]()

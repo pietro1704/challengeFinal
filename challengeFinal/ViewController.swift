@@ -11,6 +11,9 @@ class ViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var node1 = StoryNode(id: 0, text: "decisão1")
+
         // Do any additional setup after loading the view.
     }
 }
