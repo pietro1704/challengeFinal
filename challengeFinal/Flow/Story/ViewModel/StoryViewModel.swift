@@ -8,7 +8,6 @@
 import UIKit
 
 public class StoryViewModel {
-    public var imagePath: String?
-    public var textInfos: RegularTextViewInfos?
-    public var decisions: [String]?
+    var node: StoryNode?
+    weak var coordinator: StoryCoordinator?
 }

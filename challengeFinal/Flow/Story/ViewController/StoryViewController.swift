@@ -14,7 +14,6 @@ class StoryViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-
         storyView = StoryView(with: Infos.mockInfos())
         storyView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(storyView)
@@ -30,16 +29,36 @@ private struct Infos {
 
     private struct TextInfos: RegularTextViewInfos {
         var text: String
-        static func mockText() -> RegularTextViewInfos {
+        static func mockTextNode1() -> RegularTextViewInfos {
             return TextInfos(text: "Até então você tinha pleno controle sobre seus atos. Por mais que o acaso interferisse no mundo, o livre-arbítrio era uma realidade inexorável: você podia tomar a atitude que bem entendesse a qualquer hora. Sim, as forças sociais e morais que regem o mundo sempre regularam suas decisões, mas agora o mais simples ato parece incerto; seja desligar o despertador, se espreguiçar ou até mesmo se levantar do sofá.")
+        }
+        static func mockTextNode2() -> RegularTextViewInfos {
+            return TextInfos(text: "AEHAEHUUAEHAUEHAUHUAEe")
+        }
+        static func mockTextNode3() -> RegularTextViewInfos {
+            return TextInfos(text: "LAAAAALDLSLASLDLASDAS")
         }
     }
 
     static func mockInfos() -> StoryViewModel {
+        let node2 = StoryNode(id: 2,
+                              childNodes: [],
+                              imagePath: "cap1_1",
+                              title: "Coxinha",
+                              text: TextInfos.mockTextNode2().text)
+        let node3 = StoryNode(id: 3,
+                              childNodes: [],
+                              imagePath: "cap1_1",
+                              title: "Pastel",
+                              text: TextInfos.mockTextNode3().text)
+        let node = StoryNode(id: 1,
+                             childNodes: [node2, node3],
+                             imagePath: "cap1_1",
+                             title: "Risóles",
+                             text: TextInfos.mockTextNode1().text)
+        node2.childNodes = [node3, node]
         let viewModel = StoryViewModel()
-        viewModel.decisions = ["Coxinha", "Risóles", "Esfirra", "Empadaadsasadsadads"]
-        viewModel.textInfos = TextInfos.mockText()
-        viewModel.imagePath = "cap1_1"
+        viewModel.node = node
         return viewModel
     }
 }
