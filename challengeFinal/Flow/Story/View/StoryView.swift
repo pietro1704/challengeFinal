@@ -44,7 +44,10 @@ public class StoryView: UIView {
         self.viewModel = viewModel
         super.init(frame: .zero)
         backgroundColor = UIColor(red: 0.89, green: 0.88, blue: 0.85, alpha: 1.00)
+        setupConstraints()
+    }
 
+    fileprivate func setupConstraints() {
         imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
@@ -53,7 +56,7 @@ public class StoryView: UIView {
         textView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         textView.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 32).isActive = true
         textView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32).isActive = true
-
+        
         stackview.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10).isActive = true
         stackview.leadingAnchor.constraint(equalTo: textView.leadingAnchor).isActive = true
         stackview.trailingAnchor.constraint(equalTo: textView.trailingAnchor).isActive = true

@@ -10,8 +10,4 @@ import UIKit
 public class StoryViewModel {
     var node: StoryNode?
     weak var coordinator: StoryCoordinator?
-
-    public func moveTo(node: StoryNode) {
-        
-    }
 }
