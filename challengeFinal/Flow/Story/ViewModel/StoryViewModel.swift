@@ -9,5 +9,13 @@ import UIKit
 
 public class StoryViewModel {
     var node: StoryNode?
-    weak var coordinator: StoryCoordinator?
+    let service = StoryNodesServices()
+
+    public init(node: StoryNode) {
+        self.node = node
+    }
+
+    public init(with nodeId: NodeID) {
+        self.node = service.retrieveNode(nodeId: nodeId)
+    }
 }

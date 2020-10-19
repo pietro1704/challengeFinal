@@ -18,7 +18,7 @@ public class StoryNodesServices {
                                   childNodes: retrieveChildNodes(childNodes: node.childNodeIDs),
                                   imagePath: node.imagePath,
                                   title: node.title,
-                                  text: node.title)
+                                  text: node.text)
         return storyNode
     }
 

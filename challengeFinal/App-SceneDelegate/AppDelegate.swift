@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let navController = UINavigationController()
-        coordinator = StoryCoordinator(navigationController: navController)
+        let services = StoryNodesServices()
+        let firstNode = services.retrieveNode(nodeId: 1)
+        coordinator = StoryCoordinator(navigationController: navController, storyNode: firstNode!)
         coordinator?.start()
         
         window = UIWindow(frame: UIScreen.main.bounds)

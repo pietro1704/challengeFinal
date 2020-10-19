@@ -11,14 +11,17 @@ public class StoryCoordinator: Coordinator {
     
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
+    var storyNode: StoryNode
     
-    init(navigationController: UINavigationController) {
+    init (navigationController: UINavigationController, storyNode: StoryNode) {
         self.navigationController = navigationController
+        self.storyNode = storyNode
     }
     
     func start() {
         let vc = StoryViewController.instantiate(storyBoardName: "Story")
-        print("started")
+        let viewModel = StoryViewModel(node: storyNode)
+        vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: false)
     }
 
