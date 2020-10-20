@@ -32,8 +32,8 @@ public class PrimaryButton: UIButton {
     }
 
     private func setupButton() {
-        self.backgroundColor = .red
-        self.tintColor = .green
+        self.backgroundColor = UIColor(red: 0.76, green: 0.07, blue: 0.07, alpha: 1.00)
+//        self.tintColor = .green
     }
 
     required init?(coder: NSCoder) {
