@@ -12,6 +12,7 @@ public class StoryCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     var storyNode: StoryNode
+    var viewController: StoryViewController?
     
     init (navigationController: UINavigationController, storyNode: StoryNode) {
         self.navigationController = navigationController
@@ -19,10 +20,20 @@ public class StoryCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = StoryViewController.instantiate(storyBoardName: "Story")
-        let viewModel = StoryViewModel(node: storyNode)
-        vc.viewModel = viewModel
-        navigationController.pushViewController(vc, animated: false)
+        viewController = StoryViewController.instantiate(storyBoardName: "Story")
+        let viewModel = StoryViewModel(node: storyNode,
+                                       coordinatorDelegate: self)
+        viewController?.viewModel = viewModel
+        if let viewController = viewController {
+            navigationController.pushViewController(viewController, animated: false)
+        }
+    }
+
+    func update(storyNode: StoryNode) {
+        self.storyNode = storyNode
+        let viewModel = StoryViewModel(node: storyNode,
+                                       coordinatorDelegate: self)
+        viewController?.update(with: viewModel)
     }
 
     func childDidFinished(_ child: Coordinator?) {
