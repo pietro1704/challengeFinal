@@ -30,6 +30,7 @@
 		DA3E12B025387A5E00C48AF8 /* PrimaryButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E12AF25387A5E00C48AF8 /* PrimaryButtonTests.swift */; };
 		DA4A12B92540494C00504E20 /* StoryViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A12B82540494C00504E20 /* StoryViewModelDelegate.swift */; };
 		DA4A12BD25404A7C00504E20 /* StoryCoordinator+StoryViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A12BC25404A7C00504E20 /* StoryCoordinator+StoryViewModelDelegate.swift */; };
+		DA4A12C325405D2A00504E20 /* ChapterinitLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A12C225405D2A00504E20 /* ChapterinitLabelView.swift */; };
 		DA5972E8253725DB00D6EF40 /* StoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972E7253725DB00D6EF40 /* StoryCoordinator.swift */; };
 		DA5972EC253725F000D6EF40 /* Story.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5972EB253725F000D6EF40 /* Story.storyboard */; };
 		DA5972F02537261500D6EF40 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972EF2537261500D6EF40 /* StoryViewController.swift */; };
@@ -38,6 +39,7 @@
 		DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA88FF6F2537411500AF0992 /* RegularTextViewInfos.swift */; };
 		DAC23A312537329D00D57C43 /* RegularTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC23A302537329D00D57C43 /* RegularTextView.swift */; };
 		DAC23A37253733D100D57C43 /* RegularTextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC23A36253733D100D57C43 /* RegularTextViewTests.swift */; };
+		DAC55E08254081B5006E1845 /* ChapterinitLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC55E07254081B5006E1845 /* ChapterinitLabelTests.swift */; };
 		DADC40C025403F7900078CA3 /* StoryNodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC40BF25403F7900078CA3 /* StoryNodeRepository.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,7 @@
 		DA3E12AF25387A5E00C48AF8 /* PrimaryButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonTests.swift; sourceTree = "<group>"; };
 		DA4A12B82540494C00504E20 /* StoryViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModelDelegate.swift; sourceTree = "<group>"; };
 		DA4A12BC25404A7C00504E20 /* StoryCoordinator+StoryViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoryCoordinator+StoryViewModelDelegate.swift"; sourceTree = "<group>"; };
+		DA4A12C225405D2A00504E20 /* ChapterinitLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterinitLabelView.swift; sourceTree = "<group>"; };
 		DA5972E7253725DB00D6EF40 /* StoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCoordinator.swift; sourceTree = "<group>"; };
 		DA5972EB253725F000D6EF40 /* Story.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Story.storyboard; sourceTree = "<group>"; };
 		DA5972EF2537261500D6EF40 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 		DA88FF6F2537411500AF0992 /* RegularTextViewInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTextViewInfos.swift; sourceTree = "<group>"; };
 		DAC23A302537329D00D57C43 /* RegularTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTextView.swift; sourceTree = "<group>"; };
 		DAC23A36253733D100D57C43 /* RegularTextViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTextViewTests.swift; sourceTree = "<group>"; };
+		DAC55E07254081B5006E1845 /* ChapterinitLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterinitLabelTests.swift; sourceTree = "<group>"; };
 		DADC40BF25403F7900078CA3 /* StoryNodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodeRepository.swift; sourceTree = "<group>"; };
 		DAF3986D513B30C7217ED0AA /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -268,6 +272,7 @@
 		DA35ED332535F3E30061606C /* challengeFinalComponents */ = {
 			isa = PBXGroup;
 			children = (
+				DA4A12C025405D0700504E20 /* Labels */,
 				DAC23A2F2537327E00D57C43 /* RegularTextView */,
 				DA5972E02537255000D6EF40 /* PrimaryButton */,
 				DA35ED342535F3E30061606C /* ImageView */,
@@ -289,6 +294,7 @@
 				DA35ED3C2535F3FF0061606C /* ImageViewTests.swift */,
 				DAC23A36253733D100D57C43 /* RegularTextViewTests.swift */,
 				DA3E12AF25387A5E00C48AF8 /* PrimaryButtonTests.swift */,
+				DAC55E07254081B5006E1845 /* ChapterinitLabelTests.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -299,6 +305,22 @@
 				DA3E12A925386BAA00C48AF8 /* StoryViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DA4A12C025405D0700504E20 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				DA4A12C125405D1200504E20 /* ChapterInitLabel */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		DA4A12C125405D1200504E20 /* ChapterInitLabel */ = {
+			isa = PBXGroup;
+			children = (
+				DA4A12C225405D2A00504E20 /* ChapterinitLabelView.swift */,
+			);
+			path = ChapterInitLabel;
 			sourceTree = "<group>";
 		};
 		DA5972E02537255000D6EF40 /* PrimaryButton */ = {
@@ -573,6 +595,7 @@
 			files = (
 				DA5972F82537286500D6EF40 /* StoryView.swift in Sources */,
 				DA4A12B92540494C00504E20 /* StoryViewModelDelegate.swift in Sources */,
+				DA4A12C325405D2A00504E20 /* ChapterinitLabelView.swift in Sources */,
 				DA0A71EA2539E360002BAB51 /* StoryNode.swift in Sources */,
 				DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */,
 				DA0A71EB2539E360002BAB51 /* Story.swift in Sources */,
@@ -602,6 +625,7 @@
 				8DEE2C6F253746A3006C187B /* StoryNodesTest.swift in Sources */,
 				DA35ED452535F48E0061606C /* MockView.swift in Sources */,
 				DA3E12B025387A5E00C48AF8 /* PrimaryButtonTests.swift in Sources */,
+				DAC55E08254081B5006E1845 /* ChapterinitLabelTests.swift in Sources */,
 				DAC23A37253733D100D57C43 /* RegularTextViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
