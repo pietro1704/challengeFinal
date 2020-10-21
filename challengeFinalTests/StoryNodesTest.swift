@@ -11,26 +11,27 @@ import Foundation
 
 class StoryNodesTest: XCTestCase {
     
-    
     func testStoryNodesCreation(){
-        var node1 = StoryNode(id: 0, text: "decisão1")
-        var node2 = StoryNode(id: 1, text: "decisão2")
-        var node3 = StoryNode(id: 2, text: "decisão3")
-        var node4 = StoryNode(id: 3, text: "decisão4")
-        var node5 = StoryNode(id: 4, text: "decisão5")
+        let node1 = StoryNode(id: 1,
+                              childNodes: [],
+                              imagePath: nil,
+                              title: "decisão1",
+                              text: "Titulo Decisão 1")
+        let node2 = StoryNode(id: 2,
+                              childNodes: [],
+                              imagePath: nil,
+                              title: "decisão2",
+                              text: "Titulo Decisão 2")
+        let node0 = StoryNode(id: 0,
+                              childNodes: [node1, node2],
+                              imagePath: nil,
+                              title: "decisão0",
+                              text: "Titulo Decisão 0")
         
-        
-        var storyNodes = [node1, node2, node3, node4, node5]
-        
-        node1.childNodeIDs = [2, 3]
-        node3.childNodeIDs = [4]
-        node4.childNodeIDs = [5]
-        
-        for node in storyNodes{
-            var i = 1
-            print("node\(i): \(node)")
-            i += 1
-        }
+        XCTAssertEqual(node1.title, "decisão1")
+        XCTAssertEqual(node2.title, "decisão2")
+        XCTAssertEqual(node0.title, "decisão0")
+
     }
     
     func testParse() throws {
@@ -39,13 +40,11 @@ class StoryNodesTest: XCTestCase {
         let fileLocation = URL(fileURLWithPath: path)
         
         let data = try Data(contentsOf: fileLocation)
-        
-        //JSON loads correctly
-        //let json = try? JSONSerialization.jsonObject(with: data, options: [])
-                
+
         do {
-            let nodes = try JSONDecoder().decode([StoryNode].self, from: data)
-            
+            let nodes = try JSONDecoder().decode(Story.self, from: data)
+            let unwrapedStory = try XCTUnwrap(nodes)
+            XCTAssertEqual(unwrapedStory.nodes.first?.title, "Início")
         } catch let jsonerror as NSError {
             print(jsonerror.localizedDescription)
         }

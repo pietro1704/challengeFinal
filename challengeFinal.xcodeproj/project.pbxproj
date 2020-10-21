@@ -36,6 +36,7 @@
 		DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA88FF6F2537411500AF0992 /* RegularTextViewInfos.swift */; };
 		DAC23A312537329D00D57C43 /* RegularTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC23A302537329D00D57C43 /* RegularTextView.swift */; };
 		DAC23A37253733D100D57C43 /* RegularTextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC23A36253733D100D57C43 /* RegularTextViewTests.swift */; };
+		DADC40C025403F7900078CA3 /* StoryNodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC40BF25403F7900078CA3 /* StoryNodeRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		DA88FF6F2537411500AF0992 /* RegularTextViewInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTextViewInfos.swift; sourceTree = "<group>"; };
 		DAC23A302537329D00D57C43 /* RegularTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTextView.swift; sourceTree = "<group>"; };
 		DAC23A36253733D100D57C43 /* RegularTextViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTextViewTests.swift; sourceTree = "<group>"; };
+		DADC40BF25403F7900078CA3 /* StoryNodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodeRepository.swift; sourceTree = "<group>"; };
 		DAF3986D513B30C7217ED0AA /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 		8D41F6892530932300A496C6 /* challengeFinal */ = {
 			isa = PBXGroup;
 			children = (
+				DADC40BE25403F6400078CA3 /* Repository */,
 				DA0A71E62539E360002BAB51 /* Models */,
 				DA0A71E42539E360002BAB51 /* Services */,
 				DA30DF8E25371E7A007C6CA4 /* Flow */,
@@ -385,6 +388,14 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		DADC40BE25403F6400078CA3 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				DADC40BF25403F7900078CA3 /* StoryNodeRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -559,6 +570,7 @@
 				DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */,
 				DA0A71EB2539E360002BAB51 /* Story.swift in Sources */,
 				8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */,
+				DADC40C025403F7900078CA3 /* StoryNodeRepository.swift in Sources */,
 				DA0A71E92539E360002BAB51 /* StoryNodesService.swift in Sources */,
 				DA3E12AA25386BAA00C48AF8 /* StoryViewModel.swift in Sources */,
 				8D41F68F2530932300A496C6 /* MenuViewController.swift in Sources */,

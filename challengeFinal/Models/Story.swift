@@ -6,12 +6,12 @@
 //
 
 // MARK: - Story
-struct Story: Codable {
+public struct Story: Codable {
     let nodes: [Node]
 }
 
 // MARK: - Node
-struct Node: Codable {
+public struct Node: Codable {
     let id: NodeID
     let imagePath: String?
     let title, text: String
