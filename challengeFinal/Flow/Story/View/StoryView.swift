@@ -13,13 +13,7 @@ public protocol StoryViewDelegate: class {
 
 public class StoryView: UIView {
 
-    public var viewModel: StoryViewModel? {
-        didSet {
-            prepareForReuse()
-            configure(using: viewModel)
-        }
-    }
-    
+    public var viewModel: StoryViewModel?
     weak var delegate: StoryViewDelegate?
 
     private lazy var imageView: ImageView = {
@@ -78,9 +72,11 @@ public class StoryView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public func configure(using infos: StoryViewModel?) {
+    public func configure(using viewModel: StoryViewModel?) {
+        self.viewModel = viewModel
+
         prepareForReuse()
-        let node = infos?.node
+        let node = viewModel?.node
         self.imageView.recievedImage(image: loadImage(node?.imagePath))
         configureDecisions(node?.childNodes)
 
