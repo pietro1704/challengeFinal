@@ -116,8 +116,7 @@ public class StoryView: UIView {
 
 extension StoryView: PrimaryButtonDelegate {
     public func buttonPressed(_ buttonTag: Int) {
-        if let child = viewModel?.node?.childNodes?[buttonTag] {
-            delegate?.userChoose(nodeId: child.id)
-        }
+        guard let viewmodel = viewModel else { return }
+        viewmodel.userChoosedNode(buttonTag)
     }
 }

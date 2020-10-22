@@ -29,6 +29,12 @@ class StoryViewController: UIViewController, Storyboarded {
         setupConstraints()
     }
 
+    public func update(with viewModel: StoryViewModel) {
+        self.viewModel = viewModel
+        containerView.viewModel = viewModel
+        containerView.configure(using: viewModel)
+    }
+
     private func setupConstraints() {
         containerView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         containerView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
