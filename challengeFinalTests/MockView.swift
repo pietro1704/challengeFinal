@@ -19,4 +19,16 @@ extension UIView {
         self.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         return containerView
     }
+
+    func addInCenterOnMockViewIphone11Landscape() -> UIView {
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 1792, height: 828))
+
+        containerView.addSubview(self)
+        containerView.backgroundColor = .white
+
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        self.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+        return containerView
+    }
 }
