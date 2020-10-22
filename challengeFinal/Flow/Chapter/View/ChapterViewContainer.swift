@@ -10,7 +10,7 @@ import UIKit
 public class ChapterViewContainer: UIView {
     
     lazy var chapterView: ChapterView = {
-        let cView = ChapterView(title: "", imagePath: "")
+        let cView = ChapterView(title: "", imagePath: "nil")
         addSubview(cView)
         cView.translatesAutoresizingMaskIntoConstraints = false
         return cView
@@ -20,17 +20,17 @@ public class ChapterViewContainer: UIView {
 
     public init() {
         super.init(frame: .zero)
+        let scrollGesture = UISwipeGestureRecognizer(target: self,
+                                                     action: #selector(swipeUp))
+        scrollGesture.direction = .up
+        addGestureRecognizer(scrollGesture)
     }
 
     public init(viewModel: ChapterViewModel) {
         super.init(frame: .zero)
         self.viewModel = viewModel
-        setupConstraints()
-        
-        if let node = viewModel.node,
-           let title = node.title, let imagePath = node.imagePath {
-            chapterView.update(title: title, imagePath: imagePath)
-        }
+
+        setupChapterView(viewModel)
     }
     
     required init?(coder: NSCoder) {
@@ -40,6 +40,14 @@ public class ChapterViewContainer: UIView {
     public func configure(using viewModel: ChapterViewModel?) {
         guard let viewModel = viewModel else { return }
 
+        setupChapterView(viewModel)
+    }
+
+    @objc func swipeUp() {
+        viewModel?.userWantToStartChapter()
+    }
+
+    private func setupChapterView(_ viewModel: ChapterViewModel) {
         if let node = viewModel.node,
            let title = node.title, let imagePath = node.imagePath {
             chapterView.update(title: title, imagePath: imagePath)

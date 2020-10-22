@@ -9,5 +9,5 @@ import Foundation
 
 public protocol ChapterViewModelDelegate: class {
 
-    func userWantToDismiss()
+    func userWantToStartChapter()
 }

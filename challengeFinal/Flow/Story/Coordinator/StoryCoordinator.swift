@@ -45,3 +45,9 @@ public class StoryCoordinator: Coordinator {
         }
     }
 }
+
+extension StoryCoordinator: StoryViewModelDelegate {
+    public func userChoosedNode(_ node: StoryNode) {
+        self.update(storyNode: node)
+    }
+}

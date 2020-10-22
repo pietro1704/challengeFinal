@@ -9,17 +9,21 @@ import Foundation
 
 public class ChapterViewModel {
 
-//    weak var delegate: ChapterViewModelDelegate?
+    weak var delegate: ChapterViewModelDelegate?
     var node: StoryNode?
     let service = StoryNodesServices()
 
-    public init(node: StoryNode) {
+    public init(node: StoryNode, coordinatorDelegate: ChapterViewModelDelegate) {
         self.node = node
-//        self.delegate = coordinatorDelegate
+        self.delegate = coordinatorDelegate
     }
 
     public init(with nodeId: NodeID) {
         self.node = service.retrieveNode(nodeId: nodeId)
+    }
+
+    public func userWantToStartChapter() {
+        delegate?.userWantToStartChapter()
     }
 
 }
