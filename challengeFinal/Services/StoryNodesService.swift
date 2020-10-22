@@ -9,10 +9,10 @@ import Foundation
 
 public class StoryNodesServices {
     
-    private let jsonName = "StoryNodes"
+    let repository = StoryNodeRepository()
 
     func retrieveNode(nodeId: NodeID) -> StoryNode? {
-        guard let node = getStoryNode(nodeId) else { return nil }
+        guard let node = repository.getStoryNode(nodeId) else { return nil }
         
         let storyNode = StoryNode(id: node.id,
                                   childNodes: retrieveChildNodes(childNodes: node.childNodeIDs),
@@ -27,7 +27,7 @@ public class StoryNodesServices {
 
         var childNodes: [StoryNode] = []
         nodesId.forEach({ (childNodeId) in
-            guard let childNode = getStoryNode(childNodeId) else { return }
+            guard let childNode = repository.getStoryNode(childNodeId) else { return }
             childNodes.append(StoryNode(id: childNode.id,
                                         childNodes: [],
                                         imagePath: nil,
@@ -36,27 +36,6 @@ public class StoryNodesServices {
         })
         
         return childNodes
-    }
-
-    private func getStoryNode(_ nodeId: NodeID) -> Node? {
-        let nodes = getAllFromFile()?.nodes
-        let node = nodes?.filter({ (node) -> Bool in
-            return node.id == nodeId
-        }).first
-        return node
-    }
-
-    private func getAllFromFile() -> Story? {
-        if let url = Bundle.main.url(forResource: jsonName, withExtension: "json") {
-            do {
-                let data = try Data(contentsOf: url)
-                let decoder = JSONDecoder()
-                return try decoder.decode(Story.self, from: data)
-            } catch {
-                debugPrint("error:\(error)")
-            }
-        }
-        return nil
     }
     
 }
