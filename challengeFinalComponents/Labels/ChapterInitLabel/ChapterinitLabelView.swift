@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class ChapterinitLabel: UIView {
+public class ChapterInitLabel: UIView {
 
     lazy var label: UILabel = {
         let label = UILabel()

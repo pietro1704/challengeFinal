@@ -9,9 +9,6 @@ import UIKit
 
 public class ImageView: UIView {
 
-    public var imageWidth: CGFloat = 414.0
-    public var imageHeight: CGFloat = 375.0
-
     private lazy var imageView: UIImageView = {
         let iView = UIImageView()
         addSubview(iView)
