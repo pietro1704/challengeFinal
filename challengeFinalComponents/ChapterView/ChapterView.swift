@@ -30,6 +30,9 @@ public class ChapterView: UIView {
         if let image = UIImage(named: imagePath) {
             self.image.recievedImage(image: image)
         }
+        if let bgColor = UIColor(named: "Background") {
+            backgroundColor = bgColor
+        }
         setupConstraints()
     }
     
@@ -37,9 +40,16 @@ public class ChapterView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    public func update(title: String, imagePath: String, accentColor: String = "Red") {
+        self.title.update(with: title, colorName: accentColor)
+        if let image = UIImage(named: imagePath) {
+            self.image.recievedImage(image: image)
+        }
+    }
+
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            image.centerYAnchor.constraint(equalTo: centerYAnchor),
+            image.topAnchor.constraint(equalTo: topAnchor, constant: 36),
             image.centerXAnchor.constraint(equalTo: centerXAnchor),
             title.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 36),
             title.centerXAnchor.constraint(equalTo: image.centerXAnchor),

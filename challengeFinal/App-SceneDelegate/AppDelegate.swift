@@ -9,7 +9,7 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var coordinator: StoryCoordinator?
+    var coordinator: ChapterCoordinator?
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navController = UINavigationController()
         let services = StoryNodesServices()
         let firstNode = services.retrieveNode(nodeId: 1)
-        coordinator = StoryCoordinator(navigationController: navController, storyNode: firstNode!)
+        coordinator = ChapterCoordinator(navigationController: navController, storyNode: firstNode!)
         coordinator?.start()
         
         window = UIWindow(frame: UIScreen.main.bounds)
