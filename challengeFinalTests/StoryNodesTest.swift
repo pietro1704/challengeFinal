@@ -11,7 +11,7 @@ import Foundation
 
 class StoryNodesTest: XCTestCase {
     
-    func testStoryNodesCreation(){
+    func testStoryNodesCreation() {
         let node1 = StoryNode(id: 1,
                               childNodes: [],
                               imagePath: nil,
@@ -50,4 +50,3 @@ class StoryNodesTest: XCTestCase {
         }
     }
 }
-

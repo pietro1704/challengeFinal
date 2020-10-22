@@ -44,7 +44,6 @@ public class ChapterCoordinator: Coordinator {
     }
 }
 
-
 extension ChapterCoordinator: ChapterViewModelDelegate {
     public func userWantToStartChapter() {
         let coordinator = StoryCoordinator(navigationController: navigationController,

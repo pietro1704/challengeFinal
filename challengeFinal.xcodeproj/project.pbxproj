@@ -509,6 +509,7 @@
 				8D41F6832530932200A496C6 /* Sources */,
 				8D41F6842530932200A496C6 /* Frameworks */,
 				8D41F6852530932200A496C6 /* Resources */,
+				C593DED72542522600345F1B /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -660,6 +661,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C593DED72542522600345F1B /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
