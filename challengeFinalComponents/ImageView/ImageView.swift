@@ -14,7 +14,7 @@ public class ImageView: UIView {
         addSubview(iView)
         iView.translatesAutoresizingMaskIntoConstraints = false
         iView.adjustsImageSizeForAccessibilityContentSizeCategory = true
-        iView.contentMode = .scaleAspectFill
+        iView.contentMode = .scaleAspectFit
         return iView
     }()
 
@@ -32,5 +32,11 @@ public class ImageView: UIView {
 
     public func recievedImage(image: UIImage) {
         self.imageView.image = image
+    }
+
+    public func recievedImagePath(imagePath: String) {
+        if let image = UIImage(named: imagePath) {
+            self.imageView.image = image
+        }
     }
 }
