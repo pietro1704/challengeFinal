@@ -34,4 +34,23 @@ class DynamicButtonTests: XCTestCase {
         let container = button.addInCenterOnMockViewIphone11()
         assertSnapshot(matching: container, as: .image)
     }
+    
+    
+    public func testDynamicButtonRandomNotSelected() {
+        let button  = DynamicButton(title: "Aleatório", imagePath: "random", isSelected: false)
+        let container = button.addInCenterOnMockViewIphone11()
+        assertSnapshot(matching: container, as: .image)
+    }
+
+    public func testDynamicButtonChoiceNotSelected() {
+        let button  = DynamicButton(title: "Escolha", imagePath: "choice", isSelected: false)
+        let container = button.addInCenterOnMockViewIphone11()
+        assertSnapshot(matching: container, as: .image)
+    }
+
+    public func testDynamicButtonBetNotSelected() {
+        let button  = DynamicButton(title: "Aposta", imagePath: "bet", isSelected: false)
+        let container = button.addInCenterOnMockViewIphone11()
+        assertSnapshot(matching: container, as: .image)
+    }
 }

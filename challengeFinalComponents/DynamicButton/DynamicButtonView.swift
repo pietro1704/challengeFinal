@@ -14,6 +14,10 @@ public protocol DynamicButtonDelegate: class {
 let buttonWidth: CGFloat = 75.0
 let buttonHeight: CGFloat = 52.0
 public class DynamicButton: UIView {
+    
+    //is button selected: alpha = 0 or 1
+    var isSelected = true
+    
     lazy var imageView: ImageView = {
         let image = ImageView()
         addSubview(image)
@@ -32,11 +36,13 @@ public class DynamicButton: UIView {
         return label
     }()
 
-    public init(title: String, imagePath: String) {
+    public init(title: String, imagePath: String, isSelected:Bool = true) {
         super.init(frame: .zero)
+        self.isSelected = isSelected
         self.title.text = title
         self.imageView.recievedImagePath(imagePath: imagePath)
         setupConstraints()
+        setupImageTextIsSelected(isSelected: isSelected)
         backgroundColor = .clear
     }
     
@@ -44,6 +50,16 @@ public class DynamicButton: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    private func setupImageTextIsSelected(isSelected:Bool){
+        if isSelected{
+            imageView.alpha = 1
+            title.alpha = 1
+        }else{
+            imageView.alpha = 0.5
+            title.alpha = 0.5
+        }
+    }
+    
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: topAnchor),
