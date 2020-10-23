@@ -35,6 +35,7 @@
 		DA5972F02537261500D6EF40 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972EF2537261500D6EF40 /* StoryViewController.swift */; };
 		DA5972F42537278900D6EF40 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972F32537278900D6EF40 /* PrimaryButton.swift */; };
 		DA5972F82537286500D6EF40 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972F72537286500D6EF40 /* StoryView.swift */; };
+		DA789A92254312E9001CE5BF /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA789A91254312E9001CE5BF /* UIFont.swift */; };
 		DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA88FF6F2537411500AF0992 /* RegularTextViewInfos.swift */; };
 		DA8E87252541AF93000D481B /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E87242541AF93000D481B /* ChapterView.swift */; };
 		DA8E872B2541B184000D481B /* ChapterViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E872A2541B184000D481B /* ChapterViewTests.swift */; };
@@ -103,6 +104,7 @@
 		DA5972EF2537261500D6EF40 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		DA5972F32537278900D6EF40 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		DA5972F72537286500D6EF40 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
+		DA789A91254312E9001CE5BF /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		DA88FF6F2537411500AF0992 /* RegularTextViewInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTextViewInfos.swift; sourceTree = "<group>"; };
 		DA8E87242541AF93000D481B /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
 		DA8E872A2541B184000D481B /* ChapterViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewTests.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 		DA35ED332535F3E30061606C /* challengeFinalComponents */ = {
 			isa = PBXGroup;
 			children = (
+				DA789A90254312DB001CE5BF /* Extensions */,
 				DAD346402542F3D200225BAF /* DynamicButton */,
 				DA8E87232541AF83000D481B /* ChapterView */,
 				DA4A12C025405D0700504E20 /* Labels */,
@@ -396,6 +399,14 @@
 				051B5C72F68970D599E310E1 /* Pods-challengeFinal-challengeFinalTests.release.xcconfig */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		DA789A90254312DB001CE5BF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DA789A91254312E9001CE5BF /* UIFont.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DA8E87232541AF83000D481B /* ChapterView */ = {
@@ -709,6 +720,7 @@
 				DA8E873E2541BEA9000D481B /* ChapterViewContainer.swift in Sources */,
 				DA35ED362535F3E30061606C /* ImageView.swift in Sources */,
 				DA8E874C2541C1FD000D481B /* ChapterCoordinator.swift in Sources */,
+				DA789A92254312E9001CE5BF /* UIFont.swift in Sources */,
 				DA5972E8253725DB00D6EF40 /* StoryCoordinator.swift in Sources */,
 				DA8E873A2541BB64000D481B /* ChapterViewController.swift in Sources */,
 				8D41F6CB25309C6700A496C6 /* Storyboarded.swift in Sources */,

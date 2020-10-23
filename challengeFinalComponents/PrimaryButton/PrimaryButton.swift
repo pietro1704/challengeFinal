@@ -22,8 +22,8 @@ public class PrimaryButton: UIButton {
 
     public init(title: String, for state: UIControl.State = .normal) {
         super.init(frame: .zero)
-        setupButton()
         setTitle(title, for: state)
+        setupButton()
         addTarget(self, action: #selector(handleTap), for: .touchUpInside)
     }
 
@@ -32,8 +32,29 @@ public class PrimaryButton: UIButton {
     }
 
     private func setupButton() {
-        self.backgroundColor = UIColor(red: 0.76, green: 0.07, blue: 0.07, alpha: 1.00)
-//        self.tintColor = .green
+        self.layer.cornerRadius = 4
+        if let color = UIColor(named: "ButtonBackground") {
+            self.backgroundColor = color
+        }
+        self.setTitleColor(.black, for: .normal)
+        setupButtonText()
+    }
+
+    private func setupButtonText() {
+        guard let titleLabel = self.titleLabel else { return }
+        
+        titleLabel.font = UIFont.preferredFont(for: .headline, weight: .bold)
+        titleLabel.lineBreakMode = .byWordWrapping
+        titleLabel.textAlignment = .center
+        titleLabel.numberOfLines = 0
+        titleLabel.setContentHuggingPriority(.required, for: .vertical)
+        titleLabel.setContentHuggingPriority(.required, for: .horizontal)
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: 16),
+            titleLabel.leftAnchor.constraint(greaterThanOrEqualTo: leftAnchor, constant: 16),
+            titleLabel.rightAnchor.constraint(greaterThanOrEqualTo: rightAnchor, constant: 16),
+            titleLabel.bottomAnchor.constraint(greaterThanOrEqualTo: bottomAnchor, constant: 16),
+        ])
     }
 
     required init?(coder: NSCoder) {
