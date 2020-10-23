@@ -10,7 +10,6 @@ import UIKit
 public protocol DecisionViewDelegate: class{
 }
 public class DecisionView: UIView {
-    public var viewModel: DecisionViewModel?
     
     private lazy var stackview: UIStackView = {
         let stack = UIStackView()
