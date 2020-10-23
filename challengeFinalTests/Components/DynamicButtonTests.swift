@@ -53,4 +53,9 @@ class DynamicButtonTests: XCTestCase {
         let container = button.addInCenterOnMockViewIphone11()
         assertSnapshot(matching: container, as: .image)
     }
+    
+    public func testButtonDefaultNotSelected(){
+        let button = DynamicButton(title: "Aposta", imagePath: "bet")
+        XCTAssertFalse(button.isSelected)
+    }
 }
