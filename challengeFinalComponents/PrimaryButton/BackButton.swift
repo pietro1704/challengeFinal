@@ -31,10 +31,7 @@ class BackButton: UIButton {
     }
     
     private func setupButton() {
-        //transparent background
-        self.backgroundColor = .none
-        
-        
+        self.backgroundColor = .clear
     }
     
     required init?(coder: NSCoder) {

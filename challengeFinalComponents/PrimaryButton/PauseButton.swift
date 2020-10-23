@@ -14,13 +14,9 @@ public protocol PauseButtonDelegate: class {
 class PauseButton: UIButton {
     public weak var delegate: PauseButtonDelegate?
     
-    public override init(frame: CGRect) {
+    public init(for state: UIControl.State = .normal, accentColor:String = "Red") {
         super.init(frame: .zero)
-        setupButton(for: .normal)
-    }
-    
-    public init(for state: UIControl.State = .normal) {
-        super.init(frame: .zero)
+        tintColor = UIColor(named: accentColor)
         setupButton(for: state)
         
         addTarget(self, action: #selector(handleTap), for: .touchUpInside)
@@ -37,7 +33,6 @@ class PauseButton: UIButton {
         if let image = UIImage(systemName: "pause.circle"){
             self.setImage(image, for: state)
         }
-        
     }
     
     required init?(coder: NSCoder) {

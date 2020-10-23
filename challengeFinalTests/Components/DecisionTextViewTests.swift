@@ -11,12 +11,12 @@ import SnapshotTesting
 
 class DecisionTextViewTests: XCTestCase {
     func testStackView () {
-        let textView = RegularTextView()
+        let decisionTextView = RegularTextView()
         
-        textView.configure(with: Infos.mock())
-        let container = textView.addInCenterOnMockViewIphone11()
-        textView.leadingAnchor.constraint(equalTo: container.leadingAnchor).isActive = true
-        textView.trailingAnchor.constraint(equalTo: container.trailingAnchor).isActive = true
+        decisionTextView.configure(with: Infos.mock())
+        let container = decisionTextView.addInCenterOnMockViewIphone11()
+        decisionTextView.leadingAnchor.constraint(equalTo: container.leadingAnchor).isActive = true
+        decisionTextView.trailingAnchor.constraint(equalTo: container.trailingAnchor).isActive = true
         assertSnapshot(matching: container, as: .image)
     }
 }
