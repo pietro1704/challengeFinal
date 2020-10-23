@@ -27,8 +27,7 @@ class PauseButton: UIButton {
     }
     
     private func setupButton(for state: UIControl.State) {
-        //transparent background
-        self.backgroundColor = .none
+        self.backgroundColor = .clear
         
         if let image = UIImage(systemName: "pause.circle"){
             self.setImage(image, for: state)
