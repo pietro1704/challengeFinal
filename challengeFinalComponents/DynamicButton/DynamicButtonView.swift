@@ -15,8 +15,7 @@ let buttonWidth: CGFloat = 75.0
 let buttonHeight: CGFloat = 52.0
 public class DynamicButton: UIView {
     
-    //is button selected: alpha = 0 or 1
-    var isSelected = true
+    var isSelected: Bool
     
     lazy var imageView: ImageView = {
         let image = ImageView()
@@ -36,9 +35,9 @@ public class DynamicButton: UIView {
         return label
     }()
 
-    public init(title: String, imagePath: String, isSelected:Bool = true) {
-        super.init(frame: .zero)
+    public init(title: String, imagePath: String, isSelected: Bool = false) {
         self.isSelected = isSelected
+        super.init(frame: .zero)
         self.title.text = title
         self.imageView.recievedImagePath(imagePath: imagePath)
         setupConstraints()
