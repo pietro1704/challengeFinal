@@ -13,6 +13,8 @@ public protocol DynamicButtonDelegate: class {
 
 let buttonWidth: CGFloat = 75.0
 let buttonHeight: CGFloat = 52.0
+let notSelectedAlpha: CGFloat = 0.5
+
 public class DynamicButton: UIView {
     
     var isSelected: Bool
@@ -52,10 +54,8 @@ public class DynamicButton: UIView {
     private func setupImageTextIsSelected(isSelected:Bool){
         if isSelected{
             imageView.alpha = 1
-            title.alpha = 1
         }else{
-            imageView.alpha = 0.5
-            title.alpha = 0.5
+            imageView.alpha = notSelectedAlpha
         }
     }
     
