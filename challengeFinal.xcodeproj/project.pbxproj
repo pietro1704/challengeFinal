@@ -29,7 +29,6 @@
 		DA3E12AA25386BAA00C48AF8 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E12A925386BAA00C48AF8 /* StoryViewModel.swift */; };
 		DA3E12B025387A5E00C48AF8 /* PrimaryButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E12AF25387A5E00C48AF8 /* PrimaryButtonTests.swift */; };
 		DA4A12B92540494C00504E20 /* StoryViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A12B82540494C00504E20 /* StoryViewModelDelegate.swift */; };
-		DA4A12BD25404A7C00504E20 /* StoryCoordinator+StoryViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A12BC25404A7C00504E20 /* StoryCoordinator+StoryViewModelDelegate.swift */; };
 		DA4A12C325405D2A00504E20 /* ChapterinitLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A12C225405D2A00504E20 /* ChapterinitLabelView.swift */; };
 		DA5972E8253725DB00D6EF40 /* StoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972E7253725DB00D6EF40 /* StoryCoordinator.swift */; };
 		DA5972EC253725F000D6EF40 /* Story.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5972EB253725F000D6EF40 /* Story.storyboard */; };
@@ -96,7 +95,6 @@
 		DA3E12A925386BAA00C48AF8 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
 		DA3E12AF25387A5E00C48AF8 /* PrimaryButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonTests.swift; sourceTree = "<group>"; };
 		DA4A12B82540494C00504E20 /* StoryViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModelDelegate.swift; sourceTree = "<group>"; };
-		DA4A12BC25404A7C00504E20 /* StoryCoordinator+StoryViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoryCoordinator+StoryViewModelDelegate.swift"; sourceTree = "<group>"; };
 		DA4A12C225405D2A00504E20 /* ChapterinitLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterinitLabelView.swift; sourceTree = "<group>"; };
 		DA5972E7253725DB00D6EF40 /* StoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCoordinator.swift; sourceTree = "<group>"; };
 		DA5972EB253725F000D6EF40 /* Story.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Story.storyboard; sourceTree = "<group>"; };
@@ -355,7 +353,6 @@
 			isa = PBXGroup;
 			children = (
 				DA5972E7253725DB00D6EF40 /* StoryCoordinator.swift */,
-				DA4A12BC25404A7C00504E20 /* StoryCoordinator+StoryViewModelDelegate.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -695,7 +692,6 @@
 				8D41F6C325309A1000A496C6 /* MenuCoordinator.swift in Sources */,
 				8D41F68D2530932300A496C6 /* SceneDelegate.swift in Sources */,
 				DA8E873E2541BEA9000D481B /* ChapterViewContainer.swift in Sources */,
-				DA4A12BD25404A7C00504E20 /* StoryCoordinator+StoryViewModelDelegate.swift in Sources */,
 				DA35ED362535F3E30061606C /* ImageView.swift in Sources */,
 				DA8E874C2541C1FD000D481B /* ChapterCoordinator.swift in Sources */,
 				DA5972E8253725DB00D6EF40 /* StoryCoordinator.swift in Sources */,

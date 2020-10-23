@@ -21,7 +21,7 @@ public class ChapterCoordinator: Coordinator {
     
     func start() {
         viewController = ChapterViewController.instantiate(storyBoardName: "Chapter")
-        let viewModel = ChapterViewModel(node: storyNode)
+        let viewModel = ChapterViewModel(node: storyNode, coordinatorDelegate: self)
         viewController?.viewModel = viewModel
         if let viewController = viewController {
             navigationController.pushViewController(viewController, animated: false)
@@ -30,7 +30,7 @@ public class ChapterCoordinator: Coordinator {
 
     func update(storyNode: StoryNode) {
         self.storyNode = storyNode
-        let viewModel = ChapterViewModel(node: storyNode)
+        let viewModel = ChapterViewModel(node: storyNode, coordinatorDelegate: self)
         viewController?.update(with: viewModel)
     }
 
@@ -41,5 +41,15 @@ public class ChapterCoordinator: Coordinator {
                 break
             }
         }
+    }
+}
+
+
+extension ChapterCoordinator: ChapterViewModelDelegate {
+    public func userWantToStartChapter() {
+        let coordinator = StoryCoordinator(navigationController: navigationController,
+                                           storyNode: storyNode)
+        childCoordinators.append(coordinator)
+        coordinator.start()
     }
 }
