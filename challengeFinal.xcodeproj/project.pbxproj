@@ -17,6 +17,12 @@
 		8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6BD253099B900A496C6 /* Coordinator.swift */; };
 		8D41F6C325309A1000A496C6 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6C225309A1000A496C6 /* MenuCoordinator.swift */; };
 		8D41F6CB25309C6700A496C6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6CA25309C6700A496C6 /* Storyboarded.swift */; };
+		8DD3F5A22541C9F300FDA5B4 /* DecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5A12541C9F300FDA5B4 /* DecisionView.swift */; };
+		8DD3F5A62541CA9000FDA5B4 /* DecisionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5A52541CA9000FDA5B4 /* DecisionViewModel.swift */; };
+		8DD3F5AA2541CC1100FDA5B4 /* DecisionTextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5A92541CC1100FDA5B4 /* DecisionTextViewTests.swift */; };
+		8DD3F5B42541D50A00FDA5B4 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5B32541D50A00FDA5B4 /* BackButton.swift */; };
+		8DD3F5B82541D60500FDA5B4 /* PauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5B72541D60500FDA5B4 /* PauseButton.swift */; };
+		8DD3F5BE2541D6D800FDA5B4 /* PauseButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5BD2541D6D800FDA5B4 /* PauseButtonTests.swift */; };
 		8DEE2C6F253746A3006C187B /* StoryNodesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */; };
 		B08D4A095391882B7B2C3C17 /* Pods_challengeFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44548E80E7D0A3A976B144A5 /* Pods_challengeFinal.framework */; };
 		DA0A71E92539E360002BAB51 /* StoryNodesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A71E52539E360002BAB51 /* StoryNodesService.swift */; };
@@ -80,6 +86,12 @@
 		8D41F6BD253099B900A496C6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8D41F6C225309A1000A496C6 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		8D41F6CA25309C6700A496C6 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		8DD3F5A12541C9F300FDA5B4 /* DecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionView.swift; sourceTree = "<group>"; };
+		8DD3F5A52541CA9000FDA5B4 /* DecisionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DecisionViewModel.swift; path = challengeFinal/Flow/Story/ViewModel/DecisionViewModel.swift; sourceTree = SOURCE_ROOT; };
+		8DD3F5A92541CC1100FDA5B4 /* DecisionTextViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionTextViewTests.swift; sourceTree = "<group>"; };
+		8DD3F5B32541D50A00FDA5B4 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		8DD3F5B72541D60500FDA5B4 /* PauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseButton.swift; sourceTree = "<group>"; };
+		8DD3F5BD2541D6D800FDA5B4 /* PauseButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseButtonTests.swift; sourceTree = "<group>"; };
 		8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodesTest.swift; sourceTree = "<group>"; };
 		9EAC0408D3DE1D5D885DA8C1 /* Pods-challengeFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.release.xcconfig"; sourceTree = "<group>"; };
 		AD27566663346DD3881AC3C2 /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -308,7 +320,9 @@
 			isa = PBXGroup;
 			children = (
 				DA35ED3C2535F3FF0061606C /* ImageViewTests.swift */,
+				8DD3F5BD2541D6D800FDA5B4 /* PauseButtonTests.swift */,
 				DAC23A36253733D100D57C43 /* RegularTextViewTests.swift */,
+				8DD3F5A92541CC1100FDA5B4 /* DecisionTextViewTests.swift */,
 				DA3E12AF25387A5E00C48AF8 /* PrimaryButtonTests.swift */,
 				DAC55E07254081B5006E1845 /* ChapterinitLabelTests.swift */,
 				DA8E872A2541B184000D481B /* ChapterViewTests.swift */,
@@ -320,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				DA4A12B82540494C00504E20 /* StoryViewModelDelegate.swift */,
+				8DD3F5A52541CA9000FDA5B4 /* DecisionViewModel.swift */,
 				DA3E12A925386BAA00C48AF8 /* StoryViewModel.swift */,
 			);
 			path = ViewModel;
@@ -345,6 +360,8 @@
 			isa = PBXGroup;
 			children = (
 				DA5972F32537278900D6EF40 /* PrimaryButton.swift */,
+				8DD3F5B72541D60500FDA5B4 /* PauseButton.swift */,
+				8DD3F5B32541D50A00FDA5B4 /* BackButton.swift */,
 			);
 			path = PrimaryButton;
 			sourceTree = "<group>";
@@ -377,6 +394,8 @@
 			isa = PBXGroup;
 			children = (
 				DA5972F72537286500D6EF40 /* StoryView.swift */,
+				8DD3F5A12541C9F300FDA5B4 /* DecisionView.swift */,
+				DA4A12B82540494C00504E20 /* StoryViewModelDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -679,8 +698,11 @@
 				DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */,
 				DA0A71EB2539E360002BAB51 /* Story.swift in Sources */,
 				DA8E87252541AF93000D481B /* ChapterView.swift in Sources */,
+				8DD3F5A22541C9F300FDA5B4 /* DecisionView.swift in Sources */,
 				8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */,
+				8DD3F5B42541D50A00FDA5B4 /* BackButton.swift in Sources */,
 				DADC40C025403F7900078CA3 /* StoryNodeRepository.swift in Sources */,
+				8DD3F5B82541D60500FDA5B4 /* PauseButton.swift in Sources */,
 				DA0A71E92539E360002BAB51 /* StoryNodesService.swift in Sources */,
 				DA3E12AA25386BAA00C48AF8 /* StoryViewModel.swift in Sources */,
 				8D41F68F2530932300A496C6 /* MenuViewController.swift in Sources */,
@@ -694,6 +716,7 @@
 				DA8E873E2541BEA9000D481B /* ChapterViewContainer.swift in Sources */,
 				DA35ED362535F3E30061606C /* ImageView.swift in Sources */,
 				DA8E874C2541C1FD000D481B /* ChapterCoordinator.swift in Sources */,
+				8DD3F5A62541CA9000FDA5B4 /* DecisionViewModel.swift in Sources */,
 				DA5972E8253725DB00D6EF40 /* StoryCoordinator.swift in Sources */,
 				DA8E873A2541BB64000D481B /* ChapterViewController.swift in Sources */,
 				8D41F6CB25309C6700A496C6 /* Storyboarded.swift in Sources */,
@@ -705,10 +728,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA8E872B2541B184000D481B /* ChapterViewTests.swift in Sources */,
+				8DD3F5BE2541D6D800FDA5B4 /* PauseButtonTests.swift in Sources */,
 				DA35ED3D2535F3FF0061606C /* ImageViewTests.swift in Sources */,
 				8DEE2C6F253746A3006C187B /* StoryNodesTest.swift in Sources */,
 				DA35ED452535F48E0061606C /* MockView.swift in Sources */,
 				DA3E12B025387A5E00C48AF8 /* PrimaryButtonTests.swift in Sources */,
+				8DD3F5AA2541CC1100FDA5B4 /* DecisionTextViewTests.swift in Sources */,
 				DAC55E08254081B5006E1845 /* ChapterinitLabelTests.swift in Sources */,
 				DAC23A37253733D100D57C43 /* RegularTextViewTests.swift in Sources */,
 			);
