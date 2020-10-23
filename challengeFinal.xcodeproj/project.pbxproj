@@ -36,6 +36,8 @@
 		DA5972F42537278900D6EF40 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972F32537278900D6EF40 /* PrimaryButton.swift */; };
 		DA5972F82537286500D6EF40 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972F72537286500D6EF40 /* StoryView.swift */; };
 		DA789A92254312E9001CE5BF /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA789A91254312E9001CE5BF /* UIFont.swift */; };
+		DA789A9F25431502001CE5BF /* ChoiceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA789A9E25431502001CE5BF /* ChoiceButtonView.swift */; };
+		DA789AA725431B06001CE5BF /* ChoiceButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA789AA625431B06001CE5BF /* ChoiceButtonTests.swift */; };
 		DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA88FF6F2537411500AF0992 /* RegularTextViewInfos.swift */; };
 		DA8E87252541AF93000D481B /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E87242541AF93000D481B /* ChapterView.swift */; };
 		DA8E872B2541B184000D481B /* ChapterViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E872A2541B184000D481B /* ChapterViewTests.swift */; };
@@ -105,6 +107,8 @@
 		DA5972F32537278900D6EF40 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		DA5972F72537286500D6EF40 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		DA789A91254312E9001CE5BF /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		DA789A9E25431502001CE5BF /* ChoiceButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceButtonView.swift; sourceTree = "<group>"; };
+		DA789AA625431B06001CE5BF /* ChoiceButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceButtonTests.swift; sourceTree = "<group>"; };
 		DA88FF6F2537411500AF0992 /* RegularTextViewInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTextViewInfos.swift; sourceTree = "<group>"; };
 		DA8E87242541AF93000D481B /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
 		DA8E872A2541B184000D481B /* ChapterViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewTests.swift; sourceTree = "<group>"; };
@@ -293,6 +297,7 @@
 		DA35ED332535F3E30061606C /* challengeFinalComponents */ = {
 			isa = PBXGroup;
 			children = (
+				DA789A9D254314F1001CE5BF /* ChoiceButton */,
 				DA789A90254312DB001CE5BF /* Extensions */,
 				DAD346402542F3D200225BAF /* DynamicButton */,
 				DA8E87232541AF83000D481B /* ChapterView */,
@@ -321,6 +326,7 @@
 				DAC55E07254081B5006E1845 /* ChapterinitLabelTests.swift */,
 				DA8E872A2541B184000D481B /* ChapterViewTests.swift */,
 				DAD346452542F70900225BAF /* DynamicButtonTests.swift */,
+				DA789AA625431B06001CE5BF /* ChoiceButtonTests.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -407,6 +413,14 @@
 				DA789A91254312E9001CE5BF /* UIFont.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DA789A9D254314F1001CE5BF /* ChoiceButton */ = {
+			isa = PBXGroup;
+			children = (
+				DA789A9E25431502001CE5BF /* ChoiceButtonView.swift */,
+			);
+			path = ChoiceButton;
 			sourceTree = "<group>";
 		};
 		DA8E87232541AF83000D481B /* ChapterView */ = {
@@ -714,6 +728,7 @@
 				DA8E87482541C194000D481B /* ChapterViewModelDelegate.swift in Sources */,
 				DA5972F02537261500D6EF40 /* StoryViewController.swift in Sources */,
 				DAC23A312537329D00D57C43 /* RegularTextView.swift in Sources */,
+				DA789A9F25431502001CE5BF /* ChoiceButtonView.swift in Sources */,
 				8D41F6C325309A1000A496C6 /* MenuCoordinator.swift in Sources */,
 				DAD346422542F3EE00225BAF /* DynamicButtonView.swift in Sources */,
 				8D41F68D2530932300A496C6 /* SceneDelegate.swift in Sources */,
@@ -732,6 +747,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA8E872B2541B184000D481B /* ChapterViewTests.swift in Sources */,
+				DA789AA725431B06001CE5BF /* ChoiceButtonTests.swift in Sources */,
 				DA35ED3D2535F3FF0061606C /* ImageViewTests.swift in Sources */,
 				8DEE2C6F253746A3006C187B /* StoryNodesTest.swift in Sources */,
 				DA35ED452535F48E0061606C /* MockView.swift in Sources */,

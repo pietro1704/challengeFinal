@@ -31,6 +31,10 @@ public class PrimaryButton: UIButton {
         self.delegate?.buttonPressed(tag)
     }
 
+    public func update(title: String, for state: UIControl.State = .normal) {
+        setTitle(title, for: state)
+    }
+
     private func setupButton() {
         self.layer.cornerRadius = 4
         if let color = UIColor(named: "ButtonBackground") {
