@@ -13,16 +13,13 @@ public protocol BackButtonDelegate: class {
 
 class BackButton: UIButton {
     public weak var delegate: BackButtonDelegate?
-    
-    public override init(frame: CGRect) {
-        super.init(frame: .zero)
-        setupButton()
-    }
-    
-    public init(title: String, for state: UIControl.State = .normal) {
+
+    public init(title: String = "Voltar", titleColor:UIColor = .label, for state: UIControl.State = .normal) {
         super.init(frame: .zero)
         setupButton()
         setTitle(title, for: state)
+        setTitleColor(titleColor, for: state)
+        
         addTarget(self, action: #selector(handleTap), for: .touchUpInside)
     }
     
