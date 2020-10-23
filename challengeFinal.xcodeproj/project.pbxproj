@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		70D9ACFB3037CB3506CB401C /* Pods_challengeFinal_challengeFinalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA9293BB9AD97035E577805 /* Pods_challengeFinal_challengeFinalTests.framework */; };
+		8D04D60A25430ECE00E1F9F7 /* StoryViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FF5E8254303E500FBF110 /* StoryViewModelDelegate.swift */; };
 		8D41F68B2530932300A496C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F68A2530932300A496C6 /* AppDelegate.swift */; };
 		8D41F68D2530932300A496C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F68C2530932300A496C6 /* SceneDelegate.swift */; };
 		8D41F68F2530932300A496C6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F68E2530932300A496C6 /* MenuViewController.swift */; };
@@ -17,7 +18,6 @@
 		8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6BD253099B900A496C6 /* Coordinator.swift */; };
 		8D41F6C325309A1000A496C6 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6C225309A1000A496C6 /* MenuCoordinator.swift */; };
 		8D41F6CB25309C6700A496C6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6CA25309C6700A496C6 /* Storyboarded.swift */; };
-		8D4FF5E9254303E500FBF110 /* StoryViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FF5E8254303E500FBF110 /* StoryViewModelDelegate.swift */; };
 		8DD3F5A22541C9F300FDA5B4 /* DecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5A12541C9F300FDA5B4 /* DecisionView.swift */; };
 		8DD3F5AA2541CC1100FDA5B4 /* DecisionTextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5A92541CC1100FDA5B4 /* DecisionTextViewTests.swift */; };
 		8DD3F5B42541D50A00FDA5B4 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5B32541D50A00FDA5B4 /* BackButton.swift */; };
@@ -686,6 +686,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D04D60A25430ECE00E1F9F7 /* StoryViewModelDelegate.swift in Sources */,
 				DA8E87422541BF4F000D481B /* ChapterViewModel.swift in Sources */,
 				DA5972F82537286500D6EF40 /* StoryView.swift in Sources */,
 				DA4A12C325405D2A00504E20 /* ChapterinitLabelView.swift in Sources */,
@@ -693,7 +694,6 @@
 				DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */,
 				DA0A71EB2539E360002BAB51 /* Story.swift in Sources */,
 				DA8E87252541AF93000D481B /* ChapterView.swift in Sources */,
-				8D4FF5E9254303E500FBF110 /* StoryViewModelDelegate.swift in Sources */,
 				8DD3F5A22541C9F300FDA5B4 /* DecisionView.swift in Sources */,
 				8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */,
 				8DD3F5B42541D50A00FDA5B4 /* BackButton.swift in Sources */,
