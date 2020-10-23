@@ -8,7 +8,6 @@
 import UIKit
 
 public protocol DecisionViewDelegate: class{
-    #warning("implement decision delegate")
 }
 public class DecisionView: UIView {
     public var viewModel: DecisionViewModel?

@@ -13,6 +13,6 @@ class PauseButtonTests: XCTestCase {
     func testButtonImage() {
         let button = PauseButton()
         let container = button.addInCenterOnMockViewIphone11()
-        assertSnapshot(matching: container, as: .image, record: true)
+        assertSnapshot(matching: container, as: .image)
     }
 }

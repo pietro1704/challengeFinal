@@ -17,6 +17,7 @@
 		8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6BD253099B900A496C6 /* Coordinator.swift */; };
 		8D41F6C325309A1000A496C6 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6C225309A1000A496C6 /* MenuCoordinator.swift */; };
 		8D41F6CB25309C6700A496C6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6CA25309C6700A496C6 /* Storyboarded.swift */; };
+		8D4FF5E9254303E500FBF110 /* StoryViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FF5E8254303E500FBF110 /* StoryViewModelDelegate.swift */; };
 		8DD3F5A22541C9F300FDA5B4 /* DecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5A12541C9F300FDA5B4 /* DecisionView.swift */; };
 		8DD3F5A62541CA9000FDA5B4 /* DecisionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5A52541CA9000FDA5B4 /* DecisionViewModel.swift */; };
 		8DD3F5AA2541CC1100FDA5B4 /* DecisionTextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5A92541CC1100FDA5B4 /* DecisionTextViewTests.swift */; };
@@ -34,7 +35,6 @@
 		DA35ED452535F48E0061606C /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED442535F48E0061606C /* MockView.swift */; };
 		DA3E12AA25386BAA00C48AF8 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E12A925386BAA00C48AF8 /* StoryViewModel.swift */; };
 		DA3E12B025387A5E00C48AF8 /* PrimaryButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E12AF25387A5E00C48AF8 /* PrimaryButtonTests.swift */; };
-		DA4A12B92540494C00504E20 /* StoryViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A12B82540494C00504E20 /* StoryViewModelDelegate.swift */; };
 		DA4A12C325405D2A00504E20 /* ChapterinitLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4A12C225405D2A00504E20 /* ChapterinitLabelView.swift */; };
 		DA5972E8253725DB00D6EF40 /* StoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972E7253725DB00D6EF40 /* StoryCoordinator.swift */; };
 		DA5972EC253725F000D6EF40 /* Story.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5972EB253725F000D6EF40 /* Story.storyboard */; };
@@ -86,6 +86,7 @@
 		8D41F6BD253099B900A496C6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8D41F6C225309A1000A496C6 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		8D41F6CA25309C6700A496C6 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		8D4FF5E8254303E500FBF110 /* StoryViewModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewModelDelegate.swift; sourceTree = "<group>"; };
 		8DD3F5A12541C9F300FDA5B4 /* DecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionView.swift; sourceTree = "<group>"; };
 		8DD3F5A52541CA9000FDA5B4 /* DecisionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DecisionViewModel.swift; path = challengeFinal/Flow/Story/ViewModel/DecisionViewModel.swift; sourceTree = SOURCE_ROOT; };
 		8DD3F5A92541CC1100FDA5B4 /* DecisionTextViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionTextViewTests.swift; sourceTree = "<group>"; };
@@ -106,7 +107,6 @@
 		DA35ED442535F48E0061606C /* MockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
 		DA3E12A925386BAA00C48AF8 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
 		DA3E12AF25387A5E00C48AF8 /* PrimaryButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonTests.swift; sourceTree = "<group>"; };
-		DA4A12B82540494C00504E20 /* StoryViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModelDelegate.swift; sourceTree = "<group>"; };
 		DA4A12C225405D2A00504E20 /* ChapterinitLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterinitLabelView.swift; sourceTree = "<group>"; };
 		DA5972E7253725DB00D6EF40 /* StoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCoordinator.swift; sourceTree = "<group>"; };
 		DA5972EB253725F000D6EF40 /* Story.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Story.storyboard; sourceTree = "<group>"; };
@@ -333,7 +333,7 @@
 		DA3E12A825386B9800C48AF8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				DA4A12B82540494C00504E20 /* StoryViewModelDelegate.swift */,
+				8D4FF5E8254303E500FBF110 /* StoryViewModelDelegate.swift */,
 				8DD3F5A52541CA9000FDA5B4 /* DecisionViewModel.swift */,
 				DA3E12A925386BAA00C48AF8 /* StoryViewModel.swift */,
 			);
@@ -395,7 +395,6 @@
 			children = (
 				DA5972F72537286500D6EF40 /* StoryView.swift */,
 				8DD3F5A12541C9F300FDA5B4 /* DecisionView.swift */,
-				DA4A12B82540494C00504E20 /* StoryViewModelDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -692,12 +691,12 @@
 			files = (
 				DA8E87422541BF4F000D481B /* ChapterViewModel.swift in Sources */,
 				DA5972F82537286500D6EF40 /* StoryView.swift in Sources */,
-				DA4A12B92540494C00504E20 /* StoryViewModelDelegate.swift in Sources */,
 				DA4A12C325405D2A00504E20 /* ChapterinitLabelView.swift in Sources */,
 				DA0A71EA2539E360002BAB51 /* StoryNode.swift in Sources */,
 				DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */,
 				DA0A71EB2539E360002BAB51 /* Story.swift in Sources */,
 				DA8E87252541AF93000D481B /* ChapterView.swift in Sources */,
+				8D4FF5E9254303E500FBF110 /* StoryViewModelDelegate.swift in Sources */,
 				8DD3F5A22541C9F300FDA5B4 /* DecisionView.swift in Sources */,
 				8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */,
 				8DD3F5B42541D50A00FDA5B4 /* BackButton.swift in Sources */,

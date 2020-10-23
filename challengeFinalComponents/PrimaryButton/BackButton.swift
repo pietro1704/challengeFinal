@@ -23,7 +23,6 @@ class BackButton: UIButton {
         super.init(frame: .zero)
         setupButton()
         setTitle(title, for: state)
-        #warning("ou title=Voltar hard coded?")
         addTarget(self, action: #selector(handleTap), for: .touchUpInside)
     }
     
