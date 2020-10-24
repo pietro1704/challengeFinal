@@ -18,6 +18,8 @@
 		8D41F6CB25309C6700A496C6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6CA25309C6700A496C6 /* Storyboarded.swift */; };
 		8DEE2C6F253746A3006C187B /* StoryNodesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */; };
 		B08D4A095391882B7B2C3C17 /* Pods_challengeFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44548E80E7D0A3A976B144A5 /* Pods_challengeFinal.framework */; };
+		C56B280A2543892A004391BA /* PlayerDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B28092543892A004391BA /* PlayerDataService.swift */; };
+		C593DEDB2542580100345F1B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C593DEDA2542580100345F1B /* Player.swift */; };
 		DA0A71E92539E360002BAB51 /* StoryNodesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A71E52539E360002BAB51 /* StoryNodesService.swift */; };
 		DA0A71EA2539E360002BAB51 /* StoryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A71E72539E360002BAB51 /* StoryNode.swift */; };
 		DA0A71EB2539E360002BAB51 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A71E82539E360002BAB51 /* Story.swift */; };
@@ -82,6 +84,8 @@
 		9EAC0408D3DE1D5D885DA8C1 /* Pods-challengeFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.release.xcconfig"; sourceTree = "<group>"; };
 		AD27566663346DD3881AC3C2 /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3C65AD70148E9DF28692587 /* Pods-challengeFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.debug.xcconfig"; sourceTree = "<group>"; };
+		C56B28092543892A004391BA /* PlayerDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataService.swift; sourceTree = "<group>"; };
+		C593DEDA2542580100345F1B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		D3F953D80B5181C8492E54A0 /* Pods-challengeFinal-challengeFinalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.release.xcconfig"; sourceTree = "<group>"; };
 		DA0A71E52539E360002BAB51 /* StoryNodesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryNodesService.swift; sourceTree = "<group>"; };
 		DA0A71E72539E360002BAB51 /* StoryNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryNode.swift; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				DA0A71E52539E360002BAB51 /* StoryNodesService.swift */,
+				C56B28092543892A004391BA /* PlayerDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 			children = (
 				DA0A71E72539E360002BAB51 /* StoryNode.swift */,
 				DA0A71E82539E360002BAB51 /* Story.swift */,
+				C593DEDA2542580100345F1B /* Player.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -697,6 +703,7 @@
 				DA8E87252541AF93000D481B /* ChapterView.swift in Sources */,
 				8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */,
 				DADC40C025403F7900078CA3 /* StoryNodeRepository.swift in Sources */,
+				C56B280A2543892A004391BA /* PlayerDataService.swift in Sources */,
 				DA0A71E92539E360002BAB51 /* StoryNodesService.swift in Sources */,
 				DA3E12AA25386BAA00C48AF8 /* StoryViewModel.swift in Sources */,
 				8D41F68F2530932300A496C6 /* MenuViewController.swift in Sources */,
@@ -705,6 +712,7 @@
 				DA8E87482541C194000D481B /* ChapterViewModelDelegate.swift in Sources */,
 				DA5972F02537261500D6EF40 /* StoryViewController.swift in Sources */,
 				DAC23A312537329D00D57C43 /* RegularTextView.swift in Sources */,
+				C593DEDB2542580100345F1B /* Player.swift in Sources */,
 				8D41F6C325309A1000A496C6 /* MenuCoordinator.swift in Sources */,
 				DA8E873E2541BEA9000D481B /* ChapterViewContainer.swift in Sources */,
 				DA35ED362535F3E30061606C /* ImageView.swift in Sources */,
