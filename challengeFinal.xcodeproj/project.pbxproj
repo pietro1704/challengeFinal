@@ -18,6 +18,7 @@
 		8D41F6CB25309C6700A496C6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6CA25309C6700A496C6 /* Storyboarded.swift */; };
 		8DEE2C6F253746A3006C187B /* StoryNodesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */; };
 		B08D4A095391882B7B2C3C17 /* Pods_challengeFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44548E80E7D0A3A976B144A5 /* Pods_challengeFinal.framework */; };
+		C50FD4AF2544BF0B00B9D2CA /* PlayerDataServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50FD4AE2544BF0B00B9D2CA /* PlayerDataServicesTests.swift */; };
 		C56B280A2543892A004391BA /* PlayerDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B28092543892A004391BA /* PlayerDataService.swift */; };
 		C593DEDB2542580100345F1B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C593DEDA2542580100345F1B /* Player.swift */; };
 		DA0A71E92539E360002BAB51 /* StoryNodesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A71E52539E360002BAB51 /* StoryNodesService.swift */; };
@@ -84,6 +85,7 @@
 		9EAC0408D3DE1D5D885DA8C1 /* Pods-challengeFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.release.xcconfig"; sourceTree = "<group>"; };
 		AD27566663346DD3881AC3C2 /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3C65AD70148E9DF28692587 /* Pods-challengeFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.debug.xcconfig"; sourceTree = "<group>"; };
+		C50FD4AE2544BF0B00B9D2CA /* PlayerDataServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataServicesTests.swift; sourceTree = "<group>"; };
 		C56B28092543892A004391BA /* PlayerDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataService.swift; sourceTree = "<group>"; };
 		C593DEDA2542580100345F1B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		D3F953D80B5181C8492E54A0 /* Pods-challengeFinal-challengeFinalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		8D41F6A02530932500A496C6 /* challengeFinalTests */ = {
 			isa = PBXGroup;
 			children = (
+				C50FD4AD2544BEEC00B9D2CA /* Services */,
 				DA35ED3B2535F3FF0061606C /* Components */,
 				8D41F6A32530932500A496C6 /* Info.plist */,
 				DA35ED442535F48E0061606C /* MockView.swift */,
@@ -233,6 +236,14 @@
 				D3F953D80B5181C8492E54A0 /* Pods-challengeFinal-challengeFinalTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C50FD4AD2544BEEC00B9D2CA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C50FD4AE2544BF0B00B9D2CA /* PlayerDataServicesTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		DA0A71E42539E360002BAB51 /* Services */ = {
@@ -733,6 +744,7 @@
 				DA35ED452535F48E0061606C /* MockView.swift in Sources */,
 				DA3E12B025387A5E00C48AF8 /* PrimaryButtonTests.swift in Sources */,
 				DAC55E08254081B5006E1845 /* ChapterinitLabelTests.swift in Sources */,
+				C50FD4AF2544BF0B00B9D2CA /* PlayerDataServicesTests.swift in Sources */,
 				DAC23A37253733D100D57C43 /* RegularTextViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -932,7 +944,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HHRZ35A37Y;
+				DEVELOPMENT_TEAM = 8C3NFSJWVT;
 				INFOPLIST_FILE = challengeFinalTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -955,7 +967,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HHRZ35A37Y;
+				DEVELOPMENT_TEAM = 8C3NFSJWVT;
 				INFOPLIST_FILE = challengeFinalTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
