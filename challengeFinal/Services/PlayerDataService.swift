@@ -17,22 +17,34 @@ protocol PlayerDataServiceProtocol {
 /// Used only to access and savePlayers Data info in UserDefaults
 class PlayerDataService: PlayerDataServiceProtocol {
 
+    // MARK: - Properties
+
+    /// For dependency injection
+    let instance: UserDefaults
     let storyPathString = "storyPath"
     let pointsString = "points"
+
+    // MARK: - Init
+
+    init(instance: UserDefaults = UserDefaults.standard) {
+        self.instance = instance
+    }
+
+    // MARK: - Methods
     
     func getPoints() -> Int {
-        return UserDefaults.standard.object(forKey: pointsString) as? Int ?? 0
+        return instance.object(forKey: pointsString) as? Int ?? 0
     }
 
     func savePoints(_ points: Int) {
-        UserDefaults.standard.setValue(points, forKey: pointsString)
+        instance.setValue(points, forKey: pointsString)
     }
 
     func getStoryPath() -> [Int] {
-        return UserDefaults.standard.object(forKey: storyPathString) as? [Int] ?? []
+        return instance.object(forKey: storyPathString) as? [Int] ?? []
     }
 
     func saveStoryPath(_ idArray: [Int]) {
-        UserDefaults.standard.setValue(idArray, forKey: storyPathString)
+        instance.setValue(idArray, forKey: storyPathString)
     }
 }
