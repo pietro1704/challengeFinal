@@ -19,7 +19,7 @@ class PlayerDataService: PlayerDataServiceProtocol {
 
     // MARK: - Properties
 
-    /// For dependency injection
+    /// For dependency injection in Unit Tests
     let instance: UserDefaults
     let storyPathString = "storyPath"
     let pointsString = "points"

@@ -5,41 +5,18 @@
 //  Created by Ivo Dutra on 22/10/20.
 //
 
-import Foundation
-
-/* Entao vai ser isso aqui, funcoes staticas que acessam a mesma informação tempo todo e a classe player inicializo onde precisar*/
-
+/// Save players current points and its storyPath
 class Player {
-    var tracker = LevelTracker()
-    let playerName: String
-    func complete(level: Int) {
-        LevelTracker.unlock(level + 1)
-        tracker.advance(to: level + 1)
-    }
-    init(name: String) {
-        playerName = name
-    }
-}
 
-struct LevelTracker {
-    static var highestUnlockedLevel = 1
-    var currentLevel = 1
+    // MARK: - Properties
 
-    static func unlock(_ level: Int) {
-        if level > highestUnlockedLevel { highestUnlockedLevel = level }
-    }
+    var points: Int
+    var path: [NodeID]
 
-    static func isUnlocked(_ level: Int) -> Bool {
-        return level <= highestUnlockedLevel
-    }
+    // MARK: - Init
 
-    @discardableResult
-    mutating func advance(to level: Int) -> Bool {
-        if LevelTracker.isUnlocked(level) {
-            currentLevel = level
-            return true
-        } else {
-            return false
-        }
+    init(points: Int, path: [NodeID]) {
+        self.points = points
+        self.path = path
     }
 }
