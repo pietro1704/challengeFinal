@@ -8,7 +8,7 @@
 import UIKit
 
 public protocol PauseButtonDelegate: class {
-    func buttonPressed(_ tag: Int)
+    func pauseButtonPressed()
 }
 
 class PauseButton: UIButton {
@@ -18,12 +18,11 @@ class PauseButton: UIButton {
         super.init(frame: .zero)
         tintColor = UIColor(named: accentColor)
         setupButton(for: state)
-        
         addTarget(self, action: #selector(handleTap), for: .touchUpInside)
     }
     
     @objc private func handleTap() {
-        self.delegate?.buttonPressed(tag)
+        self.delegate?.pauseButtonPressed()
     }
     
     private func setupButton(for state: UIControl.State) {

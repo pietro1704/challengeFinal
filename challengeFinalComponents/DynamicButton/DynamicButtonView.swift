@@ -8,16 +8,17 @@
 import UIKit
 
 public protocol DynamicButtonDelegate: class {
-    func buttonPressed(_ tag: Int)
+    func buttonPressed(_ type: DynamicTypes)
 }
 
 let buttonWidth: CGFloat = 75.0
 let buttonHeight: CGFloat = 52.0
 let notSelectedAlpha: CGFloat = 0.5
-
 public class DynamicButton: UIView {
     
     var isSelected: Bool
+    weak var delegate: DynamicButtonDelegate?
+    var type: DynamicTypes
     
     lazy var imageView: ImageView = {
         let image = ImageView()
@@ -37,18 +38,25 @@ public class DynamicButton: UIView {
         return label
     }()
 
-    public init(title: String, imagePath: String, isSelected: Bool = false) {
+    public init(type: DynamicTypes, isSelected: Bool = false) {
         self.isSelected = isSelected
+        self.type = type
         super.init(frame: .zero)
-        self.title.text = title
-        self.imageView.recievedImagePath(imagePath: imagePath)
+        self.title.text = type.title()
+        self.imageView.recievedImagePath(imagePath: type.imagePath())
         setupConstraints()
         setupImageTextIsSelected(isSelected: isSelected)
         backgroundColor = .clear
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        self.addGestureRecognizer(gesture)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    @objc func tapped() {
+        self.delegate?.buttonPressed(self.type)
     }
 
     private func setupImageTextIsSelected(isSelected:Bool){

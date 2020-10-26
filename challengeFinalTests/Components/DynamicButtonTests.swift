@@ -12,50 +12,43 @@ import SnapshotTesting
 class DynamicButtonTests: XCTestCase {
 
     public func testDynamicButtonRandom() {
-        let button  = DynamicButton(title: "Aleatório", imagePath: "random", isSelected: true)
+        let button  = DynamicButton(type: .random, isSelected: true)
         let container = button.addInCenterOnMockViewIphone11()
         assertSnapshot(matching: container, as: .image)
     }
 
     public func testDynamicButtonChoice() {
-        let button  = DynamicButton(title: "Escolha", imagePath: "choice", isSelected: true)
+        let button  = DynamicButton(type: .choice, isSelected: true)
         let container = button.addInCenterOnMockViewIphone11()
         assertSnapshot(matching: container, as: .image)
     }
 
     public func testDynamicButtonBet() {
-        let button  = DynamicButton(title: "Aposta", imagePath: "bet", isSelected: true)
+        let button  = DynamicButton(type: .bet, isSelected: true)
         let container = button.addInCenterOnMockViewIphone11()
         assertSnapshot(matching: container, as: .image)
     }
-
-    public func testDynamicButtonWithLargText() {
-        let button  = DynamicButton(title: "EU SOU UM BOTÃO COM O TEXTO GRAAAANDEEE", imagePath: "bet", isSelected: true)
-        let container = button.addInCenterOnMockViewIphone11()
-        assertSnapshot(matching: container, as: .image)
-    }
-    
     
     public func testDynamicButtonRandomNotSelected() {
-        let button  = DynamicButton(title: "Aleatório", imagePath: "random", isSelected: false)
+        let button  = DynamicButton(type: .random)
         let container = button.addInCenterOnMockViewIphone11()
         assertSnapshot(matching: container, as: .image)
     }
 
     public func testDynamicButtonChoiceNotSelected() {
-        let button  = DynamicButton(title: "Escolha", imagePath: "choice", isSelected: false)
+        let button  = DynamicButton(type: .choice)
         let container = button.addInCenterOnMockViewIphone11()
         assertSnapshot(matching: container, as: .image)
     }
 
     public func testDynamicButtonBetNotSelected() {
-        let button  = DynamicButton(title: "Aposta", imagePath: "bet", isSelected: false)
+        let button  = DynamicButton(type: .bet)
         let container = button.addInCenterOnMockViewIphone11()
         assertSnapshot(matching: container, as: .image)
     }
     
     public func testButtonDefaultNotSelected(){
-        let button = DynamicButton(title: "Aposta", imagePath: "bet")
+        let button = DynamicButton(type: .choice)
         XCTAssertFalse(button.isSelected)
     }
 }

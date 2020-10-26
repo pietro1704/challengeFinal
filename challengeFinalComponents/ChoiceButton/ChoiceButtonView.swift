@@ -7,13 +7,21 @@
 
 import UIKit
 
+public protocol ChoiceButtonDelegate: class {
+    func buttonPressed(_ choiceId: NodeID)
+}
+
 private let roundViewWidth: CGFloat = 22.0
 private let imageforHighlightIndicator: UIImage? = UIImage(systemName: "arrow.right")
 public class ChoiceButton: UIView {
+
+    weak var delegate: ChoiceButtonDelegate?
+    
     lazy var primaryButton: PrimaryButton = {
         let button = PrimaryButton()
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.delegate = self
         return button
     }()
 
@@ -104,5 +112,11 @@ public class ChoiceButton: UIView {
 
     private func changeSelection() {
         self.selectedIndicator.isHidden = !isSelected
+    }
+}
+
+extension ChoiceButton: PrimaryButtonDelegate {
+    public func buttonPressed(_ tag: Int) {
+        self.delegate?.buttonPressed(tag)
     }
 }

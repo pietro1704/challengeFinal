@@ -28,6 +28,10 @@
 		DA0A71EA2539E360002BAB51 /* StoryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A71E72539E360002BAB51 /* StoryNode.swift */; };
 		DA0A71EB2539E360002BAB51 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A71E82539E360002BAB51 /* Story.swift */; };
 		DA0A71EF2539E379002BAB51 /* StoryNodes.json in Resources */ = {isa = PBXBuildFile; fileRef = DA0A71EE2539E379002BAB51 /* StoryNodes.json */; };
+		DA1F092B2546EBD6008A5775 /* ChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F092A2546EBD6008A5775 /* ChoiceView.swift */; };
+		DA1F09312546EE2F008A5775 /* ChoiceViewInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F09302546EE2F008A5775 /* ChoiceViewInfos.swift */; };
+		DA1F09352546F424008A5775 /* DynamicTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F09342546F424008A5775 /* DynamicTypes.swift */; };
+		DA1F09392546F7E5008A5775 /* ChoiceViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F09382546F7E5008A5775 /* ChoiceViewTests.swift */; };
 		DA35ED362535F3E30061606C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED352535F3E30061606C /* ImageView.swift */; };
 		DA35ED3D2535F3FF0061606C /* ImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED3C2535F3FF0061606C /* ImageViewTests.swift */; };
 		DA35ED452535F48E0061606C /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED442535F48E0061606C /* MockView.swift */; };
@@ -103,6 +107,10 @@
 		DA0A71E72539E360002BAB51 /* StoryNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryNode.swift; sourceTree = "<group>"; };
 		DA0A71E82539E360002BAB51 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		DA0A71EE2539E379002BAB51 /* StoryNodes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StoryNodes.json; sourceTree = "<group>"; };
+		DA1F092A2546EBD6008A5775 /* ChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceView.swift; sourceTree = "<group>"; };
+		DA1F09302546EE2F008A5775 /* ChoiceViewInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceViewInfos.swift; sourceTree = "<group>"; };
+		DA1F09342546F424008A5775 /* DynamicTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTypes.swift; sourceTree = "<group>"; };
+		DA1F09382546F7E5008A5775 /* ChoiceViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceViewTests.swift; sourceTree = "<group>"; };
 		DA35ED352535F3E30061606C /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		DA35ED3C2535F3FF0061606C /* ImageViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewTests.swift; sourceTree = "<group>"; };
 		DA35ED442535F48E0061606C /* MockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
@@ -269,6 +277,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		DA1F09292546EBC5008A5775 /* ChoiceView */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F092A2546EBD6008A5775 /* ChoiceView.swift */,
+				DA1F09302546EE2F008A5775 /* ChoiceViewInfos.swift */,
+			);
+			path = ChoiceView;
+			sourceTree = "<group>";
+		};
 		DA30DF8E25371E7A007C6CA4 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +322,7 @@
 		DA35ED332535F3E30061606C /* challengeFinalComponents */ = {
 			isa = PBXGroup;
 			children = (
+				DA1F09292546EBC5008A5775 /* ChoiceView */,
 				DA789A9D254314F1001CE5BF /* ChoiceButton */,
 				DA789A90254312DB001CE5BF /* Extensions */,
 				DAD346402542F3D200225BAF /* DynamicButton */,
@@ -337,6 +355,7 @@
 				DA8E872A2541B184000D481B /* ChapterViewTests.swift */,
 				DAD346452542F70900225BAF /* DynamicButtonTests.swift */,
 				DA789AA625431B06001CE5BF /* ChoiceButtonTests.swift */,
+				DA1F09382546F7E5008A5775 /* ChoiceViewTests.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -540,6 +559,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD346412542F3EE00225BAF /* DynamicButtonView.swift */,
+				DA1F09342546F424008A5775 /* DynamicTypes.swift */,
 			);
 			path = DynamicButton;
 			sourceTree = "<group>";
@@ -725,6 +745,7 @@
 				8D04D60A25430ECE00E1F9F7 /* StoryViewModelDelegate.swift in Sources */,
 				DA8E87422541BF4F000D481B /* ChapterViewModel.swift in Sources */,
 				DA5972F82537286500D6EF40 /* StoryView.swift in Sources */,
+				DA1F09352546F424008A5775 /* DynamicTypes.swift in Sources */,
 				DA4A12C325405D2A00504E20 /* ChapterinitLabelView.swift in Sources */,
 				DA0A71EA2539E360002BAB51 /* StoryNode.swift in Sources */,
 				DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */,
@@ -739,12 +760,14 @@
 				8D41F68F2530932300A496C6 /* MenuViewController.swift in Sources */,
 				DA5972F42537278900D6EF40 /* PrimaryButton.swift in Sources */,
 				8D41F68B2530932300A496C6 /* AppDelegate.swift in Sources */,
+				DA1F092B2546EBD6008A5775 /* ChoiceView.swift in Sources */,
 				DA8E87482541C194000D481B /* ChapterViewModelDelegate.swift in Sources */,
 				DA5972F02537261500D6EF40 /* StoryViewController.swift in Sources */,
 				DAC23A312537329D00D57C43 /* RegularTextView.swift in Sources */,
 				DA789A9F25431502001CE5BF /* ChoiceButtonView.swift in Sources */,
 				8D41F6C325309A1000A496C6 /* MenuCoordinator.swift in Sources */,
 				DAD346422542F3EE00225BAF /* DynamicButtonView.swift in Sources */,
+				DA1F09312546EE2F008A5775 /* ChoiceViewInfos.swift in Sources */,
 				8D41F68D2530932300A496C6 /* SceneDelegate.swift in Sources */,
 				DA8E873E2541BEA9000D481B /* ChapterViewContainer.swift in Sources */,
 				DA35ED362535F3E30061606C /* ImageView.swift in Sources */,
@@ -769,6 +792,7 @@
 				DA35ED452535F48E0061606C /* MockView.swift in Sources */,
 				DA3E12B025387A5E00C48AF8 /* PrimaryButtonTests.swift in Sources */,
 				DAC55E08254081B5006E1845 /* ChapterinitLabelTests.swift in Sources */,
+				DA1F09392546F7E5008A5775 /* ChoiceViewTests.swift in Sources */,
 				DAC23A37253733D100D57C43 /* RegularTextViewTests.swift in Sources */,
 				DAD346462542F70900225BAF /* DynamicButtonTests.swift in Sources */,
 			);
