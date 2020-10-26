@@ -24,7 +24,6 @@ class StoryViewController: UIViewController, Storyboarded {
         
         containerView.viewModel = viewModel
         containerView.configure(using: viewModel)
-        containerView.delegate = self
         view.addSubview(containerView)
         setupConstraints()
     }
@@ -40,12 +39,5 @@ class StoryViewController: UIViewController, Storyboarded {
         containerView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         containerView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         containerView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-    }
-}
-
-extension StoryViewController: StoryViewDelegate {
-    func userChoose(nodeId: NodeID) {
-        let nodeViewModel = StoryViewModel(with: nodeId)
-        self.containerView.configure(using: nodeViewModel)
     }
 }
