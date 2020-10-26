@@ -8,7 +8,7 @@
 import UIKit
 
 public protocol BackButtonDelegate: class {
-    func buttonPressed(_ tag: Int)
+    func backButtonPressed()
 }
 
 class BackButton: UIButton {
@@ -24,7 +24,7 @@ class BackButton: UIButton {
     }
     
     @objc private func handleTap() {
-        self.delegate?.buttonPressed(tag)
+        self.delegate?.backButtonPressed()
     }
     
     private func setupButton() {
