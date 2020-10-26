@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol PlayerDataServiceProtocol {
+public protocol PlayerDataServiceProtocol {
     func getPoints() -> Int
     func savePoints(_ points: Int)
     func getStoryPath() -> [Int]
     func saveStoryPath(_ idArray: [Int])
 }
 
-/// Used only to access and savePlayers Data info in UserDefaults
+/// Used only to access and save Players Data info in UserDefaults
 class PlayerDataService: PlayerDataServiceProtocol {
 
     // MARK: - Properties
@@ -31,20 +31,20 @@ class PlayerDataService: PlayerDataServiceProtocol {
     }
 
     // MARK: - Methods
-    
+
     func getPoints() -> Int {
         return instance.object(forKey: pointsString) as? Int ?? 0
+    }
+
+    func getStoryPath() -> [NodeID] {
+        return instance.object(forKey: storyPathString) as? [Int] ?? []
     }
 
     func savePoints(_ points: Int) {
         instance.setValue(points, forKey: pointsString)
     }
 
-    func getStoryPath() -> [Int] {
-        return instance.object(forKey: storyPathString) as? [Int] ?? []
-    }
-
-    func saveStoryPath(_ idArray: [Int]) {
+    func saveStoryPath(_ idArray: [NodeID]) {
         instance.setValue(idArray, forKey: storyPathString)
     }
 }

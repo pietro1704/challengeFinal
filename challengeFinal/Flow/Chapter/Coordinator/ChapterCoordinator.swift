@@ -13,15 +13,17 @@ public class ChapterCoordinator: Coordinator {
     var navigationController: UINavigationController
     var storyNode: StoryNode
     var viewController: ChapterViewController?
+    let playerService: PlayerServiceProtocol
     
-    init (navigationController: UINavigationController, storyNode: StoryNode) {
+    init (navigationController: UINavigationController, storyNode: StoryNode, playerService: PlayerServiceProtocol) {
         self.navigationController = navigationController
         self.storyNode = storyNode
+        self.playerService = playerService
     }
     
     func start() {
         viewController = ChapterViewController.instantiate(storyBoardName: "Chapter")
-        let viewModel = ChapterViewModel(node: storyNode, coordinatorDelegate: self)
+        let viewModel = ChapterViewModel(node: storyNode, coordinatorDelegate: self, playerService: playerService)
         viewController?.viewModel = viewModel
         if let viewController = viewController {
             navigationController.pushViewController(viewController, animated: false)
@@ -30,7 +32,7 @@ public class ChapterCoordinator: Coordinator {
 
     func update(storyNode: StoryNode) {
         self.storyNode = storyNode
-        let viewModel = ChapterViewModel(node: storyNode, coordinatorDelegate: self)
+        let viewModel = ChapterViewModel(node: storyNode, coordinatorDelegate: self, playerService: playerService)
         viewController?.update(with: viewModel)
     }
 
@@ -47,7 +49,8 @@ public class ChapterCoordinator: Coordinator {
 extension ChapterCoordinator: ChapterViewModelDelegate {
     public func userWantToStartChapter() {
         let coordinator = StoryCoordinator(navigationController: navigationController,
-                                           storyNode: storyNode)
+                                           storyNode: storyNode,
+                                           service: playerService)
         childCoordinators.append(coordinator)
         coordinator.start()
     }

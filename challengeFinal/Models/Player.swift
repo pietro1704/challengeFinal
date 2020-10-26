@@ -6,17 +6,31 @@
 //
 
 /// Save players current points and its storyPath
-class Player {
+public class Player {
 
     // MARK: - Properties
 
-    var points: Int
-    var path: [NodeID]
+    private(set) var points: Int
+    private(set) var path: [NodeID]
 
     // MARK: - Init
 
-    init(points: Int, path: [NodeID]) {
+    init(points: Int = 0, path: [NodeID] = []) {
         self.points = points
+        self.path = path
+    }
+
+    // MARK: - Updates
+
+    func updatePoints(with point: Int) {
+        self.points = point
+    }
+
+    func updateStoryPathWithNode(id: NodeID) {
+        self.path.append(id)
+    }
+
+    func updateStoryPath(path: [NodeID]) {
         self.path = path
     }
 }

@@ -18,13 +18,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navController = UINavigationController()
         let services = StoryNodesServices()
         let firstNode = services.retrieveNode(nodeId: 1)
-        coordinator = ChapterCoordinator(navigationController: navController, storyNode: firstNode!)
+        let service = PlayerService()
+        coordinator = ChapterCoordinator(navigationController: navController, storyNode: firstNode!, playerService: service)
         coordinator?.start()
-        
+
+        // Note: Refresh Player
+        service.service.savePoints(0)
+        service.service.saveStoryPath([])
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
         
         return true
     }
+
+    /*
+     save game e restore
+
+     quick save, quick load
+
+     diferença de slots de game -> quick mais rápido, nao seleciona
+
+
+     */
 }
