@@ -149,7 +149,6 @@ extension ChoiceView: PauseButtonDelegate {
         self.delegate?.pauseButtonPressed()
     }
     
-
 }
 
 extension ChoiceView: BackButtonDelegate {

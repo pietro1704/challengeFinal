@@ -57,7 +57,7 @@ public class PrimaryButton: UIButton {
             titleLabel.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: 16),
             titleLabel.leftAnchor.constraint(greaterThanOrEqualTo: leftAnchor, constant: 16),
             titleLabel.rightAnchor.constraint(greaterThanOrEqualTo: rightAnchor, constant: 16),
-            titleLabel.bottomAnchor.constraint(greaterThanOrEqualTo: bottomAnchor, constant: 16),
+            titleLabel.bottomAnchor.constraint(greaterThanOrEqualTo: bottomAnchor, constant: 16)
         ])
     }
 
