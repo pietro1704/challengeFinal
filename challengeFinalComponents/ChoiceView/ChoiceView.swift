@@ -92,10 +92,10 @@ public class ChoiceView: UIView {
         }
     }
 
-    private func setupChoiceButtons(_ nodes: [Node]) {
+    private func setupChoiceButtons(_ nodes: [StoryNode]) {
         for i in 0..<nodes.count {
             let node = nodes[i]
-            let button = ChoiceButton(buttonText: node.title, colorName: "Red")
+            let button = ChoiceButton(buttonText: node.title ?? "", colorName: "Red")
             button.translatesAutoresizingMaskIntoConstraints = false
             button.delegate = self
             choiceButtons.addArrangedSubview(button)

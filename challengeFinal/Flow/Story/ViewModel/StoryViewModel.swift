@@ -23,7 +23,7 @@ public class StoryViewModel {
     }
 
     public func userChoosedNode(_ childIndex: NodeID) {
-        guard let nodeId = self.node?.childNodes?[childIndex].id else { return }
+        guard let nodeId = self.node?.childNodes[childIndex].id else { return }
         if let node = self.service.retrieveNode(nodeId: nodeId) {
             self.delegate?.userChoosedNode(node)
         }

@@ -22,8 +22,8 @@ public class StoryNodesServices {
         return storyNode
     }
 
-    private func retrieveChildNodes(childNodes: [Int]?) -> [StoryNode]? {
-        guard let nodesId = childNodes else { return nil }
+    private func retrieveChildNodes(childNodes: [Int]?) -> [StoryNode] {
+        guard let nodesId = childNodes else { return [] }
 
         var childNodes: [StoryNode] = []
         nodesId.forEach({ (childNodeId) in
