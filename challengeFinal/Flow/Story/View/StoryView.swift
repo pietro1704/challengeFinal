@@ -24,7 +24,7 @@ public class StoryView: UIView {
     }()
 
     private lazy var textView: RegularTextView = {
-        let textView = RegularTextView()
+        let textView = RegularTextView(fontSize: 10)
         addSubview(textView)
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
