@@ -20,6 +20,7 @@ public class ChoiceViewContainer: UIView {
 
     public init() {
         super.init(frame: .zero)
+        setupConstraints()
     }
 
     public init(viewModel: ChoiceViewModel) {

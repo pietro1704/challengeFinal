@@ -72,7 +72,6 @@ public class DynamicButton: UIView {
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: title.topAnchor),
             title.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
             title.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
             title.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
