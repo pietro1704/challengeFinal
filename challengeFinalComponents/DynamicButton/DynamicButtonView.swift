@@ -59,10 +59,10 @@ public class DynamicButton: UIView {
         self.delegate?.buttonPressed(self.type)
     }
 
-    private func setupImageTextIsSelected(isSelected:Bool){
-        if isSelected{
+    private func setupImageTextIsSelected(isSelected: Bool) {
+        if isSelected {
             imageView.alpha = 1
-        }else{
+        } else {
             imageView.alpha = notSelectedAlpha
         }
     }

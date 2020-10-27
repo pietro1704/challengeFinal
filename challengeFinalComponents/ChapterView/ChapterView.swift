@@ -52,7 +52,7 @@ public class ChapterView: UIView {
             image.topAnchor.constraint(equalTo: topAnchor, constant: 36),
             image.centerXAnchor.constraint(equalTo: centerXAnchor),
             title.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 36),
-            title.centerXAnchor.constraint(equalTo: image.centerXAnchor),
+            title.centerXAnchor.constraint(equalTo: image.centerXAnchor)
         ])
     }
 }

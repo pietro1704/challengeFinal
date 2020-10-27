@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let firstNode = services.retrieveNode(nodeId: 1)
         coordinator = ChapterCoordinator(navigationController: navController, storyNode: firstNode!)
         coordinator?.start()
-        
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
@@ -28,4 +28,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-

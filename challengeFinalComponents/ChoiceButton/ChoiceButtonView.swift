@@ -91,10 +91,9 @@ public class ChoiceButton: UIView {
             highlightIndicator.centerYAnchor.constraint(equalTo: primaryButton.centerYAnchor),
             highlightIndicator.leadingAnchor.constraint(equalTo: leadingAnchor),
             selectedIndicator.centerYAnchor.constraint(equalTo: primaryButton.topAnchor),
-            selectedIndicator.centerXAnchor.constraint(equalTo: primaryButton.trailingAnchor),
+            selectedIndicator.centerXAnchor.constraint(equalTo: primaryButton.trailingAnchor)
         ])
     }
-    
 
     public func update(isHighlighted: Bool?, isSelected: Bool?) {
         if let isHighlighted = isHighlighted {
