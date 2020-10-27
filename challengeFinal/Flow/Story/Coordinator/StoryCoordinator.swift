@@ -13,18 +13,18 @@ public class StoryCoordinator: Coordinator {
     var navigationController: UINavigationController
     var storyNode: StoryNode
     var viewController: StoryViewController?
-    var playerService: PlayerServiceProtocol
-    
+
     init (navigationController: UINavigationController, storyNode: StoryNode, service: PlayerServiceProtocol) {
         self.navigationController = navigationController
         self.storyNode = storyNode
-        self.playerService = service
     }
     
     func start() {
         viewController = StoryViewController.instantiate(storyBoardName: "Story")
+        let playerService = PlayerService()
         let viewModel = StoryViewModel(node: storyNode,
-                                       coordinatorDelegate: self)
+                                       coordinatorDelegate: self,
+                                       playerService: playerService)
         viewController?.viewModel = viewModel
         if let viewController = viewController {
             navigationController.pushViewController(viewController, animated: false)
@@ -32,12 +32,11 @@ public class StoryCoordinator: Coordinator {
     }
 
     func update(storyNode: StoryNode) {
-        // Save path
-        playerService.saveChoosenNode(id: storyNode.id)
-
         self.storyNode = storyNode
+        let playerService = PlayerService()
         let viewModel = StoryViewModel(node: storyNode,
-                                       coordinatorDelegate: self)
+                                       coordinatorDelegate: self,
+                                       playerService: playerService)
         viewController?.update(with: viewModel)
     }
 

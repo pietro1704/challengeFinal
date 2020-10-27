@@ -32,7 +32,7 @@ class PlayerService: PlayerServiceProtocol {
         self.player = Player()
         self.service = service
 
-        // Start game by loading the current state from the player
+        // Load the current state from the player
         initializePlayer()
     }
 
