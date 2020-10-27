@@ -18,10 +18,6 @@ public class ChoiceViewModel {
         self.delegate = coordinatorDelegate
     }
 
-//    public init(with nodeIds: [NodeID]) {
-//        self.nodes = service.retrieveNode(nodeId: nodeId)
-//    }
-
     public func userWantToDismiss() {
         delegate?.userWantToDismiss()
     }
@@ -30,12 +26,16 @@ public class ChoiceViewModel {
         delegate?.userWantToConfirmChoice()
     }
 
-    public func userWantToChooseRandom() {
+    public func userWantToChooseDynamic(_ dynamic: DynamicTypes) {
+        switch dynamic {
+        case .bet:
+            print("user want to bet")
+        case .choice:
+            print("user want to choose")
+        case .random:
+            print("user want to random")
+        }
         delegate?.userWantToChooseRandom()
-    }
-
-    public func userWantToBet() {
-        delegate?.userWantToBet()
     }
 
     public func userWantToPause() {

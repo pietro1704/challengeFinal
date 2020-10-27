@@ -13,6 +13,7 @@ public class ChoiceViewContainer: UIView {
         let cView = ChoiceView()
         addSubview(cView)
         cView.translatesAutoresizingMaskIntoConstraints = false
+        cView.delegate = self
         return cView
     }()
 
@@ -54,5 +55,27 @@ public class ChoiceViewContainer: UIView {
             choiceView.trailingAnchor.constraint(equalTo: trailingAnchor),
             choiceView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
+    }
+}
+
+extension ChoiceViewContainer: ChoiceViewDelegate {
+    public func choiceButtonPressed(choice: NodeID) {
+//        viewModel.user
+    }
+    
+    public func dynamicButtonPressed(dynamic: DynamicTypes) {
+        viewModel?.userWantToChooseDynamic(dynamic)
+    }
+    
+    public func backButtonPressed() {
+        viewModel?.userWantToDismiss()
+    }
+    
+    public func confirmButtonPressed() {
+        viewModel?.userWantToConfirmChoice()
+    }
+    
+    public func pauseButtonPressed() {
+        viewModel?.userWantToPause()
     }
 }

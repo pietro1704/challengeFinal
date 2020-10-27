@@ -55,7 +55,7 @@ extension ChoiceCoordinator: ChoiceViewModelDelegate {
     }
     
     public func userWantToChooseRandom() {
-        print("user want to random")
+//        print("user want to random")
     }
     
     public func userWantToBet() {
