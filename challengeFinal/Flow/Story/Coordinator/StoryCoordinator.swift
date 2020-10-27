@@ -14,7 +14,7 @@ public class StoryCoordinator: Coordinator {
     var storyNode: StoryNode
     var viewController: StoryViewController?
 
-    init (navigationController: UINavigationController, storyNode: StoryNode, service: PlayerServiceProtocol) {
+    init (navigationController: UINavigationController, storyNode: StoryNode) {
         self.navigationController = navigationController
         self.storyNode = storyNode
     }

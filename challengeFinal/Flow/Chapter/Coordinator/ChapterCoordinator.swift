@@ -49,10 +49,8 @@ public class ChapterCoordinator: Coordinator {
 
 extension ChapterCoordinator: ChapterViewModelDelegate {
     public func userWantToStartChapter() {
-        let playerService = PlayerService()
         let coordinator = StoryCoordinator(navigationController: navigationController,
-                                           storyNode: storyNode,
-                                           service: playerService)
+                                           storyNode: storyNode)
         childCoordinators.append(coordinator)
         coordinator.start()
     }
