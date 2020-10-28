@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coordinator = ChoiceCoordinator(navigationController: navController,
                                         infos: ChoiceViewInfosObject(nodes: firstNode!.childNodes))
         coordinator?.start()
-        
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
@@ -29,4 +29,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-

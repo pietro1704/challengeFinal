@@ -12,14 +12,20 @@ public class StoryViewModel {
     weak var delegate: StoryViewModelDelegate?
     var node: StoryNode?
     let service = StoryNodesServices()
+    var playerService: PlayerServiceProtocol
 
-    public init(node: StoryNode, coordinatorDelegate: StoryViewModelDelegate) {
+    public init(node: StoryNode, coordinatorDelegate: StoryViewModelDelegate, playerService: PlayerServiceProtocol) {
         self.node = node
         self.delegate = coordinatorDelegate
+        self.playerService = playerService
+
+        //  When a node is initialized, its id is saved
+        self.playerService.saveChoosenNode(id: node.id)
     }
 
-    public init(with nodeId: NodeID) {
+    public init(with nodeId: NodeID, playerService: PlayerServiceProtocol) {
         self.node = service.retrieveNode(nodeId: nodeId)
+        self.playerService = playerService
     }
 
     public func userChoosedNode(_ childIndex: NodeID) {

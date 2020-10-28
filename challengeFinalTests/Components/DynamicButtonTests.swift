@@ -47,7 +47,7 @@ class DynamicButtonTests: XCTestCase {
         assertSnapshot(matching: container, as: .image)
     }
     
-    public func testButtonDefaultNotSelected(){
+    public func testButtonDefaultNotSelected() {
         let button = DynamicButton(type: .choice)
         XCTAssertFalse(button.isSelected)
     }

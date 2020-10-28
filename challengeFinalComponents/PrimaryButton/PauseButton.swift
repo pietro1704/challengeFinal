@@ -13,8 +13,8 @@ public protocol PauseButtonDelegate: class {
 
 class PauseButton: UIButton {
     public weak var delegate: PauseButtonDelegate?
-    
-    public init(for state: UIControl.State = .normal, accentColor:String = "Red") {
+
+    public init(for state: UIControl.State = .normal, accentColor: String = "Red") {
         super.init(frame: .zero)
         tintColor = UIColor(named: accentColor)
         setupButton(for: state)
@@ -28,7 +28,7 @@ class PauseButton: UIButton {
     private func setupButton(for state: UIControl.State) {
         self.backgroundColor = .clear
         
-        if let image = UIImage(systemName: "pause.circle"){
+        if let image = UIImage(systemName: "pause.circle") {
             self.setImage(image, for: state)
         }
     }
@@ -37,5 +37,3 @@ class PauseButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-

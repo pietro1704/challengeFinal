@@ -20,7 +20,7 @@ class ChoiceViewTests: XCTestCase {
             view.topAnchor.constraint(equalTo: container.topAnchor),
             view.leadingAnchor.constraint(equalTo: container.leadingAnchor),
             view.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-            view.bottomAnchor.constraint(equalTo: container.bottomAnchor),
+            view.bottomAnchor.constraint(equalTo: container.bottomAnchor)
         ])
         assertSnapshot(matching: container, as: .image)
     }
