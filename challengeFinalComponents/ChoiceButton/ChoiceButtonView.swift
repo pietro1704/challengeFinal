@@ -97,7 +97,7 @@ public class ChoiceButton: UIView {
             highlightIndicator.centerYAnchor.constraint(equalTo: primaryButton.centerYAnchor),
             highlightIndicator.trailingAnchor.constraint(equalTo: primaryButton.leadingAnchor),
             selectedIndicator.centerYAnchor.constraint(equalTo: primaryButton.topAnchor),
-            selectedIndicator.centerXAnchor.constraint(equalTo: primaryButton.trailingAnchor),
+            selectedIndicator.centerXAnchor.constraint(equalTo: primaryButton.trailingAnchor)
         ])
     }
 

@@ -11,7 +11,6 @@
 		8D04D60A25430ECE00E1F9F7 /* StoryViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FF5E8254303E500FBF110 /* StoryViewModelDelegate.swift */; };
 		8D04D6122543111100E1F9F7 /* BackButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04D6112543111100E1F9F7 /* BackButtonTests.swift */; };
 		8D41F68B2530932300A496C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F68A2530932300A496C6 /* AppDelegate.swift */; };
-		8D41F68D2530932300A496C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F68C2530932300A496C6 /* SceneDelegate.swift */; };
 		8D41F68F2530932300A496C6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F68E2530932300A496C6 /* MenuViewController.swift */; };
 		8D41F6922530932300A496C6 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D41F6902530932300A496C6 /* Menu.storyboard */; };
 		8D41F6942530932500A496C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D41F6932530932500A496C6 /* Assets.xcassets */; };
@@ -24,6 +23,10 @@
 		8DD3F5BE2541D6D800FDA5B4 /* PauseButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5BD2541D6D800FDA5B4 /* PauseButtonTests.swift */; };
 		8DEE2C6F253746A3006C187B /* StoryNodesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */; };
 		B08D4A095391882B7B2C3C17 /* Pods_challengeFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44548E80E7D0A3A976B144A5 /* Pods_challengeFinal.framework */; };
+		C50FD4AF2544BF0B00B9D2CA /* PlayerDataServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50FD4AE2544BF0B00B9D2CA /* PlayerDataServicesTests.swift */; };
+		C557D39C2547854D00A537F3 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C557D39B2547854D00A537F3 /* PlayerService.swift */; };
+		C56B280A2543892A004391BA /* PlayerDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B28092543892A004391BA /* PlayerDataService.swift */; };
+		C593DEDB2542580100345F1B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C593DEDA2542580100345F1B /* Player.swift */; };
 		DA0A71E92539E360002BAB51 /* StoryNodesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A71E52539E360002BAB51 /* StoryNodesService.swift */; };
 		DA0A71EA2539E360002BAB51 /* StoryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A71E72539E360002BAB51 /* StoryNode.swift */; };
 		DA0A71EB2539E360002BAB51 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A71E82539E360002BAB51 /* Story.swift */; };
@@ -89,7 +92,6 @@
 		8D04D6112543111100E1F9F7 /* BackButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonTests.swift; sourceTree = "<group>"; };
 		8D41F6872530932300A496C6 /* challengeFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = challengeFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D41F68A2530932300A496C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8D41F68C2530932300A496C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8D41F68E2530932300A496C6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		8D41F6912530932300A496C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
 		8D41F6932530932500A496C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +110,10 @@
 		9EAC0408D3DE1D5D885DA8C1 /* Pods-challengeFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.release.xcconfig"; sourceTree = "<group>"; };
 		AD27566663346DD3881AC3C2 /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3C65AD70148E9DF28692587 /* Pods-challengeFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.debug.xcconfig"; sourceTree = "<group>"; };
+		C50FD4AE2544BF0B00B9D2CA /* PlayerDataServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataServicesTests.swift; sourceTree = "<group>"; };
+		C557D39B2547854D00A537F3 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
+		C56B28092543892A004391BA /* PlayerDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataService.swift; sourceTree = "<group>"; };
+		C593DEDA2542580100345F1B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		D3F953D80B5181C8492E54A0 /* Pods-challengeFinal-challengeFinalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.release.xcconfig"; sourceTree = "<group>"; };
 		DA0A71E52539E360002BAB51 /* StoryNodesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryNodesService.swift; sourceTree = "<group>"; };
 		DA0A71E72539E360002BAB51 /* StoryNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryNode.swift; sourceTree = "<group>"; };
@@ -226,6 +232,7 @@
 		8D41F6A02530932500A496C6 /* challengeFinalTests */ = {
 			isa = PBXGroup;
 			children = (
+				C50FD4AD2544BEEC00B9D2CA /* Services */,
 				DA35ED3B2535F3FF0061606C /* Components */,
 				8D41F6A32530932500A496C6 /* Info.plist */,
 				DA35ED442535F48E0061606C /* MockView.swift */,
@@ -247,7 +254,6 @@
 			isa = PBXGroup;
 			children = (
 				8D41F68A2530932300A496C6 /* AppDelegate.swift */,
-				8D41F68C2530932300A496C6 /* SceneDelegate.swift */,
 			);
 			path = "App-SceneDelegate";
 			sourceTree = "<group>";
@@ -272,10 +278,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C50FD4AD2544BEEC00B9D2CA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C50FD4AE2544BF0B00B9D2CA /* PlayerDataServicesTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		DA0A71E42539E360002BAB51 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				DA0A71E52539E360002BAB51 /* StoryNodesService.swift */,
+				C56B28092543892A004391BA /* PlayerDataService.swift */,
+				C557D39B2547854D00A537F3 /* PlayerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -285,6 +301,7 @@
 			children = (
 				DA0A71E72539E360002BAB51 /* StoryNode.swift */,
 				DA0A71E82539E360002BAB51 /* Story.swift */,
+				C593DEDA2542580100345F1B /* Player.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -649,6 +666,7 @@
 				8D41F6832530932200A496C6 /* Sources */,
 				8D41F6842530932200A496C6 /* Frameworks */,
 				8D41F6852530932200A496C6 /* Resources */,
+				C593DED72542522600345F1B /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -802,6 +820,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C593DED72542522600345F1B /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -818,9 +854,11 @@
 				DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */,
 				DA0A71EB2539E360002BAB51 /* Story.swift in Sources */,
 				DA8E87252541AF93000D481B /* ChapterView.swift in Sources */,
+				C557D39C2547854D00A537F3 /* PlayerService.swift in Sources */,
 				8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */,
 				8DD3F5B42541D50A00FDA5B4 /* BackButton.swift in Sources */,
 				DADC40C025403F7900078CA3 /* StoryNodeRepository.swift in Sources */,
+				C56B280A2543892A004391BA /* PlayerDataService.swift in Sources */,
 				8DD3F5B82541D60500FDA5B4 /* PauseButton.swift in Sources */,
 				DA0A71E92539E360002BAB51 /* StoryNodesService.swift in Sources */,
 				DA3E12AA25386BAA00C48AF8 /* StoryViewModel.swift in Sources */,
@@ -835,11 +873,10 @@
 				DA1F0950254716E1008A5775 /* ChoiceViewContainer.swift in Sources */,
 				DAC23A312537329D00D57C43 /* RegularTextView.swift in Sources */,
 				DA789A9F25431502001CE5BF /* ChoiceButtonView.swift in Sources */,
+				C593DEDB2542580100345F1B /* Player.swift in Sources */,
 				8D41F6C325309A1000A496C6 /* MenuCoordinator.swift in Sources */,
 				DAD346422542F3EE00225BAF /* DynamicButtonView.swift in Sources */,
 				DA1F09312546EE2F008A5775 /* ChoiceViewInfos.swift in Sources */,
-				8D41F68D2530932300A496C6 /* SceneDelegate.swift in Sources */,
-				DA1F0947254716A2008A5775 /* ChoiceViewController.swift in Sources */,
 				DA8E873E2541BEA9000D481B /* ChapterViewContainer.swift in Sources */,
 				DA35ED362535F3E30061606C /* ImageView.swift in Sources */,
 				DA8E874C2541C1FD000D481B /* ChapterCoordinator.swift in Sources */,
@@ -864,6 +901,7 @@
 				DA35ED452535F48E0061606C /* MockView.swift in Sources */,
 				DA3E12B025387A5E00C48AF8 /* PrimaryButtonTests.swift in Sources */,
 				DAC55E08254081B5006E1845 /* ChapterinitLabelTests.swift in Sources */,
+				C50FD4AF2544BF0B00B9D2CA /* PlayerDataServicesTests.swift in Sources */,
 				DA1F09392546F7E5008A5775 /* ChoiceViewTests.swift in Sources */,
 				DAC23A37253733D100D57C43 /* RegularTextViewTests.swift in Sources */,
 				DAD346462542F70900225BAF /* DynamicButtonTests.swift in Sources */,
@@ -1023,7 +1061,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HHRZ35A37Y;
+				DEVELOPMENT_TEAM = 8C3NFSJWVT;
 				INFOPLIST_FILE = challengeFinal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1044,7 +1082,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HHRZ35A37Y;
+				DEVELOPMENT_TEAM = 8C3NFSJWVT;
 				INFOPLIST_FILE = challengeFinal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1065,7 +1103,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HHRZ35A37Y;
+				DEVELOPMENT_TEAM = 8C3NFSJWVT;
 				INFOPLIST_FILE = challengeFinalTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1088,7 +1126,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HHRZ35A37Y;
+				DEVELOPMENT_TEAM = 8C3NFSJWVT;
 				INFOPLIST_FILE = challengeFinalTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

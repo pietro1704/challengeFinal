@@ -56,7 +56,7 @@ public class ChapterInitLabel: UIView {
             line.topAnchor.constraint(equalTo: label.bottomAnchor),
             line.leadingAnchor.constraint(equalTo: label.leadingAnchor),
             line.trailingAnchor.constraint(equalTo: label.trailingAnchor),
-            line.bottomAnchor.constraint(equalTo: bottomAnchor),
+            line.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }

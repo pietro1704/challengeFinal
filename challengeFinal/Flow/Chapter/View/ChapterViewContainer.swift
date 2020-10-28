@@ -60,7 +60,7 @@ public class ChapterViewContainer: UIView {
             chapterView.topAnchor.constraint(equalTo: topAnchor),
             chapterView.leadingAnchor.constraint(equalTo: leadingAnchor),
             chapterView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            chapterView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            chapterView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 

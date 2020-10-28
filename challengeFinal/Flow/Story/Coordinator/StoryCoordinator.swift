@@ -13,7 +13,7 @@ public class StoryCoordinator: Coordinator {
     var navigationController: UINavigationController
     var storyNode: StoryNode
     var viewController: StoryViewController?
-    
+
     init (navigationController: UINavigationController, storyNode: StoryNode) {
         self.navigationController = navigationController
         self.storyNode = storyNode
@@ -21,8 +21,10 @@ public class StoryCoordinator: Coordinator {
     
     func start() {
         viewController = StoryViewController.instantiate(storyBoardName: "Story")
+        let playerService = PlayerService()
         let viewModel = StoryViewModel(node: storyNode,
-                                       coordinatorDelegate: self)
+                                       coordinatorDelegate: self,
+                                       playerService: playerService)
         viewController?.viewModel = viewModel
         if let viewController = viewController {
             navigationController.pushViewController(viewController, animated: false)
@@ -31,8 +33,10 @@ public class StoryCoordinator: Coordinator {
 
     func update(storyNode: StoryNode) {
         self.storyNode = storyNode
+        let playerService = PlayerService()
         let viewModel = StoryViewModel(node: storyNode,
-                                       coordinatorDelegate: self)
+                                       coordinatorDelegate: self,
+                                       playerService: playerService)
         viewController?.update(with: viewModel)
     }
 
