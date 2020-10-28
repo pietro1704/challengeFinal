@@ -21,6 +21,9 @@
 		8D41F6CB25309C6700A496C6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6CA25309C6700A496C6 /* Storyboarded.swift */; };
 		8D9E825E2549EACC005FDC37 /* DecisionPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E825D2549EACC005FDC37 /* DecisionPointsView.swift */; };
 		8D9E82622549EFDB005FDC37 /* DecisionPointsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E82612549EFDB005FDC37 /* DecisionPointsViewTests.swift */; };
+		8D9E826A2549F391005FDC37 /* GameColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E82692549F391005FDC37 /* GameColors.swift */; };
+		8D9E826E2549F80F005FDC37 /* GoToDecisionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E826D2549F80F005FDC37 /* GoToDecisionButton.swift */; };
+		8D9E827E2549FA02005FDC37 /* GoToDecisionButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E827D2549FA02005FDC37 /* GoToDecisionButtonTests.swift */; };
 		8DD3F5B42541D50A00FDA5B4 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5B32541D50A00FDA5B4 /* BackButton.swift */; };
 		8DD3F5B82541D60500FDA5B4 /* PauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5B72541D60500FDA5B4 /* PauseButton.swift */; };
 		8DD3F5BE2541D6D800FDA5B4 /* PauseButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5BD2541D6D800FDA5B4 /* PauseButtonTests.swift */; };
@@ -99,6 +102,9 @@
 		8D4FF5E8254303E500FBF110 /* StoryViewModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewModelDelegate.swift; sourceTree = "<group>"; };
 		8D9E825D2549EACC005FDC37 /* DecisionPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionPointsView.swift; sourceTree = "<group>"; };
 		8D9E82612549EFDB005FDC37 /* DecisionPointsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionPointsViewTests.swift; sourceTree = "<group>"; };
+		8D9E82692549F391005FDC37 /* GameColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameColors.swift; sourceTree = "<group>"; };
+		8D9E826D2549F80F005FDC37 /* GoToDecisionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToDecisionButton.swift; sourceTree = "<group>"; };
+		8D9E827D2549FA02005FDC37 /* GoToDecisionButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToDecisionButtonTests.swift; sourceTree = "<group>"; };
 		8DD3F5B32541D50A00FDA5B4 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		8DD3F5B72541D60500FDA5B4 /* PauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseButton.swift; sourceTree = "<group>"; };
 		8DD3F5BD2541D6D800FDA5B4 /* PauseButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseButtonTests.swift; sourceTree = "<group>"; };
@@ -249,6 +255,7 @@
 			children = (
 				DA0A71EE2539E379002BAB51 /* StoryNodes.json */,
 				8D41F6932530932500A496C6 /* Assets.xcassets */,
+				8D9E82692549F391005FDC37 /* GameColors.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -275,6 +282,14 @@
 				8D9E825D2549EACC005FDC37 /* DecisionPointsView.swift */,
 			);
 			path = DecisionPointsView;
+			sourceTree = "<group>";
+		};
+		8D9E82722549F998005FDC37 /* GoToDecisionButton */ = {
+			isa = PBXGroup;
+			children = (
+				8D9E826D2549F80F005FDC37 /* GoToDecisionButton.swift */,
+			);
+			path = GoToDecisionButton;
 			sourceTree = "<group>";
 		};
 		C0649F670057FC170CAF4D63 /* Pods */ = {
@@ -362,6 +377,7 @@
 				8D9E82562549EA23005FDC37 /* PauseButton */,
 				DA5972E02537255000D6EF40 /* PrimaryButton */,
 				DA35ED342535F3E30061606C /* ImageView */,
+				8D9E82722549F998005FDC37 /* GoToDecisionButton */,
 			);
 			path = challengeFinalComponents;
 			sourceTree = "<group>";
@@ -383,6 +399,7 @@
 				8D04D6112543111100E1F9F7 /* BackButtonTests.swift */,
 				DAC23A36253733D100D57C43 /* RegularTextViewTests.swift */,
 				DA3E12AF25387A5E00C48AF8 /* PrimaryButtonTests.swift */,
+				8D9E827D2549FA02005FDC37 /* GoToDecisionButtonTests.swift */,
 				DAC55E07254081B5006E1845 /* ChapterinitLabelTests.swift */,
 				DA8E872A2541B184000D481B /* ChapterViewTests.swift */,
 				DAD346452542F70900225BAF /* DynamicButtonTests.swift */,
@@ -787,6 +804,7 @@
 				DADC40C025403F7900078CA3 /* StoryNodeRepository.swift in Sources */,
 				8DD3F5B82541D60500FDA5B4 /* PauseButton.swift in Sources */,
 				DA0A71E92539E360002BAB51 /* StoryNodesService.swift in Sources */,
+				8D9E826A2549F391005FDC37 /* GameColors.swift in Sources */,
 				DA3E12AA25386BAA00C48AF8 /* StoryViewModel.swift in Sources */,
 				8D41F68F2530932300A496C6 /* MenuViewController.swift in Sources */,
 				DA5972F42537278900D6EF40 /* PrimaryButton.swift in Sources */,
@@ -800,6 +818,7 @@
 				DAD346422542F3EE00225BAF /* DynamicButtonView.swift in Sources */,
 				DA1F09312546EE2F008A5775 /* ChoiceViewInfos.swift in Sources */,
 				8D41F68D2530932300A496C6 /* SceneDelegate.swift in Sources */,
+				8D9E826E2549F80F005FDC37 /* GoToDecisionButton.swift in Sources */,
 				DA8E873E2541BEA9000D481B /* ChapterViewContainer.swift in Sources */,
 				DA35ED362535F3E30061606C /* ImageView.swift in Sources */,
 				DA8E874C2541C1FD000D481B /* ChapterCoordinator.swift in Sources */,
@@ -824,6 +843,7 @@
 				DA35ED452535F48E0061606C /* MockView.swift in Sources */,
 				DA3E12B025387A5E00C48AF8 /* PrimaryButtonTests.swift in Sources */,
 				DAC55E08254081B5006E1845 /* ChapterinitLabelTests.swift in Sources */,
+				8D9E827E2549FA02005FDC37 /* GoToDecisionButtonTests.swift in Sources */,
 				DA1F09392546F7E5008A5775 /* ChoiceViewTests.swift in Sources */,
 				DAC23A37253733D100D57C43 /* RegularTextViewTests.swift in Sources */,
 				DAD346462542F70900225BAF /* DynamicButtonTests.swift in Sources */,

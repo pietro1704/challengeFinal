@@ -37,14 +37,18 @@ public class StoryView: UIView {
         return textView
     }()
 
-    private lazy var stackview: UIStackView = {
-        let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.spacing = 8
-        stack.distribution = .fillEqually
-        stack.axis = .vertical
-        addSubview(stack)
-        return stack
+    private lazy var decisionView: DecisionPointsView = {
+        let decision = DecisionPointsView()
+        decision.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(decision)
+        return decision
+    }()
+    
+    private lazy var goToDecisionButton: GoToDecisionButton = {
+        let decision = GoToDecisionButton()
+        decision.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(decision)
+        return decision
     }()
     
     private lazy var scrollView: UIScrollView = {
@@ -61,7 +65,7 @@ public class StoryView: UIView {
         let content = UIView()
         content.translatesAutoresizingMaskIntoConstraints = false
         content.addSubview(textView)
-        content.addSubview(stackview)
+        content.addSubview(goToDecisionButton)
         return content
     }()
 
@@ -73,10 +77,9 @@ public class StoryView: UIView {
     public init(with viewModel: StoryViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
-        backgroundColor = UIColor(red: 0.89, green: 0.88, blue: 0.85, alpha: 1.00)
+        backgroundColor = UIColor.background
         setupConstraints()
     }
-
     
     
     fileprivate func setupConstraints() {
@@ -119,10 +122,10 @@ public class StoryView: UIView {
         
 
         
-        stackview.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10).isActive = true
-        stackview.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        stackview.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        stackview.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
+        goToDecisionButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10).isActive = true
+        goToDecisionButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        goToDecisionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        goToDecisionButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
        // stackview.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2).isActive = true
     }
 
@@ -136,7 +139,6 @@ public class StoryView: UIView {
         prepareForReuse()
         let node = viewModel?.node
         self.imageView.recievedImage(image: loadImage(node?.imagePath))
-        configureDecisions(node?.childNodes)
 
         if let textInfos = node?.text {
             self.textView.configure(with: textInfos)
@@ -150,31 +152,9 @@ public class StoryView: UIView {
         return image
     }
 
-    private func configureDecisions(_ decisions: [StoryNode]?) {
-        guard let decisions = decisions else { return }
-
-        for i in 0..<decisions.count {
-            let node = decisions[i]
-            let button = PrimaryButton(title: String(node.title ?? ""))
-            button.translatesAutoresizingMaskIntoConstraints = false
-            button.tag = i
-            button.delegate = self
-            stackview.addArrangedSubview(button)
-        }
-    }
-
     private func prepareForReuse() {
-        stackview.arrangedSubviews.forEach { (arrangedSubview) in
-            arrangedSubview.removeFromSuperview()
-        }
         self.imageView.recievedImage(image: UIImage())
         self.textView.configure(with: "")
     }
 }
 
-extension StoryView: PrimaryButtonDelegate {
-    public func buttonPressed(_ buttonTag: Int) {
-        guard let viewmodel = viewModel else { return }
-        viewmodel.userChoosedNode(buttonTag)
-    }
-}

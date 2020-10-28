@@ -16,6 +16,8 @@ class DecisionPointsView: UIStackView {
         let imageview = UIImageView()
         //mudar imagem pro asset do jogo
         imageview.image = UIImage(systemName: "speaker.fill")
+        //our custom red color
+        imageview.tintColor = UIColor.gameRed
         imageview.translatesAutoresizingMaskIntoConstraints = false
         return imageview
     }()
