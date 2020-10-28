@@ -9,6 +9,7 @@ import UIKit
 
 public class ChoiceCoordinator: Coordinator {
     
+    var parentCoordinator: StoryCoordinator?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     var infos: ChoiceViewInfos
@@ -46,7 +47,7 @@ public class ChoiceCoordinator: Coordinator {
 
 extension ChoiceCoordinator: ChoiceViewModelDelegate {
     public func userWantToDismiss() {
-        print("user want to dismiss")
+        parentCoordinator?.userWantToDismissChoices(self)
     }
     
     public func userWantToConfirmChoice(storyNode: StoryNode) {

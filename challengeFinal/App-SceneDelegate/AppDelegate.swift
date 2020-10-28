@@ -9,18 +9,14 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var coordinator: ChoiceCoordinator?
+    var coordinator: MainCoordinator?
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         let navController = UINavigationController()
-        let services = StoryNodesServices()
-        let firstNode = services.retrieveNode(nodeId: 1)
-        coordinator = ChoiceCoordinator(navigationController: navController,
-                                        infos: ChoiceViewInfosObject(nodes: firstNode!.childNodes, selectedDynamic: .choice,
-                                                                     selectedNode: nil, highlightedNode: nil))
+        coordinator = MainCoordinator(navigationController: navController)
         coordinator?.start()
 
         window = UIWindow(frame: UIScreen.main.bounds)

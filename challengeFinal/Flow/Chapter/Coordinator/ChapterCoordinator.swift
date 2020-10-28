@@ -9,6 +9,7 @@ import UIKit
 
 public class ChapterCoordinator: Coordinator {
     
+    var parentCoordinator: MainCoordinator?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     var storyNode: StoryNode
@@ -49,9 +50,6 @@ public class ChapterCoordinator: Coordinator {
 
 extension ChapterCoordinator: ChapterViewModelDelegate {
     public func userWantToStartChapter() {
-        let coordinator = StoryCoordinator(navigationController: navigationController,
-                                           storyNode: storyNode)
-        childCoordinators.append(coordinator)
-        coordinator.start()
+        parentCoordinator?.showStory(with: storyNode)
     }
 }

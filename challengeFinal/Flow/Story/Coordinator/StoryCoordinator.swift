@@ -40,6 +40,21 @@ public class StoryCoordinator: Coordinator {
         viewController?.update(with: viewModel)
     }
 
+    func showChoices(with childNodes: [StoryNode]) {
+        let coordinator = ChoiceCoordinator(navigationController: navigationController,
+                                            infos: ChoiceViewInfosObject(nodes: childNodes,
+                                                                         selectedDynamic: .choice,
+                                                                         selectedNode: nil,
+                                                                         highlightedNode: nil))
+        coordinator.parentCoordinator = self
+        childCoordinators.append(coordinator)
+        coordinator.start()
+    }
+
+    func userWantToDismissChoices(_ coordinator: ChoiceCoordinator) {
+        childDidFinished(coordinator)
+    }
+
     func childDidFinished(_ child: Coordinator?) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {
