@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let services = StoryNodesServices()
         let firstNode = services.retrieveNode(nodeId: 1)
         coordinator = ChoiceCoordinator(navigationController: navController,
-                                        infos: ChoiceViewInfosObject(nodes: firstNode!.childNodes))
+                                        infos: ChoiceViewInfosObject(nodes: firstNode!.childNodes, selectedDynamic: .choice,
+                                                                     selectedNode: nil, highlightedNode: nil))
         coordinator?.start()
 
         window = UIWindow(frame: UIScreen.main.bounds)

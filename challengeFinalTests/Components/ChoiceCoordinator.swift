@@ -44,27 +44,54 @@ public class ChoiceCoordinator: Coordinator {
     }
 }
 
-
 extension ChoiceCoordinator: ChoiceViewModelDelegate {
     public func userWantToDismiss() {
         print("user want to dismiss")
     }
     
-    public func userWantToConfirmChoice() {
-        print("user want to confirm")
+    public func userWantToConfirmChoice(storyNode: StoryNode) {
+        let nextCoordinator = StoryCoordinator(navigationController: navigationController,
+                                               storyNode: storyNode)
+        nextCoordinator.start()
     }
     
-    public func userWantToChooseRandom() {
-//        print("user want to random")
+    public func userWantToChooseDynamic(dynamic: DynamicTypes) {
+        let infosToUpdate = ChoiceViewInfosObject(nodes: infos.nodes,
+                                          selectedDynamic: dynamic,
+                                          selectedNode: nil,
+                                          highlightedNode: nil)
+        self.update(infos: infosToUpdate)
     }
-    
-    public func userWantToBet() {
-        print("user want to bet")
+
+    public func userWantToChooseNode(node: NodeID) {
+        let storyNode = infos.nodes.filter { (storyNode) -> Bool in
+            return storyNode.id == node
+        }
+        
+        let infosToUpdate = ChoiceViewInfosObject(nodes: infos.nodes,
+                                                  selectedDynamic: infos.selectedDynamic,
+                                                  selectedNode: storyNode.first,
+                                                  highlightedNode: nil)
+        self.update(infos: infosToUpdate)
     }
-    
+
+    public func userGotRandom(node: NodeID) {
+        let infosToUpdate = ChoiceViewInfosObject(nodes: infos.nodes,
+                                                  selectedDynamic: infos.selectedDynamic,
+                                                  selectedNode: infos.selectedNode,
+                                                  highlightedNode: node)
+        self.update(infos: infosToUpdate)
+    }
+
+    public func userWantToHighlightNode(node: NodeID) {
+        let infosToUpdate = ChoiceViewInfosObject(nodes: infos.nodes,
+                                                  selectedDynamic: infos.selectedDynamic,
+                                                  selectedNode: infos.selectedNode,
+                                                  highlightedNode: node)
+        self.update(infos: infosToUpdate)
+    }
+
     public func userWantToPause() {
         print("user want to pause")
     }
-    
-
 }

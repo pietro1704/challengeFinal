@@ -10,8 +10,10 @@ import Foundation
 public protocol ChoiceViewModelDelegate: class {
 
     func userWantToDismiss()
-    func userWantToConfirmChoice()
-    func userWantToChooseRandom()
-    func userWantToBet()
+    func userWantToConfirmChoice(storyNode: StoryNode)
+    func userWantToChooseDynamic(dynamic: DynamicTypes)
+    func userWantToHighlightNode(node: NodeID)
+    func userWantToChooseNode(node: NodeID)
+    func userGotRandom(node: NodeID)
     func userWantToPause()
 }

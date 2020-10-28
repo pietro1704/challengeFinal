@@ -42,7 +42,7 @@ public class ChoiceViewContainer: UIView {
     }
 
     private func setupChapterView(_ viewModel: ChoiceViewModel) {
-        if let infos = viewModel.infos{
+        if let infos = viewModel.infos {
             choiceView.update(with: infos)
         }
         setupConstraints()
@@ -53,14 +53,14 @@ public class ChoiceViewContainer: UIView {
             choiceView.topAnchor.constraint(equalTo: topAnchor),
             choiceView.leadingAnchor.constraint(equalTo: leadingAnchor),
             choiceView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            choiceView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            choiceView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
 
 extension ChoiceViewContainer: ChoiceViewDelegate {
-    public func choiceButtonPressed(choice: NodeID) {
-//        viewModel.user
+    public func choiceButtonPressed(node: NodeID) {
+        viewModel?.userWantToChooseNode(node)
     }
     
     public func dynamicButtonPressed(dynamic: DynamicTypes) {

@@ -8,7 +8,7 @@
 import UIKit
 
 public protocol ChoiceViewDelegate: class {
-    func choiceButtonPressed(choice: NodeID)
+    func choiceButtonPressed(node: NodeID)
     func dynamicButtonPressed(dynamic: DynamicTypes)
     func backButtonPressed()
     func confirmButtonPressed()
@@ -24,7 +24,7 @@ public class ChoiceView: UIView {
         addSubview(stackview)
         stackview.translatesAutoresizingMaskIntoConstraints = false
         stackview.axis = .horizontal
-        stackview.spacing = 8
+        stackview.spacing = 24
         stackview.distribution = .equalSpacing
         return stackview
     }()
@@ -77,27 +77,44 @@ public class ChoiceView: UIView {
     }
 
     public func update(with infos: ChoiceViewInfos) {
-        setupDynamicButtons(infos.dynamicButtons)
-        setupChoiceButtons(infos.nodes)
+        prepareForReview()
+        setupDynamicButtons(infos.dynamicButtons, selected: infos.selectedDynamic)
+        setupChoiceButtons(infos.nodes, selected: infos.selectedNode?.id,
+                           canChooseNode: infos.canChooseNode, highlighted: infos.highlightedNode)
         setupView()
     }
 
-    private func setupDynamicButtons(_ types: [DynamicTypes]) {
+    private func prepareForReview() {
+        dynamicButtons.arrangedSubviews.forEach { (dynamicButton) in
+            dynamicButton.removeFromSuperview()
+        }
+
+        choiceButtons.arrangedSubviews.forEach { (choiceButton) in
+            choiceButton.removeFromSuperview()
+        }
+    }
+
+    private func setupDynamicButtons(_ types: [DynamicTypes], selected: DynamicTypes?) {
         for i in 0..<types.count {
             let type = types[i]
-            let button = DynamicButton(type: type)
+            let button = DynamicButton(type: type, isSelected: selected == type)
             button.translatesAutoresizingMaskIntoConstraints = false
             button.delegate = self
             dynamicButtons.addArrangedSubview(button)
         }
     }
 
-    private func setupChoiceButtons(_ nodes: [StoryNode]) {
+    private func setupChoiceButtons(_ nodes: [StoryNode], selected: NodeID?,
+                                    canChooseNode: Bool, highlighted: NodeID?) {
         for i in 0..<nodes.count {
             let node = nodes[i]
             let button = ChoiceButton(buttonText: node.title ?? "", colorName: "Red")
+            button.update(isHighlighted: highlighted == node.id, isSelected: selected == node.id)
+            button.nodeId = node.id
             button.translatesAutoresizingMaskIntoConstraints = false
             button.delegate = self
+            button.isUserInteractionEnabled = canChooseNode
+            button.alpha = canChooseNode ? 1 : 0.3
             choiceButtons.addArrangedSubview(button)
         }
     }
@@ -145,7 +162,7 @@ extension ChoiceView: DynamicButtonDelegate {
 
 extension ChoiceView: ChoiceButtonDelegate {
     public func choiceButtonPressed(_ choiceId: NodeID) {
-        self.delegate?.choiceButtonPressed(choice: choiceId)
+        self.delegate?.choiceButtonPressed(node: choiceId)
     }
 }
 

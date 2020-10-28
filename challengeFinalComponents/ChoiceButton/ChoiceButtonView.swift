@@ -16,19 +16,19 @@ private let imageforHighlightIndicator: UIImage? = UIImage(systemName: "arrow.ri
 public class ChoiceButton: UIView {
 
     weak var delegate: ChoiceButtonDelegate?
-    
+    public var nodeId: NodeID = 0
+
     lazy var primaryButton: PrimaryButton = {
         let button = PrimaryButton()
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
-//        button.delegate = self
         let gesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         button.addGestureRecognizer(gesture)
         return button
     }()
 
     @objc func handleTap() {
-        self.delegate?.choiceButtonPressed(0)
+        self.delegate?.choiceButtonPressed(nodeId)
     }
 
     lazy var highlightIndicator: UIImageView = {
@@ -119,10 +119,3 @@ public class ChoiceButton: UIView {
         self.selectedIndicator.isHidden = !isSelected
     }
 }
-
-// not working :(
-//extension ChoiceButton: PrimaryButtonDelegate {
-//    public func primaryButtonPressed(_ tag: Int) {
-//        print("asda")
-//    }
-//}
