@@ -14,15 +14,17 @@ public class ChoiceCoordinator: Coordinator {
     var navigationController: UINavigationController
     var infos: ChoiceViewInfos
     var viewController: ChoiceViewController?
+    var playerService: PlayerServiceProtocol
     
     init (navigationController: UINavigationController, infos: ChoiceViewInfos) {
+        self.playerService = PlayerService()
         self.navigationController = navigationController
         self.infos = infos
     }
     
     func start() {
         viewController = ChoiceViewController.instantiate(storyBoardName: "Choice")
-        let viewModel = ChoiceViewModel(infos: infos, coordinatorDelegate: self)
+        let viewModel = ChoiceViewModel(infos: infos, coordinatorDelegate: self, playerService: playerService)
         viewController?.viewModel = viewModel
         if let viewController = viewController {
             navigationController.pushViewController(viewController, animated: false)
@@ -31,7 +33,7 @@ public class ChoiceCoordinator: Coordinator {
 
     func update(infos: ChoiceViewInfos) {
         self.infos = infos
-        let viewModel = ChoiceViewModel(infos: infos, coordinatorDelegate: self)
+        let viewModel = ChoiceViewModel(infos: infos, coordinatorDelegate: self, playerService: playerService)
         viewController?.update(with: viewModel)
     }
 

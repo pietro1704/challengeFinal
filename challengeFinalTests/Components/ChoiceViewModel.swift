@@ -11,10 +11,14 @@ public class ChoiceViewModel {
 
     weak var delegate: ChoiceViewModelDelegate?
     var infos: ChoiceViewInfos?
+    let service = StoryNodesServices()
+    let playerService: PlayerServiceProtocol
 
-    public init(infos: ChoiceViewInfos, coordinatorDelegate: ChoiceViewModelDelegate) {
+    public init(infos: ChoiceViewInfos, coordinatorDelegate: ChoiceViewModelDelegate,
+                playerService: PlayerServiceProtocol) {
         self.infos = infos
         self.delegate = coordinatorDelegate
+        self.playerService = playerService
     }
 
     public func userWantToDismiss() {
