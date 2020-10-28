@@ -15,7 +15,7 @@ class DecisionPointsViewTests: XCTestCase {
        
         decisionView.backgroundColor = .blue
         let container = decisionView.addInCenterOnMockViewIphone11()
-        assertSnapshot(matching: container, as: .image, record: true)
+        assertSnapshot(matching: container, as: .image)
     }
     
     func testLabelDefaultSize(){

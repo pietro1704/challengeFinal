@@ -23,32 +23,22 @@ public class StoryView: UIView {
         return imageView
     }()
     
-    private lazy var pauseButton: PauseButton = {
-        let pause = PauseButton()
-        addSubview(pause)
-        pause.translatesAutoresizingMaskIntoConstraints = false
-        return pause
-    }()
+   
 
     private lazy var textView: RegularTextView = {
         let textView = RegularTextView()
-        addSubview(textView)
+        //view já adicionada na inicializacao da contentView
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
 
-    private lazy var decisionView: DecisionPointsView = {
-        let decision = DecisionPointsView()
-        decision.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(decision)
-        return decision
-    }()
+    
     
     private lazy var goToDecisionButton: GoToDecisionButton = {
-        let decision = GoToDecisionButton()
-        decision.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(decision)
-        return decision
+        let gotodec = GoToDecisionButton()
+        gotodec.translatesAutoresizingMaskIntoConstraints = false
+        //view já adicionada na inicializacao da contentView
+        return gotodec
     }()
     
     private lazy var scrollView: UIScrollView = {
@@ -94,13 +84,13 @@ public class StoryView: UIView {
     }
     
     fileprivate func setupScrollViewConstrains() {
-        //FRAME
+        //SCROLL FRAME
         scrollView.frameLayoutGuide.topAnchor.constraint(equalTo: topAnchor).isActive = true
         scrollView.frameLayoutGuide.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 0).isActive = true
         scrollView.frameLayoutGuide.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
         scrollView.frameLayoutGuide.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
-        //CONTENT
+        //SCROLL CONTENT
         NSLayoutConstraint.activate([
             //4 sides, scroll relative to contentView
             scrollView.contentLayoutGuide.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: -32),
@@ -123,7 +113,8 @@ public class StoryView: UIView {
 
         
         goToDecisionButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10).isActive = true
-        goToDecisionButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        //constrain to 0.4 content width
+        goToDecisionButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.4).isActive = true
         goToDecisionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         goToDecisionButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
        // stackview.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2).isActive = true
