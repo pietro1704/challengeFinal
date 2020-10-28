@@ -22,6 +22,13 @@ public class StoryView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
+    
+    private lazy var pauseButton: PauseButton = {
+        let pause = PauseButton()
+        addSubview(pause)
+        pause.translatesAutoresizingMaskIntoConstraints = false
+        return pause
+    }()
 
     private lazy var textView: RegularTextView = {
         let textView = RegularTextView()
@@ -86,15 +93,15 @@ public class StoryView: UIView {
     fileprivate func setupScrollViewConstrains() {
         //FRAME
         scrollView.frameLayoutGuide.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        scrollView.frameLayoutGuide.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 32).isActive = true
-        scrollView.frameLayoutGuide.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32).isActive = true
+        scrollView.frameLayoutGuide.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 0).isActive = true
+        scrollView.frameLayoutGuide.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
         scrollView.frameLayoutGuide.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
         //CONTENT
         NSLayoutConstraint.activate([
-            //4 sides
-            scrollView.contentLayoutGuide.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            scrollView.contentLayoutGuide.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            //4 sides, scroll relative to contentView
+            scrollView.contentLayoutGuide.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: -32),
+            scrollView.contentLayoutGuide.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: +32),
             scrollView.contentLayoutGuide.topAnchor.constraint(equalTo: contentView.topAnchor),
             scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
