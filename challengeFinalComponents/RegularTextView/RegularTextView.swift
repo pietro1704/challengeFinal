@@ -14,6 +14,7 @@ public class RegularTextView: UITextView {
         //system font
         self.font = UIFont.systemFont(ofSize: fontSize)
         self.isEditable = false
+        self.isScrollEnabled = false
     }
 
     required init?(coder: NSCoder) {

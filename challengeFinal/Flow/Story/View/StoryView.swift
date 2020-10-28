@@ -24,7 +24,7 @@ public class StoryView: UIView {
     }()
 
     private lazy var textView: RegularTextView = {
-        let textView = RegularTextView(fontSize: 10)
+        let textView = RegularTextView()
         addSubview(textView)
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
@@ -39,6 +39,25 @@ public class StoryView: UIView {
         addSubview(stack)
         return stack
     }()
+    
+    private lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        #warning("trava scroll size na content??")
+       // scroll.contentSize = contentView.bounds.size
+        addSubview(scroll)
+        scroll.addSubview(contentView)
+        return scroll
+    }()
+    
+    private lazy var contentView: UIView = {
+        let content = UIView()
+        content.translatesAutoresizingMaskIntoConstraints = false
+        content.addSubview(textView)
+        content.addSubview(stackview)
+        return content
+    }()
+
 
     public init() {
         super.init(frame: .zero)
@@ -51,21 +70,53 @@ public class StoryView: UIView {
         setupConstraints()
     }
 
+    
+    
     fileprivate func setupConstraints() {
         imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4).isActive = true
         
-        textView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        textView.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 32).isActive = true
-        textView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32).isActive = true
+        setupScrollViewConstrains()
+        
+        setupContentViewConstrains()
+    }
+    
+    fileprivate func setupScrollViewConstrains() {
+        //FRAME
+        scrollView.frameLayoutGuide.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        scrollView.frameLayoutGuide.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 32).isActive = true
+        scrollView.frameLayoutGuide.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32).isActive = true
+        scrollView.frameLayoutGuide.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
+        //CONTENT
+        NSLayoutConstraint.activate([
+            //4 sides
+            scrollView.contentLayoutGuide.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            scrollView.contentLayoutGuide.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            scrollView.contentLayoutGuide.topAnchor.constraint(equalTo: contentView.topAnchor),
+            scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            
+            //lock width
+            scrollView.contentLayoutGuide.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor)
+        ])
+
+    }
+    
+    func setupContentViewConstrains(){
+    
+        textView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        textView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0).isActive = true
+        textView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
+        
+
         
         stackview.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10).isActive = true
-        stackview.leadingAnchor.constraint(equalTo: textView.leadingAnchor).isActive = true
-        stackview.trailingAnchor.constraint(equalTo: textView.trailingAnchor).isActive = true
-        stackview.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
-        stackview.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2).isActive = true
+        stackview.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        stackview.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        stackview.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
+       // stackview.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2).isActive = true
     }
 
     required init?(coder: NSCoder) {

@@ -21,7 +21,7 @@ class RegularTextViewTests: XCTestCase {
         
         textView.topAnchor.constraint(equalTo: container.topAnchor).isActive = true
         textView.bottomAnchor.constraint(equalTo: container.bottomAnchor).isActive = true
-        assertSnapshot(matching: container, as: .image)
+        assertSnapshot(matching:container, as: .image)
     }
     
     func testTextViewDefaultSize(){
