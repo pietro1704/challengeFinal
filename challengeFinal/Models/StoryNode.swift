@@ -13,12 +13,12 @@ public typealias NodeID = Int
 public class StoryNode {
 
     var id: NodeID
-    var childNodes: [StoryNode]?
+    var childNodes: [StoryNode]
     var imagePath: String?
     var title: String?
     var text: String
 
-    public init (id: NodeID, childNodes: [StoryNode]?, imagePath: String?, title: String?, text: String) {
+    public init (id: NodeID, childNodes: [StoryNode], imagePath: String?, title: String?, text: String) {
         self.id = id
         self.childNodes = childNodes
         self.imagePath = imagePath

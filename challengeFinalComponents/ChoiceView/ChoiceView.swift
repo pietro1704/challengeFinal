@@ -8,7 +8,7 @@
 import UIKit
 
 public protocol ChoiceViewDelegate: class {
-    func choiceButtonPressed(choice: NodeID)
+    func choiceButtonPressed(node: NodeID)
     func dynamicButtonPressed(dynamic: DynamicTypes)
     func backButtonPressed()
     func confirmButtonPressed()
@@ -24,7 +24,7 @@ public class ChoiceView: UIView {
         addSubview(stackview)
         stackview.translatesAutoresizingMaskIntoConstraints = false
         stackview.axis = .horizontal
-        stackview.spacing = 8
+        stackview.spacing = 24
         stackview.distribution = .equalSpacing
         return stackview
     }()
@@ -45,7 +45,7 @@ public class ChoiceView: UIView {
         button.backgroundColor = UIColor(named: "Red")
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
-        let gesture = UITapGestureRecognizer(target: button, action: #selector(confirmButtonPressed))
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(confirmButtonPressed))
         button.addGestureRecognizer(gesture)
         return button
     }()
@@ -69,7 +69,7 @@ public class ChoiceView: UIView {
 
     public init() {
         super.init(frame: .zero)
-        setupConstraints()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
@@ -77,58 +77,80 @@ public class ChoiceView: UIView {
     }
 
     public func update(with infos: ChoiceViewInfos) {
-        setupDynamicButtons(infos.dynamicButtons)
-        setupChoiceButtons(infos.nodes)
-        setupConstraints()
+        prepareForReview()
+        setupDynamicButtons(infos.dynamicButtons, selected: infos.selectedDynamic)
+        setupChoiceButtons(infos.nodes, selected: infos.selectedNode?.id,
+                           canChooseNode: infos.canChooseNode, highlighted: infos.highlightedNode)
+        setupView()
     }
 
-    private func setupDynamicButtons(_ types: [DynamicTypes]) {
+    private func prepareForReview() {
+        dynamicButtons.arrangedSubviews.forEach { (dynamicButton) in
+            dynamicButton.removeFromSuperview()
+        }
+
+        choiceButtons.arrangedSubviews.forEach { (choiceButton) in
+            choiceButton.removeFromSuperview()
+        }
+    }
+
+    private func setupDynamicButtons(_ types: [DynamicTypes], selected: DynamicTypes?) {
         for i in 0..<types.count {
             let type = types[i]
-            let button = DynamicButton(type: type)
+            let button = DynamicButton(type: type, isSelected: selected == type)
             button.translatesAutoresizingMaskIntoConstraints = false
             button.delegate = self
             dynamicButtons.addArrangedSubview(button)
         }
     }
 
-    private func setupChoiceButtons(_ nodes: [Node]) {
+    private func setupChoiceButtons(_ nodes: [StoryNode], selected: NodeID?,
+                                    canChooseNode: Bool, highlighted: NodeID?) {
         for i in 0..<nodes.count {
             let node = nodes[i]
-            let button = ChoiceButton(buttonText: node.title, colorName: "Red")
+            let button = ChoiceButton(buttonText: node.title ?? "", colorName: "Red")
+            button.update(isHighlighted: highlighted == node.id, isSelected: selected == node.id)
+            button.nodeId = node.id
             button.translatesAutoresizingMaskIntoConstraints = false
             button.delegate = self
+            button.isUserInteractionEnabled = canChooseNode
+            button.alpha = canChooseNode ? 1 : 0.3
             choiceButtons.addArrangedSubview(button)
         }
     }
 
-    private func setupConstraints() {
+    private func setupView() {
+        backgroundColor = UIColor(named: "Background")
         NSLayoutConstraint.activate([
             dynamicButtons.topAnchor.constraint(equalTo: topAnchor, constant: 40),
-            dynamicButtons.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1),
-            dynamicButtons.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.2),
             dynamicButtons.centerXAnchor.constraint(equalTo: centerXAnchor),
             pauseButton.topAnchor.constraint(equalTo: topAnchor),
             pauseButton.trailingAnchor.constraint(equalTo: trailingAnchor),
             pauseButton.heightAnchor.constraint(equalToConstant: 40),
             pauseButton.widthAnchor.constraint(equalTo: pauseButton.heightAnchor),
-            choiceButtons.leadingAnchor.constraint(equalTo: backButton.trailingAnchor),
-            choiceButtons.trailingAnchor.constraint(equalTo: confirmAction.leadingAnchor, constant: -40),
-            choiceButtons.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32),
-            choiceButtons.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
-            choiceButtons.heightAnchor.constraint(lessThanOrEqualTo: heightAnchor, multiplier: 0.6),
+            choiceButtons.topAnchor.constraint(equalTo: dynamicButtons.bottomAnchor, constant: 32),
+            choiceButtons.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: 0.6),
+            choiceButtons.heightAnchor.constraint(lessThanOrEqualTo: heightAnchor, multiplier: 0.8),
             choiceButtons.centerXAnchor.constraint(equalTo: centerXAnchor),
-            backButton.leadingAnchor.constraint(equalTo: leadingAnchor),
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
             backButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32),
-            backButton.trailingAnchor.constraint(equalTo: choiceButtons.leadingAnchor, constant: -40),
             confirmAction.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32),
-            confirmAction.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32),
-            confirmAction.leadingAnchor.constraint(equalTo: choiceButtons.trailingAnchor)
+            confirmAction.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32)
         ])
     }
 
     @objc func confirmButtonPressed() {
         self.delegate?.confirmButtonPressed()
+    }
+
+    public override func didMoveToSuperview() {
+        setupConstraints()
+    }
+
+    private func setupConstraints() {
+        guard let superview = superview else { return }
+        self.widthAnchor.constraint(equalTo: superview.widthAnchor).isActive = true
+        self.heightAnchor.constraint(equalTo: superview.heightAnchor).isActive = true
     }
 }
 
@@ -139,8 +161,8 @@ extension ChoiceView: DynamicButtonDelegate {
 }
 
 extension ChoiceView: ChoiceButtonDelegate {
-    public func buttonPressed(_ choiceId: NodeID) {
-        self.delegate?.choiceButtonPressed(choice: choiceId)
+    public func choiceButtonPressed(_ choiceId: NodeID) {
+        self.delegate?.choiceButtonPressed(node: choiceId)
     }
 }
 
@@ -148,7 +170,6 @@ extension ChoiceView: PauseButtonDelegate {
     public func pauseButtonPressed() {
         self.delegate?.pauseButtonPressed()
     }
-    
 }
 
 extension ChoiceView: BackButtonDelegate {

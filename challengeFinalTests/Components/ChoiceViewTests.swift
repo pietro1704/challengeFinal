@@ -29,14 +29,14 @@ class ChoiceViewTests: XCTestCase {
 
 private struct Infos: ChoiceViewInfos {
     var dynamicButtons: [DynamicTypes]
-    var nodes: [Node]
+    var nodes: [StoryNode]
     var tintColor: String
     
     static func mock() -> ChoiceViewInfos {
         return Infos(dynamicButtons: [.bet, .choice, .random],
-                     nodes: [Node(id: 1, imagePath: nil, title: "Node 1", text: "Node 1", childNodeIDs: nil),
-                             Node(id: 2, imagePath: nil, title: "Node 2", text: "Node 2", childNodeIDs: nil),
-                             Node(id: 3, imagePath: nil, title: "Node 3", text: "Node 3", childNodeIDs: nil)],
+                     nodes: [StoryNode(id: 1, childNodes: [], imagePath: nil, title: "Node 1", text: "Node 1"),
+                             StoryNode(id: 2, childNodes: [], imagePath: nil, title: "Node 2", text: "Node 2"),
+                             StoryNode(id: 3, childNodes: [], imagePath: nil, title: "Node 3", text: "Node 3")],
                      tintColor: "Red")
     }
 }

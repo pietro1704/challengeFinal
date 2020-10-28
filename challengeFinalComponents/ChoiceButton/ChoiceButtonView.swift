@@ -8,7 +8,7 @@
 import UIKit
 
 public protocol ChoiceButtonDelegate: class {
-    func buttonPressed(_ choiceId: NodeID)
+    func choiceButtonPressed(_ choiceId: NodeID)
 }
 
 private let roundViewWidth: CGFloat = 22.0
@@ -16,14 +16,20 @@ private let imageforHighlightIndicator: UIImage? = UIImage(systemName: "arrow.ri
 public class ChoiceButton: UIView {
 
     weak var delegate: ChoiceButtonDelegate?
-    
+    public var nodeId: NodeID = 0
+
     lazy var primaryButton: PrimaryButton = {
         let button = PrimaryButton()
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.delegate = self
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        button.addGestureRecognizer(gesture)
         return button
     }()
+
+    @objc func handleTap() {
+        self.delegate?.choiceButtonPressed(nodeId)
+    }
 
     lazy var highlightIndicator: UIImageView = {
         let imageView = UIImageView()
@@ -85,11 +91,11 @@ public class ChoiceButton: UIView {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             primaryButton.topAnchor.constraint(equalTo: topAnchor),
-            primaryButton.leadingAnchor.constraint(equalTo: highlightIndicator.trailingAnchor),
+            primaryButton.leadingAnchor.constraint(equalTo: leadingAnchor),
             primaryButton.trailingAnchor.constraint(equalTo: trailingAnchor),
             primaryButton.bottomAnchor.constraint(equalTo: bottomAnchor),
             highlightIndicator.centerYAnchor.constraint(equalTo: primaryButton.centerYAnchor),
-            highlightIndicator.leadingAnchor.constraint(equalTo: leadingAnchor),
+            highlightIndicator.trailingAnchor.constraint(equalTo: primaryButton.leadingAnchor),
             selectedIndicator.centerYAnchor.constraint(equalTo: primaryButton.topAnchor),
             selectedIndicator.centerXAnchor.constraint(equalTo: primaryButton.trailingAnchor)
         ])
@@ -111,11 +117,5 @@ public class ChoiceButton: UIView {
 
     private func changeSelection() {
         self.selectedIndicator.isHidden = !isSelected
-    }
-}
-
-extension ChoiceButton: PrimaryButtonDelegate {
-    public func buttonPressed(_ tag: Int) {
-        self.delegate?.buttonPressed(tag)
     }
 }

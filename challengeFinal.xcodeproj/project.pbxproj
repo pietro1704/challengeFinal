@@ -35,6 +35,12 @@
 		DA1F09312546EE2F008A5775 /* ChoiceViewInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F09302546EE2F008A5775 /* ChoiceViewInfos.swift */; };
 		DA1F09352546F424008A5775 /* DynamicTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F09342546F424008A5775 /* DynamicTypes.swift */; };
 		DA1F09392546F7E5008A5775 /* ChoiceViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F09382546F7E5008A5775 /* ChoiceViewTests.swift */; };
+		DA1F0947254716A2008A5775 /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F0946254716A2008A5775 /* ChoiceViewController.swift */; };
+		DA1F094B254716B1008A5775 /* Choice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1F094A254716B1008A5775 /* Choice.storyboard */; };
+		DA1F0950254716E1008A5775 /* ChoiceViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F094F254716E1008A5775 /* ChoiceViewContainer.swift */; };
+		DA1F095425471701008A5775 /* ChoiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F095325471701008A5775 /* ChoiceCoordinator.swift */; };
+		DA1F095825471780008A5775 /* ChoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F095725471780008A5775 /* ChoiceViewModel.swift */; };
+		DA1F095C254717D2008A5775 /* ChoiceViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F095B254717D2008A5775 /* ChoiceViewModelDelegate.swift */; };
 		DA35ED362535F3E30061606C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED352535F3E30061606C /* ImageView.swift */; };
 		DA35ED3D2535F3FF0061606C /* ImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED3C2535F3FF0061606C /* ImageViewTests.swift */; };
 		DA35ED452535F48E0061606C /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35ED442535F48E0061606C /* MockView.swift */; };
@@ -117,6 +123,12 @@
 		DA1F09302546EE2F008A5775 /* ChoiceViewInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceViewInfos.swift; sourceTree = "<group>"; };
 		DA1F09342546F424008A5775 /* DynamicTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTypes.swift; sourceTree = "<group>"; };
 		DA1F09382546F7E5008A5775 /* ChoiceViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceViewTests.swift; sourceTree = "<group>"; };
+		DA1F0946254716A2008A5775 /* ChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChoiceViewController.swift; path = challengeFinalTests/Components/ChoiceViewController.swift; sourceTree = SOURCE_ROOT; };
+		DA1F094A254716B1008A5775 /* Choice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Choice.storyboard; path = challengeFinalTests/Components/Choice.storyboard; sourceTree = SOURCE_ROOT; };
+		DA1F094F254716E1008A5775 /* ChoiceViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChoiceViewContainer.swift; path = challengeFinalTests/Components/ChoiceViewContainer.swift; sourceTree = SOURCE_ROOT; };
+		DA1F095325471701008A5775 /* ChoiceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChoiceCoordinator.swift; path = challengeFinalTests/Components/ChoiceCoordinator.swift; sourceTree = SOURCE_ROOT; };
+		DA1F095725471780008A5775 /* ChoiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChoiceViewModel.swift; path = challengeFinalTests/Components/ChoiceViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DA1F095B254717D2008A5775 /* ChoiceViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChoiceViewModelDelegate.swift; path = challengeFinalTests/Components/ChoiceViewModelDelegate.swift; sourceTree = SOURCE_ROOT; };
 		DA35ED352535F3E30061606C /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		DA35ED3C2535F3FF0061606C /* ImageViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewTests.swift; sourceTree = "<group>"; };
 		DA35ED442535F48E0061606C /* MockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
@@ -303,9 +315,63 @@
 			path = ChoiceView;
 			sourceTree = "<group>";
 		};
+		DA1F094025471666008A5775 /* Choice */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F09442547167C008A5775 /* ViewModel */,
+				DA1F094E254716CA008A5775 /* Coordinator */,
+				DA1F094325471677008A5775 /* Storyboard */,
+				DA1F094225471673008A5775 /* View */,
+				DA1F09412547166E008A5775 /* ViewController */,
+			);
+			path = Choice;
+			sourceTree = "<group>";
+		};
+		DA1F09412547166E008A5775 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F0946254716A2008A5775 /* ChoiceViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DA1F094225471673008A5775 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F094F254716E1008A5775 /* ChoiceViewContainer.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA1F094325471677008A5775 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F094A254716B1008A5775 /* Choice.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		DA1F09442547167C008A5775 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F095725471780008A5775 /* ChoiceViewModel.swift */,
+				DA1F095B254717D2008A5775 /* ChoiceViewModelDelegate.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DA1F094E254716CA008A5775 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F095325471701008A5775 /* ChoiceCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		DA30DF8E25371E7A007C6CA4 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				DA1F094025471666008A5775 /* Choice */,
 				DA8E872E2541BAEE000D481B /* Chapter */,
 				DA30DF9025371F13007C6CA4 /* Menu */,
 				DA30DF8F25371E88007C6CA4 /* Story */,
@@ -675,6 +741,7 @@
 			files = (
 				DA5972EC253725F000D6EF40 /* Story.storyboard in Resources */,
 				8D41F6972530932500A496C6 /* LaunchScreen.storyboard in Resources */,
+				DA1F094B254716B1008A5775 /* Choice.storyboard in Resources */,
 				8D41F6942530932500A496C6 /* Assets.xcassets in Resources */,
 				8D41F6922530932300A496C6 /* Menu.storyboard in Resources */,
 				DA8E87362541BB2D000D481B /* Chapter.storyboard in Resources */,
@@ -799,14 +866,19 @@
 				DA5972F42537278900D6EF40 /* PrimaryButton.swift in Sources */,
 				8D41F68B2530932300A496C6 /* AppDelegate.swift in Sources */,
 				DA1F092B2546EBD6008A5775 /* ChoiceView.swift in Sources */,
+				DA1F095C254717D2008A5775 /* ChoiceViewModelDelegate.swift in Sources */,
 				DA8E87482541C194000D481B /* ChapterViewModelDelegate.swift in Sources */,
 				DA5972F02537261500D6EF40 /* StoryViewController.swift in Sources */,
+				DA1F095825471780008A5775 /* ChoiceViewModel.swift in Sources */,
+				DA1F0950254716E1008A5775 /* ChoiceViewContainer.swift in Sources */,
 				DAC23A312537329D00D57C43 /* RegularTextView.swift in Sources */,
 				DA789A9F25431502001CE5BF /* ChoiceButtonView.swift in Sources */,
 				C593DEDB2542580100345F1B /* Player.swift in Sources */,
 				8D41F6C325309A1000A496C6 /* MenuCoordinator.swift in Sources */,
 				DAD346422542F3EE00225BAF /* DynamicButtonView.swift in Sources */,
 				DA1F09312546EE2F008A5775 /* ChoiceViewInfos.swift in Sources */,
+				8D41F68D2530932300A496C6 /* SceneDelegate.swift in Sources */,
+				DA1F0947254716A2008A5775 /* ChoiceViewController.swift in Sources */,
 				DA8E873E2541BEA9000D481B /* ChapterViewContainer.swift in Sources */,
 				DA35ED362535F3E30061606C /* ImageView.swift in Sources */,
 				DA8E874C2541C1FD000D481B /* ChapterCoordinator.swift in Sources */,
@@ -814,6 +886,7 @@
 				DA5972E8253725DB00D6EF40 /* StoryCoordinator.swift in Sources */,
 				DA8E873A2541BB64000D481B /* ChapterViewController.swift in Sources */,
 				8D41F6CB25309C6700A496C6 /* Storyboarded.swift in Sources */,
+				DA1F095425471701008A5775 /* ChoiceCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

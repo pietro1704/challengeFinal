@@ -9,7 +9,7 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var coordinator: ChapterCoordinator?
+    var coordinator: ChoiceCoordinator?
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navController = UINavigationController()
         let services = StoryNodesServices()
         let firstNode = services.retrieveNode(nodeId: 1)
-        coordinator = ChapterCoordinator(navigationController: navController, storyNode: firstNode!)
+        coordinator = ChoiceCoordinator(navigationController: navController,
+                                        infos: ChoiceViewInfosObject(nodes: firstNode!.childNodes, selectedDynamic: .choice,
+                                                                     selectedNode: nil, highlightedNode: nil))
         coordinator?.start()
 
         window = UIWindow(frame: UIScreen.main.bounds)
