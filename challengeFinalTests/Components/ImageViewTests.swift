@@ -15,7 +15,7 @@ class ImageViewTests: XCTestCase {
         if let image = UIImage(named: "cap1_1") {
             imageView.recievedImage(image: image)
         }
-        imageView.backgroundColor = .red
+        imageView.backgroundColor = UIColor.gameRed
         let container = imageView.addInCenterOnMockViewIphone11()
         assertSnapshot(matching: container, as: .image)
     }
