@@ -13,5 +13,5 @@ extension UIColor{
     static let buttonBackground = UIColor(named: "ButtonBackground")!
     
     //"red" conflicts with system
-    static let gameRed = UIColor(named: "Red")!
+    static let accentRed = UIColor(named: "Red")!
 }

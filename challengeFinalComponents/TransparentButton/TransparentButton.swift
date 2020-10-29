@@ -8,13 +8,25 @@
 import Foundation
 import UIKit
 
-class GoToDecisionButton: UIButton{
-    
+public protocol BackButtonDelegate: class {
+    func backButtonPressed()
+}
 
-    public init(title: String = "Tente por você mesmo", for state: UIControl.State = .normal) {
+public protocol gotodecisionDelegate: class {
+    func backButtonPressed()
+}
+
+class TransparentButton: UIButton{
+    public weak var backButtonDelegate: BackButtonDelegate?
+    
+    public weak var gotodecisionDelegate: gotodecisionDelegate?
+
+
+    public init(title: String, for state: UIControl.State = .normal) {
         super.init(frame: .zero)
         setTitle(title, for: state)
         setupButton()
+        
         //addTarget(self, action: #selector(handleTap), for: .touchUpInside)
     }
     
@@ -42,6 +54,5 @@ class GoToDecisionButton: UIButton{
         titleLabel.numberOfLines = 0
         titleLabel.setContentHuggingPriority(.required, for: .vertical)
         titleLabel.setContentHuggingPriority(.required, for: .horizontal)
-       
     }
 }

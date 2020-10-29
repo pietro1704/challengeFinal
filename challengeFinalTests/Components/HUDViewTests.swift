@@ -10,11 +10,10 @@ import XCTest
 import SnapshotTesting
 
 class HUDViewTests: XCTestCase {
-    func testView() {
+    func testHUDView() {
         let hud = HUDView()
        
-        hud.backgroundColor = .blue
         let container = hud.addInCenterOnMockViewIphone11()
-        assertSnapshot(matching: container, as: .image, record: true)
+        assertSnapshot(matching: container, as: .image)
     }
 }

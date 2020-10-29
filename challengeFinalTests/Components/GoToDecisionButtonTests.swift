@@ -13,15 +13,14 @@ var defaultText = "Tente por você mesmo"
 
 class GoToDecisionButtonTests: XCTestCase {
     func testButton () {
-        let button = GoToDecisionButton()
-        button.backgroundColor = .red
+        let button = TransparentButton(title: "Tente por você mesmo")
         let container = button.addInCenterOnMockViewIphone11()
 
         assertSnapshot(matching: container, as: .image)
     }
     
     func testDefaultLabel () {
-        let button = GoToDecisionButton()
+        let button = TransparentButton(title: "Tente por você mesmo")
         XCTAssert(button.titleLabel?.text == defaultText)
     }
 }

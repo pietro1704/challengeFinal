@@ -10,10 +10,9 @@ import XCTest
 import SnapshotTesting
 
 class DecisionPointsViewTests: XCTestCase {
-    func testView() {
+    func testDecisionPointsView() {
         let decisionView = DecisionPointsView()
        
-        decisionView.backgroundColor = .blue
         let container = decisionView.addInCenterOnMockViewIphone11()
         assertSnapshot(matching: container, as: .image)
     }

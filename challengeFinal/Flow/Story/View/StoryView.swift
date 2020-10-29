@@ -29,8 +29,6 @@ public class StoryView: UIView {
         hud.translatesAutoresizingMaskIntoConstraints = false
         return hud
     }()
-    
-   
 
     private lazy var textView: RegularTextView = {
         let textView = RegularTextView()
@@ -39,10 +37,8 @@ public class StoryView: UIView {
         return textView
     }()
 
-    
-    
-    private lazy var goToDecisionButton: GoToDecisionButton = {
-        let gotodec = GoToDecisionButton()
+    private lazy var goToDecisionButton: TransparentButton = {
+        let gotodec = TransparentButton(title: "Tente por você mesmo")
         gotodec.translatesAutoresizingMaskIntoConstraints = false
         //view já adicionada na inicializacao da contentView
         return gotodec
@@ -51,8 +47,6 @@ public class StoryView: UIView {
     private lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
-        #warning("trava scroll size na content??")
-       // scroll.contentSize = contentView.bounds.size
         addSubview(scroll)
         scroll.addSubview(contentView)
         return scroll
@@ -66,7 +60,6 @@ public class StoryView: UIView {
         return content
     }()
 
-
     public init() {
         super.init(frame: .zero)
     }
@@ -77,7 +70,6 @@ public class StoryView: UIView {
         backgroundColor = UIColor.background
         setupConstraints()
     }
-    
     
     fileprivate func setupConstraints() {
         imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -119,8 +111,7 @@ public class StoryView: UIView {
 
     }
     
-    func setupContentViewConstrains(){
-    
+    func setupContentViewConstrains() {
         textView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         textView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         textView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true

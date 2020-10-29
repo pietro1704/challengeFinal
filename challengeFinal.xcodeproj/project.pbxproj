@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		70D9ACFB3037CB3506CB401C /* Pods_challengeFinal_challengeFinalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA9293BB9AD97035E577805 /* Pods_challengeFinal_challengeFinalTests.framework */; };
 		8D04D60A25430ECE00E1F9F7 /* StoryViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FF5E8254303E500FBF110 /* StoryViewModelDelegate.swift */; };
-		8D04D6122543111100E1F9F7 /* BackButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04D6112543111100E1F9F7 /* BackButtonTests.swift */; };
 		8D41F68B2530932300A496C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F68A2530932300A496C6 /* AppDelegate.swift */; };
 		8D41F68F2530932300A496C6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F68E2530932300A496C6 /* MenuViewController.swift */; };
 		8D41F6922530932300A496C6 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D41F6902530932300A496C6 /* Menu.storyboard */; };
@@ -21,11 +20,10 @@
 		8D9E825E2549EACC005FDC37 /* DecisionPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E825D2549EACC005FDC37 /* DecisionPointsView.swift */; };
 		8D9E82622549EFDB005FDC37 /* DecisionPointsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E82612549EFDB005FDC37 /* DecisionPointsViewTests.swift */; };
 		8D9E826A2549F391005FDC37 /* GameColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E82692549F391005FDC37 /* GameColors.swift */; };
-		8D9E826E2549F80F005FDC37 /* GoToDecisionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E826D2549F80F005FDC37 /* GoToDecisionButton.swift */; };
+		8D9E826E2549F80F005FDC37 /* TransparentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E826D2549F80F005FDC37 /* TransparentButton.swift */; };
 		8D9E827E2549FA02005FDC37 /* GoToDecisionButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E827D2549FA02005FDC37 /* GoToDecisionButtonTests.swift */; };
 		8D9E8286254A002B005FDC37 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E8285254A002B005FDC37 /* HUDView.swift */; };
 		8D9E828D254A00D4005FDC37 /* HUDViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E828C254A00D4005FDC37 /* HUDViewTests.swift */; };
-		8DD3F5B42541D50A00FDA5B4 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5B32541D50A00FDA5B4 /* BackButton.swift */; };
 		8DD3F5B82541D60500FDA5B4 /* PauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5B72541D60500FDA5B4 /* PauseButton.swift */; };
 		8DD3F5BE2541D6D800FDA5B4 /* PauseButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5BD2541D6D800FDA5B4 /* PauseButtonTests.swift */; };
 		8DEE2C6F253746A3006C187B /* StoryNodesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */; };
@@ -96,7 +94,6 @@
 		4DA9293BB9AD97035E577805 /* Pods_challengeFinal_challengeFinalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challengeFinal_challengeFinalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B9F2E37B837715B6F04743 /* Pods-challengeFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.release.xcconfig"; sourceTree = "<group>"; };
 		7EC7DA82237EAE10FBC69ACD /* Pods_challengeFinal_challengeFinalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challengeFinal_challengeFinalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D04D6112543111100E1F9F7 /* BackButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonTests.swift; sourceTree = "<group>"; };
 		8D41F6872530932300A496C6 /* challengeFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = challengeFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D41F68A2530932300A496C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D41F68E2530932300A496C6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -113,11 +110,10 @@
 		8D9E825D2549EACC005FDC37 /* DecisionPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionPointsView.swift; sourceTree = "<group>"; };
 		8D9E82612549EFDB005FDC37 /* DecisionPointsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionPointsViewTests.swift; sourceTree = "<group>"; };
 		8D9E82692549F391005FDC37 /* GameColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameColors.swift; sourceTree = "<group>"; };
-		8D9E826D2549F80F005FDC37 /* GoToDecisionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToDecisionButton.swift; sourceTree = "<group>"; };
+		8D9E826D2549F80F005FDC37 /* TransparentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentButton.swift; sourceTree = "<group>"; };
 		8D9E827D2549FA02005FDC37 /* GoToDecisionButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToDecisionButtonTests.swift; sourceTree = "<group>"; };
 		8D9E8285254A002B005FDC37 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		8D9E828C254A00D4005FDC37 /* HUDViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewTests.swift; sourceTree = "<group>"; };
-		8DD3F5B32541D50A00FDA5B4 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		8DD3F5B72541D60500FDA5B4 /* PauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseButton.swift; sourceTree = "<group>"; };
 		8DD3F5BD2541D6D800FDA5B4 /* PauseButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseButtonTests.swift; sourceTree = "<group>"; };
 		8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodesTest.swift; sourceTree = "<group>"; };
@@ -290,14 +286,6 @@
 			path = PauseButton;
 			sourceTree = "<group>";
 		};
-		8D9E82592549EA4C005FDC37 /* BackButton */ = {
-			isa = PBXGroup;
-			children = (
-				8DD3F5B32541D50A00FDA5B4 /* BackButton.swift */,
-			);
-			path = BackButton;
-			sourceTree = "<group>";
-		};
 		8D9E825C2549EA62005FDC37 /* DecisionPointsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,12 +294,12 @@
 			path = DecisionPointsView;
 			sourceTree = "<group>";
 		};
-		8D9E82722549F998005FDC37 /* GoToDecisionButton */ = {
+		8D9E82722549F998005FDC37 /* TransparentButton */ = {
 			isa = PBXGroup;
 			children = (
-				8D9E826D2549F80F005FDC37 /* GoToDecisionButton.swift */,
+				8D9E826D2549F80F005FDC37 /* TransparentButton.swift */,
 			);
-			path = GoToDecisionButton;
+			path = TransparentButton;
 			sourceTree = "<group>";
 		};
 		8D9E8289254A00C8005FDC37 /* HUDView */ = {
@@ -468,11 +456,10 @@
 				DA8E87232541AF83000D481B /* ChapterView */,
 				DA4A12C025405D0700504E20 /* Labels */,
 				DAC23A2F2537327E00D57C43 /* RegularTextView */,
-				8D9E82592549EA4C005FDC37 /* BackButton */,
 				8D9E82562549EA23005FDC37 /* PauseButton */,
 				DA5972E02537255000D6EF40 /* PrimaryButton */,
 				DA35ED342535F3E30061606C /* ImageView */,
-				8D9E82722549F998005FDC37 /* GoToDecisionButton */,
+				8D9E82722549F998005FDC37 /* TransparentButton */,
 				8D9E8289254A00C8005FDC37 /* HUDView */,
 			);
 			path = challengeFinalComponents;
@@ -493,7 +480,6 @@
 				8D9E82612549EFDB005FDC37 /* DecisionPointsViewTests.swift */,
 				8D9E828C254A00D4005FDC37 /* HUDViewTests.swift */,
 				8DD3F5BD2541D6D800FDA5B4 /* PauseButtonTests.swift */,
-				8D04D6112543111100E1F9F7 /* BackButtonTests.swift */,
 				DAC23A36253733D100D57C43 /* RegularTextViewTests.swift */,
 				DA3E12AF25387A5E00C48AF8 /* PrimaryButtonTests.swift */,
 				8D9E827D2549FA02005FDC37 /* GoToDecisionButtonTests.swift */,
@@ -918,7 +904,6 @@
 				DA8E87252541AF93000D481B /* ChapterView.swift in Sources */,
 				C557D39C2547854D00A537F3 /* PlayerService.swift in Sources */,
 				8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */,
-				8DD3F5B42541D50A00FDA5B4 /* BackButton.swift in Sources */,
 				DADC40C025403F7900078CA3 /* StoryNodeRepository.swift in Sources */,
 				C56B280A2543892A004391BA /* PlayerDataService.swift in Sources */,
 				8DD3F5B82541D60500FDA5B4 /* PauseButton.swift in Sources */,
@@ -941,9 +926,8 @@
 				8D41F6C325309A1000A496C6 /* MenuCoordinator.swift in Sources */,
 				DAD346422542F3EE00225BAF /* DynamicButtonView.swift in Sources */,
 				DA1F09312546EE2F008A5775 /* ChoiceViewInfos.swift in Sources */,
-				8D41F68D2530932300A496C6 /* SceneDelegate.swift in Sources */,
 				DA1F0947254716A2008A5775 /* ChoiceViewController.swift in Sources */,
-				8D9E826E2549F80F005FDC37 /* GoToDecisionButton.swift in Sources */,
+				8D9E826E2549F80F005FDC37 /* TransparentButton.swift in Sources */,
 				DA8E873E2541BEA9000D481B /* ChapterViewContainer.swift in Sources */,
 				DA35ED362535F3E30061606C /* ImageView.swift in Sources */,
 				DA8E874C2541C1FD000D481B /* ChapterCoordinator.swift in Sources */,
@@ -962,7 +946,6 @@
 				DA8E872B2541B184000D481B /* ChapterViewTests.swift in Sources */,
 				DA789AA725431B06001CE5BF /* ChoiceButtonTests.swift in Sources */,
 				8D9E82622549EFDB005FDC37 /* DecisionPointsViewTests.swift in Sources */,
-				8D04D6122543111100E1F9F7 /* BackButtonTests.swift in Sources */,
 				8DD3F5BE2541D6D800FDA5B4 /* PauseButtonTests.swift in Sources */,
 				DA35ED3D2535F3FF0061606C /* ImageViewTests.swift in Sources */,
 				8DEE2C6F253746A3006C187B /* StoryNodesTest.swift in Sources */,

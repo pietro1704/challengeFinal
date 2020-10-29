@@ -17,7 +17,7 @@ class DecisionPointsView: UIStackView {
         //mudar imagem pro asset do jogo
         imageview.image = UIImage(systemName: "speaker.fill")
         //our custom red color
-        imageview.tintColor = UIColor.gameRed
+        imageview.tintColor = UIColor.accentRed
         
         imageview.translatesAutoresizingMaskIntoConstraints = false
         return imageview
@@ -31,11 +31,9 @@ class DecisionPointsView: UIStackView {
     }()
     
     init(numberOfPoints: Int = 0, textSize: CGFloat = defaultLabelSize){
-        
         super.init(frame: .zero)
         pointsLabel.font = pointsLabel.font.withSize(textSize)
         setupConstrains()
-
     }
     
     required init(coder: NSCoder) {
