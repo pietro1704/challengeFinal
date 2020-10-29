@@ -27,6 +27,10 @@
 		C557D39C2547854D00A537F3 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C557D39B2547854D00A537F3 /* PlayerService.swift */; };
 		C56B280A2543892A004391BA /* PlayerDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B28092543892A004391BA /* PlayerDataService.swift */; };
 		C593DEDB2542580100345F1B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C593DEDA2542580100345F1B /* Player.swift */; };
+		C5DFEB30254A3D3B00EAF4AA /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DFEB2F254A3D3B00EAF4AA /* PointsView.swift */; };
+		C5DFEB34254A3D4700EAF4AA /* UIILabel+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DFEB33254A3D4700EAF4AA /* UIILabel+Animation.swift */; };
+		C5DFEB38254A3D8800EAF4AA /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DFEB37254A3D8800EAF4AA /* ViewCodable.swift */; };
+		C5DFEB3C254A3DB400EAF4AA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DFEB3B254A3DB400EAF4AA /* UIView+Extension.swift */; };
 		DA0A71E92539E360002BAB51 /* StoryNodesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A71E52539E360002BAB51 /* StoryNodesService.swift */; };
 		DA0A71EA2539E360002BAB51 /* StoryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A71E72539E360002BAB51 /* StoryNode.swift */; };
 		DA0A71EB2539E360002BAB51 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A71E82539E360002BAB51 /* Story.swift */; };
@@ -108,6 +112,10 @@
 		C557D39B2547854D00A537F3 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
 		C56B28092543892A004391BA /* PlayerDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataService.swift; sourceTree = "<group>"; };
 		C593DEDA2542580100345F1B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		C5DFEB2F254A3D3B00EAF4AA /* PointsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
+		C5DFEB33254A3D4700EAF4AA /* UIILabel+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIILabel+Animation.swift"; sourceTree = "<group>"; };
+		C5DFEB37254A3D8800EAF4AA /* ViewCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
+		C5DFEB3B254A3DB400EAF4AA /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		D3F953D80B5181C8492E54A0 /* Pods-challengeFinal-challengeFinalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.release.xcconfig"; sourceTree = "<group>"; };
 		DA0A71E52539E360002BAB51 /* StoryNodesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryNodesService.swift; sourceTree = "<group>"; };
 		DA0A71E72539E360002BAB51 /* StoryNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryNode.swift; sourceTree = "<group>"; };
@@ -211,6 +219,7 @@
 				8D41F6D62530A60700A496C6 /* App-SceneDelegate */,
 				8D41F6D22530A56D00A496C6 /* Coordinator */,
 				8D41F6DA2530A72500A496C6 /* Assets */,
+				C51C0DD82548DBB300577641 /* Suporting Files */,
 				8D41F6952530932500A496C6 /* LaunchScreen.storyboard */,
 				8D41F6982530932500A496C6 /* Info.plist */,
 			);
@@ -272,6 +281,24 @@
 				C50FD4AE2544BF0B00B9D2CA /* PlayerDataServicesTests.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		C51C0DD82548DBB300577641 /* Suporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C5DFEB37254A3D8800EAF4AA /* ViewCodable.swift */,
+				C5DFEB33254A3D4700EAF4AA /* UIILabel+Animation.swift */,
+				C5DFEB3B254A3DB400EAF4AA /* UIView+Extension.swift */,
+			);
+			path = "Suporting Files";
+			sourceTree = "<group>";
+		};
+		C51C0DDD2548DE5D00577641 /* PointsView */ = {
+			isa = PBXGroup;
+			children = (
+				C5DFEB2F254A3D3B00EAF4AA /* PointsView.swift */,
+			);
+			path = PointsView;
 			sourceTree = "<group>";
 		};
 		DA0A71E42539E360002BAB51 /* Services */ = {
@@ -339,6 +366,7 @@
 		DA35ED332535F3E30061606C /* challengeFinalComponents */ = {
 			isa = PBXGroup;
 			children = (
+				C51C0DDD2548DE5D00577641 /* PointsView */,
 				DA1F09292546EBC5008A5775 /* ChoiceView */,
 				DA789A9D254314F1001CE5BF /* ChoiceButton */,
 				DA789A90254312DB001CE5BF /* Extensions */,
@@ -783,6 +811,7 @@
 				DA5972F82537286500D6EF40 /* StoryView.swift in Sources */,
 				DA1F09352546F424008A5775 /* DynamicTypes.swift in Sources */,
 				DA4A12C325405D2A00504E20 /* ChapterinitLabelView.swift in Sources */,
+				C5DFEB38254A3D8800EAF4AA /* ViewCodable.swift in Sources */,
 				DA0A71EA2539E360002BAB51 /* StoryNode.swift in Sources */,
 				DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */,
 				DA0A71EB2539E360002BAB51 /* Story.swift in Sources */,
@@ -795,7 +824,9 @@
 				8DD3F5B82541D60500FDA5B4 /* PauseButton.swift in Sources */,
 				DA0A71E92539E360002BAB51 /* StoryNodesService.swift in Sources */,
 				DA3E12AA25386BAA00C48AF8 /* StoryViewModel.swift in Sources */,
+				C5DFEB3C254A3DB400EAF4AA /* UIView+Extension.swift in Sources */,
 				8D41F68F2530932300A496C6 /* MenuViewController.swift in Sources */,
+				C5DFEB30254A3D3B00EAF4AA /* PointsView.swift in Sources */,
 				DA5972F42537278900D6EF40 /* PrimaryButton.swift in Sources */,
 				8D41F68B2530932300A496C6 /* AppDelegate.swift in Sources */,
 				DA1F092B2546EBD6008A5775 /* ChoiceView.swift in Sources */,
@@ -806,6 +837,7 @@
 				C593DEDB2542580100345F1B /* Player.swift in Sources */,
 				8D41F6C325309A1000A496C6 /* MenuCoordinator.swift in Sources */,
 				DAD346422542F3EE00225BAF /* DynamicButtonView.swift in Sources */,
+				C5DFEB34254A3D4700EAF4AA /* UIILabel+Animation.swift in Sources */,
 				DA1F09312546EE2F008A5775 /* ChoiceViewInfos.swift in Sources */,
 				DA8E873E2541BEA9000D481B /* ChapterViewContainer.swift in Sources */,
 				DA35ED362535F3E30061606C /* ImageView.swift in Sources */,
