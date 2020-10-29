@@ -59,11 +59,11 @@ public class ChoiceView: UIView {
         return button
     }()
 
-    lazy var backButton: BackButton = {
-        let button = BackButton()
+    lazy var backButton: TransparentButton = {
+        let button = TransparentButton(title: "Voltar")
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.delegate = self
+        button.backButtonDelegate = self
         return button
     }()
 

@@ -7,25 +7,14 @@
 
 import UIKit
 
-public class RegularTextView: UIView {
-
-    private lazy var textLabel: UILabel = {
-        let label = UILabel()
-        addSubview(label)
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .justified
-        return label
-    }()
-
-    public init() {
-        super.init(frame: .zero)
-        NSLayoutConstraint.activate([
-            textLabel.topAnchor.constraint(equalTo: self.topAnchor),
-            textLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            textLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            textLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-        ])
+public class RegularTextView: UITextView {
+    
+    public init(fontSize: CGFloat = 17) {
+        super.init(frame: .zero, textContainer: nil)
+        //system font
+        self.font = UIFont.systemFont(ofSize: fontSize)
+        self.isEditable = false
+        self.isScrollEnabled = false
     }
 
     required init?(coder: NSCoder) {
@@ -33,10 +22,10 @@ public class RegularTextView: UIView {
     }
 
     public func configure(with infos: RegularTextViewInfos) {
-        self.textLabel.text = infos.text
+        self.text = infos.text
     }
 
     public func configure(with text: String) {
-        self.textLabel.text = text
+        self.text = text
     }
 }

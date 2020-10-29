@@ -9,6 +9,8 @@ import XCTest
 @testable import challengeFinal
 import SnapshotTesting
 
+let defaultFontSize: CGFloat = 17
+
 class RegularTextViewTests: XCTestCase {
     func testTextView () {
         let textView = RegularTextView()
@@ -16,7 +18,21 @@ class RegularTextViewTests: XCTestCase {
         let container = textView.addInCenterOnMockViewIphone11()
         textView.leadingAnchor.constraint(equalTo: container.leadingAnchor).isActive = true
         textView.trailingAnchor.constraint(equalTo: container.trailingAnchor).isActive = true
-        assertSnapshot(matching: container, as: .image)
+        
+        textView.topAnchor.constraint(equalTo: container.topAnchor).isActive = true
+        textView.bottomAnchor.constraint(equalTo: container.bottomAnchor).isActive = true
+        assertSnapshot(matching:container, as: .image)
+    }
+    
+    func testTextViewDefaultSize(){
+        let textView = RegularTextView()
+        XCTAssert(textView.font?.pointSize == defaultFontSize)
+    }
+    
+    func testTextViewWithSize(){
+        let fontSize = CGFloat(24)
+        let textView = RegularTextView(fontSize: fontSize)
+        XCTAssert(textView.font?.pointSize == fontSize)
     }
 }
 
