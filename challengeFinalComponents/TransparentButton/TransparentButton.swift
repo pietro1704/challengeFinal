@@ -16,18 +16,15 @@ public protocol gotodecisionDelegate: class {
     func backButtonPressed()
 }
 
-class TransparentButton: UIButton{
+class TransparentButton: UIButton {
     public weak var backButtonDelegate: BackButtonDelegate?
     
     public weak var gotodecisionDelegate: gotodecisionDelegate?
-
 
     public init(title: String, for state: UIControl.State = .normal) {
         super.init(frame: .zero)
         setTitle(title, for: state)
         setupButton()
-        
-        //addTarget(self, action: #selector(handleTap), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {

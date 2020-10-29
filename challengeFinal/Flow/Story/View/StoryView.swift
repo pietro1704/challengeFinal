@@ -26,13 +26,18 @@ public class StoryView: UIView {
     private lazy var hudView: HUDView = {
         let hud = HUDView()
         addSubview(hud)
+        
+        let foregroundView = UIView(frame: hud.frame)
+        foregroundView.backgroundColor = .accentRed
+        hud.addSubview(foregroundView)
+        
         hud.translatesAutoresizingMaskIntoConstraints = false
         return hud
     }()
 
     private lazy var textView: RegularTextView = {
         let textView = RegularTextView()
-        //view já adicionada na inicializacao da contentView
+        // View já adicionada na inicializacao da contentView
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
@@ -40,7 +45,7 @@ public class StoryView: UIView {
     private lazy var goToDecisionButton: TransparentButton = {
         let gotodec = TransparentButton(title: "Tente por você mesmo")
         gotodec.translatesAutoresizingMaskIntoConstraints = false
-        //view já adicionada na inicializacao da contentView
+        // View já adicionada na inicializacao da contentView
         return gotodec
     }()
     
@@ -84,7 +89,7 @@ public class StoryView: UIView {
         setupContentViewConstrains()
     }
     
-    func setupHUDViewConstrains(){
+    func setupHUDViewConstrains() {
         hudView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
         hudView.bottomAnchor.constraint(equalTo: scrollView.topAnchor, constant: -16).isActive = true
         hudView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
@@ -92,20 +97,20 @@ public class StoryView: UIView {
     }
     
     fileprivate func setupScrollViewConstrains() {
-        //SCROLL FRAME
+        // SCROLL FRAME
         scrollView.frameLayoutGuide.leadingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
         scrollView.frameLayoutGuide.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         scrollView.frameLayoutGuide.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
-        //SCROLL CONTENT
+        // SCROLL CONTENT
         NSLayoutConstraint.activate([
-            //4 sides, scroll relative to contentView
-            scrollView.contentLayoutGuide.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: -32),
-            scrollView.contentLayoutGuide.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: +32),
+            // 4 sides, scroll relative to contentView
+            scrollView.contentLayoutGuide.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: -32),
+            scrollView.contentLayoutGuide.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: +32),
             scrollView.contentLayoutGuide.topAnchor.constraint(equalTo: contentView.topAnchor),
             scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
-            //lock width
+            // Lock width
             scrollView.contentLayoutGuide.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor)
         ])
 
@@ -116,13 +121,14 @@ public class StoryView: UIView {
         textView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         textView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         
-        
         goToDecisionButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10).isActive = true
-        //constrain to 0.4 content width
+        
+        // Constrain to 0.4 content width
         goToDecisionButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.4).isActive = true
+        
         goToDecisionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         goToDecisionButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
-       // stackview.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2).isActive = true
+       // Stackview.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2).isActive = true
     }
 
     required init?(coder: NSCoder) {

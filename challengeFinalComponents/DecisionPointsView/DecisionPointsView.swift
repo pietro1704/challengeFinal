@@ -14,9 +14,9 @@ class DecisionPointsView: UIStackView {
     
     var imageView: UIImageView = {
         let imageview = UIImageView()
-        //mudar imagem pro asset do jogo
+        // Mudar imagem pro asset do jogo
         imageview.image = UIImage(systemName: "speaker.fill")
-        //our custom red color
+        // Our custom red color
         imageview.tintColor = UIColor.accentRed
         
         imageview.translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +30,7 @@ class DecisionPointsView: UIStackView {
         return label
     }()
     
-    init(numberOfPoints: Int = 0, textSize: CGFloat = defaultLabelSize){
+    init(numberOfPoints: Int = 0, textSize: CGFloat = defaultLabelSize) {
         super.init(frame: .zero)
         pointsLabel.font = pointsLabel.font.withSize(textSize)
         setupConstrains()
@@ -40,7 +40,7 @@ class DecisionPointsView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupConstrains(){
+    func setupConstrains() {
         self.addArrangedSubview(imageView)
         self.addArrangedSubview(pointsLabel)
         self.axis = .horizontal

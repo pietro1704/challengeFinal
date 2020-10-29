@@ -17,13 +17,13 @@ class DecisionPointsViewTests: XCTestCase {
         assertSnapshot(matching: container, as: .image)
     }
     
-    func testLabelDefaultSize(){
+    func testLabelDefaultSize() {
         let decisionView = DecisionPointsView()
         
         XCTAssert(decisionView.pointsLabel.font.pointSize == 24)
     }
     
-    func testLabelSize(){
+    func testLabelSize() {
         let decisionView = DecisionPointsView(textSize: 100)
         
         XCTAssert(decisionView.pointsLabel.font.pointSize == 100)

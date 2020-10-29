@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class HUDView: UIStackView{
+class HUDView: UIStackView {
     
     private lazy var pauseButton: PauseButton = {
         let pause = PauseButton()
@@ -22,8 +22,7 @@ class HUDView: UIStackView{
         return decision
     }()
 
-    
-    init(){
+    init() {
         super.init(frame: .zero)
         setupConstrains()
     }
@@ -32,7 +31,7 @@ class HUDView: UIStackView{
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupConstrains(){
+    func setupConstrains() {
         self.addArrangedSubview(decisionPointsView)
         self.addSubview(UIView())
         self.addArrangedSubview(pauseButton)
