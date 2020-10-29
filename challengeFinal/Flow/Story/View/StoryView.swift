@@ -23,6 +23,13 @@ public class StoryView: UIView {
         return imageView
     }()
     
+    private lazy var hudView: HUDView = {
+        let hud = HUDView()
+        addSubview(hud)
+        hud.translatesAutoresizingMaskIntoConstraints = false
+        return hud
+    }()
+    
    
 
     private lazy var textView: RegularTextView = {
@@ -78,16 +85,24 @@ public class StoryView: UIView {
         imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4).isActive = true
         
+        setupHUDViewConstrains()
+        
         setupScrollViewConstrains()
         
         setupContentViewConstrains()
     }
     
+    func setupHUDViewConstrains(){
+        hudView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
+        hudView.bottomAnchor.constraint(equalTo: scrollView.topAnchor, constant: -16).isActive = true
+        hudView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        hudView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+    }
+    
     fileprivate func setupScrollViewConstrains() {
         //SCROLL FRAME
-        scrollView.frameLayoutGuide.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        scrollView.frameLayoutGuide.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 0).isActive = true
-        scrollView.frameLayoutGuide.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
+        scrollView.frameLayoutGuide.leadingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
+        scrollView.frameLayoutGuide.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         scrollView.frameLayoutGuide.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
         //SCROLL CONTENT
@@ -107,10 +122,9 @@ public class StoryView: UIView {
     func setupContentViewConstrains(){
     
         textView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        textView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0).isActive = true
-        textView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
+        textView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        textView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         
-
         
         goToDecisionButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10).isActive = true
         //constrain to 0.4 content width

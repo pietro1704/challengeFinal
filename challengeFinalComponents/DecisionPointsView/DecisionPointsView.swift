@@ -18,6 +18,7 @@ class DecisionPointsView: UIStackView {
         imageview.image = UIImage(systemName: "speaker.fill")
         //our custom red color
         imageview.tintColor = UIColor.gameRed
+        
         imageview.translatesAutoresizingMaskIntoConstraints = false
         return imageview
     }()
@@ -30,8 +31,8 @@ class DecisionPointsView: UIStackView {
     }()
     
     init(numberOfPoints: Int = 0, textSize: CGFloat = defaultLabelSize){
-        let rect = CGRect(x: 0, y: 0, width: 80, height: 32)
-        super.init(frame: rect)
+        
+        super.init(frame: .zero)
         pointsLabel.font = pointsLabel.font.withSize(textSize)
         setupConstrains()
 
@@ -45,7 +46,7 @@ class DecisionPointsView: UIStackView {
         self.addArrangedSubview(imageView)
         self.addArrangedSubview(pointsLabel)
         self.axis = .horizontal
-        self.alignment = .fill
+        self.alignment = .center
         self.spacing = 8
     }
 }

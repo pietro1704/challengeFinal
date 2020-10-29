@@ -34,9 +34,11 @@ class HUDView: UIStackView{
     
     func setupConstrains(){
         self.addArrangedSubview(decisionPointsView)
+        self.addSubview(UIView())
         self.addArrangedSubview(pauseButton)
         self.axis = .horizontal
         self.alignment = .fill
+        self.distribution = .fillProportionally
         self.spacing = 8
     }
 }
