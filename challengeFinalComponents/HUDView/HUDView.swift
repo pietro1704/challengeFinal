@@ -8,17 +8,18 @@
 import Foundation
 import UIKit
 
-class HUDView: UIStackView {
+class HUDView: UIView {
     
     private lazy var pauseButton: PauseButton = {
         let pause = PauseButton()
         pause.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(pause)
         return pause
     }()
     
-    private lazy var decisionPointsView: DecisionPointsView = {
-        let decision = DecisionPointsView()
-        decision.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var decisionPointsView: PointsView = {
+        let decision = PointsView()
+        self.addSubview(decision)
         return decision
     }()
 
@@ -32,12 +33,13 @@ class HUDView: UIStackView {
     }
     
     func setupConstrains() {
-        self.addArrangedSubview(decisionPointsView)
-        self.addSubview(UIView())
-        self.addArrangedSubview(pauseButton)
-        self.axis = .horizontal
-        self.alignment = .fill
-        self.distribution = .fillProportionally
-        self.spacing = 8
+        // Constraint on icon image
+        decisionPointsView.iconImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
+        decisionPointsView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        decisionPointsView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
+        
+        pauseButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
+        pauseButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        pauseButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
     }
 }

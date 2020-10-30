@@ -59,6 +59,7 @@ extension PointsView: ViewCodable {
         setCenterPointViewConstraints()
         setIconImageConstraints()
         setPointsLabelConstraints()
+        self.widthAnchor.constraint(greaterThanOrEqualToConstant: 80).isActive = true
     }
 
     // MARK: - View Codable Helpers
@@ -98,6 +99,4 @@ extension PointsView: ViewCodable {
             view.leadingAnchor.constraint(equalTo: centerPointView.leadingAnchor, constant: 2).isActive = true
         }
     }
-
 }
-
