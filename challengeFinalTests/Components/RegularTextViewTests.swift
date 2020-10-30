@@ -21,15 +21,15 @@ class RegularTextViewTests: XCTestCase {
         
         textView.topAnchor.constraint(equalTo: container.topAnchor).isActive = true
         textView.bottomAnchor.constraint(equalTo: container.bottomAnchor).isActive = true
-        assertSnapshot(matching:container, as: .image)
+        assertSnapshot(matching: container, as: .image)
     }
     
-    func testTextViewDefaultSize(){
+    func testTextViewDefaultSize() {
         let textView = RegularTextView()
         XCTAssert(textView.font?.pointSize == defaultFontSize)
     }
     
-    func testTextViewWithSize(){
+    func testTextViewWithSize() {
         let fontSize = CGFloat(24)
         let textView = RegularTextView(fontSize: fontSize)
         XCTAssert(textView.font?.pointSize == fontSize)

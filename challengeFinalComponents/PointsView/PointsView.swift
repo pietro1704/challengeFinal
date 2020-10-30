@@ -44,13 +44,12 @@ extension PointsView: ViewCodable {
 
     func render() {
         iconImage.image = UIImage(named: "arrows")
-        iconImage.tintColor = .purple
+        iconImage.tintColor = .accentRed
         iconImage.contentMode = .scaleAspectFit
 
         // Default points
         pointsLabel.text = "0"
         pointsLabel.font = UIFont.systemFont(ofSize: 34, weight: UIFont.Weight.thin)
-        pointsLabel.textColor = .red
     }
 
     func setConstraints() {
@@ -59,6 +58,7 @@ extension PointsView: ViewCodable {
         setCenterPointViewConstraints()
         setIconImageConstraints()
         setPointsLabelConstraints()
+        self.widthAnchor.constraint(greaterThanOrEqualToConstant: 80).isActive = true
     }
 
     // MARK: - View Codable Helpers
@@ -98,6 +98,4 @@ extension PointsView: ViewCodable {
             view.leadingAnchor.constraint(equalTo: centerPointView.leadingAnchor, constant: 2).isActive = true
         }
     }
-
 }
-
