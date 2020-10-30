@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIColor{
+extension UIColor {
     static let background = UIColor(named: "Background")!
     static let buttonBackground = UIColor(named: "ButtonBackground")!
     

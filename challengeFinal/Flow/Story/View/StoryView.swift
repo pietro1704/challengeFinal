@@ -26,6 +26,11 @@ public class StoryView: UIView {
     private lazy var hudView: HUDView = {
         let hud = HUDView()
         addSubview(hud)
+        
+        let foregroundView = UIView(frame: hud.frame)
+        foregroundView.backgroundColor = .accentRed
+        hud.addSubview(foregroundView)
+        
         hud.translatesAutoresizingMaskIntoConstraints = false
         return hud
     }()
@@ -115,6 +120,7 @@ public class StoryView: UIView {
         
         goToDecisionButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10).isActive = true
         goToDecisionButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.4).isActive = true
+        
         goToDecisionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         goToDecisionButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
     }
