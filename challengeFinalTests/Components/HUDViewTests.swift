@@ -12,8 +12,8 @@ import SnapshotTesting
 class HUDViewTests: XCTestCase {
     func testHUDView() {
         let hud = HUDView()
-       
-        let container = hud.addInCenterOnMockViewIphone11()
-        assertSnapshot(matching: container, as: .image)
+
+        let container = hud.addInCenterAndSidesOnMockViewIphone11()
+        assertSnapshot(matching: container, as: .image, record: false)
     }
 }
