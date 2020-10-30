@@ -63,7 +63,7 @@ public class ChoiceView: UIView {
         let button = TransparentButton(title: "Voltar")
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backButtonDelegate = self
+        button.delegate = self
         return button
     }()
 
@@ -172,8 +172,8 @@ extension ChoiceView: PauseButtonDelegate {
     }
 }
 
-extension ChoiceView: BackButtonDelegate {
-    public func backButtonPressed() {
+extension ChoiceView: TransparentButtonDelegate {
+    public func transpButtonPressed() {
         self.delegate?.backButtonPressed()
     }
 }

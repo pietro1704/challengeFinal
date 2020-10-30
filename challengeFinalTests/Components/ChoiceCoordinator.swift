@@ -13,27 +13,23 @@ public class ChoiceCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     var infos: ChoiceViewInfos
-    var viewController: ChoiceViewController?
-    var playerService: PlayerServiceProtocol
-    
+    var viewController: ChoiceViewController!
+
     init (navigationController: UINavigationController, infos: ChoiceViewInfos) {
-        self.playerService = PlayerService()
         self.navigationController = navigationController
         self.infos = infos
     }
-    
+
     func start() {
         viewController = ChoiceViewController.instantiate(storyBoardName: "Choice")
-        let viewModel = ChoiceViewModel(infos: infos, coordinatorDelegate: self, playerService: playerService)
+        let viewModel = ChoiceViewModel(infos: infos, coordinatorDelegate: self)
         viewController?.viewModel = viewModel
-        if let viewController = viewController {
-            navigationController.pushViewController(viewController, animated: false)
-        }
+        navigationController.pushViewController(viewController, animated: true)
     }
 
     func update(infos: ChoiceViewInfos) {
         self.infos = infos
-        let viewModel = ChoiceViewModel(infos: infos, coordinatorDelegate: self, playerService: playerService)
+        let viewModel = ChoiceViewModel(infos: infos, coordinatorDelegate: self)
         viewController?.update(with: viewModel)
     }
 
@@ -49,13 +45,14 @@ public class ChoiceCoordinator: Coordinator {
 
 extension ChoiceCoordinator: ChoiceViewModelDelegate {
     public func userWantToDismiss() {
-        parentCoordinator?.userWantToDismissChoices(self)
+        navigationController.popToViewController(parentCoordinator!.viewController,
+                                                 animated: true)
     }
     
     public func userWantToConfirmChoice(storyNode: StoryNode) {
-        let nextCoordinator = StoryCoordinator(navigationController: navigationController,
-                                               storyNode: storyNode)
-        nextCoordinator.start()
+        navigationController.popToViewController(parentCoordinator!.viewController,
+                                                 animated: true)
+        parentCoordinator?.userDidChoosed(storyNode, coordinator: self)
     }
     
     public func userWantToChooseDynamic(dynamic: DynamicTypes) {

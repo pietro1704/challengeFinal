@@ -19,7 +19,7 @@ public class ChapterCoordinator: Coordinator {
         self.navigationController = navigationController
         self.storyNode = storyNode
     }
-    
+
     func start() {
         viewController = ChapterViewController.instantiate(storyBoardName: "Chapter")
         let playerService = PlayerService()
@@ -28,7 +28,6 @@ public class ChapterCoordinator: Coordinator {
         if let viewController = viewController {
             navigationController.pushViewController(viewController, animated: false)
         }
-
     }
 
     func update(storyNode: StoryNode) {
@@ -36,6 +35,14 @@ public class ChapterCoordinator: Coordinator {
         let playerService = PlayerService()
         let viewModel = ChapterViewModel(node: storyNode, coordinatorDelegate: self, playerService: playerService)
         viewController?.update(with: viewModel)
+    }
+
+    func showStory(with node: StoryNode) {
+        let coordinator = StoryCoordinator(navigationController: navigationController,
+                                           storyNode: node)
+        childCoordinators.append(coordinator)
+        coordinator.parentCoordinator = self
+        coordinator.start()
     }
 
     func childDidFinished(_ child: Coordinator?) {
@@ -49,7 +56,7 @@ public class ChapterCoordinator: Coordinator {
 }
 
 extension ChapterCoordinator: ChapterViewModelDelegate {
-    public func userWantToStartChapter() {
-        parentCoordinator?.showStory(with: storyNode)
+    public func userWantToShowStory() {
+        showStory(with: storyNode)
     }
 }

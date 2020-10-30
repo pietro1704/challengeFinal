@@ -44,7 +44,7 @@ public class ChapterViewContainer: UIView {
     }
 
     @objc func swipeUp() {
-        viewModel?.userWantToStartChapter()
+        viewModel?.userWantToShowStory()
     }
 
     private func setupChapterView(_ viewModel: ChapterViewModel) {

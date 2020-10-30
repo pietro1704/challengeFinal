@@ -29,8 +29,8 @@ public class ChapterViewModel {
         self.playerService = playerService
     }
 
-    public func userWantToStartChapter() {
-        delegate?.userWantToStartChapter()
+    public func userWantToShowStory() {
+        delegate?.userWantToShowStory()
     }
 
 }

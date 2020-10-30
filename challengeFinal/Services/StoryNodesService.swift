@@ -15,16 +15,14 @@ public class StoryNodesServices {
         guard let node = repository.getStoryNode(nodeId) else { return nil }
         
         let storyNode = StoryNode(id: node.id,
-                                  childNodes: retrieveChildNodes(childNodes: node.childNodeIDs),
+                                  childNodes: retrieveChildNodes(node.childNodeIDs),
                                   imagePath: node.imagePath,
                                   title: node.title,
                                   text: node.text)
         return storyNode
     }
 
-    private func retrieveChildNodes(childNodes: [Int]?) -> [StoryNode] {
-        guard let nodesId = childNodes else { return [] }
-
+    private func retrieveChildNodes(_ nodesId: [Int]) -> [StoryNode] {
         var childNodes: [StoryNode] = []
         nodesId.forEach({ (childNodeId) in
             guard let childNode = repository.getStoryNode(childNodeId) else { return }

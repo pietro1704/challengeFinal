@@ -15,5 +15,5 @@ public struct Node: Codable {
     let id: NodeID
     let imagePath: String?
     let title, text: String
-    let childNodeIDs: [NodeID]?
+    let childNodeIDs: [NodeID]
 }
