@@ -44,13 +44,12 @@ extension PointsView: ViewCodable {
 
     func render() {
         iconImage.image = UIImage(named: "arrows")
-        iconImage.tintColor = .purple
+        iconImage.tintColor = .accentRed
         iconImage.contentMode = .scaleAspectFit
 
         // Default points
         pointsLabel.text = "0"
         pointsLabel.font = UIFont.systemFont(ofSize: 34, weight: UIFont.Weight.thin)
-        pointsLabel.textColor = .red
     }
 
     func setConstraints() {
