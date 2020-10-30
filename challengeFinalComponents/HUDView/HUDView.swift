@@ -19,6 +19,8 @@ class HUDView: UIView {
     
     private lazy var decisionPointsView: PointsView = {
         let decision = PointsView()
+        // TranslatesAutoresizingMaskIntoConstraints was set in View Init
+
         self.addSubview(decision)
         return decision
     }()
