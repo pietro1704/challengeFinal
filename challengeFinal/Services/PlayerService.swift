@@ -44,17 +44,17 @@ class PlayerService: PlayerServiceProtocol {
     }
 
     // Add points to player and persist change
-    func increasePlayerPoints(by newPoint: Int = 1) {
-        let newPoints = player.points + newPoint
+    func increasePlayerPoints(by int: Int = 1) {
+        let newPoints = player.points + int
         player.updatePoints(with: newPoints)
-        service.savePoints(newPoint)
+        service.savePoints(newPoints)
     }
 
     // Take points from player and persist change
-    func decreasePlayerPoints(by newPoint: Int = 1) {
-        let newPoints = player.points - newPoint
+    func decreasePlayerPoints(by int: Int = 1) {
+        let newPoints = player.points - int
         player.updatePoints(with: newPoints)
-        service.savePoints(newPoint)
+        service.savePoints(newPoints)
     }
 
     // Save path taken and persist change

@@ -19,7 +19,6 @@ public class StoryViewModel {
         self.node = service.retrieveNode(nodeId: node.id)
         self.delegate = coordinatorDelegate
         self.playerService = playerService
-        self.playerService.saveChoosenNode(id: node.id)
     }
 
     init(with nodeId: NodeID, playerService: PlayerServiceProtocol = PlayerService()) {
@@ -29,5 +28,14 @@ public class StoryViewModel {
 
     public func userWantToChoose() {
         delegate?.userWantToChoose()
+    }
+
+    // MARK: - HUD
+
+    func updateHUD(pointsView: PointsView) {
+        // Save path and update HUD
+        let currentPoints = playerService.player.points
+        playerService.saveChoosenNode(id: node?.id ?? 0)
+        pointsView.updateLabel(withPoints: currentPoints)
     }
 }

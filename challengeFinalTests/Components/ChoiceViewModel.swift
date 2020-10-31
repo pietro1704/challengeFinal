@@ -39,6 +39,7 @@ public class ChoiceViewModel {
 
     private func userChoosed() {
         guard let selectedNode = infos?.selectedNode else { return }
+        // TODO: decreasePlayerPoints should be done together with updateHUD?
         playerService.decreasePlayerPoints(by: 1)
         delegate?.userWantToConfirmChoice(storyNode: selectedNode)
     }
@@ -51,13 +52,14 @@ public class ChoiceViewModel {
     }
 
     private func userChoosedBet() {
+        // TODO: called 2x, 2x points
         guard let selectedNode = infos?.selectedNode else { return }
 
         let randomNode = retrieveRandomNumber()
         if randomNode == selectedNode.id {
-            playerService.decreasePlayerPoints(by: 1)
-        } else {
             playerService.increasePlayerPoints(by: 2)
+        } else {
+            playerService.decreasePlayerPoints(by: 1)
         }
 
         delegate?.userGotRandom(node: randomNode)

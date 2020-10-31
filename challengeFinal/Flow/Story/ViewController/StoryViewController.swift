@@ -32,6 +32,7 @@ class StoryViewController: UIViewController, Storyboarded {
         self.viewModel = viewModel
         containerView.viewModel = viewModel
         containerView.configure(using: viewModel)
+        viewModel.updateHUD(pointsView: containerView.hudView.decisionPointsView)
     }
 
     private func setupConstraints() {
