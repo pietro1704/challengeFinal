@@ -14,8 +14,8 @@ public class ChoiceViewModel {
     let service = StoryNodesServices()
     let playerService: PlayerServiceProtocol
 
-    public init(infos: ChoiceViewInfos, coordinatorDelegate: ChoiceViewModelDelegate,
-                playerService: PlayerServiceProtocol) {
+    init(infos: ChoiceViewInfos, coordinatorDelegate: ChoiceViewModelDelegate,
+         playerService: PlayerServiceProtocol = PlayerService()) {
         self.infos = infos
         self.delegate = coordinatorDelegate
         self.playerService = playerService
@@ -39,6 +39,7 @@ public class ChoiceViewModel {
 
     private func userChoosed() {
         guard let selectedNode = infos?.selectedNode else { return }
+        playerService.decreasePlayerPoints(by: 1)
         delegate?.userWantToConfirmChoice(storyNode: selectedNode)
     }
 
@@ -46,19 +47,29 @@ public class ChoiceViewModel {
         let randomNode = retrieveRandomNumber()
         print(randomNode)
         delegate?.userWantToHighlightNode(node: randomNode)
+        animateAndConfirmChoice(randomNode)
     }
 
     private func userChoosedBet() {
         guard let selectedNode = infos?.selectedNode else { return }
-        
+
         let randomNode = retrieveRandomNumber()
         if randomNode == selectedNode.id {
-            print("gain")
+            playerService.decreasePlayerPoints(by: 1)
         } else {
-            print("loss")
+            playerService.increasePlayerPoints(by: 2)
         }
 
         delegate?.userGotRandom(node: randomNode)
+        animateAndConfirmChoice(randomNode)
+    }
+
+    private func animateAndConfirmChoice(_ randomNode: NodeID) {
+        let node = infos?.nodes.filter({$0.id == randomNode}).first
+        let seconds = 2.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            self.delegate?.userWantToConfirmChoice(storyNode: node!)
+        }
     }
 
     private func retrieveRandomNumber() -> NodeID {
@@ -72,14 +83,6 @@ public class ChoiceViewModel {
     }
 
     public func userWantToChooseDynamic(_ dynamic: DynamicTypes) {
-        switch dynamic {
-        case .bet:
-            print("user want to bet")
-        case .choice:
-            print("user want to choose")
-        case .random:
-            print("user want to random")
-        }
         delegate?.userWantToChooseDynamic(dynamic: dynamic)
     }
 

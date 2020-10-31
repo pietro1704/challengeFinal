@@ -45,25 +45,25 @@ public class ChoiceView: UIView {
         button.backgroundColor = UIColor(named: "Red")
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 5
+        button.contentEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         let gesture = UITapGestureRecognizer(target: self, action: #selector(confirmButtonPressed))
         button.addGestureRecognizer(gesture)
         return button
     }()
 
-    lazy var pauseButton: PauseButton = {
-        let button = PauseButton()
-        addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .red
-        button.delegate = self
-        return button
+    lazy var hudView: HUDView = {
+        let hud = HUDView()
+        addSubview(hud)
+        hud.translatesAutoresizingMaskIntoConstraints = false
+        return hud
     }()
 
     lazy var backButton: TransparentButton = {
         let button = TransparentButton(title: "Voltar")
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backButtonDelegate = self
+        button.delegate = self
         return button
     }()
 
@@ -120,22 +120,22 @@ public class ChoiceView: UIView {
     }
 
     private func setupView() {
+        let padding: CGFloat = 32.0
         backgroundColor = UIColor(named: "Background")
         NSLayoutConstraint.activate([
             dynamicButtons.topAnchor.constraint(equalTo: topAnchor, constant: 40),
             dynamicButtons.centerXAnchor.constraint(equalTo: centerXAnchor),
-            pauseButton.topAnchor.constraint(equalTo: topAnchor),
-            pauseButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            pauseButton.heightAnchor.constraint(equalToConstant: 40),
-            pauseButton.widthAnchor.constraint(equalTo: pauseButton.heightAnchor),
-            choiceButtons.topAnchor.constraint(equalTo: dynamicButtons.bottomAnchor, constant: 32),
+            hudView.topAnchor.constraint(equalTo: topAnchor, constant: padding),
+            hudView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            hudView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            choiceButtons.topAnchor.constraint(equalTo: dynamicButtons.bottomAnchor, constant: padding),
             choiceButtons.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: 0.6),
             choiceButtons.heightAnchor.constraint(lessThanOrEqualTo: heightAnchor, multiplier: 0.8),
             choiceButtons.centerXAnchor.constraint(equalTo: centerXAnchor),
-            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
-            backButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32),
-            confirmAction.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32),
-            confirmAction.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32)
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            backButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding),
+            confirmAction.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            confirmAction.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding)
         ])
     }
 
@@ -172,8 +172,8 @@ extension ChoiceView: PauseButtonDelegate {
     }
 }
 
-extension ChoiceView: BackButtonDelegate {
-    public func backButtonPressed() {
+extension ChoiceView: TransparentButtonDelegate {
+    public func transpButtonPressed() {
         self.delegate?.backButtonPressed()
     }
 }

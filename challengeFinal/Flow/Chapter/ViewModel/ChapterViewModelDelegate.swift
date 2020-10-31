@@ -9,6 +9,5 @@ import Foundation
 
 public protocol ChapterViewModelDelegate: class {
 
-    /// Start Story
-    func userWantToStartChapter()
+    func userWantToShowStory()
 }

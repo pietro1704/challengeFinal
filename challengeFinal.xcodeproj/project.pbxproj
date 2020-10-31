@@ -74,6 +74,7 @@
 		DAC23A312537329D00D57C43 /* RegularTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC23A302537329D00D57C43 /* RegularTextView.swift */; };
 		DAC23A37253733D100D57C43 /* RegularTextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC23A36253733D100D57C43 /* RegularTextViewTests.swift */; };
 		DAC55E08254081B5006E1845 /* ChapterinitLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC55E07254081B5006E1845 /* ChapterinitLabelTests.swift */; };
+		DAC5C08C2549A97D003ED60F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5C08B2549A97D003ED60F /* MainCoordinator.swift */; };
 		DAD346422542F3EE00225BAF /* DynamicButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD346412542F3EE00225BAF /* DynamicButtonView.swift */; };
 		DAD346462542F70900225BAF /* DynamicButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD346452542F70900225BAF /* DynamicButtonTests.swift */; };
 		DADC40C025403F7900078CA3 /* StoryNodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC40BF25403F7900078CA3 /* StoryNodeRepository.swift */; };
@@ -169,6 +170,7 @@
 		DAC23A302537329D00D57C43 /* RegularTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTextView.swift; sourceTree = "<group>"; };
 		DAC23A36253733D100D57C43 /* RegularTextViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTextViewTests.swift; sourceTree = "<group>"; };
 		DAC55E07254081B5006E1845 /* ChapterinitLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterinitLabelTests.swift; sourceTree = "<group>"; };
+		DAC5C08B2549A97D003ED60F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		DAD346412542F3EE00225BAF /* DynamicButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicButtonView.swift; sourceTree = "<group>"; };
 		DAD346452542F70900225BAF /* DynamicButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicButtonTests.swift; sourceTree = "<group>"; };
 		DADC40BF25403F7900078CA3 /* StoryNodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodeRepository.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			children = (
 				8D41F6CA25309C6700A496C6 /* Storyboarded.swift */,
 				8D41F6BD253099B900A496C6 /* Coordinator.swift */,
+				DAC5C08B2549A97D003ED60F /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -907,6 +910,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D04D60A25430ECE00E1F9F7 /* StoryViewModelDelegate.swift in Sources */,
+				DAC5C08C2549A97D003ED60F /* MainCoordinator.swift in Sources */,
+				8D9E825E2549EACC005FDC37 /* DecisionPointsView.swift in Sources */,
 				DA8E87422541BF4F000D481B /* ChapterViewModel.swift in Sources */,
 				DA5972F82537286500D6EF40 /* StoryView.swift in Sources */,
 				DA1F09352546F424008A5775 /* DynamicTypes.swift in Sources */,

@@ -37,7 +37,6 @@ public class StoryView: UIView {
 
     private lazy var textView: RegularTextView = {
         let textView = RegularTextView()
-        // View já adicionada na inicializacao da contentView
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
@@ -45,7 +44,7 @@ public class StoryView: UIView {
     private lazy var goToDecisionButton: TransparentButton = {
         let gotodec = TransparentButton(title: "Tente por você mesmo")
         gotodec.translatesAutoresizingMaskIntoConstraints = false
-        // View já adicionada na inicializacao da contentView
+        gotodec.delegate = self
         return gotodec
     }()
     
@@ -106,11 +105,9 @@ public class StoryView: UIView {
         NSLayoutConstraint.activate([
             // 4 sides, scroll relative to contentView
             scrollView.contentLayoutGuide.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: -32),
-            scrollView.contentLayoutGuide.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: +32),
+            scrollView.contentLayoutGuide.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 32),
             scrollView.contentLayoutGuide.topAnchor.constraint(equalTo: contentView.topAnchor),
             scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            
-            // Lock width
             scrollView.contentLayoutGuide.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor)
         ])
 
@@ -122,13 +119,10 @@ public class StoryView: UIView {
         textView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         
         goToDecisionButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10).isActive = true
-        
-        // Constrain to 0.4 content width
         goToDecisionButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.4).isActive = true
         
         goToDecisionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         goToDecisionButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
-       // Stackview.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2).isActive = true
     }
 
     required init?(coder: NSCoder) {
@@ -160,9 +154,8 @@ public class StoryView: UIView {
     }
 }
 
-extension StoryView: PrimaryButtonDelegate {
-    public func primaryButtonPressed(_ buttonTag: Int) {
-        guard let viewmodel = viewModel else { return }
-        viewmodel.userChoosedNode(buttonTag)
+extension StoryView: TransparentButtonDelegate {
+    public func transpButtonPressed() {
+        viewModel?.userWantToChoose()
     }
 }

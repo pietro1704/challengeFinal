@@ -9,5 +9,5 @@ import Foundation
 
 public protocol StoryViewModelDelegate: class {
     
-    func userChoosedNode(_ node: StoryNode)
+    func userWantToChoose()
 }
