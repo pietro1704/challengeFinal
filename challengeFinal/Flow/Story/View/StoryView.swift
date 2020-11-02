@@ -159,3 +159,13 @@ extension StoryView: TransparentButtonDelegate {
         viewModel?.userWantToChoose()
     }
 }
+
+// MARK: - Bridge view - viewModel
+
+extension StoryView: ViewDelegate {
+
+    public func updateHUD(with points: Int) {
+        hudView.decisionPointsView.updateLabel(withPoints: points)
+    }
+
+}

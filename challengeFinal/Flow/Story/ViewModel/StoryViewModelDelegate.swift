@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Navigation Delegate
 public protocol StoryViewModelDelegate: class {
     
     func userWantToChoose()

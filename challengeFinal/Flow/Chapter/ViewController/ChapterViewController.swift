@@ -29,7 +29,6 @@ class ChapterViewController: UIViewController, Storyboarded {
     }
 
     public func update(with viewModel: ChapterViewModel) {
-        print("escolhei")
         self.viewModel = viewModel
         containerView.viewModel = viewModel
         containerView.configure(using: viewModel)
