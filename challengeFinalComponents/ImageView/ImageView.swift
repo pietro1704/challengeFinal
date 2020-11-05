@@ -9,7 +9,7 @@ import UIKit
 
 public class ImageView: UIView {
 
-    private lazy var imageView: UIImageView = {
+    public lazy var imageView: UIImageView = {
         let iView = UIImageView()
         addSubview(iView)
         iView.translatesAutoresizingMaskIntoConstraints = false

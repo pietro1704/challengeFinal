@@ -20,16 +20,13 @@ public class StoryView: UIView {
         let imageView = ImageView()
         addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.imageView.contentMode = .scaleToFill
         return imageView
     }()
     
     public lazy var hudView: HUDView = {
         let hud = HUDView()
         addSubview(hud)
-        
-        let foregroundView = UIView(frame: hud.frame)
-        foregroundView.backgroundColor = .accentRed
-        hud.addSubview(foregroundView)
         
         hud.translatesAutoresizingMaskIntoConstraints = false
         return hud
@@ -38,6 +35,7 @@ public class StoryView: UIView {
     private lazy var textView: RegularTextView = {
         let textView = RegularTextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = .background
         return textView
     }()
 
@@ -53,6 +51,7 @@ public class StoryView: UIView {
         scroll.translatesAutoresizingMaskIntoConstraints = false
         addSubview(scroll)
         scroll.addSubview(contentView)
+        scroll.backgroundColor = .clear
         return scroll
     }()
     
@@ -66,6 +65,7 @@ public class StoryView: UIView {
 
     public init() {
         super.init(frame: .zero)
+        backgroundColor = UIColor.background
     }
 
     public init(with viewModel: StoryViewModel) {
