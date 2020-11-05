@@ -41,6 +41,8 @@
 		DA0A71EF2539E379002BAB51 /* StoryNodes.json in Resources */ = {isa = PBXBuildFile; fileRef = DA0A71EE2539E379002BAB51 /* StoryNodes.json */; };
 		DA1EB881255423C900D53030 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EB880255423C900D53030 /* MenuView.swift */; };
 		DA1EB88725542C2200D53030 /* MenuViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EB88625542C2200D53030 /* MenuViewTests.swift */; };
+		DA1EB890255434B600D53030 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EB88F255434B600D53030 /* MenuViewModel.swift */; };
+		DA1EB8962554358E00D53030 /* MenuViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EB8952554358E00D53030 /* MenuViewContainer.swift */; };
 		DA1F092B2546EBD6008A5775 /* ChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F092A2546EBD6008A5775 /* ChoiceView.swift */; };
 		DA1F09312546EE2F008A5775 /* ChoiceViewInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F09302546EE2F008A5775 /* ChoiceViewInfos.swift */; };
 		DA1F09352546F424008A5775 /* DynamicTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F09342546F424008A5775 /* DynamicTypes.swift */; };
@@ -140,6 +142,8 @@
 		DA0A71EE2539E379002BAB51 /* StoryNodes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StoryNodes.json; sourceTree = "<group>"; };
 		DA1EB880255423C900D53030 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		DA1EB88625542C2200D53030 /* MenuViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewTests.swift; sourceTree = "<group>"; };
+		DA1EB88F255434B600D53030 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		DA1EB8952554358E00D53030 /* MenuViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewContainer.swift; sourceTree = "<group>"; };
 		DA1F092A2546EBD6008A5775 /* ChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceView.swift; sourceTree = "<group>"; };
 		DA1F09302546EE2F008A5775 /* ChoiceViewInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceViewInfos.swift; sourceTree = "<group>"; };
 		DA1F09342546F424008A5775 /* DynamicTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTypes.swift; sourceTree = "<group>"; };
@@ -381,6 +385,14 @@
 			path = MenuView;
 			sourceTree = "<group>";
 		};
+		DA1EB88E255434A500D53030 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DA1EB88F255434B600D53030 /* MenuViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		DA1F09292546EBC5008A5775 /* ChoiceView */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +481,7 @@
 		DA30DF9025371F13007C6CA4 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				DA1EB88E255434A500D53030 /* ViewModel */,
 				DACF216F253721E3002B1AAA /* Coordinator */,
 				DACF216E253721CB002B1AAA /* Storyboard */,
 				DACF216D253721C2002B1AAA /* View */,
@@ -699,6 +712,7 @@
 		DACF216D253721C2002B1AAA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DA1EB8952554358E00D53030 /* MenuViewContainer.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -931,6 +945,7 @@
 				DA8E87422541BF4F000D481B /* ChapterViewModel.swift in Sources */,
 				DA5972F82537286500D6EF40 /* StoryView.swift in Sources */,
 				DA1F09352546F424008A5775 /* DynamicTypes.swift in Sources */,
+				DA1EB8962554358E00D53030 /* MenuViewContainer.swift in Sources */,
 				DA4A12C325405D2A00504E20 /* ChapterinitLabelView.swift in Sources */,
 				C5DFEB38254A3D8800EAF4AA /* ViewCodable.swift in Sources */,
 				DA0A71EA2539E360002BAB51 /* StoryNode.swift in Sources */,
@@ -974,6 +989,7 @@
 				DA789A92254312E9001CE5BF /* UIFont.swift in Sources */,
 				DA5972E8253725DB00D6EF40 /* StoryCoordinator.swift in Sources */,
 				DA8E873A2541BB64000D481B /* ChapterViewController.swift in Sources */,
+				DA1EB890255434B600D53030 /* MenuViewModel.swift in Sources */,
 				8D41F6CB25309C6700A496C6 /* Storyboarded.swift in Sources */,
 				DA1F095425471701008A5775 /* ChoiceCoordinator.swift in Sources */,
 			);

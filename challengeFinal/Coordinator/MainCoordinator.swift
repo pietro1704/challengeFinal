@@ -18,8 +18,14 @@ public class MainCoordinator: Coordinator {
     }
 
     func start() {
-        let startIndex: NodeID = 1
-        showChapter(with: startIndex)
+        showMenu()
+    }
+
+    func showMenu() {
+        let coordinator = MenuCoordinator(navigationController: navigationController)
+        coordinator.parentCoordinator = self
+        childCoordinators.append(coordinator)
+        coordinator.start()
     }
 
     func showStory(with storyNode: StoryNode) {
@@ -37,6 +43,16 @@ public class MainCoordinator: Coordinator {
         coordinator.parentCoordinator = self
         childCoordinators.append(coordinator)
         coordinator.start()
+    }
+    
+    func userWantToStartNewGame(child: Coordinator) {
+        self.childDidFinished(child)
+        showChapter(with: 1)
+    }
+
+    func userWantToContinue(from node: StoryNode, child: Coordinator) {
+        self.childDidFinished(child)
+        showStory(with: node)
     }
     
     func childDidFinished(_ child: Coordinator?) {
