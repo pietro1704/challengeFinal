@@ -34,6 +34,11 @@ class TransparentButton: UIButton {
         setTitle(title, for: state)
     }
 
+    public func changeButton(to isEnable: Bool) {
+        self.isEnabled = isEnable
+        self.alpha = isEnable ? 1 : 0.3
+    }
+
     private func setupButton() {
         self.backgroundColor = .clear
         

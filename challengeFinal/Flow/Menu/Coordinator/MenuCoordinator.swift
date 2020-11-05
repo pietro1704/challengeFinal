@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 
 class MenuCoordinator: Coordinator {
-
+    
+    var parentCoordinator: MainCoordinator?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
@@ -19,6 +20,9 @@ class MenuCoordinator: Coordinator {
 
     func start() {
         let vc = MenuViewController.instantiate(storyBoardName: "Menu")
+        let playerService = PlayerService()
+        let viewModel = MenuViewModel(coordinatorDelegate: self, playerService: playerService)
+        vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: false)
     }
 
@@ -30,5 +34,14 @@ class MenuCoordinator: Coordinator {
             }
         }
     }
+}
+
+extension MenuCoordinator: MenuViewModelDelegate {
+    func userWantToStartNewGame() {
+        parentCoordinator?.userWantToStartNewGame(child: self)
+    }
     
+    func userWantToContinueGame(from node: StoryNode) {
+        parentCoordinator?.userWantToContinue(from: node, child: self)
+    }
 }
