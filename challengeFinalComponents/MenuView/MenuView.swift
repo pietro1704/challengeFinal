@@ -12,7 +12,7 @@ public class MenuView: UIView {
         let image = ImageView()
         addSubview(image)
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.imageView.contentMode = .scaleAspectFit
+        image.imageView.contentMode = .scaleToFill
         return image
     }()
 
