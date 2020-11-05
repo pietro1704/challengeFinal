@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// NavegationDelegate
 public protocol ChoiceViewModelDelegate: class {
 
     func userWantToDismiss()

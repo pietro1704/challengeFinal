@@ -45,7 +45,7 @@ public class ChoiceViewModel {
 
     private func userChoosedRandom() {
         let randomNode = retrieveRandomNumber()
-        print(randomNode)
+        print(randomNode) // TODO: delete prints
         delegate?.userWantToHighlightNode(node: randomNode)
         animateAndConfirmChoice(randomNode)
     }
@@ -55,9 +55,9 @@ public class ChoiceViewModel {
 
         let randomNode = retrieveRandomNumber()
         if randomNode == selectedNode.id {
-            playerService.decreasePlayerPoints(by: 1)
-        } else {
             playerService.increasePlayerPoints(by: 2)
+        } else {
+            playerService.decreasePlayerPoints(by: 1)
         }
 
         delegate?.userGotRandom(node: randomNode)

@@ -32,6 +32,8 @@ class StoryViewController: UIViewController, Storyboarded {
         self.viewModel = viewModel
         containerView.viewModel = viewModel
         containerView.configure(using: viewModel)
+        viewModel.viewDelegate = containerView
+        viewModel.updateHUD()
     }
 
     private func setupConstraints() {

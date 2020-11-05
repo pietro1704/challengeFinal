@@ -9,6 +9,9 @@ import UIKit
 
 public class StoryViewModel {
 
+    // Suggestion: change delegate to navigationDelegate
+    // Suggestion: change ViewModelDelegate to StoryViewModelDelegate or StoryViewDelegate? Don't know
+    weak var viewDelegate: ViewDelegate?
     weak var delegate: StoryViewModelDelegate?
     var node: StoryNode?
     let service = StoryNodesServices()
@@ -19,7 +22,6 @@ public class StoryViewModel {
         self.node = service.retrieveNode(nodeId: node.id)
         self.delegate = coordinatorDelegate
         self.playerService = playerService
-        self.playerService.saveChoosenNode(id: node.id)
     }
 
     init(with nodeId: NodeID, playerService: PlayerServiceProtocol = PlayerService()) {
@@ -30,4 +32,13 @@ public class StoryViewModel {
     public func userWantToChoose() {
         delegate?.userWantToChoose()
     }
+
+    // MARK: - ViewDelegate
+
+    public func updateHUD() {
+        // Get player's current points
+        playerService.initializePlayer()
+        viewDelegate?.updateHUD(with: playerService.player.points)
+    }
+
 }

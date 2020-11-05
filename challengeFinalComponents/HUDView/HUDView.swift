@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class HUDView: UIView {
+public class HUDView: UIView {
     
     private lazy var pauseButton: PauseButton = {
         let pause = PauseButton()
@@ -17,7 +17,7 @@ class HUDView: UIView {
         return pause
     }()
     
-    private lazy var decisionPointsView: PointsView = {
+    public lazy var decisionPointsView: PointsView = {
         let decision = PointsView()
         // TranslatesAutoresizingMaskIntoConstraints was set in View Init
 

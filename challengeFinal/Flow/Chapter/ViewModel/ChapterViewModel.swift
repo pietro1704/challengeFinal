@@ -20,7 +20,8 @@ public class ChapterViewModel {
         self.playerService = playerService
 
         // Note: Refresh Player at each run
-        self.playerService.service.savePoints(0)
+        // TODO: set initial points
+        self.playerService.service.savePoints(20)
         self.playerService.service.saveStoryPath([])
     }
 

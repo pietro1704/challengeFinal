@@ -9,7 +9,7 @@ import UIKit
 
 /// Creates a view containing the indicator (image) for the points and its label
 /// Size height and width needs to be set from outside
-class PointsView: UIView {
+public class PointsView: UIView {
 
     // MARK: - Properties
 
@@ -31,6 +31,12 @@ class PointsView: UIView {
     }
 
     // MARK: - Animations
+
+    // MARK: - Public Methods
+    
+    func updateLabel(withPoints points: Int) {
+        pointsLabel.text = String(points)
+    }
 }
 
     // MARK: - View Codable

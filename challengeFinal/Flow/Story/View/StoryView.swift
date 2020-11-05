@@ -23,7 +23,7 @@ public class StoryView: UIView {
         return imageView
     }()
     
-    private lazy var hudView: HUDView = {
+    public lazy var hudView: HUDView = {
         let hud = HUDView()
         addSubview(hud)
         
@@ -131,7 +131,7 @@ public class StoryView: UIView {
 
     public func configure(using viewModel: StoryViewModel?) {
         self.viewModel = viewModel
-
+        
         prepareForReuse()
         let node = viewModel?.node
         self.imageView.recievedImage(image: loadImage(node?.imagePath))
@@ -158,4 +158,14 @@ extension StoryView: TransparentButtonDelegate {
     public func transpButtonPressed() {
         viewModel?.userWantToChoose()
     }
+}
+
+// MARK: - Bridge view - viewModel
+
+extension StoryView: ViewDelegate {
+
+    public func updateHUD(with points: Int) {
+        hudView.decisionPointsView.updateLabel(withPoints: points)
+    }
+
 }
