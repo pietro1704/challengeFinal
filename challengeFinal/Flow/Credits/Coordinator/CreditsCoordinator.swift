@@ -19,7 +19,7 @@ class CreditsCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = MenuViewController.instantiate(storyBoardName: "Menu")
+        let vc = MenuViewController.instantiate(storyBoardName: "Credits")
         let playerService = PlayerService()
         let viewModel = MenuViewModel(coordinatorDelegate: self, playerService: playerService)
         vc.viewModel = viewModel
@@ -36,7 +36,7 @@ class CreditsCoordinator: Coordinator {
     }
 }
 
-extension MenuCoordinator: MenuViewModelDelegate {
+extension CreditsCoordinator: CreditsViewModelDelegate {
     func userWantToStartNewGame() {
         parentCoordinator?.userWantToStartNewGame(child: self)
     }

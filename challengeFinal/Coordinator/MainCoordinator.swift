@@ -24,6 +24,13 @@ public class MainCoordinator: Coordinator {
         // TODO: trocar para creditos
     }
 
+    func showCredits() {
+        let coordinator = CreditsCoordinator(navigationController: navigationController)
+        coordinator.parentCoordinator = self
+        childCoordinators.append(coordinator)
+        coordinator.start()
+    }
+    
     func showMenu() {
         let coordinator = MenuCoordinator(navigationController: navigationController)
         coordinator.parentCoordinator = self

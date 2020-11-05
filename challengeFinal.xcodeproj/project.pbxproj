@@ -121,6 +121,10 @@
 		8D9E8285254A002B005FDC37 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		8D9E828C254A00D4005FDC37 /* HUDViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewTests.swift; sourceTree = "<group>"; };
 		8DB74E462554BF7C003D4A99 /* CreditsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCoordinator.swift; sourceTree = "<group>"; };
+		8DB74E512554C278003D4A99 /* CreditsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewModel.swift; sourceTree = "<group>"; };
+		8DB74E522554C278003D4A99 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		8DB74E532554C279003D4A99 /* CreditsViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewContainer.swift; sourceTree = "<group>"; };
+		8DB74E552554C279003D4A99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Credits.storyboard; sourceTree = "<group>"; };
 		8DD3F5B72541D60500FDA5B4 /* PauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseButton.swift; sourceTree = "<group>"; };
 		8DD3F5BD2541D6D800FDA5B4 /* PauseButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseButtonTests.swift; sourceTree = "<group>"; };
 		8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodesTest.swift; sourceTree = "<group>"; };
@@ -324,6 +328,10 @@
 		8DB74E472554BFEB003D4A99 /* Credits */ = {
 			isa = PBXGroup;
 			children = (
+				8DB74E582554C3AC003D4A99 /* ViewModel */,
+				8DB74E592554C3B9003D4A99 /* Storyboard */,
+				8DB74E5A2554C3C5003D4A99 /* ViewContainer */,
+				8DB74E5B2554C3D1003D4A99 /* ViewController */,
 				8DB74E482554BFF7003D4A99 /* Coordinator */,
 			);
 			path = Credits;
@@ -335,6 +343,38 @@
 				8DB74E462554BF7C003D4A99 /* CreditsCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8DB74E582554C3AC003D4A99 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8DB74E512554C278003D4A99 /* CreditsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8DB74E592554C3B9003D4A99 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				8DB74E542554C279003D4A99 /* Credits.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		8DB74E5A2554C3C5003D4A99 /* ViewContainer */ = {
+			isa = PBXGroup;
+			children = (
+				8DB74E532554C279003D4A99 /* CreditsViewContainer.swift */,
+			);
+			path = ViewContainer;
+			sourceTree = "<group>";
+		};
+		8DB74E5B2554C3D1003D4A99 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8DB74E522554C278003D4A99 /* CreditsViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		C0649F670057FC170CAF4D63 /* Pods */ = {
@@ -1060,6 +1100,14 @@
 				8D41F6962530932500A496C6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8DB74E542554C279003D4A99 /* Credits.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DB74E552554C279003D4A99 /* Base */,
+			);
+			name = Credits.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
