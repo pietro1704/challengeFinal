@@ -120,6 +120,7 @@
 		8D9E827D2549FA02005FDC37 /* GoToDecisionButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToDecisionButtonTests.swift; sourceTree = "<group>"; };
 		8D9E8285254A002B005FDC37 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		8D9E828C254A00D4005FDC37 /* HUDViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewTests.swift; sourceTree = "<group>"; };
+		8DB74E462554BF7C003D4A99 /* CreditsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCoordinator.swift; sourceTree = "<group>"; };
 		8DD3F5B72541D60500FDA5B4 /* PauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseButton.swift; sourceTree = "<group>"; };
 		8DD3F5BD2541D6D800FDA5B4 /* PauseButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseButtonTests.swift; sourceTree = "<group>"; };
 		8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodesTest.swift; sourceTree = "<group>"; };
@@ -320,6 +321,22 @@
 			path = HUDView;
 			sourceTree = "<group>";
 		};
+		8DB74E472554BFEB003D4A99 /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				8DB74E482554BFF7003D4A99 /* Coordinator */,
+			);
+			path = Credits;
+			sourceTree = "<group>";
+		};
+		8DB74E482554BFF7003D4A99 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				8DB74E462554BF7C003D4A99 /* CreditsCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		C0649F670057FC170CAF4D63 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,6 +477,7 @@
 			children = (
 				DA1F094025471666008A5775 /* Choice */,
 				DA8E872E2541BAEE000D481B /* Chapter */,
+				8DB74E472554BFEB003D4A99 /* Credits */,
 				DA30DF9025371F13007C6CA4 /* Menu */,
 				DA30DF8F25371E88007C6CA4 /* Story */,
 			);

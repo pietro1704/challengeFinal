@@ -19,6 +19,9 @@ public class MainCoordinator: Coordinator {
 
     func start() {
         showMenu()
+        #warning("TROCAR PARA CREDITOS")
+        
+        // TODO: trocar para creditos
     }
 
     func showMenu() {
