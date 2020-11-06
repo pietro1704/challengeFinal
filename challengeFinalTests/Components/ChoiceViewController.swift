@@ -32,6 +32,8 @@ class ChoiceViewController: UIViewController, Storyboarded {
         self.viewModel = viewModel
         containerView.viewModel = viewModel
         containerView.configure(using: viewModel)
+        viewModel.hudDelegate = containerView
+        viewModel.updateHUD()
     }
 
     private func setupConstraints() {

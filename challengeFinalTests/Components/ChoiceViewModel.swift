@@ -9,6 +9,7 @@ import Foundation
 
 public class ChoiceViewModel {
 
+    weak var hudDelegate: HUDViewDelegate?
     weak var delegate: ChoiceViewModelDelegate?
     var infos: ChoiceViewInfos?
     let service = StoryNodesServices()
@@ -45,7 +46,6 @@ public class ChoiceViewModel {
 
     private func userChoosedRandom() {
         let randomNode = retrieveRandomNumber()
-        print(randomNode) // TODO: delete prints
         delegate?.userWantToHighlightNode(node: randomNode)
         animateAndConfirmChoice(randomNode)
     }
@@ -88,5 +88,13 @@ public class ChoiceViewModel {
 
     public func userWantToPause() {
         delegate?.userWantToPause()
+    }
+
+    // MARK: - HUDDelegate
+
+    public func updateHUD() {
+        // Get player's current points
+        playerService.initializePlayer()
+        hudDelegate?.updateHUD(with: playerService.player.points)
     }
 }

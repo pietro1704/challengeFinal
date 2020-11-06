@@ -79,3 +79,13 @@ extension ChoiceViewContainer: ChoiceViewDelegate {
         viewModel?.userWantToPause()
     }
 }
+
+// MARK: - Bridge view - viewModel
+
+extension ChoiceViewContainer: HUDViewDelegate {
+
+    public func updateHUD(with points: Int) {
+        choiceView.hudView.decisionPointsView.updateLabel(withPoints: points)
+    }
+
+}

@@ -9,9 +9,7 @@ import UIKit
 
 public class StoryViewModel {
 
-    // Suggestion: change delegate to navigationDelegate
-    // Suggestion: change ViewModelDelegate to StoryViewModelDelegate or StoryViewDelegate? Don't know
-    weak var viewDelegate: ViewDelegate?
+    weak var hudDelegate: HUDViewDelegate?
     weak var delegate: StoryViewModelDelegate?
     var node: StoryNode?
     let service = StoryNodesServices()
@@ -33,12 +31,12 @@ public class StoryViewModel {
         delegate?.userWantToChoose()
     }
 
-    // MARK: - ViewDelegate
+    // MARK: - HUDDelegate
 
     public func updateHUD() {
         // Get player's current points
         playerService.initializePlayer()
-        viewDelegate?.updateHUD(with: playerService.player.points)
+        hudDelegate?.updateHUD(with: playerService.player.points)
     }
 
 }
