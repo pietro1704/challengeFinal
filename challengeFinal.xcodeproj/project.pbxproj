@@ -26,7 +26,7 @@
 		8DD3F5BE2541D6D800FDA5B4 /* PauseButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5BD2541D6D800FDA5B4 /* PauseButtonTests.swift */; };
 		8DEE2C6F253746A3006C187B /* StoryNodesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */; };
 		B08D4A095391882B7B2C3C17 /* Pods_challengeFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44548E80E7D0A3A976B144A5 /* Pods_challengeFinal.framework */; };
-		C509BE0925504D2D00B37CFF /* ViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C509BE0825504D2D00B37CFF /* ViewDelegate.swift */; };
+		C509BE0925504D2D00B37CFF /* HUDViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C509BE0825504D2D00B37CFF /* HUDViewDelegate.swift */; };
 		C50FD4AF2544BF0B00B9D2CA /* PlayerDataServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50FD4AE2544BF0B00B9D2CA /* PlayerDataServicesTests.swift */; };
 		C557D39C2547854D00A537F3 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C557D39B2547854D00A537F3 /* PlayerService.swift */; };
 		C56B280A2543892A004391BA /* PlayerDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B28092543892A004391BA /* PlayerDataService.swift */; };
@@ -126,7 +126,7 @@
 		9EAC0408D3DE1D5D885DA8C1 /* Pods-challengeFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.release.xcconfig"; sourceTree = "<group>"; };
 		AD27566663346DD3881AC3C2 /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3C65AD70148E9DF28692587 /* Pods-challengeFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.debug.xcconfig"; sourceTree = "<group>"; };
-		C509BE0825504D2D00B37CFF /* ViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDelegate.swift; sourceTree = "<group>"; };
+		C509BE0825504D2D00B37CFF /* HUDViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewDelegate.swift; sourceTree = "<group>"; };
 		C50FD4AE2544BF0B00B9D2CA /* PlayerDataServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataServicesTests.swift; sourceTree = "<group>"; };
 		C557D39B2547854D00A537F3 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
 		C56B28092543892A004391BA /* PlayerDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataService.swift; sourceTree = "<group>"; };
@@ -315,6 +315,7 @@
 		8D9E8289254A00C8005FDC37 /* HUDView */ = {
 			isa = PBXGroup;
 			children = (
+				C509BE0825504D2D00B37CFF /* HUDViewDelegate.swift */,
 				8D9E8285254A002B005FDC37 /* HUDView.swift */,
 			);
 			path = HUDView;
@@ -541,7 +542,6 @@
 		DA3E12A825386B9800C48AF8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C509BE0825504D2D00B37CFF /* ViewDelegate.swift */,
 				8D4FF5E8254303E500FBF110 /* StoryViewModelDelegate.swift */,
 				DA3E12A925386BAA00C48AF8 /* StoryViewModel.swift */,
 			);
@@ -951,7 +951,7 @@
 				DA0A71EA2539E360002BAB51 /* StoryNode.swift in Sources */,
 				DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */,
 				DA0A71EB2539E360002BAB51 /* Story.swift in Sources */,
-				C509BE0925504D2D00B37CFF /* ViewDelegate.swift in Sources */,
+				C509BE0925504D2D00B37CFF /* HUDViewDelegate.swift in Sources */,
 				DA8E87252541AF93000D481B /* ChapterView.swift in Sources */,
 				C557D39C2547854D00A537F3 /* PlayerService.swift in Sources */,
 				8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */,

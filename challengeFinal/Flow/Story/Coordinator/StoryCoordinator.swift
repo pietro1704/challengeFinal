@@ -24,6 +24,7 @@ public class StoryCoordinator: Coordinator {
         viewController = StoryViewController.instantiate(storyBoardName: "Story")
         let viewModel = StoryViewModel(node: storyNode, coordinatorDelegate: self)
         viewController?.viewModel = viewModel
+        viewController?.update(with: viewModel)
         
         let transition = CATransition()
         transition.duration = 0.4
