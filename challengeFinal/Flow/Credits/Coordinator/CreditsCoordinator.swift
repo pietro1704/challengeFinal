@@ -19,9 +19,9 @@ class CreditsCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = MenuViewController.instantiate(storyBoardName: "Credits")
+        let vc = CreditsViewController.instantiate(storyBoardName: "Credits")
         let playerService = PlayerService()
-        let viewModel = MenuViewModel(coordinatorDelegate: self, playerService: playerService)
+        let viewModel = CreditsViewModel(coordinatorDelegate: self, playerService: playerService)
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: false)
     }

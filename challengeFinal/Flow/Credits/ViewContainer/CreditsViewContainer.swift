@@ -10,7 +10,7 @@ import UIKit
 public class CreditsViewContainer: UIView {
     
     lazy var containerView: CreditsView = {
-        let view = MenuView()
+        let view = CreditsView()
         addSubview(view)
         view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +35,7 @@ public class CreditsViewContainer: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func setup(with viewModel: MenuViewModel?) {
+    public func setup(with viewModel: CreditsViewModel?) {
         self.viewModel = viewModel
         setupView()
     }
@@ -59,7 +59,7 @@ public class CreditsViewContainer: UIView {
 
 }
 
-extension MenuViewContainer: MenuViewDelegate {
+extension CreditsViewContainer: CreditsViewModelDelegate {
     public func startNewGame() {
         viewModel?.userWantToStartNewGame()
     }

@@ -12,7 +12,7 @@ class CreditsViewController: UIViewController, Storyboarded {
     weak var coordinator: CreditsCoordinator?
 
     var containerView: CreditsViewContainer = {
-        let containerView = MenuViewContainer()
+        let containerView = CreditsViewContainer()
         containerView.translatesAutoresizingMaskIntoConstraints = false
         return containerView
     }()

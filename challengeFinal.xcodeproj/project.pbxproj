@@ -22,6 +22,12 @@
 		8D9E827E2549FA02005FDC37 /* GoToDecisionButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E827D2549FA02005FDC37 /* GoToDecisionButtonTests.swift */; };
 		8D9E8286254A002B005FDC37 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E8285254A002B005FDC37 /* HUDView.swift */; };
 		8D9E828D254A00D4005FDC37 /* HUDViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E828C254A00D4005FDC37 /* HUDViewTests.swift */; };
+		8DAAC8CC2554CCDC00DC08BF /* CreditsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB74E462554BF7C003D4A99 /* CreditsCoordinator.swift */; };
+		8DAAC8CF2554CCE100DC08BF /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB74E522554C278003D4A99 /* CreditsViewController.swift */; };
+		8DAAC8D22554CCE400DC08BF /* CreditsViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB74E532554C279003D4A99 /* CreditsViewContainer.swift */; };
+		8DAAC8D52554CCEA00DC08BF /* Credits.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB74E542554C279003D4A99 /* Credits.storyboard */; };
+		8DAAC8D82554CCFF00DC08BF /* CreditsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB74E512554C278003D4A99 /* CreditsViewModel.swift */; };
+		8DAAC8DD2554CEC000DC08BF /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAAC8DB2554CEA300DC08BF /* CreditsView.swift */; };
 		8DD3F5B82541D60500FDA5B4 /* PauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5B72541D60500FDA5B4 /* PauseButton.swift */; };
 		8DD3F5BE2541D6D800FDA5B4 /* PauseButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5BD2541D6D800FDA5B4 /* PauseButtonTests.swift */; };
 		8DEE2C6F253746A3006C187B /* StoryNodesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */; };
@@ -120,6 +126,7 @@
 		8D9E827D2549FA02005FDC37 /* GoToDecisionButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToDecisionButtonTests.swift; sourceTree = "<group>"; };
 		8D9E8285254A002B005FDC37 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		8D9E828C254A00D4005FDC37 /* HUDViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewTests.swift; sourceTree = "<group>"; };
+		8DAAC8DB2554CEA300DC08BF /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		8DB74E462554BF7C003D4A99 /* CreditsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCoordinator.swift; sourceTree = "<group>"; };
 		8DB74E512554C278003D4A99 /* CreditsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewModel.swift; sourceTree = "<group>"; };
 		8DB74E522554C278003D4A99 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
@@ -326,6 +333,14 @@
 			path = HUDView;
 			sourceTree = "<group>";
 		};
+		8DAAC8DC2554CEAA00DC08BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8DAAC8DB2554CEA300DC08BF /* CreditsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8DB74E472554BFEB003D4A99 /* Credits */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +348,7 @@
 				8DB74E592554C3B9003D4A99 /* Storyboard */,
 				8DB74E5A2554C3C5003D4A99 /* ViewContainer */,
 				8DB74E5B2554C3D1003D4A99 /* ViewController */,
+				8DAAC8DC2554CEAA00DC08BF /* View */,
 				8DB74E482554BFF7003D4A99 /* Coordinator */,
 			);
 			path = Credits;
@@ -899,6 +915,7 @@
 				8D41F6922530932300A496C6 /* Menu.storyboard in Resources */,
 				DA8E87362541BB2D000D481B /* Chapter.storyboard in Resources */,
 				DA0A71EF2539E379002BAB51 /* StoryNodes.json in Resources */,
+				8DAAC8D52554CCEA00DC08BF /* Credits.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1001,6 +1018,7 @@
 				8D04D60A25430ECE00E1F9F7 /* StoryViewModelDelegate.swift in Sources */,
 				DAC5C08C2549A97D003ED60F /* MainCoordinator.swift in Sources */,
 				DA8E87422541BF4F000D481B /* ChapterViewModel.swift in Sources */,
+				8DAAC8D82554CCFF00DC08BF /* CreditsViewModel.swift in Sources */,
 				DA5972F82537286500D6EF40 /* StoryView.swift in Sources */,
 				DA1F09352546F424008A5775 /* DynamicTypes.swift in Sources */,
 				DA1EB8962554358E00D53030 /* MenuViewContainer.swift in Sources */,
@@ -1010,7 +1028,10 @@
 				DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */,
 				DA0A71EB2539E360002BAB51 /* Story.swift in Sources */,
 				C509BE0925504D2D00B37CFF /* HUDViewDelegate.swift in Sources */,
+				8DAAC8CC2554CCDC00DC08BF /* CreditsCoordinator.swift in Sources */,
+				8DAAC8CF2554CCE100DC08BF /* CreditsViewController.swift in Sources */,
 				DA8E87252541AF93000D481B /* ChapterView.swift in Sources */,
+				8DAAC8D22554CCE400DC08BF /* CreditsViewContainer.swift in Sources */,
 				C557D39C2547854D00A537F3 /* PlayerService.swift in Sources */,
 				8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */,
 				DADC40C025403F7900078CA3 /* StoryNodeRepository.swift in Sources */,
@@ -1042,6 +1063,7 @@
 				DA1F0947254716A2008A5775 /* ChoiceViewController.swift in Sources */,
 				8D9E826E2549F80F005FDC37 /* TransparentButton.swift in Sources */,
 				DA8E873E2541BEA9000D481B /* ChapterViewContainer.swift in Sources */,
+				8DAAC8DD2554CEC000DC08BF /* CreditsView.swift in Sources */,
 				DA35ED362535F3E30061606C /* ImageView.swift in Sources */,
 				DA8E874C2541C1FD000D481B /* ChapterCoordinator.swift in Sources */,
 				DA789A92254312E9001CE5BF /* UIFont.swift in Sources */,
