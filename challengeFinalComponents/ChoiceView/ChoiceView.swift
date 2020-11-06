@@ -141,6 +141,8 @@ public class ChoiceView: UIView {
 
     @objc func confirmButtonPressed() {
         self.delegate?.confirmButtonPressed()
+        // TODO: quando aposto, existe um delay de uns 3s para voltar para a StoryView.
+        // Nesse meio tempo, se eu clico no botao, eu posso ganhar mais pontos.
     }
 
     public override func didMoveToSuperview() {

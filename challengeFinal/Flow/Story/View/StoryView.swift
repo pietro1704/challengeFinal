@@ -162,7 +162,7 @@ extension StoryView: TransparentButtonDelegate {
 
 // MARK: - Bridge view - viewModel
 
-extension StoryView: ViewDelegate {
+extension StoryView: HUDViewDelegate {
 
     public func updateHUD(with points: Int) {
         hudView.decisionPointsView.updateLabel(withPoints: points)
