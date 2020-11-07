@@ -90,6 +90,8 @@ extension PointsView: ViewCodable {
             // Equal center to main View
             view.addCenterYanchor(to: self)
             view.trailingAnchor.constraint(equalTo: centerPointView.trailingAnchor, constant: -2).isActive = true
+            // Make PointsView start with iconImage
+            view.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive =  true
         }
     }
 
