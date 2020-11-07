@@ -27,8 +27,14 @@ public class StoryViewModel {
         self.playerService = playerService
     }
 
+    // MARK: - Navigation
+
     public func userWantToChoose() {
         delegate?.userWantToChoose()
+    }
+
+    public func userFinishedGame() {
+        delegate?.userDidFinishChapter()
     }
 
     // MARK: - HUDDelegate

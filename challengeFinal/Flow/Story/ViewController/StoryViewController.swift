@@ -39,7 +39,6 @@ class StoryViewController: UIViewController, Storyboarded {
     public func transformIntoFinalNode(with viewModel: StoryViewModel) {
         update(with: viewModel)
         containerView.finalNodeTransformation()
-        // Instantiate coordinator?
     }
 
     private func setupConstraints() {

@@ -70,6 +70,11 @@ public class StoryCoordinator: Coordinator {
         childDidFinished(coordinator)
     }
 
+    func finishCurrentStory() {
+        parentCoordinator?.showCredits(child: self)
+
+    }
+
     func childDidFinished(_ child: Coordinator?) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {
@@ -81,7 +86,13 @@ public class StoryCoordinator: Coordinator {
 }
 
 extension StoryCoordinator: StoryViewModelDelegate {
+
     public func userWantToChoose() {
         showChoices(with: self.storyNode.childNodes)
     }
+
+    public func userDidFinishChapter() {
+        finishCurrentStory()
+    }
+
 }

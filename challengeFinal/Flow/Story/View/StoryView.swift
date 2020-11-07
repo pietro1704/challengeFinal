@@ -168,7 +168,8 @@ extension StoryView: TransparentButtonDelegate {
         if !isFinalNode {
             viewModel?.userWantToChoose()
         } else {
-            print("FIIIIIM")
+            viewModel?.userFinishedGame()
+            isFinalNode = false
         }
     }
 }
