@@ -9,10 +9,9 @@ import UIKit
 
 public class CreditsViewContainer: UIView {
     
-    lazy var containerView: CreditsView = {
+    lazy var creditsView: CreditsView = {
         let view = CreditsView()
         addSubview(view)
-        view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -42,31 +41,15 @@ public class CreditsViewContainer: UIView {
 
     private func setupView() {
         guard let viewModel = viewModel else { return }
-        if let image = UIImage(named: viewModel.imagePath) {
-            containerView.received(image: image)
-        }
-        containerView.continueGameButton.changeButton(to: viewModel.userCanContinue)
+        creditsView.configure(using: viewModel)
     }
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: topAnchor),
-            containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            containerView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            creditsView.topAnchor.constraint(equalTo: topAnchor),
+            creditsView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            creditsView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            creditsView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-
-}
-
-extension CreditsViewContainer: CreditsViewModelDelegate {
-    public func startNewGame() {
-        viewModel?.userWantToStartNewGame()
-    }
-    
-    public func continueGame() {
-        viewModel?.userWantToContinueGame()
-    }
-    
-    public func settings() { }
 }

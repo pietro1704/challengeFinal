@@ -19,6 +19,8 @@ public class CreditsViewModel {
     let storyService = StoryNodesServices()
     let playerService: PlayerServiceProtocol
     var userCanContinue: Bool
+    var text = "Pietro Guizao"
+    
 
     public init(coordinatorDelegate: CreditsViewModelDelegate, playerService: PlayerServiceProtocol) {
         self.delegate = coordinatorDelegate

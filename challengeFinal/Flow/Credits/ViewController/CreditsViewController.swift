@@ -11,8 +11,8 @@ class CreditsViewController: UIViewController, Storyboarded {
 
     weak var coordinator: CreditsCoordinator?
 
-    var containerView: CreditsViewContainer = {
-        let containerView = CreditsViewContainer()
+    var containerView: CreditsView = {
+        let containerView = CreditsView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
         return containerView
     }()
@@ -24,7 +24,7 @@ class CreditsViewController: UIViewController, Storyboarded {
         navigationController?.navigationBar.isHidden = true
         
         containerView.viewModel = viewModel
-        containerView.setup(with: viewModel)
+        containerView.configure(using: viewModel)
         view.addSubview(containerView)
         setupConstraints()
     }
@@ -32,6 +32,7 @@ class CreditsViewController: UIViewController, Storyboarded {
     public func update(with viewModel: CreditsViewModel) {
         self.viewModel = viewModel
         containerView.viewModel = viewModel
+        containerView.configure(using: viewModel)
     }
 
     private func setupConstraints() {
