@@ -18,12 +18,9 @@ public class MainCoordinator: Coordinator {
     }
 
     func start() {
-        //showMenu()
+        showMenu()
         
-        showCredits()
-        #warning("TROCAR PARA CREDITOS")
-        
-        // TODO: trocar para creditos
+        //showCredits()
     }
 
     func showCredits() {
@@ -65,6 +62,11 @@ public class MainCoordinator: Coordinator {
     func userWantToGoToMenu(child: Coordinator) {
         self.childDidFinished(child)
         showMenu()
+    }
+    
+    func userWantToShowCredits(child: Coordinator) {
+        self.childDidFinished(child)
+        showCredits()
     }
 
     func userWantToContinue(from node: StoryNode, child: Coordinator) {

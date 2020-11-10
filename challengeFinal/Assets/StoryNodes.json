@@ -19,14 +19,14 @@
             "imagePath": "coxinha",
             "title": "Continua para casa",
             "text": "voltou para casa",
-            "childNodeIDs": [1]
+            "childNodeIDs": []
         },
         {
             "id": 4,
             "imagePath": "coxinha",
             "title": "Risoles",
             "text": "Cada mordida que você dá nesse risoles, desce 0,135 ml de óleo pela mão\n\n Ponto positivo: desce que é uma beleza\n Ponto negativo: coração sente",
-            "childNodeIDs": [1]
+            "childNodeIDs": []
         },
         {
             "id": 5,
@@ -47,7 +47,7 @@
             "imagePath": "coxinha",
             "title": "Volta para o começo",
             "text": "",
-            "childNodeIDs": [1]
+            "childNodeIDs": []
         }
     ]
 }

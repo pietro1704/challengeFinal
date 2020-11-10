@@ -92,6 +92,7 @@ public class CreditsView: UIView {
         super.init(frame: .zero)
         backgroundColor = UIColor.background
         setupConstraints()
+        startAutomaticScroll()
     }
     
     public init(with viewModel: CreditsViewModel) {
@@ -99,6 +100,7 @@ public class CreditsView: UIView {
         super.init(frame: .zero)
         backgroundColor = UIColor.background
         setupConstraints()
+        startAutomaticScroll()
     }
     
     fileprivate func setupConstraints() {
@@ -163,6 +165,11 @@ public class CreditsView: UIView {
         guard let imagePath = imagePath,
               let image = UIImage(named: imagePath) else { return UIImage() }
         return image
+    }
+    
+    func startAutomaticScroll(){
+        let rect = CGRect(x: 0, y: scrollView.contentSize.height - 200, width: scrollView.bounds.width, height: 200)
+        scrollView.scrollRectToVisible(rect, animated: true)
     }
     
     private func prepareForReuse() {
