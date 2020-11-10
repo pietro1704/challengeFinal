@@ -24,7 +24,7 @@ public class ChoiceCoordinator: Coordinator {
         viewController = ChoiceViewController.instantiate(storyBoardName: "Choice")
         let viewModel = ChoiceViewModel(infos: infos, coordinatorDelegate: self)
         viewController?.viewModel = viewModel
-        viewController?.update(with: viewModel)
+        viewController?.update(with: viewModel)  // TODO: guizao please check: pode chamar esta linha aqui?
         navigationController.pushViewController(viewController, animated: true)
     }
 

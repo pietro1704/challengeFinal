@@ -36,6 +36,11 @@ class StoryViewController: UIViewController, Storyboarded {
         viewModel.updateHUD()
     }
 
+    public func transformIntoFinalNode(with viewModel: StoryViewModel) {
+        update(with: viewModel)
+        containerView.finalNodeTransformation()
+    }
+
     private func setupConstraints() {
         containerView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         containerView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
