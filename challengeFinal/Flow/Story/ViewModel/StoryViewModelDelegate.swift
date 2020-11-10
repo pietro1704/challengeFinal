@@ -11,4 +11,5 @@ import Foundation
 public protocol StoryViewModelDelegate: class {
     
     func userWantToChoose()
+    func userDidFinishChapter()
 }

@@ -15,6 +15,7 @@ public class StoryView: UIView {
 
     public var viewModel: StoryViewModel?
     weak var delegate: StoryViewDelegate?
+    private var isFinalNode: Bool = false
 
     private lazy var imageView: ImageView = {
         let imageView = ImageView()
@@ -152,11 +153,24 @@ public class StoryView: UIView {
         self.imageView.recievedImage(image: UIImage())
         self.textView.configure(with: "")
     }
+
+    // MARK: - Final Node
+
+    public func finalNodeTransformation() {
+        hudView.isHidden = true
+        goToDecisionButton.setTitle("Finalizar", for: UIControl.State.normal)
+        isFinalNode = true
+    }
 }
 
 extension StoryView: TransparentButtonDelegate {
     public func transpButtonPressed() {
-        viewModel?.userWantToChoose()
+        if !isFinalNode {
+            viewModel?.userWantToChoose()
+        } else {
+            viewModel?.userFinishedGame()
+            isFinalNode = false
+        }
     }
 }
 

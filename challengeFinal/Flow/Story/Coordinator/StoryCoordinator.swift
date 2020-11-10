@@ -24,7 +24,7 @@ public class StoryCoordinator: Coordinator {
         viewController = StoryViewController.instantiate(storyBoardName: "Story")
         let viewModel = StoryViewModel(node: storyNode, coordinatorDelegate: self)
         viewController?.viewModel = viewModel
-        viewController?.update(with: viewModel)
+        viewController?.update(with: viewModel) // TODO: guizao please check: pode chamar esta linha aqui?
         
         let transition = CATransition()
         transition.duration = 0.4
@@ -40,7 +40,14 @@ public class StoryCoordinator: Coordinator {
                                        coordinatorDelegate: self,
                                        playerService: playerService)
         self.storyNode = viewModel.node!
-        viewController?.update(with: viewModel)
+
+        if !self.storyNode.childNodes.isEmpty {
+            viewController?.update(with: viewModel)
+        } else {
+            // Final Node
+            viewController?.transformIntoFinalNode(with: viewModel)
+        }
+
     }
 
     func showChoices(with childNodes: [StoryNode]) {
@@ -63,6 +70,11 @@ public class StoryCoordinator: Coordinator {
         childDidFinished(coordinator)
     }
 
+    func finishCurrentStory() {
+        parentCoordinator?.showCredits(child: self)
+
+    }
+
     func childDidFinished(_ child: Coordinator?) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {
@@ -74,7 +86,13 @@ public class StoryCoordinator: Coordinator {
 }
 
 extension StoryCoordinator: StoryViewModelDelegate {
+
     public func userWantToChoose() {
         showChoices(with: self.storyNode.childNodes)
     }
+
+    public func userDidFinishChapter() {
+        finishCurrentStory()
+    }
+
 }
