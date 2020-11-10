@@ -61,6 +61,11 @@ public class MainCoordinator: Coordinator {
         self.childDidFinished(child)
         showChapter(with: 1)
     }
+    
+    func userWantToGoToMenu(child: Coordinator) {
+        self.childDidFinished(child)
+        showMenu()
+    }
 
     func userWantToContinue(from node: StoryNode, child: Coordinator) {
         self.childDidFinished(child)

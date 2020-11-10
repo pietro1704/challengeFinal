@@ -37,11 +37,11 @@ class CreditsCoordinator: Coordinator {
 }
 
 extension CreditsCoordinator: CreditsViewModelDelegate {
+    func userWantToGoToMenu() {
+        parentCoordinator?.userWantToGoToMenu(child: self)
+    }
+
     func userWantToStartNewGame() {
         parentCoordinator?.userWantToStartNewGame(child: self)
-    }
-    
-    func userWantToContinueGame(from node: StoryNode) {
-        parentCoordinator?.userWantToContinue(from: node, child: self)
     }
 }

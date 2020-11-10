@@ -9,7 +9,7 @@ import UIKit
 
 public protocol CreditsViewModelDelegate: class {
     func userWantToStartNewGame()
-    func userWantToContinueGame(from: StoryNode)
+    func userWantToGoToMenu()
 }
 
 public class CreditsViewModel {
@@ -21,7 +21,6 @@ public class CreditsViewModel {
     var userCanContinue: Bool
     var text = "Pietro Guizao"
     
-
     public init(coordinatorDelegate: CreditsViewModelDelegate, playerService: PlayerServiceProtocol) {
         self.delegate = coordinatorDelegate
         self.playerService = playerService
@@ -32,9 +31,7 @@ public class CreditsViewModel {
         delegate?.userWantToStartNewGame()
     }
     
-    func userWantToContinueGame() {
-        if let node = playerService.getLastNode() {
-            delegate?.userWantToContinueGame(from: node)
-        }
+    public func userWantToGoToMenu() {
+        delegate?.userWantToGoToMenu()
     }
 }

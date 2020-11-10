@@ -8,7 +8,8 @@
 import UIKit
 
 public protocol CreditsViewDelegate: class {
-    func userChoose(nodeId: NodeID)
+    func goToMenu()
+    func startNewGame()
 }
 
 public class CreditsView: UIView {
@@ -35,16 +36,22 @@ public class CreditsView: UIView {
     private lazy var newStoryButton: TransparentButton = {
         let story = TransparentButton(title: "Iniciar nova história")
         story.translatesAutoresizingMaskIntoConstraints = false
-        story.delegate = self
         addSubview(story)
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(startNewGame))
+        story.addGestureRecognizer(gesture)
+        
         return story
     }()
     
     private lazy var toMenuButton: TransparentButton = {
         let menu = TransparentButton(title: "Voltar ao menu")
         menu.translatesAutoresizingMaskIntoConstraints = false
-        menu.delegate = self
         addSubview(menu)
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(goToMenu))
+        menu.addGestureRecognizer(gesture)
+
         return menu
     }()
     
@@ -162,10 +169,12 @@ public class CreditsView: UIView {
         self.imageView.recievedImage(image: UIImage())
         self.textView.configure(with: "")
     }
-}
-
-extension CreditsView: TransparentButtonDelegate {
-    public func transpButtonPressed() {
+    
+    @objc func startNewGame() {
         viewModel?.userWantToStartNewGame()
+    }
+
+    @objc func goToMenu() {
+        viewModel?.userWantToGoToMenu()
     }
 }
