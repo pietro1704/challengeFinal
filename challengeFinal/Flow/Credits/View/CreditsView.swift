@@ -51,6 +51,7 @@ public class CreditsView: UIView {
     private lazy var buttonsStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [newStoryButton, toMenuButton])
         stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.distribution = .equalCentering
         stack.axis = .horizontal
         addSubview(stack)
         return stack
