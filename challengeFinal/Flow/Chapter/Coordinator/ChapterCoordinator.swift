@@ -47,10 +47,8 @@ public class ChapterCoordinator: Coordinator {
 
     func showCredits(child: StoryCoordinator) {
         childDidFinished(child)
-        // TODO: Pietro and Guizao: confiram por favor se desta forma qnd instanciar novamente o chapter ele não vai empilhar
-        // TODO: Pietro: substituir o start abaixo pelo start do seu coordinator
-//        let coordinator = Credits coordinator..
-        start()
+        
+        parentCoordinator?.userWantToShowCredits(child: self)
     }
 
     func childDidFinished(_ child: Coordinator?) {

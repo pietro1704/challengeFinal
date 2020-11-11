@@ -19,8 +19,17 @@ public class MainCoordinator: Coordinator {
 
     func start() {
         showMenu()
+        
+        //showCredits()
     }
 
+    func showCredits() {
+        let coordinator = CreditsCoordinator(navigationController: navigationController)
+        coordinator.parentCoordinator = self
+        childCoordinators.append(coordinator)
+        coordinator.start()
+    }
+    
     func showMenu() {
         let coordinator = MenuCoordinator(navigationController: navigationController)
         coordinator.parentCoordinator = self
@@ -48,6 +57,16 @@ public class MainCoordinator: Coordinator {
     func userWantToStartNewGame(child: Coordinator) {
         self.childDidFinished(child)
         showChapter(with: 1)
+    }
+    
+    func userWantToGoToMenu(child: Coordinator) {
+        self.childDidFinished(child)
+        showMenu()
+    }
+    
+    func userWantToShowCredits(child: Coordinator) {
+        self.childDidFinished(child)
+        showCredits()
     }
 
     func userWantToContinue(from node: StoryNode, child: Coordinator) {
