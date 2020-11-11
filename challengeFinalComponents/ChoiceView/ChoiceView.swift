@@ -90,7 +90,7 @@ public class ChoiceView: UIView {
         prepareForReview()
         setupDynamicButtons(infos.dynamicButtons, selected: infos.selectedDynamic)
         setupChoiceButtons(infos.nodes, selected: infos.selectedNode?.id,
-                           canChooseNode: infos.canChooseNode, highlighted: infos.highlightedNode)
+                           canChooseNode: infos.canChooseNode)
         setupView()
     }
 
@@ -115,7 +115,7 @@ public class ChoiceView: UIView {
     }
 
     private func setupChoiceButtons(_ nodes: [StoryNode], selected: NodeID?,
-                                    canChooseNode: Bool, highlighted: NodeID?) {
+                                    canChooseNode: Bool) {
         for i in 0..<nodes.count {
             let node = nodes[i]
             let button = ChoiceButton(buttonText: node.title ?? "", colorName: "Red")

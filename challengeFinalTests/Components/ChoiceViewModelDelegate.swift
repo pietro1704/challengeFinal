@@ -13,8 +13,8 @@ public protocol ChoiceViewModelDelegate: class {
     func userWantToDismiss()
     func userWantToConfirmChoice(storyNode: StoryNode)
     func userWantToChooseDynamic(dynamic: DynamicTypes)
-    func userWantToHighlightNode(node: NodeID)
+    func userWantToHighlightNode(node: StoryNode)
     func userWantToChooseNode(node: NodeID)
-    func userGotRandom(node: NodeID)
+    func userGotRandom(node: StoryNode)
     func userWantToPause()
 }

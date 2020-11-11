@@ -78,21 +78,21 @@ extension ChoiceCoordinator: ChoiceViewModelDelegate {
         self.update(infos: infosToUpdate)
     }
 
-    public func userGotRandom(node: NodeID) {
+    public func userGotRandom(node: StoryNode) {
         let infosToUpdate = ChoiceViewInfosObject(nodes: infos.nodes,
                                                   selectedDynamic: infos.selectedDynamic,
                                                   selectedNode: infos.selectedNode,
-                                                  highlightedNode: node,
-                                                  nodeToEndAnimation: infos.nodeToEndAnimation)
+                                                  highlightedNode: node.id,
+                                                  nodeToEndAnimation: node)
         self.update(infos: infosToUpdate)
     }
 
-    public func userWantToHighlightNode(node: NodeID) {
+    public func userWantToHighlightNode(node: StoryNode) {
         let infosToUpdate = ChoiceViewInfosObject(nodes: infos.nodes,
                                                   selectedDynamic: infos.selectedDynamic,
                                                   selectedNode: infos.selectedNode,
-                                                  highlightedNode: node,
-                                                  nodeToEndAnimation: infos.nodeToEndAnimation)
+                                                  highlightedNode: node.id,
+                                                  nodeToEndAnimation: node)
         self.update(infos: infosToUpdate)
     }
 
