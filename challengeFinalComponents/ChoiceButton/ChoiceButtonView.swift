@@ -37,7 +37,7 @@ public class ChoiceButton: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.widthAnchor.constraint(equalToConstant: 31).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        imageView.isHidden = true
+        imageView.layer.opacity = 0
         if let image = imageforHighlightIndicator {
             imageView.image = image
         }
@@ -101,18 +101,16 @@ public class ChoiceButton: UIView {
         ])
     }
 
-    public func update(isHighlighted: Bool?, isSelected: Bool?) {
-        if let isHighlighted = isHighlighted {
-            self.isHighlighted = isHighlighted
-        }
-
+    public func update(isSelected: Bool?) {
         if let isSelected = isSelected {
             self.isSelected = isSelected
         }
     }
 
     private func changeHighligt() {
-        self.highlightIndicator.isHidden = !isHighlighted
+        if isHighlighted {
+            highlightIndicator.layer.opacity = 1
+        }
     }
 
     private func changeSelection() {

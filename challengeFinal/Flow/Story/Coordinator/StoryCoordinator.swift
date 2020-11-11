@@ -48,7 +48,8 @@ public class StoryCoordinator: Coordinator {
                                             infos: ChoiceViewInfosObject(nodes: childNodes,
                                                                          selectedDynamic: .choice,
                                                                          selectedNode: nil,
-                                                                         highlightedNode: nil))
+                                                                         highlightedNode: nil,
+                                                                         nodeToEndAnimation: nil))
         coordinator.parentCoordinator = self
         childCoordinators.append(coordinator)
         coordinator.start()

@@ -7,10 +7,16 @@
 
 import Foundation
 
+public protocol RandomAndBetDelegate: class {
+    func didReceivedNode(node: StoryNode)
+}
+
 public class ChoiceViewModel {
 
     weak var hudDelegate: HUDViewDelegate?
     weak var delegate: ChoiceViewModelDelegate?
+    weak var randomAndBetDelegate: RandomAndBetDelegate?
+
     var infos: ChoiceViewInfos?
     let service = StoryNodesServices()
     let playerService: PlayerServiceProtocol
@@ -65,11 +71,9 @@ public class ChoiceViewModel {
     }
 
     private func animateAndConfirmChoice(_ randomNode: NodeID) {
-        let node = infos?.nodes.filter({$0.id == randomNode}).first
-        let seconds = 2.0
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            self.delegate?.userWantToConfirmChoice(storyNode: node!)
-        }
+        guard let node = infos?.nodes.filter({$0.id == randomNode}).first else { return }
+        infos?.nodeToEndAnimation = node
+        randomAndBetDelegate?.didReceivedNode(node: node)
     }
 
     private func retrieveRandomNumber() -> NodeID {
@@ -88,6 +92,11 @@ public class ChoiceViewModel {
 
     public func userWantToPause() {
         delegate?.userWantToPause()
+    }
+
+    public func animationFinished() {
+        guard let node = infos?.nodeToEndAnimation else { return }
+        self.delegate?.userWantToConfirmChoice(storyNode: node)
     }
 
     // MARK: - HUDDelegate

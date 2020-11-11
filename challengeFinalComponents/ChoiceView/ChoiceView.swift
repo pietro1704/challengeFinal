@@ -13,12 +13,21 @@ public protocol ChoiceViewDelegate: class {
     func backButtonPressed()
     func confirmButtonPressed()
     func pauseButtonPressed()
+    func animationFinished()
 }
 
 public class ChoiceView: UIView {
 
     weak var delegate: ChoiceViewDelegate?
+    var infos: ChoiceViewInfos?
 
+    var lastAnimatedIndex: Int = 0
+    var currentAnimation: Int = 0
+    var maxAnimation: Int = 5
+    let stdDuration: Double = 0.2
+    var currentDuration: Double = 0.2
+    var choiceButtonTapped: ChoiceButton?
+    
     lazy var dynamicButtons: UIStackView = {
         let stackview = UIStackView()
         addSubview(stackview)
@@ -77,6 +86,7 @@ public class ChoiceView: UIView {
     }
 
     public func update(with infos: ChoiceViewInfos) {
+        self.infos = infos
         prepareForReview()
         setupDynamicButtons(infos.dynamicButtons, selected: infos.selectedDynamic)
         setupChoiceButtons(infos.nodes, selected: infos.selectedNode?.id,
@@ -109,7 +119,7 @@ public class ChoiceView: UIView {
         for i in 0..<nodes.count {
             let node = nodes[i]
             let button = ChoiceButton(buttonText: node.title ?? "", colorName: "Red")
-            button.update(isHighlighted: highlighted == node.id, isSelected: selected == node.id)
+            button.update(isSelected: selected == node.id)
             button.nodeId = node.id
             button.translatesAutoresizingMaskIntoConstraints = false
             button.delegate = self
@@ -121,7 +131,7 @@ public class ChoiceView: UIView {
 
     private func setupView() {
         let padding: CGFloat = 32.0
-        backgroundColor = UIColor(named: "Background")
+        backgroundColor = .background
         NSLayoutConstraint.activate([
             dynamicButtons.topAnchor.constraint(equalTo: topAnchor, constant: 40),
             dynamicButtons.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -141,8 +151,6 @@ public class ChoiceView: UIView {
 
     @objc func confirmButtonPressed() {
         self.delegate?.confirmButtonPressed()
-        // TODO: quando aposto, existe um delay de uns 3s para voltar para a StoryView.
-        // Nesse meio tempo, se eu clico no botao, eu posso ganhar mais pontos.
     }
 
     public override func didMoveToSuperview() {
