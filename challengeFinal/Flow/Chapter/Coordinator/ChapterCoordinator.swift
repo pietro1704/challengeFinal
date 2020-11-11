@@ -45,6 +45,12 @@ public class ChapterCoordinator: Coordinator {
         coordinator.start()
     }
 
+    func showCredits(child: StoryCoordinator) {
+        childDidFinished(child)
+        
+        parentCoordinator?.userWantToShowCredits(child: self)
+    }
+
     func childDidFinished(_ child: Coordinator?) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {

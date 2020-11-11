@@ -7,16 +7,16 @@
 
 import UIKit
 
-public protocol StoryViewDelegate: class {
-    func userChoose(nodeId: NodeID)
+public protocol CreditsViewDelegate: class {
+    func goToMenu()
+    func startNewGame()
 }
 
-public class StoryView: UIView {
-
-    public var viewModel: StoryViewModel?
-    weak var delegate: StoryViewDelegate?
-    private var isFinalNode: Bool = false
-
+public class CreditsView: UIView {
+    
+    weak var delegate: CreditsViewDelegate?
+    public var viewModel: CreditsViewModel?
+    
     private lazy var imageView: ImageView = {
         let imageView = ImageView()
         addSubview(imageView)
@@ -25,28 +25,45 @@ public class StoryView: UIView {
         return imageView
     }()
     
-    public lazy var hudView: HUDView = {
-        let hud = HUDView()
-        addSubview(hud)
-        
-        hud.translatesAutoresizingMaskIntoConstraints = false
-        return hud
-    }()
-
     private lazy var textView: RegularTextView = {
         let textView = RegularTextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.backgroundColor = .background
+        addSubview(textView)
         return textView
     }()
-
-    private lazy var goToDecisionButton: TransparentButton = {
-        let gotodec = TransparentButton(title: "Tente por você mesmo")
-        gotodec.translatesAutoresizingMaskIntoConstraints = false
-        gotodec.delegate = self
-        return gotodec
+    
+    private lazy var newStoryButton: TransparentButton = {
+        let story = TransparentButton(title: "Iniciar nova história")
+        story.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(story)
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(startNewGame))
+        story.addGestureRecognizer(gesture)
+        
+        return story
     }()
     
+    private lazy var toMenuButton: TransparentButton = {
+        let menu = TransparentButton(title: "Voltar ao menu")
+        menu.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(menu)
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(goToMenu))
+        menu.addGestureRecognizer(gesture)
+
+        return menu
+    }()
+    
+    private lazy var buttonsStackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [newStoryButton, toMenuButton])
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.distribution = .equalCentering
+        stack.axis = .horizontal
+        addSubview(stack)
+        return stack
+    }()
+
     private lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
@@ -60,16 +77,24 @@ public class StoryView: UIView {
         let content = UIView()
         content.translatesAutoresizingMaskIntoConstraints = false
         content.addSubview(textView)
-        content.addSubview(goToDecisionButton)
+        content.addSubview(buttonsStackView)
         return content
     }()
-
+    
+    public func update(title: String, imagePath: String, accentColor: String = "Red") {
+        self.textView.configure(with: title)
+        if let image = UIImage(named: imagePath) {
+            self.imageView.recievedImage(image: image)
+        }
+    }
+    
     public init() {
         super.init(frame: .zero)
         backgroundColor = UIColor.background
+        setupConstraints()
     }
-
-    public init(with viewModel: StoryViewModel) {
+    
+    public init(with viewModel: CreditsViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
         backgroundColor = UIColor.background
@@ -82,23 +107,15 @@ public class StoryView: UIView {
         imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4).isActive = true
         
-        setupHUDViewConstrains()
-        
         setupScrollViewConstrains()
         
         setupContentViewConstrains()
     }
     
-    func setupHUDViewConstrains() {
-        hudView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
-        hudView.bottomAnchor.constraint(equalTo: scrollView.topAnchor, constant: -16).isActive = true
-        hudView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        hudView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-    }
-    
     fileprivate func setupScrollViewConstrains() {
         // SCROLL FRAME
         scrollView.frameLayoutGuide.leadingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
+        scrollView.frameLayoutGuide.topAnchor.constraint(equalTo: topAnchor).isActive = true
         scrollView.frameLayoutGuide.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         scrollView.frameLayoutGuide.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
@@ -109,77 +126,55 @@ public class StoryView: UIView {
             scrollView.contentLayoutGuide.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 32),
             scrollView.contentLayoutGuide.topAnchor.constraint(equalTo: contentView.topAnchor),
             scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            
             scrollView.contentLayoutGuide.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor)
         ])
-
     }
     
     func setupContentViewConstrains() {
         textView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         textView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         textView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        
-        goToDecisionButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10).isActive = true
-        goToDecisionButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.4).isActive = true
-        
-        goToDecisionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        goToDecisionButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
-    }
 
+        buttonsStackView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10).isActive = true
+        buttonsStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        
+        buttonsStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        buttonsStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    public func configure(using viewModel: StoryViewModel?) {
+    
+    public func configure(using viewModel: CreditsViewModel?) {
+        guard let viewModel = viewModel else { return }
         self.viewModel = viewModel
         
         prepareForReuse()
-        let node = viewModel?.node
-        self.imageView.recievedImage(image: loadImage(node?.imagePath))
-
-        if let textInfos = node?.text {
-            self.textView.configure(with: textInfos)
-        }
+        self.imageView.recievedImage(image: loadImage(viewModel.imagePath))
+        
+        self.textView.configure(with: viewModel.text)
+        
         setupConstraints()
     }
-
+    
     public func loadImage(_ imagePath: String?) -> UIImage {
         guard let imagePath = imagePath,
               let image = UIImage(named: imagePath) else { return UIImage() }
         return image
     }
-
+    
     private func prepareForReuse() {
         self.imageView.recievedImage(image: UIImage())
         self.textView.configure(with: "")
     }
-
-    // MARK: - Final Node
-
-    public func finalNodeTransformation() {
-        hudView.isHidden = true
-        goToDecisionButton.setTitle("Finalizar", for: UIControl.State.normal)
-        isFinalNode = true
-    }
-}
-
-extension StoryView: TransparentButtonDelegate {
-    public func transpButtonPressed() {
-        if !isFinalNode {
-            viewModel?.userWantToChoose()
-        } else {
-            viewModel?.userFinishedGame()
-            isFinalNode = false
-        }
-    }
-}
-
-// MARK: - Bridge view - viewModel
-
-extension StoryView: HUDViewDelegate {
-
-    public func updateHUD(with points: Int) {
-        hudView.decisionPointsView.updateLabel(withPoints: points)
+    
+    @objc func startNewGame() {
+        viewModel?.userWantToStartNewGame()
     }
 
+    @objc func goToMenu() {
+        viewModel?.userWantToGoToMenu()
+    }
 }

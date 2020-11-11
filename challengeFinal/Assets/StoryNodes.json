@@ -19,14 +19,14 @@
             "imagePath": "coxinha",
             "title": "Continua para casa",
             "text": "voltou para casa",
-            "childNodeIDs": [1]
+            "childNodeIDs": []
         },
         {
             "id": 4,
             "imagePath": "coxinha",
             "title": "Risoles",
             "text": "Cada mordida que você dá nesse risoles, desce 0,135 ml de óleo pela mão\n\n Ponto positivo: desce que é uma beleza\n Ponto negativo: coração sente",
-            "childNodeIDs": [1]
+            "childNodeIDs": []
         },
         {
             "id": 5,
@@ -39,15 +39,15 @@
             "id": 6,
             "imagePath": "coxinha",
             "title": "Decide contar na página Review de Salgados",
-            "text": "A experiência com um salgado não fica só no consumo, você quer mostrar para o mundo sua expertise em salgados!",
-            "childNodeIDs": [1]
+            "text": "Até então você tinha pleno controle sobre seus atos. Por mais que o acaso interferisse no mundo, o livre-arbítrio era uma realidade inexorável: você podia tomar a atitude que bem entendesse a qualquer hora. Sim, as forças sociais e morais que regem o mundo sempre regularam suas decisões, mas agora o mais simples ato parece incerto; seja desligar o despertador, se espreguiçar ou até mesmo se levantar do sofá. ",
+            "childNodeIDs": []
         },
         {
             "id": 7,
             "imagePath": "coxinha",
             "title": "Volta para o começo",
             "text": "",
-            "childNodeIDs": [1]
+            "childNodeIDs": []
         }
     ]
 }

@@ -1,22 +1,23 @@
 //
-//  StoryViewController.swift
+//  ViewController.swift
 //  challengeFinal
 //
-//  Created by Guilherme Domingues on 14/10/20.
+//  Created by Pietro Pugliesi on 09/10/20.
 //
 
 import UIKit
 
-class StoryViewController: UIViewController, Storyboarded {
-    weak var coordinator: StoryCoordinator?
+class CreditsViewController: UIViewController, Storyboarded {
 
-    var containerView: StoryView = {
-        let storyView = StoryView()
-        storyView.translatesAutoresizingMaskIntoConstraints = false
-        return storyView
+    weak var coordinator: CreditsCoordinator?
+
+    var containerView: CreditsView = {
+        let containerView = CreditsView()
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        return containerView
     }()
 
-    var viewModel: StoryViewModel?
+    var viewModel: CreditsViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,17 +29,10 @@ class StoryViewController: UIViewController, Storyboarded {
         setupConstraints()
     }
 
-    public func update(with viewModel: StoryViewModel) {
+    public func update(with viewModel: CreditsViewModel) {
         self.viewModel = viewModel
         containerView.viewModel = viewModel
         containerView.configure(using: viewModel)
-        viewModel.hudDelegate = containerView
-        viewModel.updateHUD()
-    }
-
-    public func transformIntoFinalNode(with viewModel: StoryViewModel) {
-        update(with: viewModel)
-        containerView.finalNodeTransformation()
     }
 
     private func setupConstraints() {
