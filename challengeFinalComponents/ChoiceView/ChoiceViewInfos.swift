@@ -13,8 +13,8 @@ public protocol ChoiceViewInfos {
     var tintColor: String { get set }
     var selectedDynamic: DynamicTypes? { get set }
     var selectedNode: StoryNode? { get set }
-    var highlightedNode: NodeID? { get set }
     var canChooseNode: Bool { get set }
+    var nodeToEndAnimation: StoryNode? { get set }
 }
 
 public struct ChoiceViewInfosObject: ChoiceViewInfos {
@@ -25,15 +25,16 @@ public struct ChoiceViewInfosObject: ChoiceViewInfos {
     public var nodes: [StoryNode]
     public var tintColor: String
     public var canChooseNode: Bool = false
-    public var highlightedNode: NodeID?
+    public var nodeToEndAnimation: StoryNode?
 
-    init(nodes: [StoryNode], selectedDynamic: DynamicTypes?, selectedNode: StoryNode?, highlightedNode: NodeID?) {
+    init(nodes: [StoryNode], selectedDynamic: DynamicTypes?,
+         selectedNode: StoryNode?, highlightedNode: NodeID?, nodeToEndAnimation: StoryNode?) {
         self.nodes = nodes
         self.tintColor = "Red"
         self.dynamicButtons = [.choice, .bet, .random]
         self.selectedNode = selectedNode
         self.selectedDynamic = selectedDynamic
-        self.highlightedNode = highlightedNode
+        self.nodeToEndAnimation = nodeToEndAnimation
         if let selectedDynamic = selectedDynamic {
             self.canChooseNode = selectedDynamic != .random
         }

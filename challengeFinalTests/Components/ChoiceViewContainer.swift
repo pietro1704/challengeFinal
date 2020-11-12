@@ -27,6 +27,7 @@ public class ChoiceViewContainer: UIView {
     public init(viewModel: ChoiceViewModel) {
         super.init(frame: .zero)
         self.viewModel = viewModel
+        viewModel.randomAndBetDelegate = self
 
         setupChapterView(viewModel)
     }
@@ -37,6 +38,7 @@ public class ChoiceViewContainer: UIView {
 
     public func configure(using viewModel: ChoiceViewModel?) {
         guard let viewModel = viewModel else { return }
+        viewModel.randomAndBetDelegate = self
 
         setupChapterView(viewModel)
     }
@@ -59,6 +61,10 @@ public class ChoiceViewContainer: UIView {
 }
 
 extension ChoiceViewContainer: ChoiceViewDelegate {
+    public func animationFinished() {
+        viewModel?.animationFinished()
+    }
+    
     public func choiceButtonPressed(node: NodeID) {
         viewModel?.userWantToChooseNode(node)
     }
@@ -77,6 +83,12 @@ extension ChoiceViewContainer: ChoiceViewDelegate {
     
     public func pauseButtonPressed() {
         viewModel?.userWantToPause()
+    }
+}
+
+extension ChoiceViewContainer: RandomAndBetDelegate {
+    public func didReceivedNode(node: StoryNode) {
+        choiceView.animateTo(nodeId: node.id)
     }
 }
 

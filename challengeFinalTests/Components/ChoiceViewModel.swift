@@ -7,10 +7,16 @@
 
 import Foundation
 
+public protocol RandomAndBetDelegate: class {
+    func didReceivedNode(node: StoryNode)
+}
+
 public class ChoiceViewModel {
 
     weak var hudDelegate: HUDViewDelegate?
     weak var delegate: ChoiceViewModelDelegate?
+    weak var randomAndBetDelegate: RandomAndBetDelegate?
+
     var infos: ChoiceViewInfos?
     let service = StoryNodesServices()
     let playerService: PlayerServiceProtocol
@@ -45,37 +51,29 @@ public class ChoiceViewModel {
     }
 
     private func userChoosedRandom() {
-        let randomNode = retrieveRandomNumber()
+        guard let randomNode = retrieveRandomNumber() else { return }
         delegate?.userWantToHighlightNode(node: randomNode)
-        animateAndConfirmChoice(randomNode)
+        randomAndBetDelegate?.didReceivedNode(node: randomNode)
     }
 
     private func userChoosedBet() {
-        guard let selectedNode = infos?.selectedNode else { return }
+        guard let selectedNode = infos?.selectedNode,
+              let randomNode = retrieveRandomNumber() else { return }
 
-        let randomNode = retrieveRandomNumber()
-        if randomNode == selectedNode.id {
+        delegate?.userGotRandom(node: randomNode)
+        randomAndBetDelegate?.didReceivedNode(node: randomNode)
+
+        if randomNode.id == selectedNode.id {
             playerService.increasePlayerPoints(by: 2)
         } else {
             playerService.decreasePlayerPoints(by: 1)
         }
-
-        delegate?.userGotRandom(node: randomNode)
-        animateAndConfirmChoice(randomNode)
     }
 
-    private func animateAndConfirmChoice(_ randomNode: NodeID) {
-        let node = infos?.nodes.filter({$0.id == randomNode}).first
-        let seconds = 2.0
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            self.delegate?.userWantToConfirmChoice(storyNode: node!)
-        }
-    }
-
-    private func retrieveRandomNumber() -> NodeID {
+    private func retrieveRandomNumber() -> StoryNode? {
         guard let nodes = infos?.nodes,
-              let randomNode = nodes.randomElement() else { return 0 }
-        return randomNode.id
+              let randomNode = nodes.randomElement() else { return nil }
+        return randomNode
     }
 
     public func userWantToChooseNode(_ nodeID: NodeID) {
@@ -88,6 +86,11 @@ public class ChoiceViewModel {
 
     public func userWantToPause() {
         delegate?.userWantToPause()
+    }
+
+    public func animationFinished() {
+        guard let node = infos?.nodeToEndAnimation else { return }
+        self.delegate?.userWantToConfirmChoice(storyNode: node)
     }
 
     // MARK: - HUDDelegate

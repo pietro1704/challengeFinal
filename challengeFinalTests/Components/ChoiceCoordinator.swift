@@ -60,7 +60,8 @@ extension ChoiceCoordinator: ChoiceViewModelDelegate {
         let infosToUpdate = ChoiceViewInfosObject(nodes: infos.nodes,
                                           selectedDynamic: dynamic,
                                           selectedNode: nil,
-                                          highlightedNode: nil)
+                                          highlightedNode: nil,
+                                          nodeToEndAnimation: nil)
         self.update(infos: infosToUpdate)
     }
 
@@ -72,23 +73,26 @@ extension ChoiceCoordinator: ChoiceViewModelDelegate {
         let infosToUpdate = ChoiceViewInfosObject(nodes: infos.nodes,
                                                   selectedDynamic: infos.selectedDynamic,
                                                   selectedNode: storyNode.first,
-                                                  highlightedNode: nil)
+                                                  highlightedNode: nil,
+                                                  nodeToEndAnimation: infos.nodeToEndAnimation)
         self.update(infos: infosToUpdate)
     }
 
-    public func userGotRandom(node: NodeID) {
+    public func userGotRandom(node: StoryNode) {
         let infosToUpdate = ChoiceViewInfosObject(nodes: infos.nodes,
                                                   selectedDynamic: infos.selectedDynamic,
                                                   selectedNode: infos.selectedNode,
-                                                  highlightedNode: node)
+                                                  highlightedNode: node.id,
+                                                  nodeToEndAnimation: node)
         self.update(infos: infosToUpdate)
     }
 
-    public func userWantToHighlightNode(node: NodeID) {
+    public func userWantToHighlightNode(node: StoryNode) {
         let infosToUpdate = ChoiceViewInfosObject(nodes: infos.nodes,
                                                   selectedDynamic: infos.selectedDynamic,
                                                   selectedNode: infos.selectedNode,
-                                                  highlightedNode: node)
+                                                  highlightedNode: node.id,
+                                                  nodeToEndAnimation: node)
         self.update(infos: infosToUpdate)
     }
 
