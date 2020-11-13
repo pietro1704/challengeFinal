@@ -38,7 +38,7 @@ public class ChoiceView: UIView {
         return stackview
     }()
 
-    lazy var choiceButtonsStackView: UIStackView = {
+    lazy var choiceButtons: UIStackView = {
         let stackview = UIStackView()
         addSubview(stackview)
         stackview.translatesAutoresizingMaskIntoConstraints = false
@@ -46,15 +46,6 @@ public class ChoiceView: UIView {
         stackview.spacing = 8
         stackview.distribution = .fillProportionally
         return stackview
-    }()
-    
-    private lazy var scrollView: UIScrollView = {
-        let scroll = UIScrollView()
-        scroll.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(scroll)
-        scroll.addSubview(choiceButtonsStackView)
-        scroll.backgroundColor = .clear
-        return scroll
     }()
     
     lazy var confirmAction: UIButton = {
@@ -114,7 +105,7 @@ public class ChoiceView: UIView {
             dynamicButton.removeFromSuperview()
         }
 
-        choiceButtonsStackView.arrangedSubviews.forEach { (choiceButton) in
+        choiceButtons.arrangedSubviews.forEach { (choiceButton) in
             choiceButton.removeFromSuperview()
         }
     }
@@ -140,7 +131,7 @@ public class ChoiceView: UIView {
             button.delegate = self
             button.isUserInteractionEnabled = canChooseNode
             button.alpha = canChooseNode ? 1 : 0.3
-            choiceButtonsStackView.addArrangedSubview(button)
+            choiceButtons.addArrangedSubview(button)
         }
     }
 
@@ -153,10 +144,10 @@ public class ChoiceView: UIView {
             hudView.topAnchor.constraint(equalTo: topAnchor, constant: padding),
             hudView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             hudView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
-            choiceButtonsStackView.topAnchor.constraint(equalTo: dynamicButtons.bottomAnchor, constant: padding),
-            choiceButtonsStackView.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: 0.6),
-            choiceButtonsStackView.heightAnchor.constraint(lessThanOrEqualTo: heightAnchor, multiplier: 0.8),
-            choiceButtonsStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            choiceButtons.topAnchor.constraint(equalTo: dynamicButtons.bottomAnchor, constant: padding),
+            choiceButtons.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: 0.6),
+            choiceButtons.heightAnchor.constraint(lessThanOrEqualTo: heightAnchor, multiplier: 0.8),
+            choiceButtons.centerXAnchor.constraint(equalTo: centerXAnchor),
             backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             backButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding),
             confirmAction.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),

@@ -10,7 +10,7 @@ import UIKit
 extension ChoiceView: CAAnimationDelegate {
 
     func animateTo(nodeId: NodeID) {
-        choiceButtonsStackView.arrangedSubviews.forEach { (button) in
+        choiceButtons.arrangedSubviews.forEach { (button) in
             guard let button = button as? ChoiceButton else { return }
             if button.nodeId == nodeId {
                 choiceButtonTapped = button
@@ -47,7 +47,7 @@ extension ChoiceView: CAAnimationDelegate {
             startAnimationAgain()
             return
         }
-        guard let nodeToAnimate = choiceButtonsStackView.arrangedSubviews[index] as? ChoiceButton else { return }
+        guard let nodeToAnimate = choiceButtons.arrangedSubviews[index] as? ChoiceButton else { return }
 
         blink(choiceButton: nodeToAnimate, withDuration: currentDuration)
         lastAnimatedIndex = index
@@ -62,7 +62,7 @@ extension ChoiceView: CAAnimationDelegate {
 
         lastAnimatedIndex = 0
         currentAnimation += 1
-        guard let nodeToAnimate = choiceButtonsStackView.arrangedSubviews[lastAnimatedIndex] as?
+        guard let nodeToAnimate = choiceButtons.arrangedSubviews[lastAnimatedIndex] as?
                 ChoiceButton else { return }
 
         currentDuration = currentAnimation != 0 ? stdDuration/(Double(currentAnimation)) : stdDuration
