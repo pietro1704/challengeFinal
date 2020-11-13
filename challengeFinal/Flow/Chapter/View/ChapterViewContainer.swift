@@ -50,7 +50,7 @@ public class ChapterViewContainer: UIView {
     private func setupChapterView(_ viewModel: ChapterViewModel) {
         if let node = viewModel.node,
            let title = node.title, let imagePath = node.imagePath {
-            chapterView.update(title: title, subTitle: title, imagePath: imagePath)
+            chapterView.update(title: title, subTitle: "", imagePath: imagePath)
         }
         setupConstraints()
     }
