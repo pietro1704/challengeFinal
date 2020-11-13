@@ -14,6 +14,6 @@ class ChapterinitLabelTests: XCTestCase {
         let label = ChapterInitLabel(with: "Capítulo 1  - Fiz coisas boas que me trouxeram prejuízo.", colorName: "Red")
         let container = label.addInCenterOnMockViewIphone11()
         container.backgroundColor = .white
-        assertSnapshot(matching: container, as: .image, record: true)
+        assertSnapshot(matching: container, as: .image)
     }
 }
