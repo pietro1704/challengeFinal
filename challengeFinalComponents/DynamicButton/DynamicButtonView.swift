@@ -35,9 +35,9 @@ public class DynamicButton: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.numberOfLines = 0
-        
-        label.font = UIFont.heptaRegular()
+        label.font = UIFont.heptaBold()
         label.adjustsFontForContentSizeCategory = true
+        label.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .vertical)
         return label
     }()
 
@@ -46,7 +46,6 @@ public class DynamicButton: UIView {
         self.type = type
         super.init(frame: .zero)
         self.title.text = type.title()
-        self.title.font = UIFont.preferredFont(for: .headline, weight: .bold)
         self.imageView.recievedImagePath(imagePath: type.imagePath())
         setupConstraints()
         setupImageTextIsSelected(isSelected: isSelected)
@@ -74,11 +73,10 @@ public class DynamicButton: UIView {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: topAnchor),
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             title.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
-            title.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
-            title.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
+            title.leadingAnchor.constraint(equalTo: leadingAnchor),
+            title.trailingAnchor.constraint(equalTo: trailingAnchor),
             title.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }

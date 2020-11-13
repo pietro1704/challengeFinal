@@ -33,7 +33,7 @@ public class ChoiceView: UIView {
         addSubview(stackview)
         stackview.translatesAutoresizingMaskIntoConstraints = false
         stackview.axis = .horizontal
-        stackview.spacing = 24
+        stackview.spacing = 48
         stackview.distribution = .equalSpacing
         stackview.backgroundColor = backgroundColor
         return stackview

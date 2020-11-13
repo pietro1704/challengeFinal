@@ -30,7 +30,7 @@ public class ChapterView: UIView {
     lazy var title: UILabel = {
         let title = UILabel()
         title.textColor = .white
-        title.font = UIFont.preferredFont(for: .title1, weight: .bold)
+        title.font = UIFont.heptaBold(size: 24)
         title.textAlignment = .center
         title.numberOfLines = 0
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +40,7 @@ public class ChapterView: UIView {
     lazy var subTitle: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont.preferredFont(for: .headline, weight: .regular)
+        label.font = UIFont.heptaRegular(size: 16)
         label.textAlignment = .center
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
