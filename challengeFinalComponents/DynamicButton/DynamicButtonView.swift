@@ -35,6 +35,9 @@ public class DynamicButton: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.numberOfLines = 0
+        
+        label.font = UIFont.heptaRegular()
+        label.adjustsFontForContentSizeCategory = true
         return label
     }()
 

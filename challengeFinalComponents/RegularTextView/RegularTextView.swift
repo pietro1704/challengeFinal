@@ -11,8 +11,10 @@ public class RegularTextView: UITextView {
     
     public init(fontSize: CGFloat = 17) {
         super.init(frame: .zero, textContainer: nil)
-        // System font
-        self.font = UIFont.systemFont(ofSize: fontSize)
+        // Custom scaled font
+        self.font = UIFont.heptaRegular(size: fontSize)
+        self.adjustsFontForContentSizeCategory = true
+        
         self.isEditable = false
         self.isScrollEnabled = false
     }
