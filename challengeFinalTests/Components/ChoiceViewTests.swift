@@ -28,6 +28,7 @@ class ChoiceViewTests: XCTestCase {
 }
 
 private struct Infos: ChoiceViewInfos {
+    var nodeToEndAnimation: StoryNode?
     var selectedDynamic: DynamicTypes?
     var selectedNode: StoryNode?
     var highlightedNode: NodeID?

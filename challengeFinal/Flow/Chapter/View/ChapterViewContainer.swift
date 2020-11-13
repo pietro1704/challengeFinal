@@ -10,7 +10,7 @@ import UIKit
 public class ChapterViewContainer: UIView {
     
     lazy var chapterView: ChapterView = {
-        let cView = ChapterView(title: "", imagePath: "nil")
+        let cView = ChapterView(title: "", subTitle: "", imagePath: "nil")
         addSubview(cView)
         cView.translatesAutoresizingMaskIntoConstraints = false
         return cView
@@ -50,7 +50,7 @@ public class ChapterViewContainer: UIView {
     private func setupChapterView(_ viewModel: ChapterViewModel) {
         if let node = viewModel.node,
            let title = node.title, let imagePath = node.imagePath {
-            chapterView.update(title: title, imagePath: imagePath)
+            chapterView.update(title: title, subTitle: title, imagePath: imagePath)
         }
         setupConstraints()
     }

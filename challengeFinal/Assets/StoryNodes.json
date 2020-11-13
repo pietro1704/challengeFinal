@@ -5,7 +5,7 @@
             "imagePath": "coxinha",
             "title": "Início",
             "text": " O almoço daquele dia foi arroz, feijão, bife ao molho curry e uma maçã de sobremesa.\n Lá pelas 15h30, você avista uma padaria do outro lado da rua em que você está.\n Você lembra que tem 10 reais na sua carteira.\n\n O que você faz?" ,
-            "childNodeIDs": [2, 3, 4, 5]
+            "childNodeIDs": [2, 3, 4, 5, 2, 3, 4, 5]
         },
         {
             "id": 2,
