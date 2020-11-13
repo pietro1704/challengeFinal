@@ -37,6 +37,8 @@ public class PrimaryButton: UIButton {
             backgroundColor = color
         }
         setTitleColor(.black, for: .normal)
+        
+        self.titleLabel?.adjustsFontForContentSizeCategory = true
         setupButtonText()
     }
 

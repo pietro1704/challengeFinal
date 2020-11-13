@@ -24,6 +24,10 @@ public class ChoiceButton: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         let gesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         button.addGestureRecognizer(gesture)
+        
+        if let titleLabel = button.titleLabel {
+            titleLabel.font = UIFont.heptaRegular()
+        }
         return button
     }()
 

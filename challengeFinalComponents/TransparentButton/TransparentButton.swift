@@ -49,11 +49,15 @@ class TransparentButton: UIButton {
     private func setupButtonText() {
         guard let titleLabel = self.titleLabel else { return }
         
-        titleLabel.font = UIFont.preferredFont(for: .headline, weight: .bold)
+        titleLabel.font = UIFont.heptaBold()
+        titleLabel.adjustsFontForContentSizeCategory = true
+
+        
         titleLabel.lineBreakMode = .byWordWrapping
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 0
         titleLabel.setContentHuggingPriority(.required, for: .vertical)
         titleLabel.setContentHuggingPriority(.required, for: .horizontal)
+        
     }
 }
