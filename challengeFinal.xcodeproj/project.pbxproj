@@ -32,6 +32,7 @@
 		8DD3F5BE2541D6D800FDA5B4 /* PauseButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F5BD2541D6D800FDA5B4 /* PauseButtonTests.swift */; };
 		8DEE2C6F253746A3006C187B /* StoryNodesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */; };
 		8DFEBF05255ECB9600A84D4E /* HeptaSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DFEBF04255ECB9600A84D4E /* HeptaSlab-Regular.ttf */; };
+		8DFEBF09255ECC6700A84D4E /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFEBF08255ECC6700A84D4E /* CustomFont.swift */; };
 		B08D4A095391882B7B2C3C17 /* Pods_challengeFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44548E80E7D0A3A976B144A5 /* Pods_challengeFinal.framework */; };
 		C509BE0925504D2D00B37CFF /* HUDViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C509BE0825504D2D00B37CFF /* HUDViewDelegate.swift */; };
 		C50FD4AF2544BF0B00B9D2CA /* PlayerDataServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50FD4AE2544BF0B00B9D2CA /* PlayerDataServicesTests.swift */; };
@@ -138,6 +139,7 @@
 		8DD3F5BD2541D6D800FDA5B4 /* PauseButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseButtonTests.swift; sourceTree = "<group>"; };
 		8DEE2C6E253746A3006C187B /* StoryNodesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodesTest.swift; sourceTree = "<group>"; };
 		8DFEBF04255ECB9600A84D4E /* HeptaSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "HeptaSlab-Regular.ttf"; path = "../../../../Downloads/Hepta_Slab/static/HeptaSlab-Regular.ttf"; sourceTree = "<group>"; };
+		8DFEBF08255ECC6700A84D4E /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		9EAC0408D3DE1D5D885DA8C1 /* Pods-challengeFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.release.xcconfig"; sourceTree = "<group>"; };
 		AD27566663346DD3881AC3C2 /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3C65AD70148E9DF28692587 /* Pods-challengeFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.debug.xcconfig"; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				8DFEBF04255ECB9600A84D4E /* HeptaSlab-Regular.ttf */,
 				DA0A71EE2539E379002BAB51 /* StoryNodes.json */,
 				8D41F6932530932500A496C6 /* Assets.xcassets */,
+				8DFEBF08255ECC6700A84D4E /* CustomFont.swift */,
 				8D9E82692549F391005FDC37 /* GameColors.swift */,
 			);
 			path = Assets;
@@ -1026,6 +1029,7 @@
 				DAC5C08C2549A97D003ED60F /* MainCoordinator.swift in Sources */,
 				DA8E87422541BF4F000D481B /* ChapterViewModel.swift in Sources */,
 				8DAAC8D82554CCFF00DC08BF /* CreditsViewModel.swift in Sources */,
+				8DFEBF09255ECC6700A84D4E /* CustomFont.swift in Sources */,
 				DA5972F82537286500D6EF40 /* StoryView.swift in Sources */,
 				DA1F09352546F424008A5775 /* DynamicTypes.swift in Sources */,
 				DA1EB8962554358E00D53030 /* MenuViewContainer.swift in Sources */,
