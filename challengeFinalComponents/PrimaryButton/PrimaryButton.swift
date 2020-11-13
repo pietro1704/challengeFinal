@@ -38,14 +38,15 @@ public class PrimaryButton: UIButton {
         }
         setTitleColor(.black, for: .normal)
         
-        self.titleLabel?.adjustsFontForContentSizeCategory = true
+
+        layer.borderWidth = 1
+        layer.borderColor = UIColor(named: "ButtonWidthColor")?.cgColor ?? UIColor.gray.cgColor
         setupButtonText()
     }
 
     private func setupButtonText() {
         guard let titleLabel = self.titleLabel else { return }
-
-        titleLabel.font = UIFont.preferredFont(for: .headline, weight: .bold)
+        titleLabel.adjustsFontForContentSizeCategory = true
         titleLabel.lineBreakMode = .byWordWrapping
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 0

@@ -14,6 +14,7 @@ public class HUDView: UIView {
         let pause = PauseButton()
         pause.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(pause)
+        pause.isHidden = true
         return pause
     }()
     
