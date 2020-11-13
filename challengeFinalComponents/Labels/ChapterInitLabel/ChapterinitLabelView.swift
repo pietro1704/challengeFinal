@@ -14,6 +14,8 @@ public class ChapterInitLabel: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
         label.numberOfLines = 0
+        
+        label.font = UIFont.heptaBold()
         return label
     }()
 

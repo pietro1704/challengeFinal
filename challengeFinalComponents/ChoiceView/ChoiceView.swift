@@ -62,8 +62,9 @@ public class ChoiceView: UIView {
         button.setTitle("Confirmar", for: .normal)
         
         // Dynamic type
-        button.titleLabel?.font = .preferredFont(for: .body, weight: .bold)
-        button.titleLabel?.adjustsFontForContentSizeCategory = true
+        guard let titleLabel = button.titleLabel else { return UIButton() }
+        titleLabel.font = UIFont.heptaBold()
+        titleLabel.adjustsFontForContentSizeCategory = true
         
         button.backgroundColor = UIColor(named: "Red")
         addSubview(button)

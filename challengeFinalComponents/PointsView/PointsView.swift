@@ -55,7 +55,9 @@ extension PointsView: ViewCodable {
 
         // Default points
         pointsLabel.text = "0"
-        pointsLabel.font = UIFont.systemFont(ofSize: 34, weight: UIFont.Weight.thin)
+        
+        pointsLabel.font = UIFont.heptaBold(size: 34)
+        pointsLabel.adjustsFontForContentSizeCategory = true
     }
 
     func setConstraints() {

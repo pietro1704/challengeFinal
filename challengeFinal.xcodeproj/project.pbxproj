@@ -17,6 +17,7 @@
 		8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6BD253099B900A496C6 /* Coordinator.swift */; };
 		8D41F6C325309A1000A496C6 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6C225309A1000A496C6 /* MenuCoordinator.swift */; };
 		8D41F6CB25309C6700A496C6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F6CA25309C6700A496C6 /* Storyboarded.swift */; };
+		8D493BEF255ECE840013A59A /* HeptaSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D493BEE255ECE840013A59A /* HeptaSlab-Bold.ttf */; };
 		8D9E826A2549F391005FDC37 /* GameColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E82692549F391005FDC37 /* GameColors.swift */; };
 		8D9E826E2549F80F005FDC37 /* TransparentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E826D2549F80F005FDC37 /* TransparentButton.swift */; };
 		8D9E827E2549FA02005FDC37 /* GoToDecisionButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E827D2549FA02005FDC37 /* GoToDecisionButtonTests.swift */; };
@@ -123,6 +124,7 @@
 		8D41F6BD253099B900A496C6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8D41F6C225309A1000A496C6 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		8D41F6CA25309C6700A496C6 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		8D493BEE255ECE840013A59A /* HeptaSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "HeptaSlab-Bold.ttf"; path = "../../../../Downloads/Hepta_Slab/static/HeptaSlab-Bold.ttf"; sourceTree = "<group>"; };
 		8D4FF5E8254303E500FBF110 /* StoryViewModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewModelDelegate.swift; sourceTree = "<group>"; };
 		8D9E82692549F391005FDC37 /* GameColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameColors.swift; sourceTree = "<group>"; };
 		8D9E826D2549F80F005FDC37 /* TransparentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentButton.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 		8D41F6DA2530A72500A496C6 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8D493BEE255ECE840013A59A /* HeptaSlab-Bold.ttf */,
 				8DFEBF04255ECB9600A84D4E /* HeptaSlab-Regular.ttf */,
 				DA0A71EE2539E379002BAB51 /* StoryNodes.json */,
 				8D41F6932530932500A496C6 /* Assets.xcassets */,
@@ -923,6 +926,7 @@
 				DA1F094B254716B1008A5775 /* Choice.storyboard in Resources */,
 				8D41F6942530932500A496C6 /* Assets.xcassets in Resources */,
 				8D41F6922530932300A496C6 /* Menu.storyboard in Resources */,
+				8D493BEF255ECE840013A59A /* HeptaSlab-Bold.ttf in Resources */,
 				DA8E87362541BB2D000D481B /* Chapter.storyboard in Resources */,
 				DA0A71EF2539E379002BAB51 /* StoryNodes.json in Resources */,
 				8DAAC8D52554CCEA00DC08BF /* Credits.storyboard in Resources */,
