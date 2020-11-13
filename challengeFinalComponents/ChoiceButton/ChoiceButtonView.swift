@@ -11,8 +11,9 @@ public protocol ChoiceButtonDelegate: class {
     func choiceButtonPressed(_ choiceId: NodeID)
 }
 
-private let roundViewWidth: CGFloat = 22.0
+private let roundViewWidth: CGFloat = 30.0
 private let imageforHighlightIndicator: UIImage? = UIImage(systemName: "arrow.right")
+private let imageForSelectedIndicator: UIImage? = UIImage(systemName: "checkmark.circle.fill")
 public class ChoiceButton: UIView {
 
     weak var delegate: ChoiceButtonDelegate?
@@ -44,15 +45,17 @@ public class ChoiceButton: UIView {
         return imageView
     }()
 
-    lazy var selectedIndicator: UIView = {
-        let roundView = UIView()
-        addSubview(roundView)
-        roundView.translatesAutoresizingMaskIntoConstraints = false
-        roundView.widthAnchor.constraint(equalToConstant: roundViewWidth).isActive = true
-        roundView.heightAnchor.constraint(equalTo: roundView.widthAnchor).isActive = true
-        roundView.layer.cornerRadius = roundViewWidth / 2
-        roundView.isHidden = true
-        return roundView
+    lazy var selectedIndicator: ImageView = {
+        let imageView = ImageView()
+        addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.widthAnchor.constraint(equalToConstant: roundViewWidth).isActive = true
+        imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
+        imageView.isHidden = true
+        if let image = imageForSelectedIndicator {
+            imageView.recievedImage(image: image)
+        }
+        return imageView
     }()
 
     private var isHighlighted: Bool {
@@ -84,7 +87,7 @@ public class ChoiceButton: UIView {
     private func setupView(with colorName: String) {
         if let color = UIColor(named: colorName) {
             self.highlightIndicator.tintColor = color
-            self.selectedIndicator.backgroundColor = color
+            self.selectedIndicator.tintColor = color
         }
     }
 
@@ -95,7 +98,7 @@ public class ChoiceButton: UIView {
             primaryButton.trailingAnchor.constraint(equalTo: trailingAnchor),
             primaryButton.bottomAnchor.constraint(equalTo: bottomAnchor),
             highlightIndicator.centerYAnchor.constraint(equalTo: primaryButton.centerYAnchor),
-            highlightIndicator.trailingAnchor.constraint(equalTo: primaryButton.leadingAnchor),
+            highlightIndicator.trailingAnchor.constraint(equalTo: primaryButton.leadingAnchor, constant: -8),
             selectedIndicator.centerYAnchor.constraint(equalTo: primaryButton.topAnchor),
             selectedIndicator.centerXAnchor.constraint(equalTo: primaryButton.trailingAnchor)
         ])

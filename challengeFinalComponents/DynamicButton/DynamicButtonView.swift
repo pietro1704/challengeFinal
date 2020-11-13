@@ -43,6 +43,7 @@ public class DynamicButton: UIView {
         self.type = type
         super.init(frame: .zero)
         self.title.text = type.title()
+        self.title.font = UIFont.preferredFont(for: .headline, weight: .bold)
         self.imageView.recievedImagePath(imagePath: type.imagePath())
         setupConstraints()
         setupImageTextIsSelected(isSelected: isSelected)
