@@ -35,17 +35,63 @@ public class ChoiceView: UIView {
         stackview.axis = .horizontal
         stackview.spacing = 24
         stackview.distribution = .equalSpacing
+        stackview.backgroundColor = backgroundColor
         return stackview
+    }()
+
+    lazy var dynamicButtonsBackground: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        view.backgroundColor = backgroundColor
+
+        view.addSubview(dynamicButtons)
+        NSLayoutConstraint.activate([
+            dynamicButtons.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
+            dynamicButtons.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            dynamicButtons.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            dynamicButtons.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        return view
     }()
 
     lazy var choiceButtons: UIStackView = {
         let stackview = UIStackView()
-        addSubview(stackview)
         stackview.translatesAutoresizingMaskIntoConstraints = false
         stackview.axis = .vertical
         stackview.spacing = 8
         stackview.distribution = .fillProportionally
         return stackview
+    }()
+
+    lazy var buttonsScroll: UIScrollView = {
+        let innerView = UIView()
+        innerView.addSubview(choiceButtons)
+        innerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            choiceButtons.topAnchor.constraint(equalTo: innerView.topAnchor),
+            choiceButtons.leadingAnchor.constraint(equalTo: innerView.leadingAnchor),
+            choiceButtons.trailingAnchor.constraint(equalTo: innerView.trailingAnchor),
+            choiceButtons.bottomAnchor.constraint(equalTo: innerView.bottomAnchor)
+        ])
+
+        let scroll = UIScrollView()
+        addSubview(scroll)
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.clipsToBounds = false
+        scroll.showsVerticalScrollIndicator = false
+        scroll.addSubview(innerView)
+        
+        NSLayoutConstraint.activate([
+            innerView.topAnchor.constraint(equalTo: scroll.topAnchor),
+            innerView.centerXAnchor.constraint(equalTo: scroll.centerXAnchor),
+            innerView.bottomAnchor.constraint(equalTo: scroll.bottomAnchor)
+        ])
+        
+        self.sendSubviewToBack(scroll)
+        
+        return scroll
     }()
     
     lazy var confirmAction: UIButton = {
@@ -133,15 +179,15 @@ public class ChoiceView: UIView {
         let padding: CGFloat = 32.0
         backgroundColor = .background
         NSLayoutConstraint.activate([
-            dynamicButtons.topAnchor.constraint(equalTo: topAnchor, constant: 40),
-            dynamicButtons.centerXAnchor.constraint(equalTo: centerXAnchor),
+            dynamicButtonsBackground.topAnchor.constraint(equalTo: topAnchor),
+            dynamicButtonsBackground.centerXAnchor.constraint(equalTo: centerXAnchor),
             hudView.topAnchor.constraint(equalTo: topAnchor, constant: padding),
             hudView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             hudView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
-            choiceButtons.topAnchor.constraint(equalTo: dynamicButtons.bottomAnchor, constant: padding),
-            choiceButtons.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: 0.6),
-            choiceButtons.heightAnchor.constraint(lessThanOrEqualTo: heightAnchor, multiplier: 0.8),
-            choiceButtons.centerXAnchor.constraint(equalTo: centerXAnchor),
+            buttonsScroll.topAnchor.constraint(equalTo: dynamicButtonsBackground.bottomAnchor, constant: padding),
+            buttonsScroll.leadingAnchor.constraint(equalTo: backButton.trailingAnchor),
+            buttonsScroll.trailingAnchor.constraint(equalTo: confirmAction.leadingAnchor, constant: padding),
+            buttonsScroll.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding),
             backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             backButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding),
             confirmAction.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
