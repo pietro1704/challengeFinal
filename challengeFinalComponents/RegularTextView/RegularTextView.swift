@@ -12,7 +12,13 @@ public class RegularTextView: UITextView {
     public init(fontSize: CGFloat = 17) {
         super.init(frame: .zero, textContainer: nil)
         // System font
-        self.font = UIFont.systemFont(ofSize: fontSize)
+        self.font = UIFont.preferredFont(forTextStyle: .body)
+        self.adjustsFontForContentSizeCategory = true
+        
+        // TODO: custom font dynamic type
+//        if let font = UIFont(name: "", size: fontSize){
+//            self.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+//        }
         self.isEditable = false
         self.isScrollEnabled = false
     }

@@ -55,5 +55,8 @@ class TransparentButton: UIButton {
         titleLabel.numberOfLines = 0
         titleLabel.setContentHuggingPriority(.required, for: .vertical)
         titleLabel.setContentHuggingPriority(.required, for: .horizontal)
+        
+        titleLabel.adjustsFontForContentSizeCategory = true
+
     }
 }

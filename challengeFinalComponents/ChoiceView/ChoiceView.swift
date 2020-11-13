@@ -51,6 +51,11 @@ public class ChoiceView: UIView {
     lazy var confirmAction: UIButton = {
         let button = UIButton()
         button.setTitle("Confirmar", for: .normal)
+        
+        // Dynamic type
+        button.titleLabel?.font = .preferredFont(for: .body, weight: .bold)
+        button.titleLabel?.adjustsFontForContentSizeCategory = true
+        
         button.backgroundColor = UIColor(named: "Red")
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
