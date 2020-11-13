@@ -19,28 +19,31 @@ class ChoiceButtonTests: XCTestCase {
 
     func testChoiceButtonHighlighted() {
         let button = ChoiceButton(buttonText: "Vem cá, Arguinhos! Dá um beijinho no papai, vem!”“Vem cá, Arguinhos! Dá um beijinho.", colorName: "Red")
-        button.update(isHighlighted: true, isSelected: nil)
+        button.update(isSelected: nil)
+        button.highlightIndicator.layer.opacity = 1
         let container = button.addInCenterOnMockViewIphone11()
         assertSnapshot(matching: container, as: .image)
     }
 
     func testChoiceButtonSelected() {
         let button = ChoiceButton(buttonText: "Vem cá, Arguinhos! Dá um beijinho no papai, vem!”“Vem cá, Arguinhos! Dá um beijinho.", colorName: "Red")
-        button.update(isHighlighted: nil, isSelected: true)
+        button.update(isSelected: true)
         let container = button.addInCenterOnMockViewIphone11()
         assertSnapshot(matching: container, as: .image)
     }
 
     func testChoiceButtonSelectedAndHightlighted() {
         let button = ChoiceButton(buttonText: "Vem cá, Arguinhos! Dá um beijinho no papai, vem!”“Vem cá, Arguinhos! Dá um beijinho.", colorName: "Red")
-        button.update(isHighlighted: true, isSelected: true)
+        button.update(isSelected: true)
+        button.highlightIndicator.layer.opacity = 1
         let container = button.addInCenterOnMockViewIphone11()
         assertSnapshot(matching: container, as: .image)
     }
 
     func testChoiceButtonSmallArea() {
         let button = ChoiceButton(buttonText: "Vem cá, Arguinhos! Dá um beijinho no papai, vem!”“Vem cá, Arguinhos! Dá um beijinho.", colorName: "Red")
-        button.update(isHighlighted: true, isSelected: true)
+        button.update(isSelected: true)
+        button.highlightIndicator.layer.opacity = 1
         button.translatesAutoresizingMaskIntoConstraints = true
         let container = button.addInCenterOnMockViewIphone11()
         button.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 200).isActive = true
