@@ -16,6 +16,7 @@ public protocol PlayerServiceProtocol {
     func decreasePlayerPoints(by newPoint: Int)
     func saveChoosenNode(id: NodeID)
     func getLastNode() -> StoryNode?
+    func cleanAllNodes()
 }
 
 /// Has both Player and PlayerDataService
@@ -66,5 +67,9 @@ class PlayerService: PlayerServiceProtocol {
 
     func getLastNode() -> StoryNode? {
         return service.getLastNode()
+    }
+
+    func cleanAllNodes() {
+        service.saveStoryPath([])
     }
 }

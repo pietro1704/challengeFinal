@@ -51,8 +51,13 @@ extension ChoiceCoordinator: ChoiceViewModelDelegate {
     }
     
     public func userWantToConfirmChoice(storyNode: StoryNode) {
-        navigationController.popToViewController(parentCoordinator!.viewController,
-                                                 animated: true)
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: .easeOut)
+        transition.type = CATransitionType.fade
+        navigationController.view.layer.add(transition, forKey: nil)
+        _ = navigationController.popToViewController(parentCoordinator!.viewController, animated: false)
+
         parentCoordinator?.userDidChoosed(storyNode, coordinator: self)
     }
     

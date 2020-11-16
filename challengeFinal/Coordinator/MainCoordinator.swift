@@ -12,6 +12,7 @@ public class MainCoordinator: Coordinator {
     var navigationController: UINavigationController
 
     let nodeService: StoryNodesServices = StoryNodesServices()
+    let playerService: PlayerServiceProtocol = PlayerService()
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -19,8 +20,6 @@ public class MainCoordinator: Coordinator {
 
     func start() {
         showMenu()
-        
-        //showCredits()
     }
 
     func showCredits() {
@@ -65,6 +64,8 @@ public class MainCoordinator: Coordinator {
     }
     
     func userWantToShowCredits(child: Coordinator) {
+        playerService.cleanAllNodes()
+
         self.childDidFinished(child)
         showCredits()
     }
