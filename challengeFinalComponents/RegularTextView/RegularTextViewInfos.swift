@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
 public protocol RegularTextViewInfos {
     var text: String { get set }
+    var lineSpacing: CGFloat { get set }
 }

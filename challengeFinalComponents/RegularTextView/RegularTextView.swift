@@ -24,10 +24,21 @@ public class RegularTextView: UITextView {
     }
 
     public func configure(with infos: RegularTextViewInfos) {
-        self.text = infos.text
+        configure(with: infos.text, lineSpacing: infos.lineSpacing)
     }
 
-    public func configure(with text: String) {
-        self.text = text
+    public func configure(with text: String, lineSpacing: CGFloat = 8) {
+        let attributedString = NSMutableAttributedString(string: text)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = lineSpacing
+        
+        attributedString.addAttribute(.paragraphStyle,
+                                      value:paragraphStyle,
+                                      range:NSMakeRange(0, attributedString.length))
+        attributedString.addAttribute(.font,
+                                      value: self.font ?? UIFont.heptaRegular(size: 17),
+                                      range: NSMakeRange(0, attributedString.length))
+
+        self.attributedText = attributedString
     }
 }
