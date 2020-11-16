@@ -52,7 +52,6 @@ class TransparentButton: UIButton {
         titleLabel.font = UIFont.heptaBold()
         titleLabel.adjustsFontForContentSizeCategory = true
 
-        
         titleLabel.lineBreakMode = .byWordWrapping
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 0

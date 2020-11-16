@@ -17,7 +17,7 @@ extension UIFont {
     
     static func heptaBold(size: CGFloat = 17) -> UIFont {
         var font = UIFont(name: "HeptaSlab-Bold", size: size)!
-        font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font ?? UIFont())
+        font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
         return font
     }
 }

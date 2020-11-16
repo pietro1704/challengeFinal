@@ -3,41 +3,41 @@
         {
             "id": 1,
             "imagePath": "coxinha",
-            "title": "Início",
+            "title": "node1",
             "text": " O almoço daquele dia foi arroz, feijão, bife ao molho curry e uma maçã de sobremesa.\n Lá pelas 15h30, você avista uma padaria do outro lado da rua em que você está.\n Você lembra que tem 10 reais na sua carteira.\n\n O que você faz?" ,
             "childNodeIDs": [2, 3, 4, 5, 2, 3, 4, 5]
         },
         {
             "id": 2,
-            "imagePath": "coxinha",
+            "imagePath": "node1",
             "title": "Entra na padaria",
             "text": "O ar-condicionado do lugar bate no seu rosto, que delícia.\n Na TV, Avenida Brasil passando.\n Você segue até o balcão que tem uma estufa com alguns salgados.\n             Então o Atendente te aborda:\n - Opa, boa tarde! Vai querer o que hoje chefe?",
             "childNodeIDs": [4, 5]
         },
         {
             "id": 3,
-            "imagePath": "coxinha",
+            "imagePath": "node2",
             "title": "Continua para casa",
             "text": "voltou para casa",
             "childNodeIDs": []
         },
         {
             "id": 4,
-            "imagePath": "coxinha",
+            "imagePath": "node2",
             "title": "Risoles",
             "text": "Cada mordida que você dá nesse risoles, desce 0,135 ml de óleo pela mão\n\n Ponto positivo: desce que é uma beleza\n Ponto negativo: coração sente",
             "childNodeIDs": []
         },
         {
             "id": 5,
-            "imagePath": "coxinha",
+            "imagePath": "node3",
             "title": "Coxinha",
             "text": "IIh meu bom...\n\n Você deu uma mordida na coxinha e veio aquele gosto azedinho meio ~duvidoso~\n\n O que você faz?",
             "childNodeIDs": [6]
         },
         {
             "id": 6,
-            "imagePath": "coxinha",
+            "imagePath": "node3",
             "title": "Decide contar na página Review de Salgados",
             "text": "Até então você tinha pleno controle sobre seus atos. Por mais que o acaso interferisse no mundo, o livre-arbítrio era uma realidade inexorável: você podia tomar a atitude que bem entendesse a qualquer hora. Sim, as forças sociais e morais que regem o mundo sempre regularam suas decisões, mas agora o mais simples ato parece incerto; seja desligar o despertador, se espreguiçar ou até mesmo se levantar do sofá. ",
             "childNodeIDs": []
