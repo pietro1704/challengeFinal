@@ -22,9 +22,7 @@ public class StoryCoordinator: Coordinator {
 
     func start() {
         viewController = StoryViewController.instantiate(storyBoardName: "Story")
-        let viewModel = StoryViewModel(node: storyNode, coordinatorDelegate: self)
-        viewController?.viewModel = viewModel
-        viewController?.update(with: viewModel) // TODO: guizao please check: pode chamar esta linha aqui?
+        update(storyNode: storyNode)
         
         let transition = CATransition()
         transition.duration = 0.4
@@ -40,11 +38,13 @@ public class StoryCoordinator: Coordinator {
                                        coordinatorDelegate: self,
                                        playerService: playerService)
         self.storyNode = viewModel.node!
+        viewController?.viewModel = viewModel
+        
+        playerService.saveChoosenNode(id: storyNode.id)
 
         if !self.storyNode.childNodes.isEmpty {
             viewController?.update(with: viewModel)
         } else {
-            // Final Node
             viewController?.transformIntoFinalNode(with: viewModel)
         }
 
