@@ -31,13 +31,21 @@ public class MenuView: UIView {
         return view
     }()
 
-    lazy var logo: UIView = {
-        let logo = UIView()
-        logo.translatesAutoresizingMaskIntoConstraints = false
-        logo.heightAnchor.constraint(equalToConstant: 56).isActive = true
-        logo.widthAnchor.constraint(equalToConstant: 340).isActive = true
-        logo.backgroundColor = .red
-        return logo
+    lazy var logo: ImageView = {
+        let image = ImageView()
+        addSubview(image)
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.imageView.contentMode = .scaleToFill
+
+        if let logoImage = UIImage(named: "logo") {
+            image.recievedImage(image: logoImage)
+        }
+
+        let radians = -4 / 180.0 * CGFloat.pi
+        let rotation = image.transform.rotated(by: radians)
+        image.transform = rotation
+
+        return image
     }()
     
     lazy var newGameButton: TransparentButton = {
