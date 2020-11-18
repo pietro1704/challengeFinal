@@ -142,7 +142,8 @@ public class ChoiceView: UIView {
         self.infos = infos
         prepareForReview()
         setupDynamicButtons(infos.dynamicButtons, selected: infos.selectedDynamic)
-        setupChoiceButtons(infos.nodes, selected: infos.selectedNode?.id,
+        setupChoiceButtons(infos.nodes,
+                           selected: infos.selectedNode?.id,
                            canChooseNode: infos.canChooseNode)
         setupView()
     }
@@ -167,7 +168,8 @@ public class ChoiceView: UIView {
         }
     }
 
-    private func setupChoiceButtons(_ nodes: [StoryNode], selected: NodeID?,
+    private func setupChoiceButtons(_ nodes: [StoryNode],
+                                    selected: NodeID?,
                                     canChooseNode: Bool) {
         for i in 0..<nodes.count {
             let node = nodes[i]

@@ -38,8 +38,8 @@ public class HUDView: UIView {
     func setupConstrains() {
         // Constraint on icon image
         decisionPointsView.iconImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
-        decisionPointsView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
-        decisionPointsView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
+        decisionPointsView.topAnchor.constraint(equalTo: self.topAnchor, constant: 32).isActive = true
+        decisionPointsView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
         
         pauseButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
         pauseButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true

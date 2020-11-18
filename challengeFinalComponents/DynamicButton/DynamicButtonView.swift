@@ -35,7 +35,7 @@ public class DynamicButton: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.font = UIFont.heptaBold()
+        label.font = UIFont.heptaBold(size: 11)
         label.adjustsFontForContentSizeCategory = true
         label.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .vertical)
         return label
@@ -74,7 +74,7 @@ public class DynamicButton: UIView {
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            title.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
+            title.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 4),
             title.leadingAnchor.constraint(equalTo: leadingAnchor),
             title.trailingAnchor.constraint(equalTo: trailingAnchor),
             title.bottomAnchor.constraint(equalTo: bottomAnchor)
