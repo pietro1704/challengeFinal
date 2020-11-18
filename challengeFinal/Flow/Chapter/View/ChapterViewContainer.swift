@@ -49,7 +49,8 @@ public class ChapterViewContainer: UIView {
 
     private func setupChapterView(_ viewModel: ChapterViewModel) {
         if let node = viewModel.node,
-           let title = node.title, let imagePath = node.imagePath {
+           let title = node.title {
+            let imagePath = "chapter1"
             let subTitle = "“Caminhante não há caminho,\n se faz caminho ao andar…”\nAntônio Machado"
             chapterView.update(title: title, subTitle: subTitle, imagePath: imagePath)
         }

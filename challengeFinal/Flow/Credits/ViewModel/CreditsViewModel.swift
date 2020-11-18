@@ -15,7 +15,7 @@ public protocol CreditsViewModelDelegate: class {
 public class CreditsViewModel {
     
     weak var delegate: CreditsViewModelDelegate?
-    var imagePath: String = "menu"
+    var imagePath: String = "04_pega-o-fosforo_isso-ja-e-demais"
     let storyService = StoryNodesServices()
     let playerService: PlayerServiceProtocol
     var userCanContinue: Bool
