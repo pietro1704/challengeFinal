@@ -13,7 +13,7 @@ public protocol DynamicButtonDelegate: class {
 
 let buttonWidth: CGFloat = 75.0
 let buttonHeight: CGFloat = 52.0
-let notSelectedAlpha: CGFloat = 0.5
+let notSelectedAlpha: CGFloat = 0.3
 public class DynamicButton: UIView {
     
     var isSelected: Bool

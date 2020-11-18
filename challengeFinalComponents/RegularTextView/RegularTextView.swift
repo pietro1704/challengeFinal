@@ -8,8 +8,8 @@
 import UIKit
 
 public class RegularTextView: UITextView {
-    
-    public init(fontSize: CGFloat = 17) {
+
+    public init(fontSize: CGFloat = 16) {
         super.init(frame: .zero, textContainer: nil)
         // Custom scaled font
         self.font = UIFont.heptaRegular(size: fontSize)
@@ -39,6 +39,21 @@ public class RegularTextView: UITextView {
                                       value: self.font ?? UIFont.heptaRegular(size: 17),
                                       range: NSMakeRange(0, attributedString.length))
 
+        self.attributedText = attributedString
+    }
+    
+    func boldText(_ textToBold: String, fontSize: CGFloat = 16) {
+        let boldFont = UIFont.heptaBold(size: fontSize)
+        let attributedString = NSMutableAttributedString(attributedString: self.attributedText)
+        
+        guard let range = attributedString.string.range(of: textToBold) else {
+            return
+        }
+        let nsRange = NSRange(range, in: attributedString.string)
+        attributedString.addAttribute(.font,
+                                      value: boldFont,
+                                      range: nsRange)
+        
         self.attributedText = attributedString
     }
 }

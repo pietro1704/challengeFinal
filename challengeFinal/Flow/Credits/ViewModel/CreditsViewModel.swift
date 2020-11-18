@@ -19,7 +19,55 @@ public class CreditsViewModel {
     let storyService = StoryNodesServices()
     let playerService: PlayerServiceProtocol
     var userCanContinue: Bool
-    var text = "Pietro GuizaoPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaoPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaoPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaoPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaoPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaoPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaoPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro GuizaPietro Guiza"
+    var text = """
+    Game Design
+    César Ganimi Machado
+    Guilherme Luis
+    Guilherme Shimamoto
+    Ivo Gimenes Dutra
+    Pietro Pugliesi
+
+    Game Art
+    César Ganimi Machado
+    Guilherme Shimamoto
+
+    Development
+    Guilherme Luis
+    Guilherme Shimamoto
+    Ivo Gimenes Dutra
+    Pietro Pugliesi
+
+    Roteiro
+    César Ganimi Machado
+    Guilherme Luis
+    Guilherme Shimamoto
+    Ivo Gimenes Dutra
+    Pietro Pugliesi
+
+    Escrita
+    César Ganimi
+    Guilherme Shimamoto
+    Ivo Gimenes Dutra
+
+    Mídias
+
+    Agradecimento Especiais
+    Sergio Ordine
+    Gustavo Lima
+    Mapi e Djama
+    Todos que ajudaram no desenvolvimento
+    e você.
+"""
+    
+    var boldText: [String] = [
+        "Game Design",
+        "Game Art",
+        "Development",
+        "Roteiro",
+        "Escrita",
+        "Mídias",
+        "Agradecimento Especiais"
+    ]
     
     public init(coordinatorDelegate: CreditsViewModelDelegate, playerService: PlayerServiceProtocol) {
         self.delegate = coordinatorDelegate

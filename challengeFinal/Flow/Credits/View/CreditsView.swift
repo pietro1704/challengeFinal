@@ -17,6 +17,9 @@ public class CreditsView: UIView {
     weak var delegate: CreditsViewDelegate?
     public var viewModel: CreditsViewModel?
     
+    var yOffset: CGFloat = 0
+    var timer: Timer?
+    
     private lazy var imageView: ImageView = {
         let imageView = ImageView()
         addSubview(imageView)
@@ -105,7 +108,7 @@ public class CreditsView: UIView {
         imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4).isActive = true
+        imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 360/812).isActive = true
         
         setupScrollViewConstrains()
         
@@ -132,14 +135,13 @@ public class CreditsView: UIView {
     }
     
     func setupContentViewConstrains() {
-        textView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        textView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 64).isActive = true
         textView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         textView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
 
-        buttonsStackView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10).isActive = true
-        buttonsStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        
-        buttonsStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        buttonsStackView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 32).isActive = true
+        buttonsStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
+        buttonsStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
         buttonsStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
     }
     
@@ -151,18 +153,47 @@ public class CreditsView: UIView {
         guard let viewModel = viewModel else { return }
         self.viewModel = viewModel
         
+        timer = Timer.scheduledTimer(timeInterval: 0.5,
+                                          target: self,
+                                          selector: #selector(timerAction),
+                                          userInfo: nil,
+                                          repeats: true)
         prepareForReuse()
-        self.imageView.recievedImage(image: loadImage(viewModel.imagePath))
-        
-        self.textView.configure(with: viewModel.text)
+        imageView.recievedImage(image: loadImage(viewModel.imagePath))
+        configureTextView(with: viewModel)
         
         setupConstraints()
+    }
+    
+    private func configureTextView(with viewModel: CreditsViewModel) {
+        textView.configure(with: viewModel.text)
+        textView.textAlignment = .center
+        
+        for boldText in viewModel.boldText {
+            textView.boldText(boldText)
+        }
     }
     
     public func loadImage(_ imagePath: String?) -> UIImage {
         guard let imagePath = imagePath,
               let image = UIImage(named: imagePath) else { return UIImage() }
         return image
+    }
+
+    @objc func timerAction() {
+        yOffset += 30
+        let bottomSpace: CGFloat = 32
+        
+        if yOffset >= (scrollView.contentSize.height - self.frame.height + bottomSpace) {
+            timer?.invalidate()
+            return
+        }
+
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear) {
+                self.scrollView.contentOffset.y = self.yOffset
+            }
+        }
     }
     
     private func prepareForReuse() {
@@ -171,10 +202,12 @@ public class CreditsView: UIView {
     }
     
     @objc func startNewGame() {
+        timer?.invalidate()
         viewModel?.userWantToStartNewGame()
     }
 
     @objc func goToMenu() {
+        timer?.invalidate()
         viewModel?.userWantToGoToMenu()
     }
 }
