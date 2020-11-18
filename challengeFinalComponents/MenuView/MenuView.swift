@@ -41,10 +41,6 @@ public class MenuView: UIView {
             image.recievedImage(image: logoImage)
         }
 
-        let radians = -4 / 180.0 * CGFloat.pi
-        let rotation = image.transform.rotated(by: radians)
-        image.transform = rotation
-
         return image
     }()
     
@@ -69,7 +65,7 @@ public class MenuView: UIView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.distribution = .fill
-        stack.spacing = 40
+        stack.spacing = 32
         return stack
     }()
 
@@ -98,7 +94,7 @@ public class MenuView: UIView {
         imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5).isActive = true
+        imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 360/812).isActive = true
         containerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         containerView.leadingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
         containerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
@@ -109,7 +105,7 @@ public class MenuView: UIView {
     private func setupContainerViewConstraints() {
         logo.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 64).isActive = true
         logo.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
-        buttonStack.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 40).isActive = true
+        buttonStack.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 64).isActive = true
         buttonStack.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
         buttonStack.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
     }
