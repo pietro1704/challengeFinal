@@ -50,6 +50,8 @@ public class CreditsViewModel {
     Ivo Gimenes Dutra
 
     Mídias
+    Edited "Group of young girls dancing around a maypole" by simpleinsomnia is licensed under CC BY 2.0
+    Edited "DFFD House Burn, Dec 2009" by JimAnderson1972 is licensed under CC BY 2.0
 
     Agradecimento Especiais
     Sergio Ordine
