@@ -15,7 +15,7 @@ public protocol MenuViewModelDelegate: class {
 public class MenuViewModel {
 
     weak var delegate: MenuViewModelDelegate?
-    var imagePath: String = "menu"
+    var imagePath: String = "00_menu"
     var userCanContinue: Bool
 
     let storyService = StoryNodesServices()

@@ -2,51 +2,212 @@
     "nodes": [
         {
             "id": 1,
-            "imagePath": "coxinha",
-            "title": "Início",
-            "text": " O almoço daquele dia foi arroz, feijão, bife ao molho curry e uma maçã de sobremesa.\n Lá pelas 15h30, você avista uma padaria do outro lado da rua em que você está.\n Você lembra que tem 10 reais na sua carteira.\n\n O que você faz?" ,
-            "childNodeIDs": [2, 3, 4, 5, 2, 3, 4, 5]
+            "imagePath": "01_cena1_voltando-se",
+            "title": "Prólogo",
+            "text": "Serra do Arajá, Estados Unidos do Brasil. 21 de dezembro de 1992.\n\nJá faz uma semana que você está na luta. Você aceitou com entusiasmo o convite de sua colega professora e companheira de militância Marilena para ajudar clandestinamente a educar a população da Serra do Arajá — uma pequena região montanhosa, isolada da cidade, que possui o mais alto índice de analfabetismo nacional. Diante de um governo autoritário como o que se instalou neste país, você acredita que a arma mais eficiente contra o totalitarismo é a educação. É apenas através de ações concretas que podemos mudar o rumo de nossa sociedade, certo?\n\nVocê se encontra na sala de aula — nada mais que uma construção precária improvisada — pronto para ensinar os alunos de Cidade, jovens-adultos em sua maioria. Assim que que se prepara para iniciar a aula, nota um aluno retardatário entrando pela porta. Você não se importa com o atraso, no entanto algo te chama a atenção. O indivíduo vestia-se de modo bizarro, usando uma saia de retalhos coloridos e uma máscara de madeira ornamentada com ilustrações de diversas faces humanas. Diante disso, você diz:",
+            "childNodeIDs": [2, 3, 4]
         },
         {
             "id": 2,
-            "imagePath": "coxinha",
-            "title": "Entra na padaria",
-            "text": "O ar-condicionado do lugar bate no seu rosto, que delícia.\n Na TV, Avenida Brasil passando.\n Você segue até o balcão que tem uma estufa com alguns salgados.\n             Então o Atendente te aborda:\n - Opa, boa tarde! Vai querer o que hoje chefe?",
-            "childNodeIDs": [4, 5]
+            "imagePath": "01_cena1_voltando-se",
+            "title": "Olá, poderia me dizer o que está acontecendo?",
+            "text": "O indivíduo não responde. Os alunos parecem segurar o riso, mas ninguém se pronuncia. Talvez essa vestimenta faça parte dos costumes culturais da comunidade, você pensa. Suas aulas seguiam o \"subversivo\" método de alfabetização Carlos Fontana, que consistia em entender o contexto político, social e cultural dos alunos antes de ensiná-los propriamente a ler e escrever. Nesse caso, você poderia usar desse acontecimento como um pretexto para se inteirar mais da cultura desse povo, não? Qual a sua reação?",
+            "childNodeIDs": [5, 6, 7]
         },
         {
             "id": 3,
-            "imagePath": "coxinha",
-            "title": "Continua para casa",
-            "text": "voltou para casa",
-            "childNodeIDs": []
+            "imagePath": "01_cena1_voltando-se",
+            "title": "Bom dia, camarada. Tem certeza que está no lugar certo?",
+            "text": "O indivíduo não responde. Os alunos parecem segurar o riso, mas ninguém se pronuncia. Talvez essa vestimenta faça parte dos costumes culturais da comunidade, você pensa. Suas aulas seguiam o \"subversivo\" método de alfabetização Carlos Fontana, que consistia em entender o contexto político, social e cultural dos alunos antes de ensiná-los propriamente a ler e escrever. Nesse caso, você poderia usar desse acontecimento como um pretexto para se inteirar mais da cultura desse povo, não? Qual a sua reação?",
+            "childNodeIDs": [5, 6, 7]
         },
         {
             "id": 4,
-            "imagePath": "coxinha",
-            "title": "Risoles",
-            "text": "Cada mordida que você dá nesse risoles, desce 0,135 ml de óleo pela mão\n\n Ponto positivo: desce que é uma beleza\n Ponto negativo: coração sente",
-            "childNodeIDs": []
+            "imagePath": "01_cena1_voltando-se",
+            "title": "Lugar errado, amigo. As pessoas estão aqui para estudar, não pular o carnaval",
+            "text": "O indivíduo não responde. Os alunos parecem segurar o riso, mas ninguém se pronuncia. Talvez essa vestimenta faça parte dos costumes culturais da comunidade, você pensa. Suas aulas seguiam o \"subversivo\" método de alfabetização Carlos Fontana, que consistia em entender o contexto político, social e cultural dos alunos antes de ensiná-los propriamente a ler e escrever. Nesse caso, você poderia usar desse acontecimento como um pretexto para se inteirar mais da cultura desse povo, não? Qual a sua reação?",
+            "childNodeIDs": [5, 6, 7]
         },
         {
             "id": 5,
-            "imagePath": "coxinha",
-            "title": "Coxinha",
-            "text": "IIh meu bom...\n\n Você deu uma mordida na coxinha e veio aquele gosto azedinho meio ~duvidoso~\n\n O que você faz?",
-            "childNodeIDs": [6]
+            "imagePath": "01_cena1_voltando-se",
+            "title": "Voltando-se novamente ao aluno fantasiado, pede encarecidamente para que conte sobre os costumes da vila.",
+            "text": "O aluno misterioso finalmente toma a frente e fala:\n\n— Olha, professor, nossa vida aqui não tem nada de muito diferente... A gente acorda, trabalha e volta pra casa de novo pra começar um novo dia. A gente precisa seguir a rotina que Deus nos dá, né? Mas hoje é um dia especial! Quero dizer, pra alguns. Talvez sim, talvez não...",
+            "childNodeIDs": [8, 9, 10]
         },
         {
             "id": 6,
-            "imagePath": "coxinha",
-            "title": "Decide contar na página Review de Salgados",
-            "text": "Até então você tinha pleno controle sobre seus atos. Por mais que o acaso interferisse no mundo, o livre-arbítrio era uma realidade inexorável: você podia tomar a atitude que bem entendesse a qualquer hora. Sim, as forças sociais e morais que regem o mundo sempre regularam suas decisões, mas agora o mais simples ato parece incerto; seja desligar o despertador, se espreguiçar ou até mesmo se levantar do sofá. ",
-            "childNodeIDs": []
+            "imagePath": "01_cena1_voltando-se",
+            "title": "Algum aluno se voluntaria a contar mais sobre esta comunidade e seus costumes?",
+            "text": "O aluno misterioso finalmente toma a frente e fala:\n\n— Olha, professor, nossa vida aqui não tem nada de muito diferente... A gente acorda, trabalha e volta pra casa de novo pra começar um novo dia. A gente precisa seguir a rotina que Deus nos dá, né? Mas hoje é um dia especial! Quero dizer, pra alguns. Talvez sim, talvez não...",
+            "childNodeIDs": [8, 9, 10]
         },
         {
             "id": 7,
-            "imagePath": "coxinha",
-            "title": "Volta para o começo",
-            "text": "",
+            "imagePath": "01_cena1_voltando-se",
+            "title": "Se vocês não colaborarem, não posso colaborar com vocês.",
+            "text": "O aluno misterioso finalmente toma a frente e fala:\n\n— Olha, professor, nossa vida aqui não tem nada de muito diferente... A gente acorda, trabalha e volta pra casa de novo pra começar um novo dia. A gente precisa seguir a rotina que Deus nos dá, né? Mas hoje é um dia especial! Quero dizer, pra alguns. Talvez sim, talvez não...",
+            "childNodeIDs": [8, 9, 10]
+        },
+        {
+            "id": 8,
+            "imagePath": "02_oi-menina_eutopo",
+            "title": "Eu posso saber por que hoje é um dia especial?",
+            "text": "Naquele dia você não conseguiu tirar muito dos alunos. Eles pareciam estar escondendo alguma coisa, desconversando quando você tentava entender por que hoje era um dia especial e o que isso tinha a ver com o modo como aquele sujeito estava vestido.\n\nVocê termina a aula frustrado, e caminha de volta para a sua moradia. No caminho, vê umas crianças brincando na rua com a mesma fantasia que seu aluno estava usando. Você se aproxima de uma delas, uma garota de aproximadamente 10 anos, e diz:",
+            "childNodeIDs": [11, 12]
+        },
+        {
+            "id": 9,
+            "imagePath": "02_oi-menina_eutopo",
+            "title": "Eu agradeceria se você puder ser mais específico...",
+            "text": "Naquele dia você não conseguiu tirar muito dos alunos. Eles pareciam estar escondendo alguma coisa, desconversando quando você tentava entender por que hoje era um dia especial e o que isso tinha a ver com o modo como aquele sujeito estava vestido.\n\nVocê termina a aula frustrado, e caminha de volta para a sua moradia. No caminho, vê umas crianças brincando na rua com a mesma fantasia que seu aluno estava usando. Você se aproxima de uma delas, uma garota de aproximadamente 10 anos, e diz:",
+            "childNodeIDs": [11, 12]
+        },
+        {
+            "id": 10,
+            "imagePath": "02_oi-menina_eutopo",
+            "title": "Vai me dizer que vocês comemoram o carnaval em dezembro?",
+            "text": "Naquele dia você não conseguiu tirar muito dos alunos. Eles pareciam estar escondendo alguma coisa, desconversando quando você tentava entender por que hoje era um dia especial e o que isso tinha a ver com o modo como aquele sujeito estava vestido.\n\nVocê termina a aula frustrado, e caminha de volta para a sua moradia. No caminho, vê umas crianças brincando na rua com a mesma fantasia que seu aluno estava usando. Você se aproxima de uma delas, uma garota de aproximadamente 10 anos, e diz:",
+            "childNodeIDs": [11, 12]
+        },
+        {
+            "id": 11,
+            "imagePath": "02_oi-menina_eutopo",
+            "title": "Oi, menina! Por que vocês estão se vestindo assim?",
+            "text": "A menina sai correndo e girando aleatoriamente pela rua, gritando repetidamente:\n\n— Raio verde, raio verde, raio verde!\n\nAs outras crianças se juntam a ela, correndo e gritando em uníssono. Você já está um pouco velho para ficar correndo atrás de crianças, então desiste e continua rumo à moradia.\n\nMarilena, sua companheira professora, já estava em casa. Ela era sua única confidente na comunidade, a única pessoa de fora com quem podia trocar ideias e experiências. Além do que, sendo uma competente antropóloga, tinha um interesse genuíno pelos costumes populares. A primeira coisa que você faz é contar sobre os casos insólitos que presenciou: o aluno esquisito, sua fantasia e falas evasivas, as crianças e seja lá o que fosse o maldito \"raio verde\". Marilena ouve sua epopéia sem se impressionar, como se já soubesse do segredo que ligava todos esses acontecimentos.\n\n— Que bom que você tocou nesse assunto! Estava te esperando pra falar justamente sobre isso. Mas você tem razão em achar tudo isso esquisito, eu também estranhei quando cheguei aqui. Enfim, vou tentar resumir a história:\n\nComo você bem sabe, a Holanda invadiu esta região do nordeste no século XVII, certo? Os historiadores dizem que numa dessas expedições, um grupo de holandeses que ainda cultivava suas antigas tradições pagãs estabeleceu residência neste território. Suas crenças misturaram-se com a dos povos nativos brasileiros, gerando um sincretismo religioso que perdura até hoje, especialmente aqui na Serra. As vestimentas e as máscaras que você viu fazem parte das práticas do ritual do Raio Verde, que acontece no dia do solstício, ou seja, hoje! O nome \"raio verde\" ou \"brilho verde\" vem de um fenômeno raro que acontece ao nascer ou ao pôr do sol, onde é possível vislumbrar uma minguante refração de luz verde emitida pelo sol. Os praticantes acreditam que aqueles que vêem o raio são elevados a um estado de graça, onde o acaso e a aleatoriedade ditam suas ações. O problema é que no momento em que a corja fascista tomou o controle do nosso país, os praticantes dessa tradição foram perseguidos pelo governo por serem considerados imorais e subversivos. Por isso esse mistério todo envolvendo seus membros, que acabaram tendo que disfarçar suas crenças. Isso fez com que a prática fosse se tornando cada vez mais um tabu, ao ponto de hoje se tornar uma seita secreta.\n\nBom, isso é tudo que sei, mas podemos saber mais... e é aí que eu queria chegar. Um dos meus alunos integrante da seita me convidou para participar do ritual hoje, às cinco horas. Perguntei se você poderia ir junto, e ele autorizou. O que acha, hein?",
+            "childNodeIDs": [13, 14]
+        },
+        {
+            "id": 12,
+            "imagePath": "02_oi-menina_eutopo",
+            "title": "Se você me falar porque está vestida assim, o tio te compra uma paçoca!",
+            "text": "A menina sai correndo e girando aleatoriamente pela rua, gritando repetidamente:\n\n— Raio verde, raio verde, raio verde!\n\nAs outras crianças se juntam a ela, correndo e gritando em uníssono. Você já está um pouco velho para ficar correndo atrás de crianças, então desiste e continua rumo à moradia.\n\nMarilena, sua companheira professora, já estava em casa. Ela era sua única confidente na comunidade, a única pessoa de fora com quem podia trocar ideias e experiências. Além do que, sendo uma competente antropóloga, tinha um interesse genuíno pelos costumes populares. A primeira coisa que você faz é contar sobre os casos insólitos que presenciou: o aluno esquisito, sua fantasia e falas evasivas, as crianças e seja lá o que fosse o maldito \"raio verde\". Marilena ouve sua epopéia sem se impressionar, como se já soubesse do segredo que ligava todos esses acontecimentos.\n\n— Que bom que você tocou nesse assunto! Estava te esperando pra falar justamente sobre isso. Mas você tem razão em achar tudo isso esquisito, eu também estranhei quando cheguei aqui. Enfim, vou tentar resumir a história:\n\nComo você bem sabe, a Holanda invadiu esta região do nordeste no século XVII, certo? Os historiadores dizem que numa dessas expedições, um grupo de holandeses que ainda cultivava suas antigas tradições pagãs estabeleceu residência neste território. Suas crenças misturaram-se com a dos povos nativos brasileiros, gerando um sincretismo religioso que perdura até hoje, especialmente aqui na Serra. As vestimentas e as máscaras que você viu fazem parte das práticas do ritual do Raio Verde, que acontece no dia do solstício, ou seja, hoje! O nome \"raio verde\" ou \"brilho verde\" vem de um fenômeno raro que acontece ao nascer ou ao pôr do sol, onde é possível vislumbrar uma minguante refração de luz verde emitida pelo sol. Os praticantes acreditam que aqueles que vêem o raio são elevados a um estado de graça, onde o acaso e a aleatoriedade ditam suas ações. O problema é que no momento em que a corja fascista tomou o controle do nosso país, os praticantes dessa tradição foram perseguidos pelo governo por serem considerados imorais e subversivos. Por isso esse mistério todo envolvendo seus membros, que acabaram tendo que disfarçar suas crenças. Isso fez com que a prática fosse se tornando cada vez mais um tabu, ao ponto de hoje se tornar uma seita secreta.\n\nBom, isso é tudo que sei, mas podemos saber mais... e é aí que eu queria chegar. Um dos meus alunos integrante da seita me convidou para participar do ritual hoje, às cinco horas. Perguntei se você poderia ir junto, e ele autorizou. O que acha, hein?",
+            "childNodeIDs": [13, 14]
+        },
+        {
+            "id": 13,
+            "imagePath": "02_oi-menina_eutopo",
+            "title": "Eu topo qualquer coisa que vá contra o que esse governo chama de \"moral e bons costumes\"!",
+            "text": "16h48. Você e Marilena já estão no topo da serra onde o ritual acontece, esperando pelo início do misterioso evento. Aos poucos, cada vez mais pessoas vão aparecendo, vestidas com aquelas fantasias esquisitas. Próximos ao limiar da montanha, alguns membros começam a tocar tambores, flautas e sinos num ritmo frenético e desconexo, ao passo que no extremo oposto outro grupo começa a gritar palavras ininteligíveis, num crescendo caótico, delirante. Enquanto isso, os praticantes começam individualmente a girar em seu próprio eixo. Marilena, ao seu lado, começa a fazer o mesmo. Qual a sua atitude?",
+            "childNodeIDs": [15, 16]
+        },
+        {
+            "id": 14,
+            "imagePath": "02_oi-menina_eutopo",
+            "title": "Ok, só espero que eles não sejam adeptos da antropofagia...",
+            "text": "16h48. Você e Marilena já estão no topo da serra onde o ritual acontece, esperando pelo início do misterioso evento. Aos poucos, cada vez mais pessoas vão aparecendo, vestidas com aquelas fantasias esquisitas. Próximos ao limiar da montanha, alguns membros começam a tocar tambores, flautas e sinos num ritmo frenético e desconexo, ao passo que no extremo oposto outro grupo começa a gritar palavras ininteligíveis, num crescendo caótico, delirante. Enquanto isso, os praticantes começam individualmente a girar em seu próprio eixo. Marilena, ao seu lado, começa a fazer o mesmo. Qual a sua atitude?",
+            "childNodeIDs": [15, 16]
+        },
+        {
+            "id": 15,
+            "imagePath": "03_comeca-girar_entao-me-mostre",
+            "title": "Começa a girar.",
+            "text": "A música cessa, e todos param de se movimentar. Completo silêncio. O sol já está quase se pondo. A multidão então caminha em direção a uma cabana situada ao centro da montanha. Vocês acompanham. Todos param em frente à entrada, parecendo esperar por algo.\n\nAos poucos as crianças presentes se adiantam e começam a se deitar de bruços em frente à entrada, uma ao lado da outra. A claridade do sol já está mais fraca, de modo que a penumbra contrasta com uma luminosidade vinda de dentro da cabana.\n\nLogo um senhor finalmente aparece na entrada. Se as vestimentas já lhe pareciam estranhas, nada podia se comparar à figura grotesca desse homem: seus cabelos eram um emaranhado de fios coloridos, alguns enrolados, outros lisos e crespos. Possuía sobrancelha em apenas um lado do rosto - este, aliás, era divido ao meio, pintado em duas cores, verde e laranja. Essa dualidade de figuras opostas permeava o restante de sua aparência, desde o bigode até os pés.\n\nDepois de pronunciar palavras ininteligíveis, começa a caminhar sobre os corpos das crianças que estavam deitadas à sua frente, como se fossem um tapete humano. Como você reage?",
+            "childNodeIDs": [17, 18]
+        },
+        {
+            "id": 16,
+            "imagePath": "03_comeca-girar_entao-me-mostre",
+            "title": "Continua observando o ritual. Não está afim de ter uma crise de labirintite.",
+            "text": "A música cessa, e todos param de se movimentar. Completo silêncio. O sol já está quase se pondo. A multidão então caminha em direção a uma cabana situada ao centro da montanha. Vocês acompanham. Todos param em frente à entrada, parecendo esperar por algo.\n\nAos poucos as crianças presentes se adiantam e começam a se deitar de bruços em frente à entrada, uma ao lado da outra. A claridade do sol já está mais fraca, de modo que a penumbra contrasta com uma luminosidade vinda de dentro da cabana.\n\nLogo um senhor finalmente aparece na entrada. Se as vestimentas já lhe pareciam estranhas, nada podia se comparar à figura grotesca desse homem: seus cabelos eram um emaranhado de fios coloridos, alguns enrolados, outros lisos e crespos. Possuía sobrancelha em apenas um lado do rosto - este, aliás, era divido ao meio, pintado em duas cores, verde e laranja. Essa dualidade de figuras opostas permeava o restante de sua aparência, desde o bigode até os pés.\n\nDepois de pronunciar palavras ininteligíveis, começa a caminhar sobre os corpos das crianças que estavam deitadas à sua frente, como se fossem um tapete humano. Como você reage?",
+            "childNodeIDs": [17, 18]
+        },
+        {
+            "id": 17,
+            "imagePath": "03_comeca-girar_entao-me-mostre",
+            "title": "Grita: \"Isso é um absurdo! Que tal se pisássemos em cima de você, otário?\"",
+            "text": "Você acaba chamando a atenção das pessoas, que começam a te encarar. O líder aponta pra você. A multidão ao seu redor afasta-se, de modo que apenas você e Marilena ficam em evidência. O líder pronuncia mais algumas palavras em língua estranha, e as pessoas começam a formar uma fila atrás de você.\n\nO chefe se aproxima e diz, baixinho:\n\n- Calma, rapaz. Todos estão aqui por vontade própria. Não obriguei ninguém a nada, nem essas crianças, nem você. Mas já que está aqui, peço que respeite nossas práticas. Entre na cabana, por favor. Você reage:",
+            "childNodeIDs": [19, 21]
+        },
+        {
+            "id": 18,
+            "imagePath": "03_comeca-girar_entao-me-mostre",
+            "title": "Não faz nada. Por mais absurdo que isso seja, temos que respeitar todas as culturas.",
+            "text": "A multidão ao seu redor começa a formar uma fila atrás de você.\n\nO chefe aponta para a cabana, aparentemente convidando-o a ser o primeiro a entrar.",
+            "childNodeIDs": [21, 20]
+        },
+        {
+            "id": 19,
+            "imagePath": "03_comeca-girar_entao-me-mostre",
+            "title": "\"Como vou ter respeito pela violência?\"",
+            "text": "O chefe fica furioso com sua atitude:\n\n- A gente aceitou a vinda de vocês por achar que iriam nos ajudar, mas pelo visto são apenas capangas do governo!\n\nDepois disso, os ajudantes do líder seguram você e Marilena e os carregam à força até o interior da cabana. Lá dentro tudo estava nublado com uma espessa camada de incenso. O chefe marca a sua testa com uma tinta. Aos poucos você se sente dopado, e seus sentidos vão ficando cada vez mais embaralhados.\n\nVocê é encaminhado pra fora da cabana, dando de cara com o pôr-do-sol no fim do horizonte. O som dos instrumentos voltam a soar, gerando um efeito hipnótico. Você vislumbra o sol prestes a sumir, emitindo um último raio verde fulgurante. Você apaga.",
+            "childNodeIDs": [22]
+        },
+        {
+            "id": 20,
+            "imagePath": "03_comeca-girar_entao-me-mostre",
+            "title": "Pra mim, chega. Vou embora.",
+            "text": "O chefe fica furioso com sua atitude:\n\n- A gente aceitou a vinda de vocês por achar que iriam nos ajudar, mas pelo visto são apenas capangas do governo!\n\nDepois disso, os ajudantes do líder seguram você e Marilena e os carregam à força até o interior da cabana. Lá dentro tudo estava nublado com uma espessa camada de incenso. O chefe marca a sua testa com uma tinta. Aos poucos você se sente dopado, e seus sentidos vão ficando cada vez mais embaralhados.\n\nVocê é encaminhado pra fora da cabana, dando de cara com o pôr-do-sol no fim do horizonte. O som dos instrumentos voltam a soar, gerando um efeito hipnótico. Você vislumbra o sol prestes a sumir, emitindo um último raio verde fulgurante. Você apaga.",
+            "childNodeIDs": [22]
+        },
+        {
+            "id": 21,
+            "imagePath": "03_comeca-girar_entao-me-mostre",
+            "title": "Entrar na cabana.",
+            "text": "Lá dentro tudo estava nublado com uma espessa camada de incenso. O chefe marca a sua testa com uma tinta. Aos poucos você se sente dopado, e seus sentidos vão ficando cada vez mais embaralhados.\n\nVocê é encaminhado pra fora da cabana, dando de cara com o pôr-do-sol no fim do horizonte. O som dos instrumentos voltam a soar, gerando um efeito hipnótico. Você vislumbra o sol prestes a sumir, emitindo um último raio verde fulgurante. Você apaga.",
+            "childNodeIDs": [22]
+        },
+        {
+            "id": 22,
+            "imagePath": "03_comeca-girar_entao-me-mostre",
+            "title": "...",
+            "text": "Você acorda, deitado na grama, olha ao redor, ainda está na montanha. O sol já se pôs no horizonte. Aos poucos sua consciência parece querer retornar, mas com ela alguns sentimentos estranhos vão surgindo. Você se sente poderoso, livre, como se finalmente tivesse se libertado da prisão que existia em seu âmago. Nunca em sua vida havia sentido tanta vontade de explorar o mundo. Ao mesmo passo, no fundo de seu coração alguns medos cresciam, o medo da incerteza, de perder o controle de sua tão estimada existência. Tomado pela sensação bizarra de dualidade, seu cérebro só consegue pensar \"O que está acontecendo?\".\n\nApós alguns segundos de reflexão, você se levanta e nota que outras pessoas ainda estão na montanha também. Nada fazia sentido. Algumas pessoas estavam correndo de um lado para o outro, outras rindo sentadas e até mesmo um pequeno grupo mais distante parecia estrar brigando. Você já havia visto aquela cena antes, em salas do primário lotadas de crianças descontroladas. Aquilo de certa forma o reconfortava.\n\nNo meio daquela confusão organizada, um homem vem em sua direção. Aquele rosto lhe parecia familiar. Ele para em sua frente e, sem dizer nada, coloca a mão sobre seu ombro. Você sente ternura com o gesto. E raiva, por que raios ele estava te tocando? Embora a dualidade, todos os sentimentos eram legítimos.",
+            "childNodeIDs": [23, 24]
+        },
+        {
+            "id": 23,
+            "imagePath": "03_comeca-girar_entao-me-mostre",
+            "title": "Retribui a ação, colocando a mão sobre o ombro da outra pessoa",
+            "text": "Você percebe que aquele rosto de fato era familiar. Sim, sim... era o aluno que te respondeu na aula de manhã! Ele pergunta:\n\n- Pra você está sendo um dia especial, né?\n\nVocê não responde. Ele retira a mão do seu ombro. As sensações estranhas ainda percorrem seu corpo, como se você tivesse e não tivesse limites. Sua feição deixou transparecer tais sentimentos. O aluno te encara fixamente, provavelmente analisando seu semblante derrotado. Abre um imenso sorriso e fala:\n\n- Você é livre! Não é libertador não ter a obrigação de escolher?\n\nO que você responde?",
+            "childNodeIDs": [25, 28]
+        },
+        {
+            "id": 24,
+            "imagePath": "03_comeca-girar_entao-me-mostre",
+            "title": "Que merda é essa?",
+            "text": "O sujeito diz:\n\n- Fomos agraciados pelo Raio Verde. Aproveite essa dádiva, ou maldição, como preferir!",
+            "childNodeIDs": [26, 27]
+        },
+        {
+            "id": 25,
+            "imagePath": "03_comeca-girar_entao-me-mostre",
+            "title": "Podemos dizer que sim?",
+            "text": "O sujeito diz:\n\n- Fomos agraciados pelo Raio Verde. Aproveite essa dádiva, ou maldição, como preferir!",
+            "childNodeIDs": [26, 27]
+        },
+        {
+            "id": 26,
+            "imagePath": "03_comeca-girar_entao-me-mostre",
+            "title": "Então me mostre como aproveitar essa dádiva.",
+            "text": "- Calma! Vamos dar uma voltinha, sua amiga está esperando a gente. Ela também presenciou o Raio Verde, posso garantir que está tudo bem.\n\nVocê e mais um grupo de praticantes se juntam para acompanhar o sujeito. O caminho era conhecido, vocês passam pela moradia e seguem rumo à rua que dava para a escola. É lá que vocês param.\n\nMarilena estava sentada em frente às escadas do estabelecimento e abre um sorriso logo que te vê. Ao seu lado havia dois galões de gasolina. Você pergunta se está tudo bem. Ela responde:\n\n- Não poderia estar melhor. Me sinto libertada. Finalmente chegou a hora de colocarmos nossa moral à prova de fogo, né? Literalmente! - e ri de forma cínica.\n\nOs acompanhantes pegam os galões de gasolina e começam a encharcar a escola com o líquido.\n\nO aluno se pronuncia:\n\n- É, meus irmãos... o Raio Verde finalmente jorrou sua dádiva no interior de nossos corações. No dia-a-dia, acabamos seguindo protocolos e rotinas que nos são impostas pelas circunstâncias, sem desviar dos caminhos pré-estabelecidos. Mas hoje temos a graça de exercer qualquer ação sem as amarras do falso moralismo! Por séculos tentaram esconder nossa parte maldita, nosso lado obscuro e violento. Por quê? O caos é tão válido quanto a ordem! Hoje é o dia em que o Raio Verde nos concede a oportunidade de expurgar nossa falsidade e apatia em relação ao mundo.\n\nAo fim do discurso alucinado, Marilena se aproxima com uma caixa de fósforos, risca um palito e te oferece. Uma fagulha seria o suficiente para dar início ao incêndio.\n\n- Vamos, acabe com tudo e liberte-se.\n\nO que você faz?",
+            "childNodeIDs": [29, 30]
+        },
+        {
+            "id": 27,
+            "imagePath": "03_comeca-girar_entao-me-mostre",
+            "title": "Onde está Marilena?",
+            "text": "- Calma! Vamos dar uma voltinha, sua amiga está esperando a gente. Ela também presenciou o Raio Verde, posso garantir que está tudo bem.\n\nVocê e mais um grupo de praticantes se juntam para acompanhar o sujeito. O caminho era conhecido, vocês passam pela moradia e seguem rumo à rua que dava para a escola. É lá que vocês param.\n\nMarilena estava sentada em frente às escadas do estabelecimento e abre um sorriso logo que te vê. Ao seu lado havia dois galões de gasolina. Você pergunta se está tudo bem. Ela responde:\n\n- Não poderia estar melhor. Me sinto libertada. Finalmente chegou a hora de colocarmos nossa moral à prova de fogo, né? Literalmente! - e ri de forma cínica.\n\nOs acompanhantes pegam os galões de gasolina e começam a encharcar a escola com o líquido.\n\nO aluno se pronuncia:\n\n- É, meus irmãos... o Raio Verde finalmente jorrou sua dádiva no interior de nossos corações. No dia-a-dia, acabamos seguindo protocolos e rotinas que nos são impostas pelas circunstâncias, sem desviar dos caminhos pré-estabelecidos. Mas hoje temos a graça de exercer qualquer ação sem as amarras do falso moralismo! Por séculos tentaram esconder nossa parte maldita, nosso lado obscuro e violento. Por quê? O caos é tão válido quanto a ordem! Hoje é o dia em que o Raio Verde nos concede a oportunidade de expurgar nossa falsidade e apatia em relação ao mundo.\n\nAo fim do discurso alucinado, Marilena se aproxima com uma caixa de fósforos, risca um palito e te oferece. Uma fagulha seria o suficiente para dar início ao incêndio.\n\n- Vamos, acabe com tudo e liberte-se.\n\nO que você faz?",
+            "childNodeIDs": [29, 30]
+        },
+        {
+            "id": 28,
+            "imagePath": "03_comeca-girar_entao-me-mostre",
+            "title": "Faça esses sentimentos pararem! Estou ficando louco!",
+            "text": "- Calma! Vamos dar uma voltinha, sua amiga está esperando a gente. Ela também presenciou o Raio Verde, posso garantir que está tudo bem.\n\nVocê e mais um grupo de praticantes se juntam para acompanhar o sujeito. O caminho era conhecido, vocês passam pela moradia e seguem rumo à rua que dava para a escola. É lá que vocês param.\n\nMarilena estava sentada em frente às escadas do estabelecimento e abre um sorriso logo que te vê. Ao seu lado havia dois galões de gasolina. Você pergunta se está tudo bem. Ela responde:\n\n- Não poderia estar melhor. Me sinto libertada. Finalmente chegou a hora de colocarmos nossa moral à prova de fogo, né? Literalmente! - e ri de forma cínica.\n\nOs acompanhantes pegam os galões de gasolina e começam a encharcar a escola com o líquido.\n\nO aluno se pronuncia:\n\n- É, meus irmãos... o Raio Verde finalmente jorrou sua dádiva no interior de nossos corações. No dia-a-dia, acabamos seguindo protocolos e rotinas que nos são impostas pelas circunstâncias, sem desviar dos caminhos pré-estabelecidos. Mas hoje temos a graça de exercer qualquer ação sem as amarras do falso moralismo! Por séculos tentaram esconder nossa parte maldita, nosso lado obscuro e violento. Por quê? O caos é tão válido quanto a ordem! Hoje é o dia em que o Raio Verde nos concede a oportunidade de expurgar nossa falsidade e apatia em relação ao mundo.\n\nAo fim do discurso alucinado, Marilena se aproxima com uma caixa de fósforos, risca um palito e te oferece. Uma fagulha seria o suficiente para dar início ao incêndio.\n\n- Vamos, acabe com tudo e liberte-se.\n\nO que você faz?",
+            "childNodeIDs": [29, 30]
+        },
+        {
+            "id": 29,
+            "imagePath": "04_pega-o-fosforo_isso-ja-e-demais",
+            "title": "Pega o fósforo e arremessa na escola.",
+            "text": "Em questão de segundos as chamas engolem todo o estabelecimento. As labaredas vão se avolumando com a mesma intensidade que pensamentos surgem em sua mente.\n\nJá são mais de cinco da manhã, o céu está nebuloso como sua alma. Você contempla o espetáculo insano que acaba de criar utilizando suas próprias mãos. Você destruiu uma escola, símbolo de todos os prinícios que mantêm sua esperança na humanidade. Parte de você não consegue acreditar que esse ato aparentemente aleatório partiu do seu livre-arbítrio. No entanto, uma faísca no subterrâneo mais oculto do seu ser parece estar vibrando, não? Caso contrário, como teria chegado até aqui?",
+            "childNodeIDs": []
+        },
+        {
+            "id": 30,
+            "imagePath": "04_pega-o-fosforo_isso-ja-e-demais",
+            "title": "Isso já demais pra mim. Vocês estão loucos... loucos!",
+            "text": "Você dá meia volta e caminha em direção à moradia. Quando estava prestes a dobrar a esquina da rua, ouve gritos vindos da escola:\n\n— Queima!\n— Salve, Raio Verde!\n— Viva!\n\nVocê se vira e vê a escola, de longe, em meio às chamas. Os incendiários, inclusive Marilena, pulavam e riam contemplando a destruição.\n\nIndependente das suas decisões, o destino acabou tomando seu rumo. Ainda assim, você sente uma ponta de orgulho por ter mantido sua sanidade. Por outro lado, algo ainda te inquieta: que diferença faria se você mesmo tivesse ateado o fogo?",
             "childNodeIDs": []
         }
     ]

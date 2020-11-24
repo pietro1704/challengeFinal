@@ -19,7 +19,7 @@ public class ChapterView: UIView {
     lazy var titleBackground: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.alpha = 0.85
+        view.alpha = 0.84
         addSubview(view)
         view.addSubview(title)
         view.addSubview(subTitle)
@@ -30,7 +30,7 @@ public class ChapterView: UIView {
     lazy var title: UILabel = {
         let title = UILabel()
         title.textColor = .white
-        title.font = UIFont.heptaBold(size: 24)
+        title.font = UIFont.heptaBold(size: 16)
         title.textAlignment = .center
         title.numberOfLines = 0
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -50,7 +50,7 @@ public class ChapterView: UIView {
     lazy var scrollDownImage: ImageView = {
         let image = ImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        let imageConfig = UIImage.SymbolConfiguration(pointSize: 22, weight: .bold, scale: .large)
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: 16, weight: .bold, scale: .large)
         let arrow = UIImage(systemName: "arrow.down", withConfiguration: imageConfig) ?? UIImage()
         image.recievedImage(image: arrow)
         image.tintColor = .white
@@ -90,15 +90,14 @@ public class ChapterView: UIView {
             image.leadingAnchor.constraint(equalTo: leadingAnchor),
             image.trailingAnchor.constraint(equalTo: trailingAnchor),
             image.bottomAnchor.constraint(equalTo: bottomAnchor),
-            titleBackground.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -30),
+            titleBackground.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32),
             titleBackground.centerXAnchor.constraint(equalTo: centerXAnchor),
-            titleBackground.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3),
-            title.topAnchor.constraint(equalTo: titleBackground.topAnchor, constant: 32),
-            title.leadingAnchor.constraint(equalTo: titleBackground.leadingAnchor),
-            title.trailingAnchor.constraint(equalTo: titleBackground.trailingAnchor),
+            title.topAnchor.constraint(equalTo: titleBackground.topAnchor, constant: 16),
+            title.leadingAnchor.constraint(equalTo: titleBackground.leadingAnchor, constant: 32),
+            title.trailingAnchor.constraint(equalTo: titleBackground.trailingAnchor, constant: -32),
             subTitle.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 16),
-            subTitle.leadingAnchor.constraint(equalTo: titleBackground.leadingAnchor),
-            subTitle.trailingAnchor.constraint(equalTo: titleBackground.trailingAnchor),
+            subTitle.leadingAnchor.constraint(equalTo: title.leadingAnchor),
+            subTitle.trailingAnchor.constraint(equalTo: title.trailingAnchor),
             scrollDownImage.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 16),
             scrollDownImage.centerXAnchor.constraint(equalTo: titleBackground.centerXAnchor),
             scrollDownImage.bottomAnchor.constraint(equalTo: titleBackground.bottomAnchor, constant: -16)

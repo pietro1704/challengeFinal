@@ -85,6 +85,7 @@ public class ChoiceView: UIView {
         
         NSLayoutConstraint.activate([
             innerView.topAnchor.constraint(equalTo: scroll.topAnchor),
+            innerView.widthAnchor.constraint(equalTo: scroll.widthAnchor),
             innerView.centerXAnchor.constraint(equalTo: scroll.centerXAnchor),
             innerView.bottomAnchor.constraint(equalTo: scroll.bottomAnchor)
         ])
@@ -141,7 +142,8 @@ public class ChoiceView: UIView {
         self.infos = infos
         prepareForReview()
         setupDynamicButtons(infos.dynamicButtons, selected: infos.selectedDynamic)
-        setupChoiceButtons(infos.nodes, selected: infos.selectedNode?.id,
+        setupChoiceButtons(infos.nodes,
+                           selected: infos.selectedNode?.id,
                            canChooseNode: infos.canChooseNode)
         setupView()
     }
@@ -166,7 +168,8 @@ public class ChoiceView: UIView {
         }
     }
 
-    private func setupChoiceButtons(_ nodes: [StoryNode], selected: NodeID?,
+    private func setupChoiceButtons(_ nodes: [StoryNode],
+                                    selected: NodeID?,
                                     canChooseNode: Bool) {
         for i in 0..<nodes.count {
             let node = nodes[i]
@@ -191,8 +194,8 @@ public class ChoiceView: UIView {
             hudView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             hudView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             buttonsScroll.topAnchor.constraint(equalTo: dynamicButtonsBackground.bottomAnchor, constant: padding),
-            buttonsScroll.leadingAnchor.constraint(equalTo: backButton.trailingAnchor),
-            buttonsScroll.trailingAnchor.constraint(equalTo: confirmAction.leadingAnchor, constant: padding),
+            buttonsScroll.centerXAnchor.constraint(equalTo: centerXAnchor),
+            buttonsScroll.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.7),
             buttonsScroll.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding),
             backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             backButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding),

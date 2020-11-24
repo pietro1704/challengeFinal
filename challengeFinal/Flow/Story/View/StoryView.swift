@@ -41,7 +41,7 @@ public class StoryView: UIView {
     }()
 
     private lazy var goToDecisionButton: TransparentButton = {
-        let gotodec = TransparentButton(title: "Tente por você mesmo")
+        let gotodec = TransparentButton(title: "Continuar")
         gotodec.translatesAutoresizingMaskIntoConstraints = false
         gotodec.delegate = self
         return gotodec
@@ -80,7 +80,7 @@ public class StoryView: UIView {
         imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4).isActive = true
+        imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 360/812).isActive = true
         
         setupHUDViewConstrains()
         
@@ -119,7 +119,7 @@ public class StoryView: UIView {
         textView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         textView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         
-        goToDecisionButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10).isActive = true
+        goToDecisionButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 32).isActive = true
         goToDecisionButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.4).isActive = true
         
         goToDecisionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
@@ -140,6 +140,8 @@ public class StoryView: UIView {
         if let textInfos = node?.text {
             self.textView.configure(with: textInfos)
         }
+        
+        self.scrollView.scrollRectToVisible(CGRect.init(x: 0, y: 0, width: 1, height: 1), animated: false)
         setupConstraints()
     }
 
