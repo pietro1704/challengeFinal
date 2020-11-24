@@ -9,7 +9,7 @@ import XCTest
 @testable import challengeFinal
 import SnapshotTesting
 
-let defaultFontSize: CGFloat = 17
+let defaultFontSize: CGFloat = 16
 
 class RegularTextViewTests: XCTestCase {
     func testTextView () {
@@ -37,9 +37,11 @@ class RegularTextViewTests: XCTestCase {
 }
 
 private struct Infos: RegularTextViewInfos {
+    var lineSpacing: CGFloat
     var text: String
     // swiftlint:disable line_length
     static func mock() -> Infos {
-        return Infos(text: "Até então você tinha pleno controle sobre seus atos. Por mais que o acaso interferisse no mundo, o livre-arbítrio era uma realidade inexorável: você podia tomar a atitude que bem entendesse a qualquer hora. Sim, as forças sociais e morais que regem o mundo sempre regularam suas decisões, mas agora o mais simples ato parece incerto; seja desligar o despertador, se espreguiçar ou até mesmo se levantar do sofá.")
+        return Infos(lineSpacing: 8,
+                     text: "Até então você tinha pleno controle sobre seus atos. Por mais que o acaso interferisse no mundo, o livre-arbítrio era uma realidade inexorável: você podia tomar a atitude que bem entendesse a qualquer hora. Sim, as forças sociais e morais que regem o mundo sempre regularam suas decisões, mas agora o mais simples ato parece incerto; seja desligar o despertador, se espreguiçar ou até mesmo se levantar do sofá.")
     }
 }

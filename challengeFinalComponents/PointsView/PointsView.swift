@@ -56,7 +56,7 @@ extension PointsView: ViewCodable {
         // Default points
         pointsLabel.text = "0"
         
-        pointsLabel.font = UIFont.heptaBold(size: 34)
+        pointsLabel.font = UIFont.heptaBold(size: 18)
         pointsLabel.adjustsFontForContentSizeCategory = true
     }
 

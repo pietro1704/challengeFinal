@@ -38,7 +38,6 @@ public class PrimaryButton: UIButton {
         }
         setTitleColor(.black, for: .normal)
         
-
         layer.borderWidth = 1
         layer.borderColor = UIColor(named: "ButtonWidthColor")?.cgColor ?? UIColor.gray.cgColor
         setupButtonText()

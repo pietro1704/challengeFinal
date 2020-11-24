@@ -31,13 +31,17 @@ public class MenuView: UIView {
         return view
     }()
 
-    lazy var logo: UIView = {
-        let logo = UIView()
-        logo.translatesAutoresizingMaskIntoConstraints = false
-        logo.heightAnchor.constraint(equalToConstant: 56).isActive = true
-        logo.widthAnchor.constraint(equalToConstant: 340).isActive = true
-        logo.backgroundColor = .red
-        return logo
+    lazy var logo: ImageView = {
+        let image = ImageView()
+        addSubview(image)
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.imageView.contentMode = .scaleToFill
+
+        if let logoImage = UIImage(named: "logo") {
+            image.recievedImage(image: logoImage)
+        }
+
+        return image
     }()
     
     lazy var newGameButton: TransparentButton = {
@@ -61,7 +65,7 @@ public class MenuView: UIView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.distribution = .fill
-        stack.spacing = 40
+        stack.spacing = 32
         return stack
     }()
 
@@ -90,7 +94,7 @@ public class MenuView: UIView {
         imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5).isActive = true
+        imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 360/812).isActive = true
         containerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         containerView.leadingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
         containerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
@@ -101,7 +105,7 @@ public class MenuView: UIView {
     private func setupContainerViewConstraints() {
         logo.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 64).isActive = true
         logo.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
-        buttonStack.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 40).isActive = true
+        buttonStack.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 64).isActive = true
         buttonStack.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
         buttonStack.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
     }

@@ -44,7 +44,7 @@ class StoryNodesTest: XCTestCase {
         do {
             let nodes = try JSONDecoder().decode(Story.self, from: data)
             let unwrapedStory = try XCTUnwrap(nodes)
-            XCTAssertEqual(unwrapedStory.nodes.first?.title, "Início")
+            XCTAssertEqual(unwrapedStory.nodes.first?.title, "Prólogo")
         } catch let jsonerror as NSError {
             print(jsonerror.localizedDescription)
         }
