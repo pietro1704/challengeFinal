@@ -13,15 +13,19 @@ class CreditsCoordinator: Coordinator {
     var parentCoordinator: MainCoordinator?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
-    
-    init(navigationController: UINavigationController) {
+    let eventLogger: LogEventProtocol
+
+    init(navigationController: UINavigationController,
+         eventLogger: LogEventProtocol) {
         self.navigationController = navigationController
+        self.eventLogger = eventLogger
     }
 
     func start() {
         let vc = CreditsViewController.instantiate(storyBoardName: "Credits")
         let playerService = PlayerService()
-        let viewModel = CreditsViewModel(coordinatorDelegate: self, playerService: playerService)
+        let viewModel = CreditsViewModel(coordinatorDelegate: self, playerService: playerService,
+                                         eventLogger: eventLogger)
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: false)
     }

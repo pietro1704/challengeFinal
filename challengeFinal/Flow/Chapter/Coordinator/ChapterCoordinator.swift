@@ -14,16 +14,20 @@ public class ChapterCoordinator: Coordinator {
     var navigationController: UINavigationController
     var storyNode: StoryNode
     var viewController: ChapterViewController?
-    
-    init (navigationController: UINavigationController, storyNode: StoryNode) {
+    let eventLogger: LogEventProtocol
+
+    init (navigationController: UINavigationController, storyNode: StoryNode,
+          eventLogger: LogEventProtocol) {
         self.navigationController = navigationController
         self.storyNode = storyNode
+        self.eventLogger = eventLogger
     }
 
     func start() {
         viewController = ChapterViewController.instantiate(storyBoardName: "Chapter")
         let playerService = PlayerService()
-        let viewModel = ChapterViewModel(node: storyNode, coordinatorDelegate: self, playerService: playerService)
+        let viewModel = ChapterViewModel(node: storyNode, coordinatorDelegate: self,
+                                         playerService: playerService, eventLogger: eventLogger)
         viewController?.viewModel = viewModel
         if let viewController = viewController {
             navigationController.pushViewController(viewController, animated: false)
@@ -33,13 +37,14 @@ public class ChapterCoordinator: Coordinator {
     func update(storyNode: StoryNode) {
         self.storyNode = storyNode
         let playerService = PlayerService()
-        let viewModel = ChapterViewModel(node: storyNode, coordinatorDelegate: self, playerService: playerService)
+        let viewModel = ChapterViewModel(node: storyNode, coordinatorDelegate: self,
+                                         playerService: playerService, eventLogger: eventLogger)
         viewController?.update(with: viewModel)
     }
 
     func showStory(with node: StoryNode) {
         let coordinator = StoryCoordinator(navigationController: navigationController,
-                                           storyNode: node)
+                                           storyNode: node, eventLogger: eventLogger)
         childCoordinators.append(coordinator)
         coordinator.parentCoordinator = self
         coordinator.start()

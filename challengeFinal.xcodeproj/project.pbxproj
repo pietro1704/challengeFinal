@@ -75,6 +75,7 @@
 		DA789A92254312E9001CE5BF /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA789A91254312E9001CE5BF /* UIFont.swift */; };
 		DA789A9F25431502001CE5BF /* ChoiceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA789A9E25431502001CE5BF /* ChoiceButtonView.swift */; };
 		DA789AA725431B06001CE5BF /* ChoiceButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA789AA625431B06001CE5BF /* ChoiceButtonTests.swift */; };
+		DA7D1470256D3D98003AE652 /* LoggableScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D146F256D3D98003AE652 /* LoggableScreen.swift */; };
 		DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA88FF6F2537411500AF0992 /* RegularTextViewInfos.swift */; };
 		DA8E87252541AF93000D481B /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E87242541AF93000D481B /* ChapterView.swift */; };
 		DA8E872B2541B184000D481B /* ChapterViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E872A2541B184000D481B /* ChapterViewTests.swift */; };
@@ -91,6 +92,9 @@
 		DAD346422542F3EE00225BAF /* DynamicButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD346412542F3EE00225BAF /* DynamicButtonView.swift */; };
 		DAD346462542F70900225BAF /* DynamicButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD346452542F70900225BAF /* DynamicButtonTests.swift */; };
 		DADC40C025403F7900078CA3 /* StoryNodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC40BF25403F7900078CA3 /* StoryNodeRepository.swift */; };
+		DAE2FBA0256D34B60041C272 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAE2FB9F256D34B60041C272 /* GoogleService-Info.plist */; };
+		DAE2FBA6256D377B0041C272 /* AnalyticsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2FBA5256D377B0041C272 /* AnalyticsLogger.swift */; };
+		DAE2FBAC256D3B590041C272 /* LogEventProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2FBAB256D3B590041C272 /* LogEventProtocol.swift */; };
 		DAE65294255ED72800AB1009 /* HeptaSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE65292255ED72800AB1009 /* HeptaSlab-Regular.ttf */; };
 		DAE65295255ED72800AB1009 /* HeptaSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE65293255ED72800AB1009 /* HeptaSlab-Bold.ttf */; };
 /* End PBXBuildFile section */
@@ -186,6 +190,7 @@
 		DA789A91254312E9001CE5BF /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		DA789A9E25431502001CE5BF /* ChoiceButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceButtonView.swift; sourceTree = "<group>"; };
 		DA789AA625431B06001CE5BF /* ChoiceButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceButtonTests.swift; sourceTree = "<group>"; };
+		DA7D146F256D3D98003AE652 /* LoggableScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggableScreen.swift; sourceTree = "<group>"; };
 		DA88FF6F2537411500AF0992 /* RegularTextViewInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTextViewInfos.swift; sourceTree = "<group>"; };
 		DA8E87242541AF93000D481B /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
 		DA8E872A2541B184000D481B /* ChapterViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewTests.swift; sourceTree = "<group>"; };
@@ -202,6 +207,9 @@
 		DAD346412542F3EE00225BAF /* DynamicButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicButtonView.swift; sourceTree = "<group>"; };
 		DAD346452542F70900225BAF /* DynamicButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicButtonTests.swift; sourceTree = "<group>"; };
 		DADC40BF25403F7900078CA3 /* StoryNodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryNodeRepository.swift; sourceTree = "<group>"; };
+		DAE2FB9F256D34B60041C272 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DAE2FBA5256D377B0041C272 /* AnalyticsLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsLogger.swift; sourceTree = "<group>"; };
+		DAE2FBAB256D3B590041C272 /* LogEventProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEventProtocol.swift; sourceTree = "<group>"; };
 		DAE65292255ED72800AB1009 /* HeptaSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HeptaSlab-Regular.ttf"; sourceTree = "<group>"; };
 		DAE65293255ED72800AB1009 /* HeptaSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HeptaSlab-Bold.ttf"; sourceTree = "<group>"; };
 		DAF3986D513B30C7217ED0AA /* Pods-challengeFinal-challengeFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -262,6 +270,7 @@
 		8D41F6892530932300A496C6 /* challengeFinal */ = {
 			isa = PBXGroup;
 			children = (
+				DAE2FBA9256D3AF80041C272 /* Helpers */,
 				DADC40BE25403F6400078CA3 /* Repository */,
 				DA0A71E62539E360002BAB51 /* Models */,
 				DA0A71E42539E360002BAB51 /* Services */,
@@ -272,6 +281,7 @@
 				C51C0DD82548DBB300577641 /* Suporting Files */,
 				8D41F6952530932500A496C6 /* LaunchScreen.storyboard */,
 				8D41F6982530932500A496C6 /* Info.plist */,
+				DAE2FB9F256D34B60041C272 /* GoogleService-Info.plist */,
 			);
 			path = challengeFinal;
 			sourceTree = "<group>";
@@ -836,6 +846,24 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		DAE2FBA9256D3AF80041C272 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DAE2FBAA256D3B000041C272 /* Analytics */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DAE2FBAA256D3B000041C272 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				DAE2FBA5256D377B0041C272 /* AnalyticsLogger.swift */,
+				DAE2FBAB256D3B590041C272 /* LogEventProtocol.swift */,
+				DA7D146F256D3D98003AE652 /* LoggableScreen.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -848,6 +876,7 @@
 				8D41F6842530932200A496C6 /* Frameworks */,
 				8D41F6852530932200A496C6 /* Resources */,
 				C593DED72542522600345F1B /* Swiftlint */,
+				4B67AACDD9CA130560361E2A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -929,6 +958,7 @@
 				DAE65295255ED72800AB1009 /* HeptaSlab-Bold.ttf in Resources */,
 				DA8E87362541BB2D000D481B /* Chapter.storyboard in Resources */,
 				DA0A71EF2539E379002BAB51 /* StoryNodes.json in Resources */,
+				DAE2FBA0256D34B60041C272 /* GoogleService-Info.plist in Resources */,
 				8DAAC8D52554CCEA00DC08BF /* Credits.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -963,6 +993,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B67AACDD9CA130560361E2A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-challengeFinal/Pods-challengeFinal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-challengeFinal/Pods-challengeFinal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-challengeFinal/Pods-challengeFinal-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		94E714B610347F37F66020D5 /* [CP] Check Pods Manifest.lock */ = {
@@ -1050,11 +1097,13 @@
 				C557D39C2547854D00A537F3 /* PlayerService.swift in Sources */,
 				8D41F6BE253099B900A496C6 /* Coordinator.swift in Sources */,
 				DADC40C025403F7900078CA3 /* StoryNodeRepository.swift in Sources */,
+				DAE2FBAC256D3B590041C272 /* LogEventProtocol.swift in Sources */,
 				C56B280A2543892A004391BA /* PlayerDataService.swift in Sources */,
 				8DD3F5B82541D60500FDA5B4 /* PauseButton.swift in Sources */,
 				DA0A71E92539E360002BAB51 /* StoryNodesService.swift in Sources */,
 				8D9E826A2549F391005FDC37 /* GameColors.swift in Sources */,
 				DA3E12AA25386BAA00C48AF8 /* StoryViewModel.swift in Sources */,
+				DAE2FBA6256D377B0041C272 /* AnalyticsLogger.swift in Sources */,
 				C5DFEB3C254A3DB400EAF4AA /* UIView+Extension.swift in Sources */,
 				8D41F68F2530932300A496C6 /* MenuViewController.swift in Sources */,
 				DA2D0ECA255587E40098CF73 /* ChoiceView+Animations.swift in Sources */,
@@ -1063,6 +1112,7 @@
 				DA5972F42537278900D6EF40 /* PrimaryButton.swift in Sources */,
 				8D41F68B2530932300A496C6 /* AppDelegate.swift in Sources */,
 				DA1F092B2546EBD6008A5775 /* ChoiceView.swift in Sources */,
+				DA7D1470256D3D98003AE652 /* LoggableScreen.swift in Sources */,
 				DA1F095C254717D2008A5775 /* ChoiceViewModelDelegate.swift in Sources */,
 				DA8E87482541C194000D481B /* ChapterViewModelDelegate.swift in Sources */,
 				DA5972F02537261500D6EF40 /* StoryViewController.swift in Sources */,
@@ -1281,7 +1331,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = aue.challengeFinal;
+				PRODUCT_BUNDLE_IDENTIFIER = aue.araja;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1302,7 +1352,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = aue.challengeFinal;
+				PRODUCT_BUNDLE_IDENTIFIER = aue.araja;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
