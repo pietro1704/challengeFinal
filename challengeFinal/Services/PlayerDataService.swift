@@ -13,6 +13,8 @@ public protocol PlayerDataServiceProtocol {
     func getStoryPath() -> [Int]
     func saveStoryPath(_ idArray: [Int])
     func getLastNode() -> StoryNode?
+    func getUserSawOnboarding() -> Bool
+    func setUserFinishedOnboarding()
 }
 
 /// Used only to access and save Players Data info in UserDefaults
@@ -24,6 +26,7 @@ class PlayerDataService: PlayerDataServiceProtocol {
     let instance: UserDefaults
     let storyPathString = "storyPath"
     let pointsString = "points"
+    let sawOnboarding = "onboarding"
 
     // MARK: - Init
 
@@ -53,5 +56,13 @@ class PlayerDataService: PlayerDataServiceProtocol {
         guard let nodeId = getStoryPath().last else { return nil }
         let nodeService = StoryNodesServices()
         return nodeService.retrieveNode(nodeId: nodeId)
+    }
+    
+    func getUserSawOnboarding() -> Bool {
+        return (instance.object(forKey: sawOnboarding) as? Bool) ?? false
+    }
+    
+    func setUserFinishedOnboarding() {
+        instance.setValue(true, forKey: sawOnboarding)
     }
 }

@@ -1,22 +1,15 @@
 //
-//  StoryView.swift
+//  OnboardingView.swift
 //  challengeFinal
 //
-//  Created by Guilherme Domingues on 14/10/20.
+//  Created by Guilherme Tavares Shimamoto on 24/11/20.
 //
 
 import UIKit
 
-public protocol StoryViewDelegate: class {
-    func userChoose(nodeId: NodeID)
-}
-
-public class StoryView: UIView {
-
-    public var viewModel: StoryViewModel?
-    weak var delegate: StoryViewDelegate?
-    private var isFinalNode: Bool = false
-
+public class OnboardingView: UIView {
+    var viewModel: OnboardingViewModel?
+    
     private lazy var imageView: ImageView = {
         let imageView = ImageView()
         addSubview(imageView)
@@ -40,8 +33,8 @@ public class StoryView: UIView {
         return textView
     }()
 
-    private lazy var goToDecisionButton: TransparentButton = {
-        let gotodec = TransparentButton(title: "Continuar")
+    private lazy var continueButton: TransparentButton = {
+        let gotodec = TransparentButton(title: "Ignorar guia louco")
         gotodec.translatesAutoresizingMaskIntoConstraints = false
         gotodec.delegate = self
         return gotodec
@@ -60,19 +53,40 @@ public class StoryView: UIView {
         let content = UIView()
         content.translatesAutoresizingMaskIntoConstraints = false
         content.addSubview(textView)
-        content.addSubview(goToDecisionButton)
+        content.addSubview(continueButton)
         return content
     }()
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     public init() {
         super.init(frame: .zero)
         backgroundColor = UIColor.background
     }
-
-    public init(with viewModel: StoryViewModel) {
+    
+    public init(with viewModel: OnboardingViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
         backgroundColor = UIColor.background
+        setupConstraints()
+    }
+    
+    public func configure(using viewModel: OnboardingViewModel?) {
+        self.viewModel = viewModel
+        
+        if let text = viewModel?.text,
+           let imagePath = viewModel?.imagePath,
+           let image = UIImage(named: imagePath) {
+            textView.configure(with:  text)
+            imageView.recievedImage(image: image)
+        }
+        
+        //Points to be displayed in Onboarding HUD
+        hudView.decisionPointsView.updateLabel(withPoints: 11)
+
+        scrollView.scrollRectToVisible(CGRect.init(x: 0, y: 0, width: 1, height: 1), animated: false)
         setupConstraints()
     }
     
@@ -83,9 +97,7 @@ public class StoryView: UIView {
         imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 360/812).isActive = true
         
         setupHUDViewConstrains()
-        
         setupScrollViewConstrains()
-        
         setupContentViewConstrains()
     }
     
@@ -111,7 +123,6 @@ public class StoryView: UIView {
             scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             scrollView.contentLayoutGuide.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor)
         ])
-
     }
     
     func setupContentViewConstrains() {
@@ -119,69 +130,16 @@ public class StoryView: UIView {
         textView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         textView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         
-        goToDecisionButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 32).isActive = true
-        goToDecisionButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.4).isActive = true
+        continueButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 32).isActive = true
+        continueButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.4).isActive = true
         
-        goToDecisionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        goToDecisionButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    public func configure(using viewModel: StoryViewModel?) {
-        self.viewModel = viewModel
-        
-        prepareForReuse()
-        let node = viewModel?.node
-        self.imageView.recievedImage(image: loadImage(node?.imagePath))
-
-        if let textInfos = node?.text {
-            self.textView.configure(with: textInfos)
-        }
-        
-        scrollView.scrollRectToVisible(CGRect.init(x: 0, y: 0, width: 1, height: 1), animated: false)
-        setupConstraints()
-    }
-
-    public func loadImage(_ imagePath: String?) -> UIImage {
-        guard let imagePath = imagePath,
-              let image = UIImage(named: imagePath) else { return UIImage() }
-        return image
-    }
-
-    private func prepareForReuse() {
-        self.imageView.recievedImage(image: UIImage())
-        self.textView.configure(with: "")
-    }
-
-    // MARK: - Final Node
-
-    public func finalNodeTransformation() {
-        hudView.isHidden = true
-        goToDecisionButton.setTitle("Finalizar", for: UIControl.State.normal)
-        isFinalNode = true
+        continueButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        continueButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
     }
 }
 
-extension StoryView: TransparentButtonDelegate {
+extension OnboardingView: TransparentButtonDelegate {
     public func transpButtonPressed() {
-        if !isFinalNode {
-            viewModel?.userWantToChoose()
-        } else {
-            viewModel?.userFinishedGame()
-            isFinalNode = false
-        }
+        viewModel?.didTapShowChapter()
     }
-}
-
-// MARK: - Bridge view - viewModel
-
-extension StoryView: HUDViewDelegate {
-
-    public func updateHUD(with points: Int) {
-        hudView.decisionPointsView.updateLabel(withPoints: points)
-    }
-
 }
