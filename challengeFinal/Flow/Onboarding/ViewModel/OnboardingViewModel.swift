@@ -10,7 +10,7 @@ import Foundation
 public class OnboardingViewModel {
     var coordinatorDelegate: OnboardingViewModelCoordinatorDelegate?
     var playerService: PlayerServiceProtocol = PlayerService()
-    var imagePath: String = "00_menu"
+    var imagePath: String = "000_onboarding"
     var text = """
 Bem-vindo(a) a Arajá!
 
