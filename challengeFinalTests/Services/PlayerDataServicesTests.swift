@@ -32,6 +32,7 @@ class PlayerDataServicesTests: XCTestCase {
     func mockData() {
         mockedUserDefaults.setValue(mockedPoints, forKey: sut.pointsString)
         mockedUserDefaults.setValue(mockedPath, forKey: sut.storyPathString)
+        mockedUserDefaults.setValue(false, forKey: sut.sawOnboarding)
     }
 
     // MARK: - Get
@@ -60,6 +61,14 @@ class PlayerDataServicesTests: XCTestCase {
 
         XCTAssertEqual(sut.getStoryPath(), path)
     }
-
+    
+    func testGetUserSawOnboarding() {
+        var didSee = sut.getUserSawOnboarding()
+        XCTAssertFalse(didSee)
+        
+        sut.setUserFinishedOnboarding()
+        didSee = sut.getUserSawOnboarding()
+        XCTAssertTrue(didSee)
+    }
 }
 
