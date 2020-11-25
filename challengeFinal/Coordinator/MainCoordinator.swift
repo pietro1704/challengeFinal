@@ -13,9 +13,16 @@ public class MainCoordinator: Coordinator {
 
     let nodeService: StoryNodesServices = StoryNodesServices()
     let playerService: PlayerServiceProtocol = PlayerService()
+    let logger: LogEventProtocol
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, logger: LogEventProtocol? = nil) {
         self.navigationController = navigationController
+        
+        if let logger = logger {
+            self.logger = logger
+        } else {
+            self.logger = AnalyticsLogger()
+        }
     }
 
     func start() {
@@ -23,14 +30,16 @@ public class MainCoordinator: Coordinator {
     }
 
     func showCredits() {
-        let coordinator = CreditsCoordinator(navigationController: navigationController)
+        let coordinator = CreditsCoordinator(navigationController: navigationController,
+                                             eventLogger: logger)
         coordinator.parentCoordinator = self
         childCoordinators.append(coordinator)
         coordinator.start()
     }
-    
+
     func showMenu() {
-        let coordinator = MenuCoordinator(navigationController: navigationController)
+        let coordinator = MenuCoordinator(navigationController: navigationController,
+                                          eventLogger: logger)
         coordinator.parentCoordinator = self
         childCoordinators.append(coordinator)
         coordinator.start()
@@ -38,7 +47,8 @@ public class MainCoordinator: Coordinator {
 
     func showStory(with storyNode: StoryNode) {
         let coordinator = StoryCoordinator(navigationController: navigationController,
-                                           storyNode: storyNode)
+                                           storyNode: storyNode,
+                                           eventLogger: logger)
         childCoordinators.append(coordinator)
         coordinator.start()
     }
@@ -54,7 +64,8 @@ public class MainCoordinator: Coordinator {
         guard let node = nodeService.retrieveNode(nodeId: index) else { return }
         
         let coordinator = ChapterCoordinator(navigationController: navigationController,
-                                                    storyNode: node)
+                                             storyNode: node,
+                                             eventLogger: logger)
         coordinator.parentCoordinator = self
         childCoordinators.append(coordinator)
         coordinator.start()

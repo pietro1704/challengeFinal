@@ -14,10 +14,13 @@ public class StoryCoordinator: Coordinator {
     var navigationController: UINavigationController
     var storyNode: StoryNode
     var viewController: StoryViewController!
+    let eventLogger: LogEventProtocol
 
-    init (navigationController: UINavigationController, storyNode: StoryNode) {
+    init (navigationController: UINavigationController, storyNode: StoryNode,
+          eventLogger: LogEventProtocol) {
         self.navigationController = navigationController
         self.storyNode = storyNode
+        self.eventLogger = eventLogger
     }
 
     func start() {
@@ -36,7 +39,8 @@ public class StoryCoordinator: Coordinator {
         let playerService = PlayerService()
         let viewModel = StoryViewModel(node: storyNode,
                                        coordinatorDelegate: self,
-                                       playerService: playerService)
+                                       playerService: playerService,
+                                       eventLogger: eventLogger)
         self.storyNode = viewModel.node!
         viewController?.viewModel = viewModel
         
@@ -56,7 +60,8 @@ public class StoryCoordinator: Coordinator {
                                                                          selectedDynamic: .choice,
                                                                          selectedNode: nil,
                                                                          highlightedNode: nil,
-                                                                         nodeToEndAnimation: nil))
+                                                                         nodeToEndAnimation: nil),
+                                            eventLogger: eventLogger)
         coordinator.parentCoordinator = self
         childCoordinators.append(coordinator)
         coordinator.start()

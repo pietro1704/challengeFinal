@@ -14,26 +14,32 @@ public class StoryViewModel {
     var node: StoryNode?
     let service = StoryNodesServices()
     var playerService: PlayerServiceProtocol
+    let eventLogger: LogEventProtocol
 
     init(node: StoryNode, coordinatorDelegate: StoryViewModelDelegate,
-         playerService: PlayerServiceProtocol = PlayerService()) {
+         playerService: PlayerServiceProtocol = PlayerService(), eventLogger: LogEventProtocol) {
         self.node = service.retrieveNode(nodeId: node.id)
         self.delegate = coordinatorDelegate
         self.playerService = playerService
+        self.eventLogger = eventLogger
     }
 
-    init(with nodeId: NodeID, playerService: PlayerServiceProtocol = PlayerService()) {
+    init(with nodeId: NodeID, playerService: PlayerServiceProtocol = PlayerService(),
+         eventLogger: LogEventProtocol) {
         self.node = service.retrieveNode(nodeId: nodeId)
         self.playerService = playerService
+        self.eventLogger = eventLogger
     }
 
     // MARK: - Navigation
 
     public func userWantToChoose() {
+        eventLogger.logEvent("start_choose", parameters: nil)
         delegate?.userWantToChoose()
     }
 
     public func userFinishedGame() {
+        eventLogger.logEvent("finish_chapter", parameters: nil)
         delegate?.userDidFinishChapter()
     }
 
@@ -45,4 +51,14 @@ public class StoryViewModel {
         hudDelegate?.updateHUD(with: playerService.player.points)
     }
 
+}
+
+extension StoryViewModel: LoggableScreen {
+    func screenName() -> String {
+        return "story"
+    }
+    
+    func logger() -> LogEventProtocol? {
+        return eventLogger
+    }
 }

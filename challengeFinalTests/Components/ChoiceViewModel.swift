@@ -20,20 +20,26 @@ public class ChoiceViewModel {
     var infos: ChoiceViewInfos?
     let service = StoryNodesServices()
     let playerService: PlayerServiceProtocol
+    var eventLogger: LogEventProtocol
 
     init(infos: ChoiceViewInfos, coordinatorDelegate: ChoiceViewModelDelegate,
-         playerService: PlayerServiceProtocol = PlayerService()) {
+         playerService: PlayerServiceProtocol = PlayerService(),
+         eventLogger: LogEventProtocol) {
         self.infos = infos
         self.delegate = coordinatorDelegate
         self.playerService = playerService
+        self.eventLogger = eventLogger
     }
 
     public func userWantToDismiss() {
         delegate?.userWantToDismiss()
+        eventLogger.logEvent("dismiss", parameters: nil)
     }
 
     public func userWantToConfirmChoice() {
         guard let dynamic = infos?.selectedDynamic else { return }
+        eventLogger.logEvent("confirm_choice", parameters: ["dynamic": dynamic.title()])
+
         switch dynamic {
         case .choice:
             userChoosed()
@@ -99,5 +105,15 @@ public class ChoiceViewModel {
         // Get player's current points
         playerService.initializePlayer()
         hudDelegate?.updateHUD(with: playerService.player.points)
+    }
+}
+
+extension ChoiceViewModel: LoggableScreen {
+    func screenName() -> String {
+        return "choice"
+    }
+    
+    func logger() -> LogEventProtocol? {
+        return eventLogger
     }
 }

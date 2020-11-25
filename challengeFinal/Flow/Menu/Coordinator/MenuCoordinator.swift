@@ -13,15 +13,18 @@ class MenuCoordinator: Coordinator {
     var parentCoordinator: MainCoordinator?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
-    
-    init(navigationController: UINavigationController) {
+    let eventLogger: LogEventProtocol
+
+    init(navigationController: UINavigationController, eventLogger: LogEventProtocol) {
         self.navigationController = navigationController
+        self.eventLogger = eventLogger
     }
 
     func start() {
         let vc = MenuViewController.instantiate(storyBoardName: "Menu")
         let playerService = PlayerService()
-        let viewModel = MenuViewModel(coordinatorDelegate: self, playerService: playerService)
+        let viewModel = MenuViewModel(coordinatorDelegate: self, playerService: playerService,
+                                      eventLogger: eventLogger)
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: false)
     }

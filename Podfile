@@ -4,8 +4,8 @@
 target 'challengeFinal' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
   # Pods for challengeFinal
+  pod 'Firebase/Analytics'
 
   target 'challengeFinalTests' do
     pod 'SnapshotTesting', '~> 1.8.1'

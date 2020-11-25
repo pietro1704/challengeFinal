@@ -13,16 +13,21 @@ public class ChapterViewModel {
     var node: StoryNode?
     let storyService = StoryNodesServices()
     let playerService: PlayerServiceProtocol
+    let eventLogger: LogEventProtocol
 
-    public init(node: StoryNode, coordinatorDelegate: ChapterViewModelDelegate, playerService: PlayerServiceProtocol) {
+    public init(node: StoryNode, coordinatorDelegate: ChapterViewModelDelegate,
+                playerService: PlayerServiceProtocol, eventLogger: LogEventProtocol) {
         self.node = node
         self.delegate = coordinatorDelegate
         self.playerService = playerService
+        self.eventLogger = eventLogger
     }
 
-    public init(with nodeId: NodeID, playerService: PlayerServiceProtocol) {
+    public init(with nodeId: NodeID, playerService: PlayerServiceProtocol,
+                eventLogger: LogEventProtocol) {
         self.node = storyService.retrieveNode(nodeId: nodeId)
         self.playerService = playerService
+        self.eventLogger = eventLogger
     }
 
     public func userWantToShowStory() {
@@ -34,4 +39,14 @@ public class ChapterViewModel {
         delegate?.userWantToShowStory()
     }
 
+}
+
+extension ChapterViewModel: LoggableScreen {
+    func screenName() -> String {
+        return "chapter"
+    }
+    
+    func logger() -> LogEventProtocol? {
+        return eventLogger
+    }
 }
