@@ -27,11 +27,11 @@ public struct ChoiceViewInfosObject: ChoiceViewInfos {
     public var canChooseNode: Bool = false
     public var nodeToEndAnimation: StoryNode?
 
-    init(nodes: [StoryNode], selectedDynamic: DynamicTypes?,
+    init(nodes: [StoryNode], selectedDynamic: DynamicTypes?, dynamicButtons: [DynamicTypes],
          selectedNode: StoryNode?, highlightedNode: NodeID?, nodeToEndAnimation: StoryNode?) {
         self.nodes = nodes
         self.tintColor = "Red"
-        self.dynamicButtons = [.choice, .bet, .random]
+        self.dynamicButtons = dynamicButtons
         self.selectedNode = selectedNode
         self.selectedDynamic = selectedDynamic
         self.nodeToEndAnimation = nodeToEndAnimation

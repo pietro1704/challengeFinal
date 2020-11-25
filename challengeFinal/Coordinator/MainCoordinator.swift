@@ -64,8 +64,7 @@ public class MainCoordinator: Coordinator {
         guard let node = nodeService.retrieveNode(nodeId: index) else { return }
         
         let coordinator = ChapterCoordinator(navigationController: navigationController,
-                                             storyNode: node,
-                                             eventLogger: logger)
+                                             storyNode: node, eventLogger: logger)
         coordinator.parentCoordinator = self
         childCoordinators.append(coordinator)
         coordinator.start()
@@ -84,7 +83,7 @@ public class MainCoordinator: Coordinator {
     func userWantToStartChapter(child: Coordinator) {
         self.childDidFinished(child)
         
-        //Removing onboarding view controller from navigation
+        // Removing onboarding view controller from navigation
         if let topViewController = navigationController.topViewController,
            topViewController.isKind(of: OnboardingViewController.self) {
             navigationController.popViewController(animated: false)

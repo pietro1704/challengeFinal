@@ -67,6 +67,7 @@ extension ChoiceCoordinator: ChoiceViewModelDelegate {
     public func userWantToChooseDynamic(dynamic: DynamicTypes) {
         let infosToUpdate = ChoiceViewInfosObject(nodes: infos.nodes,
                                           selectedDynamic: dynamic,
+                                          dynamicButtons: infos.dynamicButtons,
                                           selectedNode: nil,
                                           highlightedNode: nil,
                                           nodeToEndAnimation: nil)
@@ -80,6 +81,7 @@ extension ChoiceCoordinator: ChoiceViewModelDelegate {
         
         let infosToUpdate = ChoiceViewInfosObject(nodes: infos.nodes,
                                                   selectedDynamic: infos.selectedDynamic,
+                                                  dynamicButtons: infos.dynamicButtons,
                                                   selectedNode: storyNode.first,
                                                   highlightedNode: nil,
                                                   nodeToEndAnimation: infos.nodeToEndAnimation)
@@ -89,6 +91,7 @@ extension ChoiceCoordinator: ChoiceViewModelDelegate {
     public func userGotRandom(node: StoryNode) {
         let infosToUpdate = ChoiceViewInfosObject(nodes: infos.nodes,
                                                   selectedDynamic: infos.selectedDynamic,
+                                                  dynamicButtons: infos.dynamicButtons,
                                                   selectedNode: infos.selectedNode,
                                                   highlightedNode: node.id,
                                                   nodeToEndAnimation: node)
@@ -98,6 +101,7 @@ extension ChoiceCoordinator: ChoiceViewModelDelegate {
     public func userWantToHighlightNode(node: StoryNode) {
         let infosToUpdate = ChoiceViewInfosObject(nodes: infos.nodes,
                                                   selectedDynamic: infos.selectedDynamic,
+                                                  dynamicButtons: infos.dynamicButtons,
                                                   selectedNode: infos.selectedNode,
                                                   highlightedNode: node.id,
                                                   nodeToEndAnimation: node)

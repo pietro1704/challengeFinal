@@ -15,6 +15,7 @@ public class StoryCoordinator: Coordinator {
     var storyNode: StoryNode
     var viewController: StoryViewController!
     let eventLogger: LogEventProtocol
+    var playerService: PlayerServiceProtocol?
 
     init (navigationController: UINavigationController, storyNode: StoryNode,
           eventLogger: LogEventProtocol) {
@@ -26,7 +27,7 @@ public class StoryCoordinator: Coordinator {
     func start() {
         viewController = StoryViewController.instantiate(storyBoardName: "Story")
         update(storyNode: storyNode)
-        
+
         let transition = CATransition()
         transition.duration = 0.4
         transition.type = .push
@@ -36,15 +37,16 @@ public class StoryCoordinator: Coordinator {
     }
 
     func update(storyNode: StoryNode) {
-        let playerService = PlayerService()
+        playerService = PlayerService()
+
         let viewModel = StoryViewModel(node: storyNode,
                                        coordinatorDelegate: self,
-                                       playerService: playerService,
+                                       playerService: playerService!,
                                        eventLogger: eventLogger)
         self.storyNode = viewModel.node!
         viewController?.viewModel = viewModel
         
-        playerService.saveChoosenNode(id: storyNode.id)
+        playerService?.saveChoosenNode(id: storyNode.id)
 
         if !self.storyNode.childNodes.isEmpty {
             viewController?.update(with: viewModel)
@@ -55,9 +57,19 @@ public class StoryCoordinator: Coordinator {
     }
 
     func showChoices(with childNodes: [StoryNode]) {
+        var dynamics: [DynamicTypes]
+        var selectedDynamic: DynamicTypes
+        if playerService?.player.points == 0 {
+            dynamics = [.random]
+            selectedDynamic = .random
+        } else {
+            dynamics = [.choice, .bet, .random]
+            selectedDynamic = .choice
+        }
         let coordinator = ChoiceCoordinator(navigationController: navigationController,
                                             infos: ChoiceViewInfosObject(nodes: childNodes,
-                                                                         selectedDynamic: .choice,
+                                                                         selectedDynamic: selectedDynamic,
+                                                                         dynamicButtons: dynamics,
                                                                          selectedNode: nil,
                                                                          highlightedNode: nil,
                                                                          nodeToEndAnimation: nil),
