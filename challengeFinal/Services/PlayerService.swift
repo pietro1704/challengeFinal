@@ -17,6 +17,8 @@ public protocol PlayerServiceProtocol {
     func saveChoosenNode(id: NodeID)
     func getLastNode() -> StoryNode?
     func cleanAllNodes()
+    func didSeeOnboarding() -> Bool
+    func finishedOnboarding()
 }
 
 /// Has both Player and PlayerDataService
@@ -71,5 +73,13 @@ class PlayerService: PlayerServiceProtocol {
 
     func cleanAllNodes() {
         service.saveStoryPath([])
+    }
+    
+    func didSeeOnboarding() -> Bool {
+        return service.getUserSawOnboarding()
+    }
+    
+    func finishedOnboarding() {
+        service.setUserFinishedOnboarding()
     }
 }

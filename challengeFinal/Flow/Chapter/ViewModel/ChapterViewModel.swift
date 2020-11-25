@@ -21,11 +21,6 @@ public class ChapterViewModel {
         self.delegate = coordinatorDelegate
         self.playerService = playerService
         self.eventLogger = eventLogger
-
-        // Note: Refresh Player at each run
-        // Initialize player's points
-        self.playerService.service.savePoints(999)
-        self.playerService.service.saveStoryPath([])
     }
 
     public init(with nodeId: NodeID, playerService: PlayerServiceProtocol,
@@ -36,6 +31,11 @@ public class ChapterViewModel {
     }
 
     public func userWantToShowStory() {
+        // Note: Refresh Player at each run
+        // Initialize player's points
+        playerService.service.savePoints(11)
+        playerService.service.saveStoryPath([])
+        
         delegate?.userWantToShowStory()
     }
 

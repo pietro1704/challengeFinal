@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42EC830F256D34160042D82D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC830E256D34160042D82D /* OnboardingViewController.swift */; };
+		42EC8313256D344F0042D82D /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EC8312256D344F0042D82D /* Onboarding.storyboard */; };
+		42EC8317256D35AA0042D82D /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC8316256D35AA0042D82D /* OnboardingCoordinator.swift */; };
+		42EC831B256D35C10042D82D /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC831A256D35C10042D82D /* OnboardingViewModel.swift */; };
+		42EC831F256D35CE0042D82D /* OnboardingViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC831E256D35CE0042D82D /* OnboardingViewDelegates.swift */; };
+		42EC8323256D35D80042D82D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC8322256D35D80042D82D /* OnboardingView.swift */; };
 		70D9ACFB3037CB3506CB401C /* Pods_challengeFinal_challengeFinalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA9293BB9AD97035E577805 /* Pods_challengeFinal_challengeFinalTests.framework */; };
 		8D04D60A25430ECE00E1F9F7 /* StoryViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FF5E8254303E500FBF110 /* StoryViewModelDelegate.swift */; };
 		8D41F68B2530932300A496C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41F68A2530932300A496C6 /* AppDelegate.swift */; };
@@ -112,6 +118,12 @@
 /* Begin PBXFileReference section */
 		051B5C72F68970D599E310E1 /* Pods-challengeFinal-challengeFinalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal-challengeFinalTests.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal-challengeFinalTests/Pods-challengeFinal-challengeFinalTests.release.xcconfig"; sourceTree = "<group>"; };
 		06541E4086D503AA0D506763 /* Pods-challengeFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.debug.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.debug.xcconfig"; sourceTree = "<group>"; };
+		42EC830E256D34160042D82D /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		42EC8312256D344F0042D82D /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		42EC8316256D35AA0042D82D /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		42EC831A256D35C10042D82D /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		42EC831E256D35CE0042D82D /* OnboardingViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewDelegates.swift; sourceTree = "<group>"; };
+		42EC8322256D35D80042D82D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		44548E80E7D0A3A976B144A5 /* Pods_challengeFinal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challengeFinal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA9293BB9AD97035E577805 /* Pods_challengeFinal_challengeFinalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challengeFinal_challengeFinalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B9F2E37B837715B6F04743 /* Pods-challengeFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeFinal.release.xcconfig"; path = "Target Support Files/Pods-challengeFinal/Pods-challengeFinal.release.xcconfig"; sourceTree = "<group>"; };
@@ -243,6 +255,59 @@
 				4DA9293BB9AD97035E577805 /* Pods_challengeFinal_challengeFinalTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42EC8307256D33960042D82D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				42EC8308256D33A10042D82D /* ViewModel */,
+				42EC8309256D33AB0042D82D /* Coordinator */,
+				42EC830A256D33B10042D82D /* Storyboard */,
+				42EC830B256D33C20042D82D /* View */,
+				42EC830D256D33D30042D82D /* ViewController */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		42EC8308256D33A10042D82D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				42EC831A256D35C10042D82D /* OnboardingViewModel.swift */,
+				42EC831E256D35CE0042D82D /* OnboardingViewDelegates.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		42EC8309256D33AB0042D82D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				42EC8316256D35AA0042D82D /* OnboardingCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		42EC830A256D33B10042D82D /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				42EC8312256D344F0042D82D /* Onboarding.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		42EC830B256D33C20042D82D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				42EC8322256D35D80042D82D /* OnboardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42EC830D256D33D30042D82D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				42EC830E256D34160042D82D /* OnboardingViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		8D41F67E2530932200A496C6 = {
@@ -554,6 +619,7 @@
 		DA30DF8E25371E7A007C6CA4 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				42EC8307256D33960042D82D /* Onboarding */,
 				DA1F094025471666008A5775 /* Choice */,
 				DA8E872E2541BAEE000D481B /* Chapter */,
 				8DB74E472554BFEB003D4A99 /* Credits */,
@@ -949,6 +1015,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42EC8313256D344F0042D82D /* Onboarding.storyboard in Resources */,
 				DA5972EC253725F000D6EF40 /* Story.storyboard in Resources */,
 				DAE65294255ED72800AB1009 /* HeptaSlab-Regular.ttf in Resources */,
 				8D41F6972530932500A496C6 /* LaunchScreen.storyboard in Resources */,
@@ -1083,12 +1150,15 @@
 				8DFEBF09255ECC6700A84D4E /* CustomFont.swift in Sources */,
 				DA5972F82537286500D6EF40 /* StoryView.swift in Sources */,
 				DA1F09352546F424008A5775 /* DynamicTypes.swift in Sources */,
+				42EC830F256D34160042D82D /* OnboardingViewController.swift in Sources */,
 				DA1EB8962554358E00D53030 /* MenuViewContainer.swift in Sources */,
 				DA4A12C325405D2A00504E20 /* ChapterinitLabelView.swift in Sources */,
 				C5DFEB38254A3D8800EAF4AA /* ViewCodable.swift in Sources */,
 				DA0A71EA2539E360002BAB51 /* StoryNode.swift in Sources */,
 				DA88FF702537411500AF0992 /* RegularTextViewInfos.swift in Sources */,
+				42EC8323256D35D80042D82D /* OnboardingView.swift in Sources */,
 				DA0A71EB2539E360002BAB51 /* Story.swift in Sources */,
+				42EC831F256D35CE0042D82D /* OnboardingViewDelegates.swift in Sources */,
 				C509BE0925504D2D00B37CFF /* HUDViewDelegate.swift in Sources */,
 				8DAAC8CC2554CCDC00DC08BF /* CreditsCoordinator.swift in Sources */,
 				8DAAC8CF2554CCE100DC08BF /* CreditsViewController.swift in Sources */,
@@ -1118,6 +1188,7 @@
 				DA5972F02537261500D6EF40 /* StoryViewController.swift in Sources */,
 				DA1F095825471780008A5775 /* ChoiceViewModel.swift in Sources */,
 				DA1F0950254716E1008A5775 /* ChoiceViewContainer.swift in Sources */,
+				42EC8317256D35AA0042D82D /* OnboardingCoordinator.swift in Sources */,
 				DAC23A312537329D00D57C43 /* RegularTextView.swift in Sources */,
 				DA789A9F25431502001CE5BF /* ChoiceButtonView.swift in Sources */,
 				C593DEDB2542580100345F1B /* Player.swift in Sources */,
@@ -1134,6 +1205,7 @@
 				DA8E874C2541C1FD000D481B /* ChapterCoordinator.swift in Sources */,
 				DA789A92254312E9001CE5BF /* UIFont.swift in Sources */,
 				DA5972E8253725DB00D6EF40 /* StoryCoordinator.swift in Sources */,
+				42EC831B256D35C10042D82D /* OnboardingViewModel.swift in Sources */,
 				DA8E873A2541BB64000D481B /* ChapterViewController.swift in Sources */,
 				DA1EB890255434B600D53030 /* MenuViewModel.swift in Sources */,
 				8D41F6CB25309C6700A496C6 /* Storyboarded.swift in Sources */,
