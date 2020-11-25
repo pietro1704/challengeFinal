@@ -42,6 +42,13 @@ public class MainCoordinator: Coordinator {
         childCoordinators.append(coordinator)
         coordinator.start()
     }
+    
+    func showOnboarding() {
+        let coordinator = OnboardingCoordinator(navigationController: navigationController)
+        coordinator.parentCoordinator = self
+        childCoordinators.append(coordinator)
+        coordinator.start()
+    }
 
     func showChapter(with index: NodeID) {
         guard let node = nodeService.retrieveNode(nodeId: index) else { return }
@@ -55,6 +62,23 @@ public class MainCoordinator: Coordinator {
     
     func userWantToStartNewGame(child: Coordinator) {
         self.childDidFinished(child)
+        
+        if playerService.didSeeOnboarding() {
+            showChapter(with: 1)
+        } else {
+            showOnboarding()
+        }
+    }
+    
+    func userWantToStartChapter(child: Coordinator) {
+        self.childDidFinished(child)
+        
+        //Removing onboarding view controller from navigation
+        if let topViewController = navigationController.topViewController,
+           topViewController.isKind(of: OnboardingViewController.self) {
+            navigationController.popViewController(animated: false)
+        }
+        
         showChapter(with: 1)
     }
     

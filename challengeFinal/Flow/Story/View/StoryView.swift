@@ -141,7 +141,7 @@ public class StoryView: UIView {
             self.textView.configure(with: textInfos)
         }
         
-        self.scrollView.scrollRectToVisible(CGRect.init(x: 0, y: 0, width: 1, height: 1), animated: false)
+        scrollView.scrollRectToVisible(CGRect.init(x: 0, y: 0, width: 1, height: 1), animated: false)
         setupConstraints()
     }
 
