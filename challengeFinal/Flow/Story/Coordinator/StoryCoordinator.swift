@@ -15,7 +15,7 @@ public class StoryCoordinator: Coordinator {
     var storyNode: StoryNode
     var viewController: StoryViewController!
     let eventLogger: LogEventProtocol
-    var playerService: PlayerServiceProtocol?
+    var playerService: PlayerServiceProtocol!
 
     init (navigationController: UINavigationController, storyNode: StoryNode,
           eventLogger: LogEventProtocol) {
@@ -41,12 +41,12 @@ public class StoryCoordinator: Coordinator {
 
         let viewModel = StoryViewModel(node: storyNode,
                                        coordinatorDelegate: self,
-                                       playerService: playerService!,
+                                       playerService: playerService,
                                        eventLogger: eventLogger)
         self.storyNode = viewModel.node!
         viewController?.viewModel = viewModel
         
-        playerService?.saveChoosenNode(id: storyNode.id)
+        playerService.saveChoosenNode(id: storyNode.id)
 
         if !self.storyNode.childNodes.isEmpty {
             viewController?.update(with: viewModel)
@@ -57,22 +57,14 @@ public class StoryCoordinator: Coordinator {
     }
 
     func showChoices(with childNodes: [StoryNode]) {
-        var dynamics: [DynamicTypes]
-        var selectedDynamic: DynamicTypes
-        if playerService?.player.points == 0 {
-            dynamics = [.random]
-            selectedDynamic = .random
-        } else {
-            dynamics = [.choice, .bet, .random]
-            selectedDynamic = .choice
-        }
         let coordinator = ChoiceCoordinator(navigationController: navigationController,
                                             infos: ChoiceViewInfosObject(nodes: childNodes,
-                                                                         selectedDynamic: selectedDynamic,
-                                                                         dynamicButtons: dynamics,
+                                                                         selectedDynamic: .choice,
+                                                                         dynamicButtons: [.choice, .bet, .random],
                                                                          selectedNode: nil,
                                                                          highlightedNode: nil,
-                                                                         nodeToEndAnimation: nil),
+                                                                         nodeToEndAnimation: nil,
+                                                                         playerPoints: playerService.player.points),
                                             eventLogger: eventLogger)
         coordinator.parentCoordinator = self
         childCoordinators.append(coordinator)

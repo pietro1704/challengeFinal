@@ -70,7 +70,8 @@ extension ChoiceCoordinator: ChoiceViewModelDelegate {
                                           dynamicButtons: infos.dynamicButtons,
                                           selectedNode: nil,
                                           highlightedNode: nil,
-                                          nodeToEndAnimation: nil)
+                                          nodeToEndAnimation: nil,
+                                          playerPoints: infos.playerPoints)
         self.update(infos: infosToUpdate)
     }
 
@@ -84,7 +85,8 @@ extension ChoiceCoordinator: ChoiceViewModelDelegate {
                                                   dynamicButtons: infos.dynamicButtons,
                                                   selectedNode: storyNode.first,
                                                   highlightedNode: nil,
-                                                  nodeToEndAnimation: infos.nodeToEndAnimation)
+                                                  nodeToEndAnimation: infos.nodeToEndAnimation,
+                                                  playerPoints: infos.playerPoints)
         self.update(infos: infosToUpdate)
     }
 
@@ -94,7 +96,8 @@ extension ChoiceCoordinator: ChoiceViewModelDelegate {
                                                   dynamicButtons: infos.dynamicButtons,
                                                   selectedNode: infos.selectedNode,
                                                   highlightedNode: node.id,
-                                                  nodeToEndAnimation: node)
+                                                  nodeToEndAnimation: node,
+                                                  playerPoints: infos.playerPoints)
         self.update(infos: infosToUpdate)
     }
 
@@ -104,7 +107,8 @@ extension ChoiceCoordinator: ChoiceViewModelDelegate {
                                                   dynamicButtons: infos.dynamicButtons,
                                                   selectedNode: infos.selectedNode,
                                                   highlightedNode: node.id,
-                                                  nodeToEndAnimation: node)
+                                                  nodeToEndAnimation: node,
+                                                  playerPoints: infos.playerPoints)
         self.update(infos: infosToUpdate)
     }
 
