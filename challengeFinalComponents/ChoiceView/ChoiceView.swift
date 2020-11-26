@@ -179,7 +179,7 @@ public class ChoiceView: UIView {
             button.translatesAutoresizingMaskIntoConstraints = false
             button.delegate = self
             button.isUserInteractionEnabled = canChooseNode
-            button.alpha = canChooseNode ? 1 : 0.3
+            button.primaryButton.alpha = canChooseNode ? 1 : 0.3
             choiceButtons.addArrangedSubview(button)
         }
     }

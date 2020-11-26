@@ -15,6 +15,7 @@ public class StoryCoordinator: Coordinator {
     var storyNode: StoryNode
     var viewController: StoryViewController!
     let eventLogger: LogEventProtocol
+    var playerService: PlayerServiceProtocol!
 
     init (navigationController: UINavigationController, storyNode: StoryNode,
           eventLogger: LogEventProtocol) {
@@ -26,7 +27,7 @@ public class StoryCoordinator: Coordinator {
     func start() {
         viewController = StoryViewController.instantiate(storyBoardName: "Story")
         update(storyNode: storyNode)
-        
+
         let transition = CATransition()
         transition.duration = 0.4
         transition.type = .push
@@ -36,7 +37,8 @@ public class StoryCoordinator: Coordinator {
     }
 
     func update(storyNode: StoryNode) {
-        let playerService = PlayerService()
+        playerService = PlayerService()
+
         let viewModel = StoryViewModel(node: storyNode,
                                        coordinatorDelegate: self,
                                        playerService: playerService,
@@ -58,9 +60,11 @@ public class StoryCoordinator: Coordinator {
         let coordinator = ChoiceCoordinator(navigationController: navigationController,
                                             infos: ChoiceViewInfosObject(nodes: childNodes,
                                                                          selectedDynamic: .choice,
+                                                                         dynamicButtons: [.choice, .bet, .random],
                                                                          selectedNode: nil,
                                                                          highlightedNode: nil,
-                                                                         nodeToEndAnimation: nil),
+                                                                         nodeToEndAnimation: nil,
+                                                                         playerPoints: playerService.player.points),
                                             eventLogger: eventLogger)
         coordinator.parentCoordinator = self
         childCoordinators.append(coordinator)

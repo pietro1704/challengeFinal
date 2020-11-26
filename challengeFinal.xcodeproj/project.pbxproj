@@ -996,9 +996,10 @@
 			};
 			buildConfigurationList = 8D41F6822530932200A496C6 /* Build configuration list for PBXProject "challengeFinal" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = pt-Br;
+			developmentRegion = "pt-Br";
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				"pt-Br",
 				en,
 				"pt-BR",
 			);
@@ -1405,7 +1406,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = HHRZ35A37Y;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = challengeFinal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1428,7 +1429,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = HHRZ35A37Y;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = challengeFinal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
